@@ -4,8 +4,9 @@ export const Market = () => {
   return (
     <div>
       <Helmet
-        title="MARKET"
+        title='MARKET'
         meta={[
+          { property: "description", content: "market descr" },
           { property: "og:type", content: "website" },
           { property: "og:title", content: "Страница Market нашего Dobre" },
           { property: "og:url", content: "https://test.com/" },

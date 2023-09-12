@@ -4,8 +4,9 @@ export const Item = () => {
   return (
     <div>
       <Helmet
-        title="ITEM"
+        title='ITEM'
         meta={[
+          { property: "description", content: "item descr" },
           { property: "og:type", content: "website" },
           { property: "og:title", content: "Страница Item нашего Dobre" },
           { property: "og:url", content: "https://test.net/" },
