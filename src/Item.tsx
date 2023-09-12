@@ -6,7 +6,7 @@ export const Item = () => {
       <Helmet
         title='ITEM'
         meta={[
-          { property: "description", content: "item descr" },
+          { name: "description", content: "item descr" },
           { property: "og:type", content: "website" },
           { property: "og:title", content: "Страница Item нашего Dobre" },
           { property: "og:url", content: "https://test.net/" },

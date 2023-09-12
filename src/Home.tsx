@@ -34,7 +34,7 @@ export const Home = () => {
         <Helmet
           title={testMeta[0].category}
           meta={[
-            { property: "description", content: testMeta[0].category },
+            { name: "description", content: testMeta[0].category },
             { property: "og:type", content: "website" },
             { property: "og:title", content: testMeta[0].category },
             { property: "og:url", content: "https://test.ru/" },
