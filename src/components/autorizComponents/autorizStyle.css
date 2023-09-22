@@ -1,0 +1,145 @@
+.wrapper {
+  padding: 20px;
+}
+
+.rowContent {
+  display: flex;
+  margin-top: 10px;
+  max-width: 360px;
+}
+
+.text {
+  font-size: 15px;
+  line-height: 20.49px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.blueText {
+  color: rgba(37, 64, 228, 1);
+  cursor: pointer;
+}
+
+.inputWrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.inputSyle {
+  height: 50px;
+  width: 385px;
+  margin-top: 5px;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordIcon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  height: 17px;
+  width: 17px;
+  cursor: pointer;
+}
+
+.passActionsWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.MuiCheckbox-root {
+  padding: 0;
+}
+.savePass,
+.hidePass {
+  color: rgba(100, 110, 116, 1);
+  cursor: pointer;
+}
+
+.hidePass {
+  text-decoration: underline;
+}
+
+.logInButton {
+  width: 100%;
+  background: rgba(37, 64, 228, 1);
+  height: 50px;
+  border-radius: 8px;
+  margin-top: 26px;
+}
+
+.logInButton:hover {
+  background: rgba(23, 48, 200, 1);
+}
+
+.otherLogInLine {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.otherLogInLine > hr {
+  width: 100%;
+  color: rgba(226, 229, 233, 1);
+}
+
+.orWrapper {
+  margin: 0 20px;
+  color: rgba(100, 110, 116, 1);
+}
+
+.otherSiteConnection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.siteConnect {
+  border: 1px solid rgba(226, 229, 233, 1);
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.createWrapperAccept {
+  display: flex;
+  max-width: 370px;
+  font-size: 15px;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+.savePass > span {
+  text-decoration: underline;
+}
+
+.checkLvlPass {
+  color: rgba(100, 110, 116, 1);
+  font-size: 11px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.resetText {
+  color: rgba(0, 0, 0, 1);
+  font-size: 17px;
+  max-width: 370px;
+  margin-top: 8px;
+}
