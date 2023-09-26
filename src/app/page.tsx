@@ -2,15 +2,15 @@
 import { MainLayout } from "@/components/MainLayout";
 import DOBRE from "@/assets/image/DOBRE.svg";
 import Image from "next/image";
-import { LogInComponent } from "@/components/autorizComponents/LogInComponent";
+import { LogInComponent } from "@/components/AuthorizationComponents/LogInComponent";
 import autorizBanner from "@/assets/image/leftBanner.png";
-import { CreateAccountComponent } from "@/components/autorizComponents/CreateAccountComponent";
+import { CreateAccountComponent } from "@/components/AuthorizationComponents/CreateAccountComponent";
 import { useState } from "react";
-import { ResetPasswordComponent } from "@/components/autorizComponents/ResetPasswordComponent";
+import { ResetPasswordComponent } from "@/components/AuthorizationComponents/ResetPasswordComponent";
 import whiteLogo from "@/assets/image/whiteLogo.svg";
 
 export default function Autorization() {
-  const [activeStep, setActiveStep] = useState("login");
+  const [activeStep, setActiveStep] = useState("create");
 
   return (
     <MainLayout>
@@ -36,7 +36,6 @@ export default function Autorization() {
           {activeStep === "reset" && <ResetPasswordComponent />}
         </div>
 
-        <div className="contentWrapper">{/* <LogInComponent /> */}</div>
         <Image src={DOBRE} alt="DOBRE" className="dobreImage" />
       </div>
     </MainLayout>

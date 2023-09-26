@@ -1,6 +1,6 @@
 "use client";
 import TextField from "@mui/material/TextField";
-import "./autorizStyle.css";
+import "./authorizationStyle.css";
 import Image from "next/image";
 import { Dispatch, SetStateAction, useState } from "react";
 import closePass from "@/assets/image/eyeClosed.png";

@@ -1,7 +1,7 @@
 "use client";
 import { ModalComponent } from "@/components/ModalComponent";
 import "./home.css";
-import { CreateAccountMess } from "@/components/notificationMessageModal/CreateAccount";
+import { CreateAccountMess } from "@/components/NotificationMessageModal/CreateAccount";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 

@@ -1,8 +1,8 @@
 "use client";
 import TextField from "@mui/material/TextField";
-import "./autorizStyle.css";
+import "./authorizationStyle.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import closePass from "@/assets/image/eyeClosed.png";
 import openPass from "@/assets/image/eyeOpen.png";
 import { Button, Checkbox } from "@mui/material";
@@ -11,9 +11,10 @@ import appleIcon from "@/assets/image/apple.svg";
 import vkIcon from "@/assets/image/vk.svg";
 import yandexIcon from "@/assets/image/yandex.svg";
 import { ModalComponent } from "@/components/ModalComponent";
-import { CreateAccountMess } from "../notificationMessageModal/CreateAccount";
+import { CreateAccountMess } from "../NotificationMessageModal/CreateAccount";
 import { AutorizPropsType } from "./LogInComponent";
-import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import ReCAPTCHA from "react-google-recaptcha";
+import { verifyCaptcha } from "../VeryfiCaptcha";
 
 export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [isPassword, setIsPassword] = useState(false);
@@ -23,6 +24,17 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [passInput, setPassInput] = useState("");
 
   const [test, setTest] = useState(false);
+
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [isVerified, setIsverified] = useState<boolean>(false);
+
+  const token = "6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz";
+
+  async function handleCaptchaSubmission(token: string | null) {
+    await verifyCaptcha(token)
+      .then(() => setIsverified(true))
+      .catch(() => setIsverified(false));
+  }
 
   return (
     <div className="wrapper">
@@ -100,9 +112,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
             <div
               className="valuePassLvl"
               style={{
-                color: `${
-                  passInput.length >= 8 ? "rgba(37, 64, 228, 1)" : "red"
-                }`,
+                color: `rgba(37, 64, 228, 1)`,
               }}
             >
               {passInput.length >= 8 ? "Сложный" : "Слабый"}
@@ -121,7 +131,17 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
         </>
       )}
 
-      <GoogleReCaptchaProvider reCaptchaKey={""} children={undefined} />
+      <div className="captchaStyle">
+        <ReCAPTCHA
+          sitekey="6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz"
+          ref={recaptchaRef}
+          onChange={handleCaptchaSubmission}
+          className="testCap"
+        />
+        {/* <Button type="submit" disabled={!isVerified}>
+          Submit feedback
+        </Button> */}
+      </div>
 
       <div className="createWrapperAccept">
         <Checkbox
@@ -142,7 +162,6 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
       </Button>
       <ModalComponent open={test} handleClose={() => setTest(false)}>
         <CreateAccountMess />
-        {/* <LinkResetMess /> */}
       </ModalComponent>
     </div>
   );
