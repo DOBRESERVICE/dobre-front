@@ -5,7 +5,8 @@
 .rowContent {
   display: flex;
   margin-top: 10px;
-  max-width: 360px;
+  max-width: 370px;
+  font-size: 15px;
 }
 
 .text {
@@ -77,6 +78,7 @@
   height: 50px;
   border-radius: 8px;
   margin-top: 26px;
+  text-transform: none !important;
 }
 
 .logInButton:hover {
@@ -92,11 +94,13 @@
 
 .otherLogInLine > hr {
   width: 100%;
-  color: rgba(226, 229, 233, 1);
+  border: 1px solid rgba(226, 229, 233, 1);
+  margin-top: 3px;
 }
 
 .orWrapper {
   margin: 0 20px;
+  font-size: 13px;
   color: rgba(100, 110, 116, 1);
 }
 
@@ -142,4 +146,32 @@
   font-size: 17px;
   max-width: 370px;
   margin-top: 8px;
+}
+
+.MuiOutlinedInput-input {
+  color: rgba(37, 64, 228, 1) !important;
+}
+
+.lvlPass {
+  display: flex;
+}
+
+.lvlPass {
+  margin-top: 10px;
+}
+
+.grayLine {
+  height: 2px;
+  background: rgba(226, 229, 233, 1);
+  width: 67%;
+}
+
+.blueLine {
+  width: 33%;
+  background: rgba(37, 64, 228, 1);
+  height: 2px;
+}
+
+.fullLine {
+  width: 100%;
 }

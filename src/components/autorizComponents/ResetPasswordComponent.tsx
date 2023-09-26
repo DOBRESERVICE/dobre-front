@@ -1,18 +1,11 @@
 "use client";
 import TextField from "@mui/material/TextField";
 import "./autorizStyle.css";
-import Image from "next/image";
 import { useState } from "react";
-import { Button, Checkbox } from "@mui/material";
-import googleIcon from "@/assets/image/google.svg";
-import appleIcon from "@/assets/image/apple.svg";
-import vkIcon from "@/assets/image/vk.svg";
-import yandexIcon from "@/assets/image/yandex.svg";
+import { Button } from "@mui/material";
 
 export const ResetPasswordComponent = () => {
   const [isSavePass, setIsSavePass] = useState(false);
-
-  console.log("isSavePass", isSavePass);
 
   return (
     <div className="wrapper">

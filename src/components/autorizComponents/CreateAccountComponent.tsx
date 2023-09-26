@@ -11,15 +11,16 @@ import appleIcon from "@/assets/image/apple.svg";
 import vkIcon from "@/assets/image/vk.svg";
 import yandexIcon from "@/assets/image/yandex.svg";
 import { ModalComponent } from "@/components/ModalComponent";
-// import { CreateAccountMess } from "../notificationMessageModal/createAccount";
-import { LinkResetMess } from "../notificationMessageModal/LinkReset";
+import { CreateAccountMess } from "../notificationMessageModal/CreateAccount";
+import { AutorizPropsType } from "./LogInComponent";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
-export const CreateAccountComponent = () => {
+export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [isPassword, setIsPassword] = useState(false);
 
   const [isAccept, setIsAccept] = useState(false);
 
-  const [isGoodPass, setIsGoodPass] = useState(false);
+  const [passInput, setPassInput] = useState("");
 
   const [test, setTest] = useState(false);
 
@@ -28,7 +29,11 @@ export const CreateAccountComponent = () => {
       <div className="title">Создание аккаунта</div>
       <div className="rowContent">
         <p className="text">Вы уже зарегистрированны?</p>
-        <span className="blueText" style={{ marginLeft: "6px" }}>
+        <span
+          className="blueText"
+          style={{ marginLeft: "6px" }}
+          onClick={() => setActiveStep("login")}
+        >
           Войти
         </span>
       </div>
@@ -67,6 +72,8 @@ export const CreateAccountComponent = () => {
             variant="outlined"
             className="inputSyle"
             size="small"
+            value={passInput}
+            onChange={(e) => setPassInput(e.target.value)}
           />
           {isPassword ? (
             <Image
@@ -86,15 +93,36 @@ export const CreateAccountComponent = () => {
         </div>
       </div>
 
-      <div className="checkLvlPass">
-        <div className="checkPassLvl">Уровень сложности пароля</div>
-        <div
-          className="valuePassLvl"
-          style={{ color: `${isGoodPass ? "green" : "red"}` }}
-        >
-          {isGoodPass ? "Надёжный" : "Не надёжный"}
-        </div>
-      </div>
+      {!!passInput.length && (
+        <>
+          <div className="checkLvlPass">
+            <div className="checkPassLvl">Уровень сложности пароля</div>
+            <div
+              className="valuePassLvl"
+              style={{
+                color: `${
+                  passInput.length >= 8 ? "rgba(37, 64, 228, 1)" : "red"
+                }`,
+              }}
+            >
+              {passInput.length >= 8 ? "Сложный" : "Слабый"}
+            </div>
+          </div>
+          <div className="lvlPass">
+            {passInput.length < 8 ? (
+              <>
+                <div className="blueLine" />
+                <div className="grayLine" />
+              </>
+            ) : (
+              <div className="blueLine fullLine" />
+            )}
+          </div>
+        </>
+      )}
+
+      <GoogleReCaptchaProvider reCaptchaKey={""} children={undefined} />
+
       <div className="createWrapperAccept">
         <Checkbox
           onChange={() => setIsAccept(!isAccept)}
@@ -113,8 +141,8 @@ export const CreateAccountComponent = () => {
         Создать аккаунт
       </Button>
       <ModalComponent open={test} handleClose={() => setTest(false)}>
-        {/* <CreateAccountMess /> */}
-        <LinkResetMess />
+        <CreateAccountMess />
+        {/* <LinkResetMess /> */}
       </ModalComponent>
     </div>
   );
