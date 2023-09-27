@@ -1,6 +1,6 @@
+import { acceptIcon } from '@/assets/image';
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import acceptIcon from '@/assets/image/acceptIcon.svg';
 
 export const CreateAccountMess = () => {
   return (

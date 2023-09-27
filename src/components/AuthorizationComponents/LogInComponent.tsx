@@ -3,14 +3,9 @@ import TextField from '@mui/material/TextField';
 import './authorizationStyle.css';
 import Image from 'next/image';
 import { Dispatch, SetStateAction, useState } from 'react';
-import closePass from '@/assets/image/eyeClosed.png';
-import openPass from '@/assets/image/eyeOpen.png';
 import { Button, Checkbox } from '@mui/material';
-import googleIcon from '@/assets/image/google.svg';
-import appleIcon from '@/assets/image/apple.svg';
-import vkIcon from '@/assets/image/vk.svg';
-import yandexIcon from '@/assets/image/yandex.svg';
 import { useRouter } from 'next/navigation';
+import { eyeOpen, eyeClosed, googleIcon, appleIcon, vkIcon, yandexIcon } from '@/assets/image';
 
 export type AutorizPropsType = {
   setActiveStep: Dispatch<SetStateAction<string>>;
@@ -50,9 +45,9 @@ export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
             size='small'
           />
           {isPassword ? (
-            <Image src={openPass} alt='open' className='passwordIcon' onClick={() => setIsPassword(false)} />
+            <Image src={eyeOpen} alt='open' className='passwordIcon' onClick={() => setIsPassword(false)} />
           ) : (
-            <Image src={closePass} alt='close' className='passwordIcon' onClick={() => setIsPassword(true)} />
+            <Image src={eyeClosed} alt='close' className='passwordIcon' onClick={() => setIsPassword(true)} />
           )}
         </div>
       </div>
@@ -64,13 +59,13 @@ export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
           Забыли пароль?
         </div>
       </div>
-      <Button variant='contained' className='logInButton' onClick={() => router.push('/home?authoriz=1')}>
+      <Button variant='contained' className='logInButton' onClick={() => router.push('/?authoriz=1')}>
         Войти
       </Button>
       <div className='otherLogInLine'>
         <hr /> <div className='orWrapper'>или</div> <hr />
       </div>
-      <div className='otherSiteConnection'>
+      <div className='otherSiteConnection' style={{ marginLeft: '20px' }}>
         <div className='siteConnect'>
           <Image src={googleIcon} alt='google' />
         </div>
