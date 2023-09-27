@@ -1,6 +1,6 @@
 'use client';
 import TextField from '@mui/material/TextField';
-import './authorizationStyle.css';
+import './authorizationStyle.scss';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 

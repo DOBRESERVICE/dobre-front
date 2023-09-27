@@ -1,4 +1,4 @@
-import styles from './SearchBlock.module.css';
+import styles from './SearchBlock.module.scss';
 
 export const SearchBlock = () => {
   return (

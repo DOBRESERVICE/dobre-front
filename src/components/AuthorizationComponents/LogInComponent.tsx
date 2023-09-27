@@ -1,6 +1,6 @@
 'use client';
 import TextField from '@mui/material/TextField';
-import './authorizationStyle.css';
+import './authorizationStyle.scss';
 import Image from 'next/image';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';

@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header/Header';
-import styles from './HomeLayout.module.css';
+import styles from './HomeLayout.module.scss';
 interface LayoutProps {
   children: React.ReactNode;
 }

@@ -1,5 +1,5 @@
 import { BurgerButton } from '@/ui/BurgerButton/BurgerButton';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import categoriesIcon from '../../assets/image/categoriesIcon.svg';
