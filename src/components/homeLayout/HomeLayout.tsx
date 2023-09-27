@@ -1,12 +1,14 @@
+import { Header } from '@/components/Header/Header';
+
 interface LayoutProps {
-    children:React.ReactNode;
+  children: React.ReactNode;
 }
-export const HomeLayout:React.FC<LayoutProps> = ({children}) => {
-    return (
-        <>
-            <header>крутой хедер</header>
-            <main>{children}</main>
-            <footer>крутой футер</footer>
-        </>
-    );
+export const HomeLayout: React.FC<LayoutProps> = ({ children }) => {
+  return (
+    <>
+      <Header />
+      <main>{children}</main>
+      <footer>крутой футер</footer>
+    </>
+  );
 };

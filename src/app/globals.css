@@ -1,22 +1,41 @@
-* {
-  margin: 0;
+*,
+*::before,
+*::after {
   padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 @font-face {
   font-family: Manrope;
-  src: url("../assets/fonts/Manrope/Manrope-VariableFont_wght.ttf");
+  src: url('../assets/fonts/Manrope/Manrope-VariableFont_wght.ttf');
 }
 
 body {
   font-family: Manrope !important;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
 
 .autorizationWrapper {

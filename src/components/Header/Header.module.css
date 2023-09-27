@@ -1,0 +1,46 @@
+.header {
+  width: 97%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap:10px;
+}
+.locationWrapper > p {
+  font-size: 15px;
+  font-weight: 700;
+}
+.cartCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px;
+  height: 46px;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #FFF;
+  transition: background-color 0.3s ease;
+}
+.cartCircle:hover {
+  background-color: #EEE;
+}
+.cartCircle:active {
+  background-color: #C9C9C9;
+}
+.cartCircle > img {
+  position: absolute;
+}
+.content {
+  display: flex;
+  gap:25px;
+  justify-content:center;
+  align-items: center;
+}
+.logo {
+  flex:1;
+}
