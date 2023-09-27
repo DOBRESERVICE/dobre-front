@@ -1,0 +1,25 @@
+@import "src/styles/variables";
+.sectionHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+
+  & > h1 {
+    font-size: $font-big;
+    font-weight: $fweight-big;
+    color:$white;
+    line-height: 62px;
+  }
+  & > h2 {
+    font-size: 36px;
+    font-weight: $fweight-big;
+    color:$white;
+  }
+  & > h3 {
+    font-size: $font-medium;
+    color:$white;
+    font-weight: $fweight-medium;
+  }
+}

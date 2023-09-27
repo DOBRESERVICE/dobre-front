@@ -11,4 +11,6 @@ export const colors = {
   lightGray: '#EEE',
   hoverBlack: '#343434',
   activeBlack: '#6A6A6A',
+  inputText: '#81878B',
+  orangeGradient: 'linear-gradient(104deg, #F59045 0%, #E65071 100%)',
 };
