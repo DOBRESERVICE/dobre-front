@@ -4,6 +4,7 @@ import { CreateAccountMess } from '@/components/notificationMessageModal/CreateA
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
+import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -26,6 +27,7 @@ export default function HomePage() {
         <CreateAccountMess />
         {/* <LinkResetMess /> */}
       </ModalComponent>
+      <SearchBlock />
     </HomeLayout>
   );
 }
