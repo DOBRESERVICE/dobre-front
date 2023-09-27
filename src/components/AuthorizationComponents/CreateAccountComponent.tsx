@@ -3,18 +3,20 @@ import TextField from "@mui/material/TextField";
 import "./authorizationStyle.css";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import closePass from "@/assets/image/eyeClosed.png";
-import openPass from "@/assets/image/eyeOpen.png";
 import { Button, Checkbox } from "@mui/material";
-import googleIcon from "@/assets/image/google.svg";
-import appleIcon from "@/assets/image/apple.svg";
-import vkIcon from "@/assets/image/vk.svg";
-import yandexIcon from "@/assets/image/yandex.svg";
 import { ModalComponent } from "@/components/ModalComponent";
 import { CreateAccountMess } from "../NotificationMessageModal/CreateAccount";
 import { AutorizPropsType } from "./LogInComponent";
 import ReCAPTCHA from "react-google-recaptcha";
 import { verifyCaptcha } from "../VeryfiCaptcha";
+import {
+  googleIcon,
+  appleIcon,
+  vkIcon,
+  yandexIcon,
+  eyeOpen,
+  eyeClosed,
+} from "@/assets/image";
 
 export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [isPassword, setIsPassword] = useState(false);
@@ -23,12 +25,10 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
 
   const [passInput, setPassInput] = useState("");
 
-  const [test, setTest] = useState(false);
+  const [isShowModal, setIsShowModal] = useState(false);
 
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isVerified, setIsverified] = useState<boolean>(false);
-
-  const token = "6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz";
 
   async function handleCaptchaSubmission(token: string | null) {
     await verifyCaptcha(token)
@@ -52,7 +52,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
 
       <div
         className="otherSiteConnection"
-        style={{ justifyContent: "flex-start" }}
+        style={{ justifyContent: "flex-start", marginLeft: "20px" }}
       >
         <div className="siteConnect">
           <Image src={googleIcon} alt="google" />
@@ -89,14 +89,14 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
           />
           {isPassword ? (
             <Image
-              src={openPass}
+              src={eyeOpen}
               alt="open"
               className="passwordIcon"
               onClick={() => setIsPassword(false)}
             />
           ) : (
             <Image
-              src={closePass}
+              src={eyeClosed}
               alt="close"
               className="passwordIcon"
               onClick={() => setIsPassword(true)}
@@ -156,11 +156,14 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
         variant="contained"
         className="logInButton"
         disabled={!isAccept}
-        onClick={() => setTest(true)}
+        onClick={() => setIsShowModal(true)}
       >
         Создать аккаунт
       </Button>
-      <ModalComponent open={test} handleClose={() => setTest(false)}>
+      <ModalComponent
+        open={isShowModal}
+        handleClose={() => setIsShowModal(false)}
+      >
         <CreateAccountMess />
       </ModalComponent>
     </div>
