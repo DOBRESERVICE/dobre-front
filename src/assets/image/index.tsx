@@ -12,6 +12,7 @@ import userIcon from './userIcon.svg';
 import vkIcon from './vk.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
+import plusIcon from './plusIcon.svg';
 import searchIcon from './searchIcon.svg';
 import firstLampGroup from './firstLampGroup.png';
 import secureIcon from './secureIcon.svg';
@@ -41,6 +42,7 @@ export {
   markerIcon,
   messageIcon,
   shopIcon,
+  plusIcon,
   searchIcon,
   firstLampGroup,
   secureIcon,

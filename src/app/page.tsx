@@ -7,6 +7,8 @@ import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
+import { FirstItem } from '@/components/FirstItem/FirstItem';
+
 export default function HomePage() {
   const currentUrl = window.location;
   const router = useRouter();
@@ -28,7 +30,11 @@ export default function HomePage() {
         <CreateAccountMess />
         {/* <LinkResetMess /> */}
       </ModalComponent>
+
       <NewProducts />
+
+      <SearchBlock />
+
     </HomeLayout>
   );
 }
