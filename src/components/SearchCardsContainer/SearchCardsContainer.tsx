@@ -3,12 +3,12 @@ import { SearchBlockCard } from '@/components/SearchBlockCard/SearchBlockCard';
 import { FC } from 'react';
 
 interface SearchCardsContainer {
-  data: SearchBlockCard[];
+  cardsData: SearchBlockCard[];
 }
-export const SearchCardsContainer: FC<SearchCardsContainer> = ({ data }) => {
+export const SearchCardsContainer: FC<SearchCardsContainer> = ({ cardsData }) => {
   return (
     <div className={styles.searchCardsContainer}>
-      {data.map((card) => (
+      {cardsData.map((card) => (
         <SearchBlockCard key={card.id} cardHeader={card.cardHeader} cardText={card.cardText} iconUrl={card.iconUrl} />
       ))}
     </div>
