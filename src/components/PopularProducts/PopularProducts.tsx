@@ -1,30 +1,15 @@
 import styles from './PopularProducts.module.scss';
-import Image from 'next/image';
-import { sportImage } from '@/assets/image';
+import { popularProductsData } from '@/data';
+import { PopularItem } from '@/components/PopularProducts/common/PopularItem';
+import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 export const PopularProducts = () => {
   return (
-    <section>
+    <section className={styles.popularProductsSection}>
+      <TopSectionBar barName='Популярно сейчас' hasLinkArrow />
       <div className={styles.gridContainer}>
-        <div className=''>
-          <h3>Электроника</h3>
-        </div>
-        <div className=''>Кемпинг и путешествия</div>
-        <div className={styles.cardWrapper}>
-          <Image src={sportImage} alt='sport image' />
-          Спорт и активный отдых
-        </div>
-        <div className=''>
-          Бытовая <br /> техника
-        </div>
-        <div className=''>
-          Для родителей <br /> и дедей
-        </div>
-        <div className=''>
-          Игры и <br /> развлечения
-        </div>
-        <div className=''>
-          Хобби и <br /> творчество
-        </div>
+        {popularProductsData.map((product) => (
+          <PopularItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
+        ))}
       </div>
     </section>
   );
