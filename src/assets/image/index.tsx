@@ -16,6 +16,13 @@ import aboutUsImage from './aboutUsImage.png';
 import aboutUsAccept from './aboutUsAccept.png';
 import aboutUsLine from './lineAboutUs.svg';
 import aboutUsBlob from './blobAboutUs.svg';
+import plusIcon from './plusIcon.svg';
+import searchIcon from './searchIcon.svg';
+import firstLampGroup from './firstLampGroup.png';
+import secureIcon from './secureIcon.svg';
+import smartDelivery from './smartDelivery.svg';
+import paymentIcon from './paymentIcon.svg';
+import secondLampGroup from './secondLampGroup.png';
 
 export {
   acceptIcon,
@@ -36,4 +43,11 @@ export {
   aboutUsAccept,
   aboutUsLine,
   aboutUsBlob,
+  plusIcon,
+  searchIcon,
+  firstLampGroup,
+  secureIcon,
+  smartDelivery,
+  paymentIcon,
+  secondLampGroup,
 };

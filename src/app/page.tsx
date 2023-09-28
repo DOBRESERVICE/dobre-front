@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
+import { FirstItem } from '@/components/FirstItem/FirstItem';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -29,6 +30,7 @@ export default function HomePage() {
         {/* <LinkResetMess /> */}
       </ModalComponent>
       <SearchBlock />
+      <FirstItem />
       <AboutUs />
     </HomeLayout>
   );

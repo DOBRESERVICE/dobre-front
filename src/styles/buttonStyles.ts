@@ -79,3 +79,26 @@ export const customLoginButton = {
     boxShadow: 'none',
   },
 };
+
+export const customSearchInput = {
+  color: colors.inputText,
+  width: '80%',
+  fontWeight: 500,
+  fontSize: '18px',
+};
+export const customSearchButton = {
+  borderRadius: '8px',
+  height: '45px',
+  fontSize: '15px',
+  marginRight: '10px',
+  fontWeight: 700,
+  background: colors.orangeGradient,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+};

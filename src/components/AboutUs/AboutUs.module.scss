@@ -1,7 +1,7 @@
 @import '@/styles/variables.scss';
 
 .wrapper {
-  width: $main-wrapper;
+  width: $width-wrapper;
   margin: 0 auto;
   border-radius: 16px;
 }
@@ -30,7 +30,7 @@
   font-weight: 700;
   line-height: 44px;
   font-size: 36px;
-  color: $blue;
+  color: $deep-blue;
   max-width: 500px;
 }
 
@@ -38,7 +38,7 @@
   font-size: 20px;
   font-weight: 500;
   line-height: 27px;
-  color: $blue;
+  color: $deep-blue;
   max-width: 370px;
   margin-top: 20px;
 }
