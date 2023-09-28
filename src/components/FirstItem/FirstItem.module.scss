@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  width: 1330px;
+  max-width: $width-wrapper;
   margin: 0 auto;
   padding: 90px 0 101px 0;
   border-bottom: 1px solid #d9d9d9;
@@ -14,7 +14,7 @@
   font-size: 36px;
 
   span {
-    color: blue;
+    color: $blue;
   }
 }
 
