@@ -1,4 +1,3 @@
-import { NewProductItem } from '@/components/NewProductItem/NewProductItem';
 import styles from './NewProducts.module.scss';
 import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 import classNames from 'classnames';

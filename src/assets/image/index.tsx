@@ -18,6 +18,7 @@ import starReviews from './starReviews.svg';
 import verified from './verified.svg';
 import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
+import nextArrow from './nextArrow.svg';
 
 export {
   acceptIcon,
@@ -40,4 +41,5 @@ export {
   verified,
   favouriteIcon,
   linkArrow,
+  nextArrow,
 };

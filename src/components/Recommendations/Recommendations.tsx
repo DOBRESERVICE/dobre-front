@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { NewProductItem } from '@/components/NewProductItem/NewProductItem';
 import { ProductsContainer } from '@/components/ProductsContainer/ProductsContainer';
 
-export const PopularProducts = () => {
+export const Recommendations = () => {
   return (
     <section className={styles.newProductsSection}>
       <TopSectionBar hasLinkArrow barName='Рекомендации для вас' />
