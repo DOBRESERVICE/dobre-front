@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './AboutUsItem.module.scss';
 import { aboutUsBlob, aboutUsLine } from '@/assets/image';
+import { FC } from 'react';
 
 type AboutItemType = {
   title: string;
@@ -8,7 +9,7 @@ type AboutItemType = {
   position: 'left' | 'right' | 'bottom';
 };
 
-export const AboutUsItem = ({ title, description, position }: AboutItemType) => {
+export const AboutUsItem: FC<AboutItemType> = ({ title, description, position }) => {
   return (
     <div className={styles.mainItem}>
       <div className={styles.itemTitle}>
