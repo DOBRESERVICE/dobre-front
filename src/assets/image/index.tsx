@@ -13,6 +13,12 @@ import vkIcon from './vk.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import plusIcon from './plusIcon.svg';
+import searchIcon from './searchIcon.svg';
+import firstLampGroup from './firstLampGroup.png';
+import secureIcon from './secureIcon.svg';
+import smartDelivery from './smartDelivery.svg';
+import paymentIcon from './paymentIcon.svg';
+import secondLampGroup from './secondLampGroup.png';
 
 export {
   acceptIcon,
@@ -30,4 +36,10 @@ export {
   messageIcon,
   shopIcon,
   plusIcon,
+  searchIcon,
+  firstLampGroup,
+  secureIcon,
+  smartDelivery,
+  paymentIcon,
+  secondLampGroup,
 };
