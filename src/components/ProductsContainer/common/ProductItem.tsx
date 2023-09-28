@@ -3,11 +3,11 @@ import Image, { StaticImageData } from 'next/image';
 import { favouriteIcon, starReviews, verified } from '@/assets/image';
 import { ProductStatus } from '@/enums';
 import { FC } from 'react';
-import { StatusBar } from '@/components/StatusBar/StatusBar';
 import { availableNow, inRent, isGoodStatus } from '@/constants';
 import classNames from 'classnames';
-import { RentInfoContainer } from '@/components/RentInfoContainer/RentInfoContainer';
+import { RentInfoContainer } from '@/components/ProductsContainer/common/RentInfoContainer/RentInfoContainer';
 import { RentInfoData } from '@/interfaces';
+import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
 
 interface ProductItem {
   itemName: string;

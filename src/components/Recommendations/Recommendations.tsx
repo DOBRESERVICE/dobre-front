@@ -2,7 +2,7 @@ import styles from '@/components/NewProducts/NewProducts.module.scss';
 import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 import classNames from 'classnames';
 import { NewProductItem } from '@/components/NewProductItem/NewProductItem';
-import { ProductsContainer } from '@/components/ProductsContainer/ProductsContainer';
+import { ProductsContainer } from '@/components/ProductsContainer/common/ProductsContainer';
 
 export const Recommendations = () => {
   return (

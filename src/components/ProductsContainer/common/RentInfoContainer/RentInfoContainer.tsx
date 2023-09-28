@@ -1,6 +1,6 @@
 import styles from './RentInfoContainer.module.scss';
 import { FC } from 'react';
-import { RentInfoItem } from '@/components/RentInfoContainer/RentInfoItem';
+import { RentInfoItem } from '@/components/ProductsContainer/common/RentInfoContainer/RentInfoItem';
 import { RentInfoData } from '@/interfaces';
 
 interface RentInfoContainer {

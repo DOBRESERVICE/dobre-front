@@ -1,4 +1,4 @@
-import styles from './statusBar.module.scss';
+import styles from './StatusBar.module.scss';
 import { ProductStatus } from '@/enums';
 import { FC } from 'react';
 import classNames from 'classnames';

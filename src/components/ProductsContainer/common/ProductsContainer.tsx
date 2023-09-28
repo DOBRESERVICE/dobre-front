@@ -1,6 +1,6 @@
 import styles from './ProductsContainer.module.scss';
 import classNames from 'classnames';
-import { ProductItem } from '@/components/ProductsContainer/ProductItem';
+import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
 import { ProductStatus } from '@/enums';
 import { mockItem, mockUser } from '@/assets/image';
 import { rentInfoData } from '@/data';
