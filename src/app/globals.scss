@@ -32,7 +32,9 @@ h6 {
   font-family: Manrope;
   src: url("https://fonts.google.com/specimen/Manrope");
 }
-
+html {
+  overflow-x:hidden;
+}
 body {
   font-family: Manrope !important;
   color: rgb(var(--foreground-rgb));
@@ -42,6 +44,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-x:hidden;
 }
 
 .autorizationWrapper {

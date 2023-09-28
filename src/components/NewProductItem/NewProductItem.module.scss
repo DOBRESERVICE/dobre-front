@@ -1,0 +1,143 @@
+@import "/src/styles/variables";
+.newProductWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 320px;
+  position: relative;
+  max-width: 320px;
+  & > img:nth-child(1),
+  & > img:nth-child(2) {
+    position: absolute;
+  }
+
+  & > img:nth-child(1) {
+    border-radius: 50%;
+    top:18px;
+    left:20px;
+  }
+
+  & > img:nth-child(2) {
+    top:18px;
+    right:20px;
+  }
+}
+
+.status {
+  color:#55C94D;
+  font-size: 13px;
+  font-weight: $fweight-big;
+}
+.statusBarContainer {
+  display: flex;
+  gap:10px;
+
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3),
+  & > span:nth-child(4),
+  & > span:nth-child(5)
+  {
+    height: 4px;
+    border-radius: 5px;
+    background-color: #55C94D;
+  }
+
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3)
+  {
+    width: 23px;
+  }
+
+  & > span:nth-child(4),
+  & > span:nth-child(5)
+  {
+    width: 13px;
+  }
+
+}
+
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rentTimeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  background-color: #F4F4F4;
+  border-radius: 8px;
+
+  & > div > p {
+    font-size: 9px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    color:$graphite;
+  }
+
+  & > div > span {
+    font-size: 14px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    color:#000;
+  }
+
+}
+.line {
+  width: 1px;
+  height: 23px;
+  background-color: #E6E6E6;
+}
+.itemName {
+  font-size: 18px;
+  font-weight: $fweight-big;
+  line-height: 24px;
+}
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > span {
+    color:$black;
+    font-weight: 600;
+  }
+  & span:first-of-type {
+    font-size: 15px;
+  }
+
+  & span:last-of-type{
+    font-size: 13px;
+  }
+
+}
+
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background: linear-gradient(104deg, #F59045 0%, #E65071 100%);
+  & > p {
+    color:$white;
+    font-size: 12px;
+    font-weight: $fweight-big;
+  }
+}
+.sellerInfoContainer {
+  display: flex;
+  gap:6px;
+
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: $fweight-big;
+  }
+
+}
