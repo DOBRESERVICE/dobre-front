@@ -2,6 +2,14 @@ import styles from './NewProductItem.module.scss';
 import Image from 'next/image';
 import { favouriteIcon, mockItem, mockUser, starReviews, verified } from '@/assets/image';
 
+interface NewProductItem {
+  itemName: string;
+  photoUrl: string;
+  status: string;
+  price: number;
+  rating: number;
+  condition: string;
+}
 export const NewProductItem = () => {
   return (
     <div className={styles.newProductWrapper}>
