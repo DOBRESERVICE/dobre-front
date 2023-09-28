@@ -3,24 +3,7 @@ import classNames from 'classnames';
 import { ProductItem } from '@/components/ProductsContainer/ProductItem';
 import { ProductStatus } from '@/enums';
 import { mockItem, mockUser } from '@/assets/image';
-
-const rentInfoData = [
-  {
-    id: 1,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-  {
-    id: 2,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-  {
-    id: 3,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-];
+import { rentInfoData } from '@/data';
 
 export const ProductsContainer = () => {
   return (
@@ -30,9 +13,8 @@ export const ProductsContainer = () => {
       <ProductItem
         photoUrl={mockItem}
         userUrl={mockUser}
-        rentEndDate={'18.23'}
+        rentEndDate='18.23'
         itemName='ssssss'
-        isInFavourites={true}
         status={ProductStatus.LIKE_NEW}
         rating={4}
         feedbackCount={32}

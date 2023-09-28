@@ -12,6 +12,12 @@ import userIcon from './userIcon.svg';
 import vkIcon from './vk.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
+import searchIcon from './searchIcon.svg';
+import firstLampGroup from './firstLampGroup.png';
+import secureIcon from './secureIcon.svg';
+import smartDelivery from './smartDelivery.svg';
+import paymentIcon from './paymentIcon.svg';
+import secondLampGroup from './secondLampGroup.png';
 import mockItem from './mockItem.png';
 import mockUser from './mockUser.png';
 import starReviews from './starReviews.svg';
@@ -35,6 +41,12 @@ export {
   markerIcon,
   messageIcon,
   shopIcon,
+  searchIcon,
+  firstLampGroup,
+  secureIcon,
+  smartDelivery,
+  paymentIcon,
+  secondLampGroup,
   mockUser,
   mockItem,
   starReviews,

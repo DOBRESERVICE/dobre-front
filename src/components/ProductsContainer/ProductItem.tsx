@@ -1,18 +1,14 @@
 import styles from './ProductItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { favouriteIcon, mockItem, starReviews, verified } from '@/assets/image';
+import { favouriteIcon, starReviews, verified } from '@/assets/image';
 import { ProductStatus } from '@/enums';
 import { FC } from 'react';
 import { StatusBar } from '@/components/StatusBar/StatusBar';
 import { availableNow, inRent, isGoodStatus } from '@/constants';
 import classNames from 'classnames';
 import { RentInfoContainer } from '@/components/RentInfoContainer/RentInfoContainer';
+import { RentInfoData } from '@/interfaces';
 
-export interface RentInfoData {
-  id: number;
-  timeInRent: string;
-  price: string;
-}
 interface ProductItem {
   itemName: string;
   userUrl: string | StaticImageData;

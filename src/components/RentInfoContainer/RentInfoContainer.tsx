@@ -1,7 +1,7 @@
 import styles from './RentInfoContainer.module.scss';
-import { RentInfoData } from '@/components/ProductsContainer/ProductItem';
 import { FC } from 'react';
 import { RentInfoItem } from '@/components/RentInfoContainer/RentInfoItem';
+import { RentInfoData } from '@/interfaces';
 
 interface RentInfoContainer {
   rentInfoArray: RentInfoData[];
