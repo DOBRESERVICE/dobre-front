@@ -19,6 +19,7 @@ import secureIcon from './secureIcon.svg';
 import smartDelivery from './smartDelivery.svg';
 import paymentIcon from './paymentIcon.svg';
 import secondLampGroup from './secondLampGroup.png';
+import sportImage from './sportImage.png';
 
 export {
   acceptIcon,
@@ -42,4 +43,5 @@ export {
   smartDelivery,
   paymentIcon,
   secondLampGroup,
+  sportImage,
 };
