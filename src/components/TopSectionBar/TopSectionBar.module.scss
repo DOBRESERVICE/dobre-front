@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .topSectionBar {
   display: flex;
@@ -14,7 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:10px;
+  gap: 10px;
   cursor: pointer;
 
   & > p {
@@ -30,5 +30,5 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color:$black;
+  background-color: $black;
 }

@@ -30,21 +30,16 @@ h6 {
 
 @font-face {
   font-family: Manrope;
-  src: url("https://fonts.google.com/specimen/Manrope");
+  src: url('https://fonts.google.com/specimen/Manrope');
 }
 html {
-  overflow-x:hidden;
+  overflow-x: hidden;
 }
 body {
   font-family: Manrope !important;
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-  overflow-x:hidden;
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
 .autorizationWrapper {
