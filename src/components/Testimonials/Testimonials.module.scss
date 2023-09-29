@@ -1,0 +1,22 @@
+@import '@/styles/variables.scss';
+
+.wrapper {
+  width: $width-wrapper;
+  margin: 0 auto;
+  padding: 85px 0 100px 0;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 46px;
+}
+
+.contentWrapper {
+  display: flex;
+  margin-top: 18px;
+}
+
+.testimonialsImage {
+  border-radius: 16px;
+}

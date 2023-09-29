@@ -30,6 +30,7 @@ import verified from './verified.svg';
 import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
+import testimonialsImage from './testimonialsImage.png';
 
 export {
   acceptIcon,
@@ -64,4 +65,5 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
+  testimonialsImage,
 };

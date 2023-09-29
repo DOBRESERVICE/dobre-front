@@ -9,6 +9,7 @@ import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
+import { Testimonials } from '@/components/Testimonials/Testimonials';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -35,6 +36,7 @@ export default function HomePage() {
       <NewProducts />
       <FirstItem />
       <AboutUs />
+      <Testimonials />
     </HomeLayout>
   );
 }
