@@ -1,4 +1,4 @@
-import { paymentIcon, secureIcon, smartDelivery } from '@/assets/image';
+import { paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
 import { StaticImageData } from 'next/image';
 import { ProductStatus } from '@/enums';
 import { RentInfoData } from '@/interfaces';
@@ -38,5 +38,43 @@ export const rentInfoData = [
     id: 3,
     timeInRent: '1 неделя',
     price: '799 pуб.',
+  },
+];
+
+export const popularProductsData = [
+  {
+    id: 1,
+    imageUrl: sportImage,
+    title: 'Электроника ',
+  },
+  {
+    id: 2,
+    imageUrl: sportImage,
+    title: 'Кемпинг и путешествия ',
+  },
+  {
+    id: 3,
+    imageUrl: sportImage,
+    title: 'Спорт и активный отдых ',
+  },
+  {
+    id: 4,
+    imageUrl: sportImage,
+    title: 'Бытовая техника ',
+  },
+  {
+    id: 5,
+    imageUrl: sportImage,
+    title: 'Для родителей и дедей ',
+  },
+  {
+    id: 6,
+    imageUrl: sportImage,
+    title: 'Игры и развлечения ',
+  },
+  {
+    id: 7,
+    imageUrl: sportImage,
+    title: 'Хобби и творчество ',
   },
 ];
