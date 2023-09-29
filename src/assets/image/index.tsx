@@ -13,7 +13,7 @@ import vkIcon from './vk.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import aboutUsImage from './aboutUsImage.png';
-import aboutUsAccept from './aboutUsAccept.png';
+import aboutUsAccept from './aboutUsAccept.svg';
 import aboutUsLine from './lineAboutUs.svg';
 import aboutUsBlob from './blobAboutUs.svg';
 import plusIcon from './plusIcon.svg';
