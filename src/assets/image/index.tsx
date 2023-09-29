@@ -33,6 +33,8 @@ import nextArrow from './nextArrow.svg';
 import sportImage from './sportImage.png';
 import FAQBackground from './FAQBackground.png';
 import linkButtonArrow from './linkButtonArrow.svg';
+import FAQBottomGroup from './FAQBottomGroup.svg';
+import FAQTopGroup from './FAQTopGroup.svg';
 
 export {
   acceptIcon,
@@ -70,4 +72,6 @@ export {
   nextArrow,
   FAQBackground,
   linkButtonArrow,
+  FAQBottomGroup,
+  FAQTopGroup,
 };
