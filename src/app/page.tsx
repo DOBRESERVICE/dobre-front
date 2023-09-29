@@ -10,6 +10,7 @@ import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
+import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 
 export default function HomePage() {
@@ -32,6 +33,7 @@ export default function HomePage() {
       >
         <CreateAccountMess />
       </ModalComponent>
+      <HowWeWork />
       {/*<SearchBlock />*/}
       <PopularProducts />
       <FirstItem />

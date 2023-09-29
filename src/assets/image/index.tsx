@@ -30,6 +30,10 @@ import verified from './verified.svg';
 import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
+import blueArrow from './blueArrow.svg';
+import checkedIcon from './checkedIcon.svg';
+import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
+import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
 import sportImage from './sportImage.png';
 
 export {
@@ -66,4 +70,8 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
+  blueArrow,
+  checkedIcon,
+  howWeWorkFirstGroup,
+  howWeWorkSecondGroup,
 };
