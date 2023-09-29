@@ -90,9 +90,27 @@ export const customSearchButton = {
   borderRadius: '8px',
   height: '45px',
   fontSize: '15px',
-  marginRight: '10px',
+  color: colors.white,
   fontWeight: 700,
   background: colors.orangeGradient,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+};
+
+export const howWeWorkButton = {
+  borderRadius: '8px',
+  height: '45px',
+  fontSize: '15px',
+  color: colors.graphite,
+  width: '50%',
+  fontWeight: 700,
+  background: colors.white,
   boxShadow: 'none',
   textTransform: 'none',
   '&:hover': {

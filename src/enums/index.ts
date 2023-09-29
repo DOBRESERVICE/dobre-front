@@ -5,3 +5,7 @@ export const enum ProductStatus {
   USED = 'Среднее',
   BAD = 'Не очень',
 }
+export const enum RentState {
+  TakeRent = 'Беру',
+  GiveRent = 'Сдаю',
+}

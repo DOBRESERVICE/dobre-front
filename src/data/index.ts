@@ -1,7 +1,4 @@
-import { paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
-import { StaticImageData } from 'next/image';
-import { ProductStatus } from '@/enums';
-import { RentInfoData } from '@/interfaces';
+import { blueArrow, checkedIcon, paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
 
 export const searchCardsData = [
   {
@@ -40,7 +37,28 @@ export const rentInfoData = [
     price: '799 pуб.',
   },
 ];
-
+export const howWeWorkData = [
+  {
+    id: 1,
+    cardHeader: '1. Поиск',
+    cardText: 'Быстро и легко находите находите желаемое без ограничений сэкономив время и деньги.',
+    iconUrl: blueArrow,
+  },
+  {
+    id: 2,
+    cardHeader: '2. Аренда',
+    cardText:
+      'Не беспокойтесь, если повредите или нанесете большой ущерб арендуемому товару, страховка защитит и возместит все убытки.',
+    iconUrl: blueArrow,
+  },
+  {
+    id: 3,
+    cardHeader: '3. Возврат',
+    cardText:
+      'Получить и вернуть в срок товар теперь просто и быстро, интегрированный сервис доставки сделает это за вас.',
+    iconUrl: checkedIcon,
+  },
+];
 export const popularProductsData = [
   {
     id: 1,

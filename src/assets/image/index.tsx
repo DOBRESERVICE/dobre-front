@@ -31,6 +31,10 @@ import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
 import testimonialsImage from './testimonialsImage.png';
+import blueArrow from './blueArrow.svg';
+import checkedIcon from './checkedIcon.svg';
+import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
+import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
 import sportImage from './sportImage.png';
 import emoji from './emoji.svg';
 
@@ -70,4 +74,8 @@ export {
   nextArrow,
   testimonialsImage,
   emoji,
+  blueArrow,
+  checkedIcon,
+  howWeWorkFirstGroup,
+  howWeWorkSecondGroup,
 };
