@@ -47,12 +47,17 @@
 
 .acceptImage {
   position: absolute;
-  left: 29.4%;
-  bottom: 0;
+  right: -175px;
+  bottom: 23px;
+  height: 245px;
 }
 
 .itemsWrapper {
   display: flex;
   justify-content: space-around;
   margin-top: 79px;
+}
+
+.imageWrapper {
+  position: relative;
 }
