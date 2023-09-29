@@ -8,6 +8,7 @@ import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
+import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -30,11 +31,7 @@ export default function HomePage() {
         <CreateAccountMess />
         {/* <LinkResetMess /> */}
       </ModalComponent>
-
-      <NewProducts />
-
-      <SearchBlock />
-
+      <HowWeWork />
     </HomeLayout>
   );
 }
