@@ -26,7 +26,6 @@ import verified from './verified.svg';
 import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
-import howWeWorkBackground from './Banner.png';
 import blueArrow from './blueArrow.svg';
 import checkedIcon from './checkedIcon.svg';
 import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
@@ -61,7 +60,6 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
-  howWeWorkBackground,
   blueArrow,
   checkedIcon,
   howWeWorkFirstGroup,
