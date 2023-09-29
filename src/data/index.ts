@@ -1,4 +1,8 @@
 import { blueArrow, checkedIcon, paymentIcon, secureIcon, smartDelivery } from '@/assets/image';
+import { paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
+import { StaticImageData } from 'next/image';
+import { ProductStatus } from '@/enums';
+import { RentInfoData } from '@/interfaces';
 
 export const searchCardsData = [
   {
@@ -57,5 +61,42 @@ export const howWeWorkData = [
     cardText:
       'Получить и вернуть в срок товар теперь просто и быстро, интегрированный сервис доставки сделает это за вас.',
     iconUrl: checkedIcon,
+
+export const popularProductsData = [
+  {
+    id: 1,
+    imageUrl: sportImage,
+    title: 'Электроника ',
+  },
+  {
+    id: 2,
+    imageUrl: sportImage,
+    title: 'Кемпинг и путешествия ',
+  },
+  {
+    id: 3,
+    imageUrl: sportImage,
+    title: 'Спорт и активный отдых ',
+  },
+  {
+    id: 4,
+    imageUrl: sportImage,
+    title: 'Бытовая техника ',
+  },
+  {
+    id: 5,
+    imageUrl: sportImage,
+    title: 'Для родителей и дедей ',
+  },
+  {
+    id: 6,
+    imageUrl: sportImage,
+    title: 'Игры и развлечения ',
+  },
+  {
+    id: 7,
+    imageUrl: sportImage,
+    title: 'Хобби и творчество ',
+
   },
 ];

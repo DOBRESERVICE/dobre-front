@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
+
+import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
 import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
+import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -29,9 +32,17 @@ export default function HomePage() {
         }}
       >
         <CreateAccountMess />
-        {/* <LinkResetMess /> */}
       </ModalComponent>
       <HowWeWork />
+      {/*<SearchBlock />*/}
+      <PopularProducts />
+      <FirstItem />
+
+
+      <SearchBlock />
+      <NewProducts />
+      <FirstItem />
+      <AboutUs />
     </HomeLayout>
   );
 }

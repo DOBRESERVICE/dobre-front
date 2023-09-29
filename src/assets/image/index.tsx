@@ -12,6 +12,10 @@ import userIcon from './userIcon.svg';
 import vkIcon from './vk.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
+import aboutUsImage from './aboutUsImage.png';
+import aboutUsAccept from './aboutUsAccept.svg';
+import aboutUsLine from './lineAboutUs.svg';
+import aboutUsBlob from './blobAboutUs.svg';
 import plusIcon from './plusIcon.svg';
 import searchIcon from './searchIcon.svg';
 import firstLampGroup from './firstLampGroup.png';
@@ -30,6 +34,7 @@ import blueArrow from './blueArrow.svg';
 import checkedIcon from './checkedIcon.svg';
 import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
 import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
+import sportImage from './sportImage.png';
 
 export {
   acceptIcon,
@@ -46,6 +51,10 @@ export {
   markerIcon,
   messageIcon,
   shopIcon,
+  aboutUsImage,
+  aboutUsAccept,
+  aboutUsLine,
+  aboutUsBlob,
   plusIcon,
   searchIcon,
   firstLampGroup,
@@ -53,6 +62,7 @@ export {
   smartDelivery,
   paymentIcon,
   secondLampGroup,
+  sportImage,
   mockUser,
   mockItem,
   starReviews,
