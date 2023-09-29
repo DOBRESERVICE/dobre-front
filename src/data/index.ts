@@ -1,4 +1,7 @@
 import { paymentIcon, secureIcon, smartDelivery } from '@/assets/image';
+import { StaticImageData } from 'next/image';
+import { ProductStatus } from '@/enums';
+import { RentInfoData } from '@/interfaces';
 
 export const searchCardsData = [
   {
@@ -18,5 +21,22 @@ export const searchCardsData = [
     cardHeader: 'Удобная доставка',
     cardText: 'Отправляйте или получайте  быстро с помощью интегрированных сервисов доставки',
     iconUrl: smartDelivery,
+  },
+];
+export const rentInfoData = [
+  {
+    id: 1,
+    timeInRent: '1 неделя',
+    price: '799 pуб.',
+  },
+  {
+    id: 2,
+    timeInRent: '1 неделя',
+    price: '799 pуб.',
+  },
+  {
+    id: 3,
+    timeInRent: '1 неделя',
+    price: '799 pуб.',
   },
 ];

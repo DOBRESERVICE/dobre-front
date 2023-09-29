@@ -1,0 +1,25 @@
+@import '../../../../styles/variables.scss';
+
+.rentTimeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+
+  & > div > p {
+    font-size: 9px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    color: $graphite;
+  }
+
+  & > div > span {
+    font-size: 14px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    color: #000;
+  }
+}

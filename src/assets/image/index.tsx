@@ -23,6 +23,13 @@ import secureIcon from './secureIcon.svg';
 import smartDelivery from './smartDelivery.svg';
 import paymentIcon from './paymentIcon.svg';
 import secondLampGroup from './secondLampGroup.png';
+import mockItem from './mockItem.png';
+import mockUser from './mockUser.png';
+import starReviews from './starReviews.svg';
+import verified from './verified.svg';
+import favouriteIcon from './favouriteIcon.png';
+import linkArrow from './linkArrow.svg';
+import nextArrow from './nextArrow.svg';
 
 export {
   acceptIcon,
@@ -50,4 +57,11 @@ export {
   smartDelivery,
   paymentIcon,
   secondLampGroup,
+  mockUser,
+  mockItem,
+  starReviews,
+  verified,
+  favouriteIcon,
+  linkArrow,
+  nextArrow,
 };

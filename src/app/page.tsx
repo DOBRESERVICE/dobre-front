@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
+import { NewProducts } from '@/components/NewProducts/NewProducts';
+
 import { FirstItem } from '@/components/FirstItem/FirstItem';
 
 export default function HomePage() {
@@ -27,9 +29,10 @@ export default function HomePage() {
         }}
       >
         <CreateAccountMess />
-        {/* <LinkResetMess /> */}
       </ModalComponent>
+
       <SearchBlock />
+      <NewProducts />
       <FirstItem />
       <AboutUs />
     </HomeLayout>

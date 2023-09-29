@@ -8,7 +8,7 @@
 .locationWrapper {
   display: flex;
   align-items: center;
-  gap:10px;
+  gap: 10px;
 }
 .locationWrapper > p {
   font-size: 15px;
@@ -23,24 +23,24 @@
   position: relative;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #FFF;
+  background-color: #fff;
   transition: background-color 0.3s;
 }
 .cartCircle:hover {
-  background-color: #EEE;
+  background-color: #eee;
 }
 .cartCircle:active {
-  background-color: #C9C9C9;
+  background-color: #c9c9c9;
 }
 .cartCircle > img {
   position: absolute;
 }
 .content {
   display: flex;
-  gap:25px;
-  justify-content:center;
+  gap: 25px;
+  justify-content: center;
   align-items: center;
 }
 .logo {
-  flex:1;
+  flex: 1;
 }
