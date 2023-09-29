@@ -3,24 +3,25 @@ import classNames from 'classnames';
 import { Button } from '@mui/material';
 import { howWeWorkButton } from '@/styles/buttonStyles';
 import { useState } from 'react';
+import { RentState } from '@/enums';
 
 export const ButtonsContainer = () => {
-  const [currentType, setCurrentType] = useState('Беру');
+  const [currentType, setCurrentType] = useState<RentState>(RentState.TakeRent);
 
   return (
     <div className={styles.buttonsWrapper}>
       <div
         className={classNames(styles.active, {
-          [styles.take]: currentType === 'Беру',
-          [styles.rent]: currentType === 'Сдаю',
+          [styles.take]: currentType === RentState.TakeRent,
+          [styles.rent]: currentType === RentState.GiveRent,
         })}
       >
         <p>{currentType}</p>
       </div>
-      <Button sx={howWeWorkButton} disableRipple onClick={() => setCurrentType('Беру')}>
+      <Button sx={howWeWorkButton} disableRipple onClick={() => setCurrentType(RentState.TakeRent)}>
         Беру
       </Button>
-      <Button sx={howWeWorkButton} disableRipple onClick={() => setCurrentType('Сдаю')}>
+      <Button sx={howWeWorkButton} disableRipple onClick={() => setCurrentType(RentState.GiveRent)}>
         Сдаю
       </Button>
     </div>
