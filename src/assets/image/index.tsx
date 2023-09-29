@@ -31,6 +31,10 @@ import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
 import sportImage from './sportImage.png';
+import FAQBottomImage from './FAQBottomImage.svg';
+import FAQTopImage from './FAQTopImage.svg';
+import FAQBackground from './FAQBackground.png';
+import linkButtonArrow from './linkButtonArrow.svg';
 
 export {
   acceptIcon,
@@ -66,4 +70,8 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
+  FAQBottomImage,
+  FAQTopImage,
+  FAQBackground,
+  linkButtonArrow,
 };

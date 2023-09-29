@@ -33,14 +33,6 @@ export default function HomePage() {
       >
         <CreateAccountMess />
       </ModalComponent>
-      {/*<SearchBlock />*/}
-      <PopularProducts />
-      <FirstItem />
-
-      <SearchBlock />
-      <NewProducts />
-      <FirstItem />
-      <AboutUs />
       <FAQ />
     </HomeLayout>
   );

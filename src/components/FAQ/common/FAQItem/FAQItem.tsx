@@ -18,7 +18,18 @@ export const FAQItem: FC<FAQItem> = ({ text, title, setActiveCard, activeCard, i
     <div className={styles.faqItem} role='button' aria-label='question' onClick={handleToggle}>
       <div className={styles.content}>
         <h2>{title}</h2>
-        <div className={styles.arrowUp}></div>
+        <div
+          className={classNames(styles.arrowContainer, {
+            [styles.activeArrow]: isSelected,
+          })}
+        >
+          <div
+            className={classNames(styles.arrow, {
+              [styles.arrowUp]: isSelected,
+              [styles.arrowDown]: !isSelected,
+            })}
+          ></div>
+        </div>
       </div>
       <div
         className={classNames(styles.description, {
