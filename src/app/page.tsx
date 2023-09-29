@@ -10,6 +10,7 @@ import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
+import { Testimonials } from '@/components/Testimonials/Testimonials';
 import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 
@@ -38,11 +39,11 @@ export default function HomePage() {
       <PopularProducts />
       <FirstItem />
 
-
       <SearchBlock />
       <NewProducts />
       <FirstItem />
       <AboutUs />
+      <Testimonials />
     </HomeLayout>
   );
 }
