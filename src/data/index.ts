@@ -1,8 +1,4 @@
-import { blueArrow, checkedIcon, paymentIcon, secureIcon, smartDelivery } from '@/assets/image';
-import { paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
-import { StaticImageData } from 'next/image';
-import { ProductStatus } from '@/enums';
-import { RentInfoData } from '@/interfaces';
+import { blueArrow, checkedIcon, paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
 
 export const searchCardsData = [
   {
@@ -61,7 +57,8 @@ export const howWeWorkData = [
     cardText:
       'Получить и вернуть в срок товар теперь просто и быстро, интегрированный сервис доставки сделает это за вас.',
     iconUrl: checkedIcon,
-
+  },
+];
 export const popularProductsData = [
   {
     id: 1,
@@ -97,6 +94,5 @@ export const popularProductsData = [
     id: 7,
     imageUrl: sportImage,
     title: 'Хобби и творчество ',
-
   },
 ];
