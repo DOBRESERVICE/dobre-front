@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './CommentItem.module.scss';
-import { aboutUsBlob, aboutUsLine } from '@/assets/image';
 import { FC } from 'react';
+import { emoji } from '@/assets/image';
 
 type AboutItemType = {
   title: string;
@@ -25,6 +25,7 @@ export const CommentItem: FC<AboutItemType> = ({ title, description, userName, u
           <div className={styles.userName}>{userName}</div>
         </div>
       </div>
+      <Image src={emoji} alt='emoji' className={styles.emoji} />
     </div>
   );
 };

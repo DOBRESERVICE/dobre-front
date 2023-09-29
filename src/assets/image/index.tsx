@@ -32,6 +32,7 @@ import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
 import testimonialsImage from './testimonialsImage.png';
 import sportImage from './sportImage.png';
+import emoji from './emoji.svg';
 
 export {
   acceptIcon,
@@ -68,4 +69,5 @@ export {
   linkArrow,
   nextArrow,
   testimonialsImage,
+  emoji,
 };
