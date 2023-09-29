@@ -31,6 +31,7 @@ import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
 import testimonialsImage from './testimonialsImage.png';
+import sportImage from './sportImage.png';
 
 export {
   acceptIcon,
@@ -58,6 +59,7 @@ export {
   smartDelivery,
   paymentIcon,
   secondLampGroup,
+  sportImage,
   mockUser,
   mockItem,
   starReviews,
