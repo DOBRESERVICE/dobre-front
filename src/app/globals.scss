@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  font-family: sans-serif;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+@font-face {
+  font-family: Manrope;
+  src: url('https://fonts.google.com/specimen/Manrope');
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: Manrope !important;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+.autorizationWrapper {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.componentWrapper {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.leftBanner {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 23px;
+  height: 91%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  max-width: 520px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 100px 0 40px;
+}
+
+.leftBannerTitle {
+  margin-top: 30px;
+}
+
+.leftBannerDescr {
+  width: 70%;
+  margin-top: 80px;
+}
+
+.dobreImage {
+  height: 100%;
+}
+
+.modalPosition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalWrapper {
+  padding: 40px;
+  background: #fff;
+  border-radius: 14px;
+  max-width: 510px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titleModal {
+  font-size: 26px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 700;
+  margin-top: 15px;
+  max-width: 400px;
+}
+
+.descrModal {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  margin-top: 15px;
+  max-width: 380px;
+}
+
+.modalButtonWrapper {
+  max-width: 258px;
+  font-size: 15px;
+  text-transform: none;
+}

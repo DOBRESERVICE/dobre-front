@@ -1,0 +1,27 @@
+.burgerButton {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  width: 25px;
+  height: 12px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.burgerButton::before,
+.burgerButton::after {
+  content: '';
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+  position: absolute;
+}
+.burgerButton::before {
+  top: 0;
+}
+.burgerButton::after {
+  bottom: 0;
+}
