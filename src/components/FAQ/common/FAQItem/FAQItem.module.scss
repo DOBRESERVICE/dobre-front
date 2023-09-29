@@ -1,0 +1,45 @@
+@import "src/styles/variables";
+
+.faqItem {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 40px 40px;
+  border-radius: 14px;
+  background-color: $white;
+  gap: 14px;
+}
+.description {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 75%;
+  & > p {
+    color: $black;
+    font-size: $font-default;
+    font-weight: $fweight-small;
+    letter-spacing: 0.32px;
+    overflow: hidden;
+  }
+  transition: all .5s;
+}
+
+.opened {
+  grid-template-rows: 1fr;
+}
+.content {
+  display: flex;
+
+  & > h2 {
+    color: $black;
+    font-size: 22px;
+    font-weight: $fweight-big;
+  }
+
+}
+.arrowUp {
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  transform: rotate(-135deg);
+
+}

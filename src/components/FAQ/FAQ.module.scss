@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+.faqSectionWrapper {
+  width: calc(100% - 350px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  background-color: #EFF6FF;
+}
+.faqHeader {
+  color: $black;
+  text-align: center;
+  font-size: 24px;
+  font-weight: $fweight-big;
+  padding: 50px 0px 30px 0px;
+}

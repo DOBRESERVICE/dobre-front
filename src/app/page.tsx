@@ -11,6 +11,7 @@ import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
+import { FAQ } from '@/components/FAQ/FAQ';
 
 export default function HomePage() {
   const currentUrl = window.location;
@@ -36,11 +37,11 @@ export default function HomePage() {
       <PopularProducts />
       <FirstItem />
 
-
       <SearchBlock />
       <NewProducts />
       <FirstItem />
       <AboutUs />
+      <FAQ />
     </HomeLayout>
   );
 }
