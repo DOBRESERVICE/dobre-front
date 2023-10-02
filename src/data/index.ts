@@ -1,4 +1,15 @@
-import { blueArrow, checkedIcon, paymentIcon, secureIcon, smartDelivery, sportImage } from '@/assets/image';
+import {
+  blueArrow,
+  checkedIcon,
+  mockItem,
+  mockUser,
+  paymentIcon,
+  secureIcon,
+  smartDelivery,
+  sportImage,
+  travelling,
+} from '@/assets/image';
+import { ProductStatus } from '@/enums';
 
 export const searchCardsData = [
   {
@@ -62,12 +73,11 @@ export const howWeWorkData = [
 export const popularProductsData = [
   {
     id: 1,
-    imageUrl: sportImage,
     title: 'Электроника ',
   },
   {
     id: 2,
-    imageUrl: sportImage,
+    imageUrl: travelling,
     title: 'Кемпинг и путешествия ',
   },
   {
@@ -77,22 +87,18 @@ export const popularProductsData = [
   },
   {
     id: 4,
-    imageUrl: sportImage,
     title: 'Бытовая техника ',
   },
   {
     id: 5,
-    imageUrl: sportImage,
     title: 'Для родителей и дедей ',
   },
   {
     id: 6,
-    imageUrl: sportImage,
     title: 'Игры и развлечения ',
   },
   {
     id: 7,
-    imageUrl: sportImage,
     title: 'Хобби и творчество ',
   },
 ];
@@ -117,5 +123,92 @@ export const descriptionData = [
     id: 4,
     title: 'Что делать, если мою вещь испортят?',
     text: 'Я регулярно пользуюсь сервисом, по мне очень выгодно и очень удобно, быстрая доставка, единственное не получилось оплатить apple pay. Познакомились с Александром, нашли много общего, очень рада, что есть кто-то кто заботится о людях искренне...',
+  },
+];
+
+export const productsData = [
+  {
+    id: 1,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
+  },
+  {
+    id: 2,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
+  },
+  {
+    id: 3,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
+  },
+  {
+    id: 4,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
+  },
+  {
+    id: 5,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
+  },
+  {
+    id: 6,
+    photoUrl: mockItem,
+    userUrl: mockUser,
+    rentEndDate: '18.23',
+    itemName: 'ssssss',
+    status: ProductStatus.LIKE_NEW,
+    rating: 4,
+    feedbackCount: 32,
+    sellerInfo: 'seller',
+    isAvailable: true,
+    isConfirmed: true,
+    rentInfoArray: rentInfoData,
   },
 ];

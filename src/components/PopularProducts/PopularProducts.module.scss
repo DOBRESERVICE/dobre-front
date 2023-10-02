@@ -2,6 +2,7 @@
 .popularProductsSection {
   display: flex;
   width: 100%;
+  margin-top: 100px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,20 +17,12 @@
   grid-template-rows: repeat(2,230px);
   grid-template-columns: repeat(12,1fr);
 
-  & > div:nth-child(1) {
-    & h3 {
-      color: $black;
-    }
-  }
-
   & > div:nth-child(1), div:nth-child(2), div:nth-child(3) {
     grid-column: 4 span;
   }
 
   & > div:nth-child(4), div:nth-child(5), div:nth-child(6) , div:nth-child(7) {
-    & h3 {
-      color: $black;
-    }
+
     grid-column: 3 span;
   }
 
