@@ -14,7 +14,6 @@ import { Testimonials } from '@/components/Testimonials/Testimonials';
 import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
-import { Record } from 'immutable';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
 
 export default function HomePage() {
