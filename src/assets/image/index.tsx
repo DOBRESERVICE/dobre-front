@@ -47,6 +47,7 @@ import ytIcon from './ytIcon.svg';
 import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
+import travelling from './travelling.png';
 
 export {
   acceptIcon,
@@ -98,4 +99,5 @@ export {
   inIcon,
   instIcon,
   ytIcon,
+  travelling,
 };
