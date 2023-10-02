@@ -37,6 +37,16 @@ import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
 import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
 import sportImage from './sportImage.png';
 import emoji from './emoji.svg';
+import logoDobre from './dobreLogo.svg';
+import fbIcon from './fbIcon.svg';
+import iconVk from './vkIcon.svg';
+import instIcon from './instIcon.svg';
+import inIcon from './inIcon.svg';
+import tgIcon from './tgIcon.svg';
+import ytIcon from './ytIcon.svg';
+import linkButtonArrow from './linkButtonArrow.svg';
+import FAQBottomGroup from './FAQBottomGroup.svg';
+import FAQTopGroup from './FAQTopGroup.svg';
 
 export {
   acceptIcon,
@@ -72,10 +82,20 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
+  linkButtonArrow,
+  FAQBottomGroup,
+  FAQTopGroup,
   testimonialsImage,
   emoji,
   blueArrow,
   checkedIcon,
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
+  logoDobre,
+  iconVk,
+  fbIcon,
+  tgIcon,
+  inIcon,
+  instIcon,
+  ytIcon,
 };
