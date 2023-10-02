@@ -29,7 +29,7 @@ export default function HomePage() {
       <ModalComponent
         open={showModal}
         handleClose={() => {
-          router.push('/home');
+          router.push('/');
           setIsShowModal(false);
         }}
       >

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .wrapper {
   padding: 20px;
 }
@@ -17,11 +19,13 @@
 .title {
   font-size: 26px;
   font-weight: 700;
+  margin-top: 9px;
 }
 
 .blueText {
-  color: rgba(37, 64, 228, 1);
+  color: $deep-blue;
   cursor: pointer;
+  margin-left: 6px;
 }
 
 .inputWrapper {
@@ -64,7 +68,7 @@
 }
 .savePass,
 .hidePass {
-  color: rgba(100, 110, 116, 1);
+  color: $graphite;
   cursor: pointer;
 }
 
@@ -74,7 +78,7 @@
 
 .logInButton {
   width: 100%;
-  background: rgba(37, 64, 228, 1);
+  background: $deep-blue;
   height: 50px;
   border-radius: 8px;
   margin-top: 26px;
@@ -82,7 +86,7 @@
 }
 
 .logInButton:hover {
-  background: rgba(23, 48, 200, 1);
+  background: $deep-blue;
 }
 
 .otherLogInLine {
@@ -94,25 +98,26 @@
 
 .otherLogInLine > hr {
   width: 100%;
-  border: 1px solid rgba(226, 229, 233, 1);
+  border: 1px solid $light-graphite;
   margin-top: 3px;
 }
 
 .orWrapper {
   margin: 0 20px;
   font-size: 13px;
-  color: rgba(100, 110, 116, 1);
+  color: $graphite;
 }
 
 .otherSiteConnection {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-top: 20px;
+  justify-content: flex-start;
+  margin-bottom: 6px;
 }
 
 .siteConnect {
-  border: 1px solid rgba(226, 229, 233, 1);
+  border: 1px solid $light-graphite;
   border-radius: 8px;
   width: 38px;
   height: 38px;
@@ -135,21 +140,17 @@
 }
 
 .checkLvlPass {
-  color: rgba(100, 110, 116, 1);
+  color: $graphite;
   font-size: 11px;
   display: flex;
   justify-content: space-between;
 }
 
 .resetText {
-  color: rgba(0, 0, 0, 1);
+  color: $black;
   font-size: 17px;
   max-width: 370px;
   margin-top: 8px;
-}
-
-.MuiOutlinedInput-input {
-  color: rgba(37, 64, 228, 1) !important;
 }
 
 .lvlPass {
@@ -162,18 +163,20 @@
 
 .grayLine {
   height: 2px;
-  background: rgba(226, 229, 233, 1);
+  background: $light-graphite;
   width: 67%;
 }
 
 .blueLine {
   width: 33%;
-  background: rgba(37, 64, 228, 1);
+  background: $deep-blue;
   height: 2px;
 }
 
 .fullLine {
   width: 100%;
+  background: $deep-blue;
+  height: 2px;
 }
 
 .captchaStyle {
