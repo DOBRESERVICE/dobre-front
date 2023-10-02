@@ -17,7 +17,7 @@ import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
 
 export default function HomePage() {
-  const currentUrl = window.location;
+  const currentUrl = global?.window && window.location;
   const router = useRouter();
   const [showModal, setIsShowModal] = useState<boolean>();
 
