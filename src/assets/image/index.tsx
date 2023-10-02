@@ -37,6 +37,13 @@ import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
 import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
 import sportImage from './sportImage.png';
 import emoji from './emoji.svg';
+import logoDobre from './dobreLogo.svg';
+import fbIcon from './fbIcon.svg';
+import iconVk from './vkIcon.svg';
+import instIcon from './instIcon.svg';
+import inIcon from './inIcon.svg';
+import tgIcon from './tgIcon.svg';
+import ytIcon from './ytIcon.svg';
 
 export {
   acceptIcon,
@@ -78,4 +85,11 @@ export {
   checkedIcon,
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
+  logoDobre,
+  iconVk,
+  fbIcon,
+  tgIcon,
+  inIcon,
+  instIcon,
+  ytIcon,
 };
