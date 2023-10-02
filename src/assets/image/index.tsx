@@ -44,6 +44,9 @@ import instIcon from './instIcon.svg';
 import inIcon from './inIcon.svg';
 import tgIcon from './tgIcon.svg';
 import ytIcon from './ytIcon.svg';
+import linkButtonArrow from './linkButtonArrow.svg';
+import FAQBottomGroup from './FAQBottomGroup.svg';
+import FAQTopGroup from './FAQTopGroup.svg';
 
 export {
   acceptIcon,
@@ -79,6 +82,9 @@ export {
   favouriteIcon,
   linkArrow,
   nextArrow,
+  linkButtonArrow,
+  FAQBottomGroup,
+  FAQTopGroup,
   testimonialsImage,
   emoji,
   blueArrow,
