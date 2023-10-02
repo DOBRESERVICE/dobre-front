@@ -30,7 +30,20 @@ import verified from './verified.svg';
 import favouriteIcon from './favouriteIcon.png';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
+import testimonialsImage from './testimonialsImage.png';
+import blueArrow from './blueArrow.svg';
+import checkedIcon from './checkedIcon.svg';
+import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
+import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
 import sportImage from './sportImage.png';
+import emoji from './emoji.svg';
+import logoDobre from './dobreLogo.svg';
+import fbIcon from './fbIcon.svg';
+import iconVk from './vkIcon.svg';
+import instIcon from './instIcon.svg';
+import inIcon from './inIcon.svg';
+import tgIcon from './tgIcon.svg';
+import ytIcon from './ytIcon.svg';
 import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
@@ -72,4 +85,17 @@ export {
   linkButtonArrow,
   FAQBottomGroup,
   FAQTopGroup,
+  testimonialsImage,
+  emoji,
+  blueArrow,
+  checkedIcon,
+  howWeWorkFirstGroup,
+  howWeWorkSecondGroup,
+  logoDobre,
+  iconVk,
+  fbIcon,
+  tgIcon,
+  inIcon,
+  instIcon,
+  ytIcon,
 };

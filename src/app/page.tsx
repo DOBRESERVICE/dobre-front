@@ -10,6 +10,8 @@ import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
 
 import { FirstItem } from '@/components/FirstItem/FirstItem';
+import { Testimonials } from '@/components/Testimonials/Testimonials';
+import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 
@@ -34,6 +36,16 @@ export default function HomePage() {
         <CreateAccountMess />
       </ModalComponent>
       <FAQ />
+      <HowWeWork />
+      {/*<SearchBlock />*/}
+      <PopularProducts />
+      <FirstItem />
+
+      <SearchBlock />
+      <NewProducts />
+      <FirstItem />
+      <AboutUs />
+      <Testimonials />
     </HomeLayout>
   );
 }
