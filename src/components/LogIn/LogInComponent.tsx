@@ -2,21 +2,43 @@
 import TextField from '@mui/material/TextField';
 import styles from './LogIn.module.scss';
 import Image from 'next/image';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
-import { useRouter } from 'next/navigation';
 import { eyeOpen, eyeClosed, googleIcon, appleIcon, vkIcon, yandexIcon } from '@/assets/image';
+import { loginUser } from '@/api/authApi';
+import { StatusCode } from '@/enums';
+import { useAuthData } from '@/context/authContext';
+import { AxiosError } from 'axios';
 
 export type AutorizPropsType = {
   setActiveStep: Dispatch<SetStateAction<string>>;
 };
 
-export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
+export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
   const [isPassword, setIsPassword] = useState(false);
-
-  const router = useRouter();
-
   const [isSavePass, setIsSavePass] = useState(false);
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [errorText, setErrorText] = useState('');
+  const { setUserEmail } = useAuthData();
+
+  const handleLogin = async () => {
+    try {
+      const result = await loginUser(email, password);
+      if (result && result.status === StatusCode.OK) {
+        setUserEmail(result.data.user.email);
+      }
+    } catch (error) {
+      const axiosError = error as AxiosError;
+      if (axiosError.response?.status === StatusCode.Unauthorized) {
+        setErrorText('Доступ запрещен.');
+      } else if (axiosError.response?.status === 422) {
+        setErrorText('Неверные данные.');
+      } else {
+        setErrorText(`Неизвестная ошибка`);
+      }
+    }
+  };
 
   return (
     <div className={styles.styles}>
@@ -34,6 +56,8 @@ export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
           variant='outlined'
           className={styles.inputSyle}
           size='small'
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <div className={styles.passwordWrapper}>
           <TextField
@@ -43,12 +67,16 @@ export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
             variant='outlined'
             className={styles.inputSyle}
             size='small'
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          {isPassword ? (
-            <Image src={eyeOpen} alt='open' className={styles.passwordIcon} onClick={() => setIsPassword(false)} />
-          ) : (
-            <Image src={eyeClosed} alt='close' className={styles.passwordIcon} onClick={() => setIsPassword(true)} />
-          )}
+
+          <Image
+            src={isPassword ? eyeOpen : eyeClosed}
+            alt='open'
+            className={styles.passwordIcon}
+            onClick={() => setIsPassword(!isPassword)}
+          />
         </div>
       </div>
       <div className={styles.passActionsWrapper}>
@@ -59,7 +87,7 @@ export const LogInComponent = ({ setActiveStep }: AutorizPropsType) => {
           Забыли пароль?
         </div>
       </div>
-      <Button variant='contained' className={styles.logInButton} onClick={() => router.push('/?authoriz=1')}>
+      <Button variant='contained' className={styles.logInButton} onClick={handleLogin}>
         Войти
       </Button>
       <div className={styles.otherLogInLine}>
