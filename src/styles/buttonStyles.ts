@@ -120,3 +120,8 @@ export const howWeWorkButton = {
     boxShadow: 'none',
   },
 };
+
+export const authCustomInput = {
+  height: '50px',
+  width: '385px',
+};
