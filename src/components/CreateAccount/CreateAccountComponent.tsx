@@ -2,7 +2,7 @@
 import TextField from '@mui/material/TextField';
 import styles from './CreateAccount.module.scss';
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
 import { ModalComponent } from '@/components/ModalComponent';
 import { CreateAccountMess } from '../NotificationMessageModal/CreateAccount';
@@ -11,26 +11,28 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { verifyCaptcha } from '../VeryfiCaptcha';
 import { googleIcon, appleIcon, vkIcon, yandexIcon, eyeOpen, eyeClosed } from '@/assets/image';
 import { registerUser } from '@/api/authApi';
-import { useAuthData } from '@/context/authContext';
 import { StatusCode } from '@/enums';
 import { AxiosError } from 'axios';
+import { authCustomInput } from '@/styles/buttonStyles';
+import { emailRules } from '@/constants';
 
 export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [isPassword, setIsPassword] = useState(false);
-
   const [isAccept, setIsAccept] = useState(false);
-
   const [passwordValue, setPasswordValue] = useState('');
-
   const [isShowModal, setIsShowModal] = useState(false);
-
   const recaptchaRef = useRef<ReCAPTCHA>(null);
-  const [isVerified, setIsverified] = useState<boolean>(false);
+  const [isVerified, setIsVerified] = useState<boolean>(false);
   const [emailValue, setEmailValue] = useState('');
+  const [emailError, setEmailError] = useState(false);
+
+  const isPasswordStrong = passwordValue.length >= 8;
+  const isDisabled = !isAccept || emailError || !isPasswordStrong;
+
   async function handleCaptchaSubmission(token: string | null) {
     await verifyCaptcha(token)
-      .then(() => setIsverified(true))
-      .catch(() => setIsverified(false));
+      .then(() => setIsVerified(true))
+      .catch(() => setIsVerified(false));
   }
 
   const handleRegister = async () => {
@@ -44,6 +46,12 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
       console.error('Error during registration:', axiosError.message);
       setIsShowModal(false);
     }
+  };
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isValidEmail = emailRules.test(value);
+    setEmailValue(value);
+    setEmailError(!isValidEmail);
   };
 
   return (
@@ -75,11 +83,13 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
         <TextField
           id='outlined-basic'
           label='Email'
+          error={emailError}
           variant='outlined'
-          className={styles.inputSyle}
           size='small'
           value={emailValue}
-          onChange={(e) => setEmailValue(e.target.value)}
+          sx={authCustomInput}
+          onChange={handleEmailChange}
+          helperText={emailError ? 'invalid email' : ''}
         />
         <div className={styles.passwordWrapper}>
           <TextField
@@ -87,43 +97,33 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
             label='Пароль'
             type={!isPassword ? 'password' : 'text'}
             variant='outlined'
-            className={styles.inputSyle}
             size='small'
+            sx={authCustomInput}
             value={passwordValue}
             onChange={(e) => setPasswordValue(e.target.value)}
           />
-          {isPassword ? (
-            <Image src={eyeOpen} alt='open' className={styles.passwordIcon} onClick={() => setIsPassword(false)} />
-          ) : (
-            <Image src={eyeClosed} alt='close' className={styles.passwordIcon} onClick={() => setIsPassword(true)} />
-          )}
+          <Image
+            src={isPassword ? eyeOpen : eyeClosed}
+            alt='open'
+            className={styles.passwordIcon}
+            onClick={() => setIsPassword(!isPassword)}
+          />
         </div>
       </div>
-
-      <>
-        <div className={styles.checkLvlPass}>
-          <div className={styles.checkPassLvl}>Уровень сложности пароля</div>
-          <div
-            className={styles.valuePassLvl}
-            style={{
-              color: `rgba(37, 64, 228, 1)`,
-            }}
-          >
-            {passwordValue.length >= 8 ? 'Сложный' : 'Слабый'}
-          </div>
-        </div>
-        <div className={styles.lvlPass}>
-          {passwordValue.length < 8 ? (
-            <>
-              <div className={styles.blueLine} />
-              <div className={styles.grayLine} />
-            </>
-          ) : (
-            <div className={styles.fullLine} />
-          )}
-        </div>
-      </>
-
+      <div className={styles.checkLvlPass}>
+        <div className={styles.checkPassLvl}>Уровень сложности пароля</div>
+        <div className={styles.valuePassLvl}>{isPasswordStrong ? 'Сложный' : 'Слабый'}</div>
+      </div>
+      <div className={styles.lvlPass}>
+        {!isPasswordStrong ? (
+          <>
+            <div className={styles.blueLine} />
+            <div className={styles.grayLine} />
+          </>
+        ) : (
+          <div className={styles.fullLine} />
+        )}
+      </div>
       <div className={styles.captchaStyle}>
         <ReCAPTCHA
           sitekey='6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz'
@@ -138,7 +138,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
           Я принимаю <span>условия пользовательского соглашения</span>
         </div>
       </div>
-      <Button variant='contained' className={styles.logInButton} disabled={!isAccept} onClick={handleRegister}>
+      <Button variant='contained' className={styles.logInButton} disabled={isDisabled} onClick={handleRegister}>
         Создать аккаунт
       </Button>
       <ModalComponent open={isShowModal} handleClose={() => setIsShowModal(false)}>

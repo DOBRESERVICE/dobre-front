@@ -6,6 +6,7 @@
 
 .rowContent {
   display: flex;
+  align-items: center;
   margin-top: 10px;
   max-width: 370px;
   font-size: 15px;
@@ -29,14 +30,10 @@
 }
 
 .inputWrapper {
-  margin-top: 20px;
+  margin-top: 35px;
   display: flex;
   flex-direction: column;
-}
-.inputSyle {
-  height: 50px;
-  width: 385px;
-  margin-top: 5px;
+  gap:20px;
 }
 
 .MuiOutlinedInput-root {
@@ -159,6 +156,9 @@
 
 .lvlPass {
   margin-top: 10px;
+}
+.valuePassLvl {
+  color: $deep-blue;
 }
 
 .grayLine {

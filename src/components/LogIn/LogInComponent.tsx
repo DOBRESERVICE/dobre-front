@@ -2,13 +2,14 @@
 import TextField from '@mui/material/TextField';
 import styles from './LogIn.module.scss';
 import Image from 'next/image';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
+import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
 import { eyeOpen, eyeClosed, googleIcon, appleIcon, vkIcon, yandexIcon } from '@/assets/image';
 import { loginUser } from '@/api/authApi';
 import { StatusCode } from '@/enums';
 import { useAuthData } from '@/context/authContext';
 import { AxiosError } from 'axios';
+import { emailRules } from '@/constants';
 
 export type AutorizPropsType = {
   setActiveStep: Dispatch<SetStateAction<string>>;
@@ -20,7 +21,10 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [errorText, setErrorText] = useState('');
+  const [emailError, setEmailError] = useState(false);
   const { setUserEmail } = useAuthData();
+
+  const isDisabled = emailError || !password;
 
   const handleLogin = async () => {
     try {
@@ -32,12 +36,18 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
       const axiosError = error as AxiosError;
       if (axiosError.response?.status === StatusCode.Unauthorized) {
         setErrorText('Доступ запрещен.');
-      } else if (axiosError.response?.status === 422) {
+      } else if (axiosError.response?.status === StatusCode.NotFound) {
         setErrorText('Неверные данные.');
       } else {
         setErrorText(`Неизвестная ошибка`);
       }
     }
+  };
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isValidEmail = emailRules.test(value);
+    setEmail(value);
+    setEmailError(!isValidEmail);
   };
 
   return (
@@ -54,10 +64,12 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
           id='outlined-basic'
           label='Телефон или Email'
           variant='outlined'
+          error={emailError}
           className={styles.inputSyle}
           size='small'
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmailChange}
+          helperText={emailError ? 'invalid email' : ''}
         />
         <div className={styles.passwordWrapper}>
           <TextField
@@ -69,6 +81,7 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
             size='small'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            error={password.length === 0}
           />
 
           <Image
@@ -87,7 +100,7 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
           Забыли пароль?
         </div>
       </div>
-      <Button variant='contained' className={styles.logInButton} onClick={handleLogin}>
+      <Button variant='contained' className={styles.logInButton} disabled={isDisabled} onClick={handleLogin}>
         Войти
       </Button>
       <div className={styles.otherLogInLine}>
