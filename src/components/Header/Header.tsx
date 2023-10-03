@@ -20,19 +20,32 @@ import {
 } from '@/styles/buttonStyles';
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
-import TextField from '@mui/material/TextField';
-import { searchIcon } from '@/assets/image';
+import { rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
 
 export const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <header
       className={classNames(styles.header, {
-        [styles.catalogHeader]: pathname === '/catalog',
+        [styles.catalogHeader]: pathname.includes('/catalog'),
       })}
     >
+      <div className={styles.topBar}>
+        <div className={styles.contentGroup}>
+          <p>Легко арендовать, безопасно сдавать 😍</p>
+          <p className={styles.geoLocationInfo}>
+            <Image src={geolocationIcon} alt='geolocation' />
+            Минск
+          </p>
+        </div>
+        <div className={styles.contentGroup}>
+          <p>Как арендовать</p>
+          <p>Как сдавать</p>
+          <p>База знаний</p>
+          <p>Помощь</p>
+        </div>
+      </div>
       <BurgerButton />
       <div className={styles.content}>
         <Button disableRipple variant='contained' size='medium' sx={customCategoriesButton}>
@@ -49,7 +62,7 @@ export const Header = () => {
       </div>
       <Image src={logo} alt='logo' className={styles.logo} />
       <div className={styles.inputWrapper}>
-        <div className={styles.content}>
+        <div className={styles.inputContent}>
           <Image src={searchIcon} alt='search' />
           <Input placeholder='Что вы ищете?' disableUnderline sx={customSearchInput} />
         </div>
@@ -62,9 +75,27 @@ export const Header = () => {
           <Image src={plus} alt='plus' />
           Сдать в аренду
         </Button>
-        <Image src={group} alt='group' />
-        <div className={styles.cartCircle}>
-          <Image src={cart} alt='cart' />
+        <div className={styles.iconsWrapper}>
+          <div>
+            <div className={styles.cartCircle}>
+              <Image src={group} alt='group' />
+            </div>
+            <p>Избранное</p>
+          </div>
+          <div>
+            <div className={styles.cartCircle}>
+              <Image src={cart} alt='cart' />
+              <div className={styles.circleInfo}>3</div>
+            </div>
+            <p>Корзина</p>
+          </div>
+          <div>
+            <div className={styles.cartCircle}>
+              <Image src={rentImage} alt='rent' />
+              <div className={styles.circleInfo}>12</div>
+            </div>
+            <p>Аренда</p>
+          </div>
         </div>
         <Button variant='outlined' disableRipple size='medium' sx={customLoginButton}>
           <Image src={userIcon} alt='user' />

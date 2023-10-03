@@ -48,6 +48,7 @@ import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
 import travelling from './travelling.png';
+import rentImage from './rentImage.svg';
 
 export {
   acceptIcon,
@@ -100,4 +101,5 @@ export {
   instIcon,
   ytIcon,
   travelling,
+  rentImage,
 };
