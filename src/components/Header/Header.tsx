@@ -1,3 +1,4 @@
+'use client';
 import { BurgerButton } from '@/ui/BurgerButton/BurgerButton';
 import styles from './Header.module.scss';
 import { Button } from '@mui/material';
@@ -14,13 +15,26 @@ import {
   customLoginButton,
   customPremiumButton,
   customRentButton,
+  customSearchButton,
+  customSearchInput,
 } from '@/styles/buttonStyles';
+import { usePathname } from 'next/navigation';
+import classNames from 'classnames';
+import TextField from '@mui/material/TextField';
+import { searchIcon } from '@/assets/image';
+import Input from '@mui/material/Input';
 
 export const Header = () => {
+  const pathname = usePathname();
+  console.log(pathname);
   return (
-    <header className={styles.header}>
+    <header
+      className={classNames(styles.header, {
+        [styles.catalogHeader]: pathname === '/catalog',
+      })}
+    >
+      <BurgerButton />
       <div className={styles.content}>
-        <BurgerButton />
         <Button disableRipple variant='contained' size='medium' sx={customCategoriesButton}>
           <Image src={categoriesIcon} alt='categories icon' />
           Все категории
@@ -34,6 +48,15 @@ export const Header = () => {
         </div>
       </div>
       <Image src={logo} alt='logo' className={styles.logo} />
+      <div className={styles.inputWrapper}>
+        <div className={styles.content}>
+          <Image src={searchIcon} alt='search' />
+          <Input placeholder='Что вы ищете?' disableUnderline sx={customSearchInput} />
+        </div>
+        <Button variant='contained' disableRipple size='medium' sx={customSearchButton}>
+          Найти
+        </Button>
+      </div>
       <div className={styles.content}>
         <Button variant='contained' disableRipple size='medium' sx={customRentButton}>
           <Image src={plus} alt='plus' />

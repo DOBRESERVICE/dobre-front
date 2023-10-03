@@ -120,3 +120,21 @@ export const howWeWorkButton = {
     boxShadow: 'none',
   },
 };
+
+export const headerSearchButton = {
+  borderRadius: '8px',
+  height: '45px',
+  fontSize: '15px',
+  color: colors.graphite,
+  width: '50%',
+  fontWeight: 700,
+  background: colors.white,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+};
