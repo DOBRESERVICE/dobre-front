@@ -21,11 +21,9 @@ export default function HomePage() {
   const currentUrl = global?.window && window.location;
   const router = useRouter();
   const [showModal, setIsShowModal] = useState<boolean>();
-  const { userEmail, isAuth } = useAuthData();
   useEffect(() => {
     setIsShowModal(!!currentUrl?.search.split('=')[1]);
   }, [currentUrl]);
-  console.log(userEmail, isAuth);
   return (
     <HomeLayout>
       <ModalComponent
