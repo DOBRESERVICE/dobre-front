@@ -8,13 +8,6 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 export const HomeLayout: React.FC<LayoutProps> = ({ children }) => {
-  const { isAuth } = useAuthData();
-  const router = useRouter();
-  useEffect(() => {
-    if (!isAuth) {
-      router.push('/login');
-    }
-  }, [isAuth]);
   return (
     <>
       <Header />

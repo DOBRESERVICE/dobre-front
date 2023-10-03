@@ -6,12 +6,5 @@ interface FormLayoutProps {
   children: React.ReactNode;
 }
 export const AuthLayout: React.FC<FormLayoutProps> = ({ children }) => {
-  const { isAuth } = useAuthData();
-  const router = useRouter();
-  useEffect(() => {
-    if (isAuth) {
-      router.push('/');
-    }
-  }, [isAuth]);
   return <>{children}</>;
 };

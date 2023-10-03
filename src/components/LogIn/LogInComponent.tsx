@@ -81,7 +81,6 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
             size='small'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            error={password.length === 0}
           />
 
           <Image
