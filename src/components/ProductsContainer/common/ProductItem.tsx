@@ -9,7 +9,8 @@ import { RentInfoContainer } from '@/components/ProductsContainer/common/RentInf
 import { RentInfoData } from '@/interfaces';
 import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
 
-interface ProductItem {
+export interface ProductItem {
+  id?: number;
   itemName: string;
   userUrl: string | StaticImageData;
   photoUrl: string | StaticImageData;

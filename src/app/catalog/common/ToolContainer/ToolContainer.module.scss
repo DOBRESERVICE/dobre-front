@@ -1,0 +1,10 @@
+  .popularToolsWrapper {
+    width: calc(100% - 350px);
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+    column-gap: 20px;
+    row-gap: 30px;
+  }

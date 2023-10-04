@@ -1,9 +1,12 @@
 import styles from './ProductsContainer.module.scss';
 import classNames from 'classnames';
 import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
-import { productsData, rentInfoData } from '@/data';
+import { FC } from 'react';
 
-export const ProductsContainer = () => {
+interface ProductsContainer {
+  productsData: ProductItem[];
+}
+export const ProductsContainer: FC<ProductsContainer> = ({ productsData }) => {
   return (
     <div className={styles.productsWrapper}>
       <div className={classNames(styles.blur, styles.leftBlur)}></div>

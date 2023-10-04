@@ -1,0 +1,51 @@
+@import "src/styles/variables";
+
+.constructionSectionWrapper {
+  display: flex;
+  width: 100%;
+  position: relative;
+  margin-top: 23px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.textWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: calc(100% - 350px);
+  & > h3 {
+    color: $black;
+    font-size: 24px;
+    font-weight: $fweight-big;
+  }
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+.constructionItemsContainer {
+  display: flex;
+  width: 100%;
+  overflow-x: scroll;
+  gap: 20px;
+}
+.blur {
+  position: absolute;
+  background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  width: 100px;
+  height: 100%;
+  z-index: 1;
+}
+
+.leftBlur {
+  top: 0;
+  left: 0;
+}
+
+.rightBlur {
+  top: 0;
+  right: 0;
+}
