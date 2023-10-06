@@ -3,7 +3,7 @@ import { constuctionData } from '@/data';
 import { CardItem } from '@/components/CardItem/CardItem';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { sliderBlur, sliderLeftBlur, sliderRightBlur } from '@/assets/image';
+import { sliderLeftBlur, sliderRightBlur } from '@/assets/image';
 export const Construction = () => {
   return (
     <section className={styles.constructionSectionWrapper}>
