@@ -9,7 +9,8 @@ import { RentInfoContainer } from '@/components/ProductsContainer/common/RentInf
 import { RentInfoData } from '@/interfaces';
 import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
 
-interface ProductItem {
+export interface ProductItem {
+  id?: number;
   itemName: string;
   userUrl: string | StaticImageData;
   photoUrl: string | StaticImageData;
@@ -39,39 +40,47 @@ export const ProductItem: FC<ProductItem> = ({
   return (
     <div className={styles.newProductWrapper}>
       <Image src={userUrl} alt='user' />
-      <Image src={favouriteIcon} alt='favourite' />
+      <div className={styles.imageWrapper}>
+        <Image src={favouriteIcon} alt='favourite' />
+      </div>
       <div>
         <Image src={photoUrl} alt='item' />
       </div>
-      <div className={styles.statusWrapper}>
-        <p
-          className={classNames(styles.status, {
-            [styles.goodStatus]: isGoodStatus(status),
-            [styles.mediumStatus]: !isGoodStatus(status),
-          })}
-        >
-          {status}
-        </p>
-        <StatusBar status={status} />
-      </div>
-      <RentInfoContainer rentInfoArray={rentInfoArray} />
-      <div className={styles.infoWrapper}>
-        <div
-          className={classNames(styles.notification, {
-            [styles.availableItem]: isAvailable,
-            [styles.unAvailableItem]: !isAvailable,
-          })}
-        >
-          <p>{isAvailable ? availableNow : `${inRent} ${rentEndDate}`}</p>
+      <div className={styles.content}>
+        <div className={styles.statusWrapper}>
+          <p
+            className={classNames(styles.status, {
+              [styles.goodStatus]: isGoodStatus(status),
+              [styles.mediumStatus]: !isGoodStatus(status),
+            })}
+          >
+            {status}
+          </p>
+          <StatusBar status={status} />
         </div>
-        <Image src={starReviews} alt='star' />
-        <span>{rating}</span>
-        <span>({feedbackCount} отзывов)</span>
-      </div>
-      <p className={styles.itemName}>{itemName}</p>
-      <div className={styles.sellerInfoContainer}>
-        {isConfirmed && <Image src={verified} alt='verified' />}
-        <p className={styles.sellerInfo}>{sellerInfo}</p>
+        <RentInfoContainer rentInfoArray={rentInfoArray} />
+        <div className={styles.infoWrapper}>
+          <div
+            className={classNames(styles.notification, {
+              [styles.availableItem]: isAvailable,
+              [styles.unAvailableItem]: !isAvailable,
+            })}
+          >
+            <p>{isAvailable ? availableNow : `${inRent} ${rentEndDate}`}</p>
+          </div>
+          <div className={styles.ratingWrapper}>
+            <div>
+              <Image src={starReviews} alt='star' />
+              <span>{rating}</span>
+            </div>
+            <span>({feedbackCount} отзывов)</span>
+          </div>
+        </div>
+        <p className={styles.itemName}>{itemName}</p>
+        <div className={styles.sellerInfoContainer}>
+          {isConfirmed && <Image src={verified} alt='verified' />}
+          <p className={styles.sellerInfo}>{sellerInfo}</p>
+        </div>
       </div>
     </div>
   );

@@ -1,12 +1,12 @@
-import styles from './PopularItem.module.scss';
+import styles from './CardItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
-interface PopularItem {
+interface CardItem {
   imageUrl?: StaticImageData;
   title: string;
 }
-export const PopularItem: FC<PopularItem> = ({ imageUrl, title }) => {
+export const CardItem: FC<CardItem> = ({ imageUrl, title }) => {
   return (
     <div className={styles.cardWrapper}>
       {imageUrl && (

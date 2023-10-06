@@ -18,23 +18,23 @@ import aboutUsLine from './lineAboutUs.svg';
 import aboutUsBlob from './blobAboutUs.svg';
 import plusIcon from './plusIcon.svg';
 import searchIcon from './searchIcon.svg';
-import firstLampGroup from './firstLampGroup.png';
+import firstLampGroup from './firstLampGroup.svg';
 import secureIcon from './secureIcon.svg';
 import smartDelivery from './smartDelivery.svg';
 import paymentIcon from './paymentIcon.svg';
-import secondLampGroup from './secondLampGroup.png';
+import secondLampGroup from './secondLampGroup.svg';
 import mockItem from './mockItem.png';
-import mockUser from './mockUser.png';
+import mockUser from './mockUser.svg';
 import starReviews from './starReviews.svg';
 import verified from './verified.svg';
-import favouriteIcon from './favouriteIcon.png';
+import favouriteIcon from './favouriteIcon.svg';
 import linkArrow from './linkArrow.svg';
 import nextArrow from './nextArrow.svg';
 import testimonialsImage from './testimonialsImage.png';
 import blueArrow from './blueArrow.svg';
 import checkedIcon from './checkedIcon.svg';
-import howWeWorkFirstGroup from './howWeWorkFirstGroup.png';
-import howWeWorkSecondGroup from './howWeWorkSecondGroup.png';
+import howWeWorkFirstGroup from './HowWeWorkFirstGroup.svg';
+import howWeWorkSecondGroup from './HowWeWorkSecondGroup.svg';
 import sportImage from './sportImage.png';
 import emoji from './emoji.svg';
 import logoDobre from './dobreLogo.svg';
@@ -50,6 +50,22 @@ import FAQTopGroup from './FAQTopGroup.svg';
 import travelling from './travelling.png';
 import dobreBanner from './DobreBanner.svg';
 import dobreWhiteLogo from './dobreWhiteLogo.svg';
+import rentImage from './rentImage.svg';
+import handMadeTools from './constructionImages/handMadeTools.png';
+import electroTools from './constructionImages/electroTools.png';
+import specialTechnique from './constructionImages/specialTechnique.png';
+import constructionEquipment from './constructionImages/constructionEquipment.png';
+import bosch from './brands/Bosch.svg';
+import makita from './brands/makita.svg';
+import karcher from './brands/karcher.svg';
+import hilti from './brands/hilti.svg';
+import dewalt from './brands/dewalt.svg';
+import festool from './brands/festool.svg';
+import aeg from './brands/AEG.svg';
+import metabo from './brands/metabo.svg';
+import drill from './drill.png';
+import sliderRightBlur from './sliderRightBlur.svg';
+import sliderLeftBlur from './sliderLeftBlur.svg';
 
 export {
   acceptIcon,
@@ -104,4 +120,20 @@ export {
   travelling,
   dobreBanner,
   dobreWhiteLogo,
+  rentImage,
+  specialTechnique,
+  handMadeTools,
+  electroTools,
+  constructionEquipment,
+  hilti,
+  makita,
+  bosch,
+  dewalt,
+  festool,
+  metabo,
+  aeg,
+  karcher,
+  drill,
+  sliderRightBlur,
+  sliderLeftBlur,
 };

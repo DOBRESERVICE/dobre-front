@@ -1,11 +1,24 @@
 import {
+  aeg,
   blueArrow,
+  bosch,
   checkedIcon,
+  constructionEquipment,
+  dewalt,
+  drill,
+  electroTools,
+  festool,
+  handMadeTools,
+  hilti,
+  karcher,
+  makita,
+  metabo,
   mockItem,
   mockUser,
   paymentIcon,
   secureIcon,
   smartDelivery,
+  specialTechnique,
   sportImage,
   travelling,
 } from '@/assets/image';
@@ -132,11 +145,11 @@ export const productsData = [
     photoUrl: mockItem,
     userUrl: mockUser,
     rentEndDate: '18.23',
-    itemName: 'ssssss',
+    itemName: 'Горный велосипед Denton Stor аренда',
     status: ProductStatus.LIKE_NEW,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
+    sellerInfo: 'Частное лицо',
     isAvailable: true,
     isConfirmed: true,
     rentInfoArray: rentInfoData,
@@ -145,14 +158,14 @@ export const productsData = [
     id: 2,
     photoUrl: mockItem,
     userUrl: mockUser,
-    rentEndDate: '18.23',
-    itemName: 'ssssss',
-    status: ProductStatus.LIKE_NEW,
+    rentEndDate: '18 сен. 2023',
+    itemName: 'Горный велосипед Denton Stor аренда',
+    status: ProductStatus.NEW,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
-    isAvailable: true,
-    isConfirmed: true,
+    sellerInfo: 'Частное лицо',
+    isAvailable: false,
+    isConfirmed: false,
     rentInfoArray: rentInfoData,
   },
   {
@@ -160,11 +173,11 @@ export const productsData = [
     photoUrl: mockItem,
     userUrl: mockUser,
     rentEndDate: '18.23',
-    itemName: 'ssssss',
-    status: ProductStatus.LIKE_NEW,
+    itemName: 'Горный велосипед Denton Stor аренда',
+    status: ProductStatus.BAD,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
+    sellerInfo: 'Организация',
     isAvailable: true,
     isConfirmed: true,
     rentInfoArray: rentInfoData,
@@ -174,11 +187,11 @@ export const productsData = [
     photoUrl: mockItem,
     userUrl: mockUser,
     rentEndDate: '18.23',
-    itemName: 'ssssss',
-    status: ProductStatus.LIKE_NEW,
+    itemName: 'Горный велосипед Denton Stor аренда',
+    status: ProductStatus.USED,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
+    sellerInfo: 'Организация',
     isAvailable: true,
     isConfirmed: true,
     rentInfoArray: rentInfoData,
@@ -188,11 +201,11 @@ export const productsData = [
     photoUrl: mockItem,
     userUrl: mockUser,
     rentEndDate: '18.23',
-    itemName: 'ssssss',
-    status: ProductStatus.LIKE_NEW,
+    itemName: 'Горный велосипед Denton Stor аренда',
+    status: ProductStatus.GOOD,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
+    sellerInfo: 'Организация',
     isAvailable: true,
     isConfirmed: true,
     rentInfoArray: rentInfoData,
@@ -201,14 +214,313 @@ export const productsData = [
     id: 6,
     photoUrl: mockItem,
     userUrl: mockUser,
-    rentEndDate: '18.23',
-    itemName: 'ssssss',
+    rentEndDate: '18 сен. 2023',
+    itemName: 'Горный велосипед Denton Stor аренда',
     status: ProductStatus.LIKE_NEW,
     rating: 4,
     feedbackCount: 32,
-    sellerInfo: 'seller',
+    sellerInfo: 'Организация',
     isAvailable: true,
     isConfirmed: true,
     rentInfoArray: rentInfoData,
+  },
+];
+
+export const constuctionData = [
+  {
+    id: 1,
+    imageUrl: handMadeTools,
+    title: 'Ручные инструменты',
+  },
+  {
+    id: 2,
+    imageUrl: electroTools,
+    title: 'Электроинструменты',
+  },
+  {
+    id: 3,
+    imageUrl: specialTechnique,
+    title: 'Спецтехника',
+  },
+  {
+    id: 4,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+  {
+    id: 5,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+  {
+    id: 6,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+  {
+    id: 7,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+  {
+    id: 8,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+  {
+    id: 9,
+    imageUrl: constructionEquipment,
+    title: 'Строительное оборудование',
+  },
+];
+
+export const brandsData = [
+  {
+    id: 1,
+    imageUrl: bosch,
+  },
+  {
+    id: 2,
+    imageUrl: makita,
+  },
+  {
+    id: 3,
+    imageUrl: karcher,
+  },
+  {
+    id: 4,
+    imageUrl: hilti,
+  },
+  {
+    id: 5,
+    imageUrl: dewalt,
+  },
+  {
+    id: 6,
+    imageUrl: festool,
+  },
+  {
+    id: 7,
+    imageUrl: aeg,
+  },
+  {
+    id: 8,
+    imageUrl: metabo,
+  },
+  {
+    id: 9,
+  },
+  {
+    id: 10,
+  },
+  {
+    id: 11,
+  },
+  {
+    id: 12,
+  },
+];
+
+export const popularToolsData = [
+  {
+    id: 1,
+    imageUrl: drill,
+    title: 'Дрели и шуруповерты',
+  },
+  {
+    id: 2,
+    title: 'Аппараты высокого давления',
+  },
+  {
+    id: 3,
+    title: 'Компрессоры',
+  },
+  {
+    id: 4,
+    title: 'Тепловые пушки и обогреватели',
+  },
+  {
+    id: 5,
+    title: 'Болгарки УШМ',
+  },
+  {
+    id: 6,
+    title: 'Пылесосы строительные',
+  },
+];
+
+export const catalogData = [
+  {
+    id: 1,
+    title: 'Электроинструменты',
+    subCategories: [
+      {
+        id: 1,
+        title: 'Болгарки УШМ',
+      },
+      {
+        id: 2,
+        title: 'Дрели и шуруповерты',
+      },
+      {
+        id: 3,
+        title: 'Перфораторы',
+      },
+      {
+        id: 4,
+        title: 'Шлифовальные машины',
+      },
+      {
+        id: 5,
+        title: 'Электрорубанки',
+      },
+      {
+        id: 6,
+        title: 'Электрофрезеры',
+      },
+      {
+        id: 7,
+        title: 'Бензопилы и электрорезы',
+      },
+      {
+        id: 8,
+        title: 'Электропилы и электролобзики',
+      },
+      {
+        id: 9,
+        title: 'Аппараты высокого давления',
+      },
+      {
+        id: 10,
+        title: 'Пылесосы строительные ',
+      },
+      {
+        id: 11,
+        title: 'Сварочное оборудование',
+      },
+      {
+        id: 12,
+        title: 'Комрессоры',
+      },
+    ],
+    items: productsData,
+  },
+
+  {
+    id: 2,
+    title: 'Спецтехника',
+    subCategories: [
+      {
+        id: 1,
+        title: 'Бетономешалки',
+      },
+      {
+        id: 2,
+        title: 'Самосвалы',
+      },
+      {
+        id: 3,
+        title: 'Прицепы',
+      },
+      {
+        id: 4,
+        title: 'Автовышки',
+      },
+      {
+        id: 5,
+        title: 'Эскаваторы',
+      },
+      {
+        id: 6,
+        title: 'Автокраны',
+      },
+      {
+        id: 7,
+        title: 'Тракторы',
+      },
+      {
+        id: 8,
+        title: 'Манипуляторы',
+      },
+      {
+        id: 9,
+        title: 'Эвакуаторы',
+      },
+      {
+        id: 10,
+        title: 'Катки',
+      },
+      {
+        id: 11,
+        title: 'Погрузчики',
+      },
+      {
+        id: 12,
+        title: 'Ямобуры',
+      },
+    ],
+    items: productsData,
+  },
+  {
+    id: 3,
+    title: 'Ручные инструменты',
+    subCategories: [
+      {
+        id: 1,
+        title: 'Наборы инструментов',
+      },
+      {
+        id: 2,
+        title: 'Отбойные молотки, топоры, кувалды',
+      },
+      {
+        id: 3,
+        title: 'Плиткорезы, стеклорезы, захваты',
+      },
+      {
+        id: 4,
+        title: 'Лопаты, шуфели, грабли',
+      },
+      {
+        id: 5,
+        title: 'Пилы и лобзики',
+      },
+      {
+        id: 6,
+        title: 'Домкраты',
+      },
+    ],
+    items: productsData,
+  },
+  {
+    id: 4,
+    title: 'Строительное оборудование',
+    subCategories: [
+      {
+        id: 1,
+        title: 'Наборы инструментов',
+      },
+      {
+        id: 2,
+        title: 'Отбойные молотки, топоры, кувалды',
+      },
+      {
+        id: 3,
+        title: 'Плиткорезы, стеклорезы, захваты',
+      },
+      {
+        id: 4,
+        title: 'Лопаты, шуфели, грабли',
+      },
+      {
+        id: 5,
+        title: 'Пилы и лобзики',
+      },
+      {
+        id: 6,
+        title: 'Домкраты',
+      },
+    ],
+    items: productsData,
   },
 ];

@@ -1,0 +1,33 @@
+@import "/src/styles/variables";
+
+.toolWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  min-width: 206px;
+  align-self: start;
+}
+
+.emptyCard {
+  background: $light-graphite;
+  width: 100%;
+  border-radius: 14px;
+  height: 140px;
+}
+.toolWrapper > p {
+  color: $black;
+  font-size: $font-default;
+  font-weight: $fweight-big;
+  align-self: start;
+}
+.imageWrapper {
+  background-color:$sky-blue;
+  border-radius: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

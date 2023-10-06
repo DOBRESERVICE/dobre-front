@@ -14,8 +14,14 @@
 .contentWrapper {
   display: flex;
   margin-top: 18px;
+  gap: 44px;
 }
 
 .testimonialsImage {
   border-radius: 16px;
+}
+.commentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

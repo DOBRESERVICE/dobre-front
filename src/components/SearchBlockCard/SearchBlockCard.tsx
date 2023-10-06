@@ -1,16 +1,22 @@
 import styles from './SearchBlockCard.module.scss';
 import Image from 'next/image';
 import { FC } from 'react';
+import classNames from 'classnames';
 
 export interface SearchBlockCard {
   id?: number;
   cardHeader: string;
   cardText: string;
   iconUrl: string;
+  inHowWeWork?: boolean;
 }
-export const SearchBlockCard: FC<SearchBlockCard> = ({ cardText, cardHeader, iconUrl }) => {
+export const SearchBlockCard: FC<SearchBlockCard> = ({ cardText, cardHeader, iconUrl, inHowWeWork }) => {
   return (
-    <div className={styles.cardContainer}>
+    <div
+      className={classNames(styles.cardContainer, {
+        [styles.howWeWorkCard]: inHowWeWork,
+      })}
+    >
       <div className={styles.textContent}>
         <h3>{cardHeader}</h3>
         <p>{cardText}</p>

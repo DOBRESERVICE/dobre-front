@@ -42,15 +42,15 @@
   font-weight: 500;
   line-height: 27px;
   color: $deep-blue;
-  max-width: 370px;
+  max-width: 380px;
   margin-top: 20px;
 }
 
 .acceptImage {
   position: absolute;
-  right: -175px;
-  bottom: 23px;
-  height: 245px;
+ left: 26%;
+  bottom: 10px;
+  z-index: 1;
 }
 
 .itemsWrapper {

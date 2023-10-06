@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+.breadCrumbsWrapper {
+  width: calc(100% - 350px);
+  display: flex;
+  gap:8px;
+}
+.breadCrumbsWrapper > span {
+  color: $graphite;
+  font-size: 13px;
+  font-weight: 600;
+}

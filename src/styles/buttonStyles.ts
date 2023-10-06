@@ -88,7 +88,7 @@ export const customSearchInput = {
 };
 export const customSearchButton = {
   borderRadius: '8px',
-  height: '45px',
+  padding: '10px 22px',
   fontSize: '15px',
   color: colors.white,
   fontWeight: 700,

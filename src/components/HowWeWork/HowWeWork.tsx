@@ -11,9 +11,6 @@ export const HowWeWork = () => {
       <div className={styles.imageWrapper}>
         <Image src={howWeWorkFirstGroup} alt='first group' />
       </div>
-      <div className={styles.imageWrapper}>
-        <Image src={howWeWorkSecondGroup} alt='first group' />
-      </div>
       <div className={styles.content}>
         <SectionHeader>
           <h2>Как работает сервис DOBRE</h2>
@@ -21,7 +18,7 @@ export const HowWeWork = () => {
         </SectionHeader>
         <ButtonsContainer />
       </div>
-      <SearchCardsContainer cardsData={howWeWorkData} />
+      <SearchCardsContainer cardsData={howWeWorkData} inHowWeWork />
     </section>
   );
 };
