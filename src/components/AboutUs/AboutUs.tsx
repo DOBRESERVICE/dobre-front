@@ -7,9 +7,9 @@ export const AboutUs = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
+        <Image src={aboutUsAccept} alt='accept' className={styles.acceptImage} />
         <div className={styles.imageWrapper}>
           <Image src={aboutUsImage} alt='aboutUs' />
-          <Image src={aboutUsAccept} alt='accept' className={styles.acceptImage} />
         </div>
         <div className={styles.titleWrapper}>
           <div className={styles.titleTextWrapper}>

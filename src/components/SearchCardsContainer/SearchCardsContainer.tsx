@@ -15,7 +15,13 @@ export const SearchCardsContainer: FC<SearchCardsContainer> = ({ cardsData, inHo
       })}
     >
       {cardsData.map((card) => (
-        <SearchBlockCard key={card.id} cardHeader={card.cardHeader} cardText={card.cardText} iconUrl={card.iconUrl} />
+        <SearchBlockCard
+          inHowWeWork={inHowWeWork}
+          key={card.id}
+          cardHeader={card.cardHeader}
+          cardText={card.cardText}
+          iconUrl={card.iconUrl}
+        />
       ))}
     </div>
   );

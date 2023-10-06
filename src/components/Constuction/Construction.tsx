@@ -11,16 +11,18 @@ export const Construction = () => {
         <h3>Ремонт и стройка</h3>
         <p>1322 объявления</p>
       </div>
-      <div className={styles.constructionItemsContainer}>
-        <div className={classNames(styles.blur, styles.leftBlur)}>
-          <Image src={sliderLeftBlur} alt='blur' />
+      <div className={styles.constructionItemsWrapper}>
+        <div className={styles.constructionItemsContainer}>
+          <div className={classNames(styles.blur, styles.leftBlur)}>
+            <Image src={sliderLeftBlur} alt='blur' />
+          </div>
+          <div className={classNames(styles.blur, styles.rightBlur)}>
+            <Image src={sliderRightBlur} alt='blur' />
+          </div>
+          {constuctionData.map((product) => (
+            <CardItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
+          ))}
         </div>
-        <div className={classNames(styles.blur, styles.rightBlur)}>
-          <Image src={sliderRightBlur} alt='blur' />
-        </div>
-        {constuctionData.map((product) => (
-          <CardItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
-        ))}
       </div>
     </section>
   );

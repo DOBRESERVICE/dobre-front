@@ -5,9 +5,8 @@
   gap: 10px;
   max-width: 320px;
   position: relative;
-  max-width: 320px;
-  & > img:nth-child(1),
-  & > img:nth-child(2) {
+
+  & > img:nth-child(1){
     position: absolute;
   }
 
@@ -17,12 +16,27 @@
     left: 20px;
   }
 
-  & > img:nth-child(2) {
-    top: 18px;
-    right: 20px;
-  }
 }
-
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $white;
+  top: 18px;
+  right: 20px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+.imageWrapper:hover {
+  background-color: #EEE;
+}
+.imageWrapper:active {
+  background-color: #C9C9C9;
+}
 .status {
   font-size: 13px;
   font-weight: $fweight-big;
@@ -57,24 +71,13 @@
   justify-content: space-between;
   align-items: center;
 
-  & > span {
-    color: $black;
-    font-weight: 600;
-  }
-  & span:first-of-type {
-    font-size: 15px;
-  }
-
-  & span:last-of-type {
-    font-size: 13px;
-  }
 }
 
 .notification {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
+  padding: 4px 10px 4px 10px;
   border-radius: 4px;
   & > p {
     color: $white;
@@ -98,4 +101,28 @@
     font-size: 13px;
     font-weight: $fweight-big;
   }
+}
+.ratingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  & span {
+    color: $black;
+    font-weight: 600;
+  }
+& > span {
+  font-size: 13px;
+}
+  & > div:first-child > span {
+    margin-left: 6px;
+    font-size: 15px;
+  }
+
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap:20px;
 }
