@@ -10,7 +10,7 @@ export interface SubCategoriesData {
   id: number;
   title: string;
   imageUrl?: StaticImageData;
-
+}
 
 export interface ResponseData {
   user: User;
@@ -34,5 +34,4 @@ export interface User {
   updatedAt: string;
   createdAt: string;
   deletedAt: any;
-
 }
