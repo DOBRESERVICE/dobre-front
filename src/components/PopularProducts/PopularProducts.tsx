@@ -1,6 +1,6 @@
 import styles from './PopularProducts.module.scss';
 import { popularProductsData } from '@/data';
-import { PopularItem } from '@/components/PopularProducts/common/PopularItem';
+import { CardItem } from '@/components/CardItem/CardItem';
 import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 export const PopularProducts = () => {
   return (
@@ -8,7 +8,7 @@ export const PopularProducts = () => {
       <TopSectionBar barName='Популярно сейчас' hasLinkArrow />
       <div className={styles.gridContainer}>
         {popularProductsData.map((product) => (
-          <PopularItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
+          <CardItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
         ))}
       </div>
     </section>

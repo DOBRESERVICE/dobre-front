@@ -48,6 +48,22 @@ import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
 import travelling from './travelling.png';
+import rentImage from './rentImage.svg';
+import handMadeTools from './constructionImages/handMadeTools.png';
+import electroTools from './constructionImages/electroTools.png';
+import specialTechnique from './constructionImages/specialTechnique.png';
+import constructionEquipment from './constructionImages/constructionEquipment.png';
+import bosch from './brands/Bosch.svg';
+import makita from './brands/makita.svg';
+import karcher from './brands/karcher.svg';
+import hilti from './brands/hilti.svg';
+import dewalt from './brands/dewalt.svg';
+import festool from './brands/festool.svg';
+import aeg from './brands/AEG.svg';
+import metabo from './brands/metabo.svg';
+import drill from './drill.png';
+import sliderRightBlur from './sliderRightBlur.svg';
+import sliderLeftBlur from './sliderLeftBlur.svg';
 
 export {
   acceptIcon,
@@ -100,4 +116,20 @@ export {
   instIcon,
   ytIcon,
   travelling,
+  rentImage,
+  specialTechnique,
+  handMadeTools,
+  electroTools,
+  constructionEquipment,
+  hilti,
+  makita,
+  bosch,
+  dewalt,
+  festool,
+  metabo,
+  aeg,
+  karcher,
+  drill,
+  sliderRightBlur,
+  sliderLeftBlur,
 };
