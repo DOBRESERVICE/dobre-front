@@ -48,6 +48,8 @@ import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
 import travelling from './travelling.png';
+import dobreBanner from './DobreBanner.svg';
+import dobreWhiteLogo from './dobreWhiteLogo.svg';
 
 export {
   acceptIcon,
@@ -100,4 +102,6 @@ export {
   instIcon,
   ytIcon,
   travelling,
+  dobreBanner,
+  dobreWhiteLogo,
 };

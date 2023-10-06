@@ -15,7 +15,6 @@ import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
-import { AuthProvider, useAuthData } from '@/context/authContext';
 
 export default function HomePage() {
   const currentUrl = global?.window && window.location;
