@@ -88,6 +88,7 @@ export const customSearchInput = {
 };
 export const customSearchButton = {
   borderRadius: '8px',
+  padding: '10px 22px',
   fontSize: '15px',
   color: colors.white,
   fontWeight: 700,
@@ -119,7 +120,6 @@ export const howWeWorkButton = {
     boxShadow: 'none',
   },
 };
-
 
 export const authCustomInput = {
   height: '50px',

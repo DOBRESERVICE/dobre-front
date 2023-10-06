@@ -1,6 +1,6 @@
 import styles from './CatalogBlocks.module.scss';
 import { catalogData } from '@/data';
-import { CatalogBlock } from '@/app/catalog/common/CatalogBlock/CatalogBlock';
+import { CatalogBlock } from '@/components/CatalogBlocks/common/CatalogBlock/CatalogBlock';
 export const CatalogBlocks = () => {
   return (
     <section className={styles.catalogBlocksSectionWrapper}>

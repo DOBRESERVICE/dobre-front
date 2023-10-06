@@ -24,7 +24,7 @@ export const SearchBlock = () => {
       <div className={styles.rightImageWrapper}>
         <Image src={secondLampGroup} alt='lamp group' />
       </div>
-      <SearchCardsContainer cardsData={searchCardsData} />
+      <SearchCardsContainer inHowWeWork={false} cardsData={searchCardsData} />
     </section>
   );
 };

@@ -52,9 +52,6 @@ export const Header = () => {
           <Image src={categoriesIcon} alt='categories icon' />
           Все категории
         </Button>
-        <Button variant='contained' disableRipple size='medium' sx={customPremiumButton}>
-          Premium
-        </Button>
         <div className={styles.locationWrapper}>
           <Image src={geolocationIcon} alt='location' />
           <p>Вся Беларусь</p>
