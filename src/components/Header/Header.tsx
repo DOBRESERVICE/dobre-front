@@ -22,11 +22,17 @@ import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';
 import { mockUser, rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
   const pathname = usePathname();
   const router = useRouter();
-  const token = localStorage.getItem('token');
+  const [token, setToken] = useState<string | null>('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setToken(token);
+  }, []);
 
   return (
     <header
