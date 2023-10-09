@@ -60,7 +60,7 @@
   display: none;
 }
 .catalogHeader {
-  padding-block: 44px;
+  padding-top: 44px;
 }
 .catalogHeader .logo {
   flex:0;
@@ -99,9 +99,6 @@
     }
   order:1;
   padding: 8px 10px 8px 20px;
-   > button {
-     height: 30px;
-   }
   }
 
 .inputContent {
