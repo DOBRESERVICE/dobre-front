@@ -22,9 +22,12 @@ import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
 import { rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
+import { useAuthData } from '@/context/authContext';
 
 export const Header = () => {
   const pathname = usePathname();
+  const { userInfo } = useAuthData();
+  console.log(userInfo);
   return (
     <header
       className={classNames(styles.header, {

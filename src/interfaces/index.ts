@@ -12,19 +12,15 @@ export interface SubCategoriesData {
   imageUrl?: StaticImageData;
 }
 
-export interface ResponseData {
+export interface AuthResponse {
   user: User;
   authToken: string;
 }
-
-export interface AuthResponse {
-  data: ResponseData;
-  status: number;
-}
-export interface RegisterData {
+export interface RequestData {
   email: string;
   password: string;
 }
+
 export interface User {
   role: string;
   id: string;
@@ -33,5 +29,5 @@ export interface User {
   is_activated: boolean;
   updatedAt: string;
   createdAt: string;
-  deletedAt: any;
+  deletedAt: string | null;
 }

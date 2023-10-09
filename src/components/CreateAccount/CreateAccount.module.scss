@@ -12,38 +12,6 @@
   gap: 20px;
 }
 
-.text {
-  font-size: 15px;
-  font-weight: 600;
-}
-
-.title {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.blueText {
-  color: $deep-blue;
-  cursor: pointer;
-  margin-left: 6px;
-}
-
-.iconsWrapper {
-  display: flex;
-  gap:16px;
-
-}
-
-.siteConnect {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid $light-graphite;
-  border-radius: 8px;
-
-}
 .inputWrapper {
   display: flex;
   flex-direction: column;
@@ -88,9 +56,4 @@
 
 .savePass > span {
   text-decoration: underline;
-}
-
-.captchaStyle {
-  align-self: center;
-  transform: scale(1.26);
 }

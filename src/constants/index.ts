@@ -9,5 +9,6 @@ export const isGoodStatus = (status: ProductStatus) =>
 export const emailRules =
   /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
 
-export const mediumPasswordRules = /^(?=.*[A-Z])|(?=.*[!@#$%^&*]).{9,}$/;
-export const strongPasswordRules = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{9,}$/;
+export const mediumPasswordRules =
+  /^(?=.*[A-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])[\w!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]{8,}$/;
+export const strongPasswordRules = /^(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;

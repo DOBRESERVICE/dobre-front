@@ -123,16 +123,9 @@ export const howWeWorkButton = {
 
 export const authCustomInput = {
   width: '385px',
-  borderRadius: '8px',
   '& .MuiOutlinedInput-root': {
     borderRadius: '8px',
     border: `1px solid ${colors.grayBorder}`,
-    '&.Mui-focused fieldset': {
-      borderColor: colors.deepBlue,
-    },
-    '&.Mui-error fieldset': {
-      borderColor: colors.inputError,
-    },
     '& input': {
       color: colors.deepBlue,
     },
@@ -140,22 +133,15 @@ export const authCustomInput = {
       color: colors.mainText,
     },
   },
-  '& .MuiInputLabel-root.Mui-focused': {
-    color: colors.deepBlue,
-  },
 };
 
 export const authButton = {
-  background: colors.deepBlue,
   height: '50px',
   borderRadius: '8px',
   textTransform: 'none',
 };
 export const authCheckBox = {
   padding: '0px',
-  '&.Mui-checked': {
-    color: colors.deepBlue,
-  },
   '& input': {
     height: '50px',
     borderRadius: '4px',
