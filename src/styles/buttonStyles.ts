@@ -86,6 +86,12 @@ export const customSearchInput = {
   fontWeight: 500,
   fontSize: '18px',
 };
+export const customHeaderSearchInput = {
+  color: colors.inputText,
+  width: '80%',
+  fontWeight: 500,
+  fontSize: '15px',
+};
 export const customSearchButton = {
   borderRadius: '8px',
   padding: '10px 22px',
