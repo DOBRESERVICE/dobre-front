@@ -2,18 +2,15 @@
 import TextField from '@mui/material/TextField';
 import styles from './LogIn.module.scss';
 import Image from 'next/image';
-import { ChangeEvent, Dispatch, FC, SetStateAction, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
-import { eyeOpen, eyeClosed, googleIcon, appleIcon, vkIcon, yandexIcon } from '@/assets/image';
+import { eyeClosed, eyeOpen } from '@/assets/image';
 import { useAuthData } from '@/context/authContext';
 import { emailRules } from '@/constants';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
-
-export type AutorizPropsType = {
-  setActiveStep: Dispatch<SetStateAction<string>>;
-};
+import { AuthStep, AutorizPropsType } from '@/components/AuthForm/AuthForm';
 
 export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
   const [isPassword, setIsPassword] = useState(false);
@@ -39,7 +36,7 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
         title='Вход'
         text='Новый пользователь?'
         actionType='Создать учетную запись'
-        setActiveStep={() => setActiveStep('create')}
+        setActiveStep={() => setActiveStep(AuthStep.CREATE)}
       />
       <div className={styles.inputWrapper}>
         <TextField
@@ -76,7 +73,7 @@ export const LogInComponent: FC<AutorizPropsType> = ({ setActiveStep }) => {
             <Checkbox sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />
             <p>Запомнить пароль</p>
           </div>
-          <div className={styles.hidePass} onClick={() => setActiveStep('reset')}>
+          <div className={styles.hidePass} onClick={() => setActiveStep(AuthStep.RESET)}>
             Забыли пароль?
           </div>
         </div>

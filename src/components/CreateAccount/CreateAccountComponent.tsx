@@ -6,15 +6,15 @@ import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
 import { ModalComponent } from '@/components/ModalComponent';
 import { CreateAccountMess } from '../NotificationMessageModal/CreateAccount';
-import { AutorizPropsType } from '../LogIn/LogInComponent';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { googleIcon, appleIcon, vkIcon, yandexIcon, eyeOpen, eyeClosed } from '@/assets/image';
+import { eyeClosed, eyeOpen } from '@/assets/image';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
 import { emailRules, mediumPasswordRules, strongPasswordRules } from '@/constants';
 import { DifficultyProgressBar } from '@/app/login/common/DifficultyProgressBar/DifficultyProgressBar';
 import { useAuthData } from '@/context/authContext';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
+import { AuthStep, AutorizPropsType } from '@/components/AuthForm/AuthForm';
 
 export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const [isPassword, setIsPassword] = useState(true);
@@ -67,7 +67,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
           title='Создание аккаунта'
           text='Вы уже зарегистрированы?'
           actionType='Войти'
-          setActiveStep={() => setActiveStep('login')}
+          setActiveStep={() => setActiveStep(AuthStep.LOGIN)}
         />
         <AuthServices />
       </div>
