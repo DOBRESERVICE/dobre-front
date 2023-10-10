@@ -2,83 +2,74 @@
 import TextField from '@mui/material/TextField';
 import styles from './CreateAccount.module.scss';
 import Image from 'next/image';
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
 import { ModalComponent } from '@/components/ModalComponent';
 import { CreateAccountMess } from '../NotificationMessageModal/CreateAccount';
-import { AutorizPropsType } from '../LogIn/LogInComponent';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { verifyCaptcha } from '../VeryfiCaptcha';
-import { googleIcon, appleIcon, vkIcon, yandexIcon, eyeOpen, eyeClosed } from '@/assets/image';
-import { registerUser } from '@/api/authApi';
-import { StatusCode } from '@/enums';
-import { AxiosError } from 'axios';
-import { authCustomInput } from '@/styles/buttonStyles';
-import { emailRules } from '@/constants';
+import { eyeClosed, eyeOpen } from '@/assets/image';
+import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
+import { emailRules, mediumPasswordRules, strongPasswordRules } from '@/constants';
+import { DifficultyProgressBar } from '@/app/login/common/DifficultyProgressBar/DifficultyProgressBar';
+import { AuthStep, useAuthData } from '@/context/authContext';
+import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
+import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 
-export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
-  const [isPassword, setIsPassword] = useState(false);
+export const CreateAccountComponent = () => {
+  const [isPassword, setIsPassword] = useState(true);
   const [isAccept, setIsAccept] = useState(false);
   const [passwordValue, setPasswordValue] = useState('');
-  const [isShowModal, setIsShowModal] = useState(false);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [emailValue, setEmailValue] = useState('');
   const [emailError, setEmailError] = useState(false);
+  const [strengthPassword, setStrengthPassword] = useState(1);
+  const [strengthText, setStrengthText] = useState('Слабый');
+  const isPasswordAcceptable = passwordValue.length >= 8;
+  const isEmailDirty = emailValue.length > 0;
+  const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
+  const { isModalShown, setIsModalShown, handleRegister, setActiveStep } = useAuthData();
 
-  const isPasswordStrong = passwordValue.length >= 8;
-  const isDisabled = !isAccept || emailError || !isPasswordStrong;
-
-  async function handleCaptchaSubmission(token: string | null) {
-    await verifyCaptcha(token)
-      .then(() => setIsVerified(true))
-      .catch(() => setIsVerified(false));
-  }
-
-  const handleRegister = async () => {
-    try {
-      const result = await registerUser(emailValue, passwordValue);
-      if (result && result.status === StatusCode.OK) {
-        setIsShowModal(true);
-      }
-    } catch (error) {
-      const axiosError = error as AxiosError;
-      console.error('Error during registration:', axiosError.message);
-      setIsShowModal(false);
+  function handleCaptchaSubmission(token: string | null) {
+    if (token) {
+      setIsVerified(true);
     }
-  };
+  }
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);
     setEmailValue(value);
     setEmailError(!isValidEmail);
   };
+  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setPasswordValue(value);
+  };
+
+  useEffect(() => {
+    if (strongPasswordRules.test(passwordValue)) {
+      setStrengthPassword(3);
+      setStrengthText('Сильный');
+    } else if (mediumPasswordRules.test(passwordValue)) {
+      setStrengthPassword(2);
+      setStrengthText('Средний');
+    } else {
+      setStrengthPassword(1);
+      setStrengthText('Слабый');
+    }
+  }, [passwordValue, strengthPassword, strengthText]);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.title}>Создание аккаунта</div>
-      <div className={styles.rowContent}>
-        <p className={styles.text}>Вы уже зарегистрированны?</p>
-        <span className={styles.blueText} onClick={() => setActiveStep('login')}>
-          Войти
-        </span>
+    <>
+      <div className={styles.content}>
+        <AuthHeader
+          title='Создание аккаунта'
+          text='Вы уже зарегистрированы?'
+          actionType='Войти'
+          setActiveStep={() => setActiveStep(AuthStep.LOGIN)}
+        />
+        <AuthServices />
       </div>
-
-      <div className={styles.otherSiteConnection}>
-        <div className={styles.siteConnect}>
-          <Image src={googleIcon} alt='google' />
-        </div>
-        <div className={styles.siteConnect}>
-          <Image src={appleIcon} alt='apple' />
-        </div>
-        <div className={styles.siteConnect}>
-          <Image src={vkIcon} alt='vk' />
-        </div>
-        <div className={styles.siteConnect}>
-          <Image src={yandexIcon} alt='yandex' />
-        </div>
-      </div>
-
       <div className={styles.inputWrapper}>
         <TextField
           id='outlined-basic'
@@ -91,16 +82,16 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
           onChange={handleEmailChange}
           helperText={emailError ? 'invalid email' : ''}
         />
-        <div className={styles.passwordWrapper}>
+        <div>
           <TextField
             id='outlined-basic'
             label='Пароль'
-            type={!isPassword ? 'password' : 'text'}
+            type={isPassword ? 'password' : 'text'}
             variant='outlined'
             size='small'
             sx={authCustomInput}
             value={passwordValue}
-            onChange={(e) => setPasswordValue(e.target.value)}
+            onChange={handlePasswordChange}
           />
           <Image
             src={isPassword ? eyeOpen : eyeClosed}
@@ -109,41 +100,33 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
             onClick={() => setIsPassword(!isPassword)}
           />
         </div>
-      </div>
-      <div className={styles.checkLvlPass}>
-        <div className={styles.checkPassLvl}>Уровень сложности пароля</div>
-        <div className={styles.valuePassLvl}>{isPasswordStrong ? 'Сложный' : 'Слабый'}</div>
-      </div>
-      <div className={styles.lvlPass}>
-        {!isPasswordStrong ? (
-          <>
-            <div className={styles.blueLine} />
-            <div className={styles.grayLine} />
-          </>
-        ) : (
-          <div className={styles.fullLine} />
-        )}
-      </div>
-      <div className={styles.captchaStyle}>
-        <ReCAPTCHA
-          sitekey='6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz'
-          ref={recaptchaRef}
-          onChange={handleCaptchaSubmission}
-        />
+        <DifficultyProgressBar strength={strengthPassword} strengthText={strengthText} />
       </div>
 
+      <ReCAPTCHA
+        sitekey='6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz'
+        ref={recaptchaRef}
+        onChange={handleCaptchaSubmission}
+        style={{ transform: 'scale(1.26)', alignSelf: 'center' }}
+      />
+
       <div className={styles.createWrapperAccept}>
-        <Checkbox onChange={() => setIsAccept(!isAccept)} style={{ margin: '0 10px;' }} />
+        <Checkbox onChange={() => setIsAccept(!isAccept)} sx={authCheckBox} />
         <div className={styles.savePass}>
           Я принимаю <span>условия пользовательского соглашения</span>
         </div>
       </div>
-      <Button variant='contained' className={styles.logInButton} disabled={isDisabled} onClick={handleRegister}>
+      <Button
+        variant='contained'
+        disabled={isDisabled}
+        sx={authButton}
+        onClick={() => handleRegister(emailValue, passwordValue)}
+      >
         Создать аккаунт
       </Button>
-      <ModalComponent open={isShowModal} handleClose={() => setIsShowModal(false)}>
-        <CreateAccountMess setActiveStep={setActiveStep} />
+      <ModalComponent open={isModalShown} handleClose={() => setIsModalShown(false)}>
+        <CreateAccountMess />
       </ModalComponent>
-    </div>
+    </>
   );
 };

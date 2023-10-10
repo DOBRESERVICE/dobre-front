@@ -1,0 +1,17 @@
+@import "src/styles/variables";
+.iconsWrapper {
+  display: flex;
+  gap:16px;
+
+}
+
+.siteConnect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid $light-graphite;
+  border-radius: 8px;
+
+}

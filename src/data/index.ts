@@ -446,6 +446,12 @@ export const brandsData = [
   {
     id: 12,
   },
+  {
+    id: 13,
+  },
+  {
+    id: 14,
+  },
 ];
 
 export const popularToolsData = [
@@ -474,12 +480,16 @@ export const popularToolsData = [
     id: 6,
     title: 'Пылесосы строительные',
   },
+  {
+    id: 7,
+    title: 'Электрофрезеры',
+  },
 ];
 
 export const catalogData = [
   {
     id: 1,
-    title: 'Электроинструменты',
+    title: 'Электроинструменты в аренду',
     subCategories: [
       {
         id: 1,
@@ -529,13 +539,21 @@ export const catalogData = [
         id: 12,
         title: 'Комрессоры',
       },
+      {
+        id: 13,
+        title: 'Комрессоры',
+      },
+      {
+        id: 14,
+        title: 'Комрессоры',
+      },
     ],
     items: productsData,
   },
 
   {
     id: 2,
-    title: 'Спецтехника',
+    title: 'Спецтехника в аренду',
     subCategories: [
       {
         id: 1,
@@ -585,12 +603,20 @@ export const catalogData = [
         id: 12,
         title: 'Ямобуры',
       },
+      {
+        id: 13,
+        title: 'Ямобуры',
+      },
+      {
+        id: 14,
+        title: 'Ямобуры',
+      },
     ],
     items: productsData,
   },
   {
     id: 3,
-    title: 'Ручные инструменты',
+    title: 'Ручные инструменты в аренду',
     subCategories: [
       {
         id: 1,
@@ -616,12 +642,16 @@ export const catalogData = [
         id: 6,
         title: 'Домкраты',
       },
+      {
+        id: 7,
+        title: 'Домкраты',
+      },
     ],
     items: productsData,
   },
   {
     id: 4,
-    title: 'Строительное оборудование',
+    title: 'Строительное оборудование в аренду',
     subCategories: [
       {
         id: 1,
@@ -645,6 +675,10 @@ export const catalogData = [
       },
       {
         id: 6,
+        title: 'Домкраты',
+      },
+      {
+        id: 7,
         title: 'Домкраты',
       },
     ],

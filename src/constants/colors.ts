@@ -13,5 +13,8 @@ export const colors = {
   activeBlack: '#6A6A6A',
   inputText: '#81878B',
   graphite: '#646E74',
+  grayBorder: '#E2E5E9',
+  inputError: '#d32f2f',
+  lightGraphite: '#E2E5E9',
   orangeGradient: 'linear-gradient(104deg, #F59045 0%, #E65071 100%)',
 };

@@ -5,10 +5,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
-
 import { AboutUs } from '@/components/AboutUs/AboutUs';
 import { NewProducts } from '@/components/NewProducts/NewProducts';
-
 import { FirstItem } from '@/components/FirstItem/FirstItem';
 import { Testimonials } from '@/components/Testimonials/Testimonials';
 import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
@@ -32,7 +30,7 @@ export default function HomePage() {
           setIsShowModal(false);
         }}
       >
-        <CreateAccountMess setActiveStep={() => {}} />
+        <CreateAccountMess />
       </ModalComponent>
       <SearchBlock />
       <NewProducts />
