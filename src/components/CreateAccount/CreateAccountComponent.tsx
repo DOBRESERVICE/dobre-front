@@ -11,12 +11,11 @@ import { eyeClosed, eyeOpen } from '@/assets/image';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
 import { emailRules, mediumPasswordRules, strongPasswordRules } from '@/constants';
 import { DifficultyProgressBar } from '@/app/login/common/DifficultyProgressBar/DifficultyProgressBar';
-import { useAuthData } from '@/context/authContext';
+import { AuthStep, useAuthData } from '@/context/authContext';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
-import { AuthStep, AutorizPropsType } from '@/components/AuthForm/AuthForm';
 
-export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
+export const CreateAccountComponent = () => {
   const [isPassword, setIsPassword] = useState(true);
   const [isAccept, setIsAccept] = useState(false);
   const [passwordValue, setPasswordValue] = useState('');
@@ -29,7 +28,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isModalShown, setIsModalShown, handleRegister } = useAuthData();
+  const { isModalShown, setIsModalShown, handleRegister, setActiveStep } = useAuthData();
 
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
@@ -126,7 +125,7 @@ export const CreateAccountComponent = ({ setActiveStep }: AutorizPropsType) => {
         Создать аккаунт
       </Button>
       <ModalComponent open={isModalShown} handleClose={() => setIsModalShown(false)}>
-        <CreateAccountMess setActiveStep={setActiveStep} />
+        <CreateAccountMess />
       </ModalComponent>
     </>
   );
