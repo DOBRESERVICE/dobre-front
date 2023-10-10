@@ -86,6 +86,12 @@ export const customSearchInput = {
   fontWeight: 500,
   fontSize: '18px',
 };
+export const customHeaderSearchInput = {
+  color: colors.inputText,
+  width: '80%',
+  fontWeight: 500,
+  fontSize: '15px',
+};
 export const customSearchButton = {
   borderRadius: '8px',
   padding: '10px 22px',
@@ -122,6 +128,30 @@ export const howWeWorkButton = {
 };
 
 export const authCustomInput = {
-  height: '50px',
   width: '385px',
+  '& .MuiOutlinedInput-root': {
+    borderRadius: '8px',
+    border: `1px solid ${colors.grayBorder}`,
+    '& input': {
+      color: colors.deepBlue,
+    },
+    '& input[type="password"]': {
+      color: colors.mainText,
+    },
+  },
+};
+
+export const authButton = {
+  height: '50px',
+  borderRadius: '8px',
+  textTransform: 'none',
+};
+export const authCheckBox = {
+  padding: '0px',
+  '& input': {
+    height: '50px',
+    borderRadius: '4px',
+    textTransform: 'none',
+    border: `1px solid ${colors.lightGraphite}`,
+  },
 };

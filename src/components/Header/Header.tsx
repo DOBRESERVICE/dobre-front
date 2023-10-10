@@ -12,19 +12,28 @@ import cart from '../../assets/image/cart.svg';
 import userIcon from '../../assets/image/userIcon.svg';
 import {
   customCategoriesButton,
+  customHeaderSearchInput,
   customLoginButton,
-  customPremiumButton,
   customRentButton,
   customSearchButton,
   customSearchInput,
 } from '@/styles/buttonStyles';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';
-import { rentImage, searchIcon } from '@/assets/image';
+import { mockUser, rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
+import { useEffect, useState } from 'react';
 
 export const Header = () => {
   const pathname = usePathname();
+  const router = useRouter();
+  const [token, setToken] = useState<string | null>('');
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    setToken(token);
+  }, []);
+
   return (
     <header
       className={classNames(styles.header, {
@@ -40,6 +49,7 @@ export const Header = () => {
           </p>
         </div>
         <div className={styles.contentGroup}>
+          <p>О проекте</p>
           <p>Как арендовать</p>
           <p>Как сдавать</p>
           <p>База знаний</p>
@@ -48,7 +58,13 @@ export const Header = () => {
       </div>
       <BurgerButton />
       <div className={styles.content}>
-        <Button disableRipple variant='contained' size='medium' sx={customCategoriesButton}>
+        <Button
+          disableRipple
+          variant='contained'
+          size='medium'
+          sx={customCategoriesButton}
+          onClick={() => router.push('/catalog')}
+        >
           <Image src={categoriesIcon} alt='categories icon' />
           Все категории
         </Button>
@@ -61,7 +77,7 @@ export const Header = () => {
       <div className={styles.inputWrapper}>
         <div className={styles.inputContent}>
           <Image src={searchIcon} alt='search' />
-          <Input placeholder='Что вы ищете?' disableUnderline sx={customSearchInput} />
+          <Input placeholder='Что вы ищете?' disableUnderline sx={customHeaderSearchInput} />
         </div>
         <Button variant='contained' disableRipple size='medium' sx={customSearchButton}>
           Найти
@@ -94,10 +110,14 @@ export const Header = () => {
             <p>Аренда</p>
           </div>
         </div>
-        <Button variant='outlined' disableRipple size='medium' sx={customLoginButton}>
-          <Image src={userIcon} alt='user' />
-          Войти
-        </Button>
+        {token ? (
+          <Image src={mockUser} alt='mock user' />
+        ) : (
+          <Button variant='outlined' disableRipple size='medium' sx={customLoginButton}>
+            <Image src={userIcon} alt='user' />
+            Войти
+          </Button>
+        )}
       </div>
     </header>
   );

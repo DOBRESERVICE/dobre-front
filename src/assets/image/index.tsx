@@ -48,6 +48,8 @@ import linkButtonArrow from './linkButtonArrow.svg';
 import FAQBottomGroup from './FAQBottomGroup.svg';
 import FAQTopGroup from './FAQTopGroup.svg';
 import travelling from './travelling.png';
+import dobreBanner from './DobreBanner.svg';
+import dobreWhiteLogo from './dobreWhiteLogo.svg';
 import rentImage from './rentImage.svg';
 import handMadeTools from './constructionImages/handMadeTools.png';
 import electroTools from './constructionImages/electroTools.png';
@@ -116,6 +118,8 @@ export {
   instIcon,
   ytIcon,
   travelling,
+  dobreBanner,
+  dobreWhiteLogo,
   rentImage,
   specialTechnique,
   handMadeTools,

@@ -1,0 +1,33 @@
+@import "src/styles/variables";
+
+.difficultyProgressBar {
+  height: 2px;
+  width: 100%;
+}
+.difficultyProgressBar::-webkit-progress-bar {
+  background-color: $light-graphite;
+}
+.difficultyProgressBar::-webkit-progress-value {
+  background: $deep-blue;
+  transition: width .5s;
+
+}
+.progressWrapper {
+  display: flex;
+  flex-direction: column;
+  gap:12px;
+}
+.progressWrapper > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  & p {
+    color: $graphite;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  & span {
+    color: $deep-blue;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
