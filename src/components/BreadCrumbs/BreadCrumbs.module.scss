@@ -4,8 +4,12 @@
   display: flex;
   gap:8px;
 }
-.breadCrumbsWrapper > span {
+.breadCrumbsWrapper > a {
   color: $graphite;
   font-size: 13px;
   font-weight: 600;
+}
+
+.breadCrumbsWrapper > span:last-child {
+  display: none;
 }

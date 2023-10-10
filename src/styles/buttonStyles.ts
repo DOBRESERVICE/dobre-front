@@ -147,11 +147,6 @@ export const authButton = {
   textTransform: 'none',
 };
 export const authCheckBox = {
+  color: colors.lightGraphite,
   padding: '0px',
-  '& input': {
-    height: '50px',
-    borderRadius: '4px',
-    textTransform: 'none',
-    border: `1px solid ${colors.lightGraphite}`,
-  },
 };

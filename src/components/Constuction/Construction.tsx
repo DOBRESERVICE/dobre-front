@@ -4,13 +4,11 @@ import { CardItem } from '@/components/CardItem/CardItem';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { sliderLeftBlur, sliderRightBlur } from '@/assets/image';
+import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 export const Construction = () => {
   return (
     <section className={styles.constructionSectionWrapper}>
-      <div className={styles.textWrapper}>
-        <h3>Ремонт и стройка</h3>
-        <p>1322 объявления</p>
-      </div>
+      <TopSectionBar barName='Ремонт и стройка' announcements='316 объявлений' hasLinkArrow={false} />
       <div className={styles.constructionItemsWrapper}>
         <div className={styles.constructionItemsContainer}>
           <div className={classNames(styles.blur, styles.leftBlur)}>
