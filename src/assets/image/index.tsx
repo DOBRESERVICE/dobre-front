@@ -73,6 +73,8 @@ import houseAndyarn from './houseAndyarn.svg';
 import furniture from './furniture.svg';
 import camping from './camping.svg';
 import sport from './sport.svg';
+import previous from './previousSlideButton.svg';
+import next from './nextSlideButton.svg';
 
 export {
   acceptIcon,
@@ -150,4 +152,6 @@ export {
   sport,
   houseHold,
   houseAndyarn,
+  previous,
+  next,
 };
