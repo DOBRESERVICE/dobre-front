@@ -1,23 +1,22 @@
 @import "src/styles/variables";
-.asideWrapper {
+.rentPriceContainer {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 300px;
+  gap: 18px;
 }
-.title {
+.inputWrapper {
   display: flex;
+  flex-direction: column;
   gap: 10px;
 
-  & > h2 {
+  & > label {
     color: $black;
-    font-size: $font-medium;
+    font-size: 13px;
     font-weight: $fweight-big;
   }
+
 }
-.chooseContent {
+.content {
   display: flex;
-  width: 276px;
-  flex-direction: column;
-  gap: 34px;
+  gap:18px;
 }

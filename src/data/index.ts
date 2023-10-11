@@ -278,22 +278,27 @@ export const brandsData = [
   {
     id: 1,
     imageUrl: bosch,
+    brandName: 'Bosch',
   },
   {
     id: 2,
     imageUrl: makita,
+    brandName: 'Makita',
   },
   {
     id: 3,
     imageUrl: karcher,
+    brandName: 'Karcher',
   },
   {
     id: 4,
     imageUrl: hilti,
+    brandName: 'Hilti',
   },
   {
     id: 5,
     imageUrl: dewalt,
+    brandName: 'DeWalt',
   },
   {
     id: 6,
@@ -556,5 +561,24 @@ export const catalogData = [
       },
     ],
     items: productsData,
+  },
+];
+
+export const qualityButtonsData = [
+  {
+    id: 1,
+    qualityType: 'Новое',
+  },
+  {
+    id: 2,
+    qualityType: 'Как новое',
+  },
+  {
+    id: 3,
+    qualityType: 'Хорошее',
+  },
+  {
+    id: 4,
+    qualityType: 'Среднее',
   },
 ];

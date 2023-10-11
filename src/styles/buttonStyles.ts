@@ -150,3 +150,72 @@ export const authCheckBox = {
   color: colors.lightGraphite,
   padding: '0px',
 };
+
+export const customSelect = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  borderRadius: '8px',
+  '& > div': {
+    padding: '6.5px 14px',
+  },
+};
+export const customLabel = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  top: '-8px',
+};
+export const customRentPriceInput = {
+  '& > div': {
+    height: '36px',
+    borderRadius: '8px',
+    color: colors.graphite,
+    fontSize: '15px',
+    fontWeight: '600',
+  },
+  '& > div input::placeholder': {
+    opacity: 1,
+  },
+};
+
+export const customSellerTypeButton = {
+  height: '36px',
+  width: '100%',
+  backgroundColor: colors.lightBlue,
+  boxShadow: 'none',
+  paddingInline: '20px',
+  color: colors.deepBlue,
+  fontWeight: 700,
+  fontSize: '12px',
+  textTransform: 'none',
+  borderRadius: '8px',
+  '&:hover': {
+    backgroundColor: colors.hoverLightBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeLightBlue,
+    boxShadow: 'none',
+  },
+};
+export const rentInfoCustomButton = {
+  borderRadius: '8px',
+  height: '36px',
+  gap: '10px',
+  fontSize: '15px',
+  color: colors.white,
+  width: '100%',
+  fontWeight: 700,
+  background: colors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};

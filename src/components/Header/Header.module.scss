@@ -6,6 +6,7 @@
   gap:30px;
   position: relative;
   align-items: center;
+  justify-content: center;
   margin: 0 auto;
 }
 .locationWrapper {
@@ -51,7 +52,15 @@
   align-items: center;
 }
 .logo {
+  display: flex;
   flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.logo > img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
 }
 .header .topBar {
   display: none;

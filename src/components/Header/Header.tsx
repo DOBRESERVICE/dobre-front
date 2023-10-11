@@ -73,7 +73,9 @@ export const Header = () => {
           <p>Вся Беларусь</p>
         </div>
       </div>
-      <Image src={logo} alt='logo' className={styles.logo} />
+      <div className={styles.logo}>
+        <Image src={logo} alt='logo' />
+      </div>
       <div className={styles.inputWrapper}>
         <div className={styles.inputContent}>
           <Image src={searchIcon} alt='search' />

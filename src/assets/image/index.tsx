@@ -66,9 +66,16 @@ import metabo from './brands/metabo.svg';
 import drill from './drill.png';
 import sliderRightBlur from './sliderRightBlur.svg';
 import sliderLeftBlur from './sliderLeftBlur.svg';
+import blueNextArrow from './blueNextArrow.svg';
+import backArrow from './backArrow.svg';
+import greyArrowNext from './greyArrowNext.svg';
+import rentButtonIcon from './rentButtonIcon.svg';
+import blackArrowNext from './blackArrowNext.svg';
 
 export {
   acceptIcon,
+  blackArrowNext,
+  rentButtonIcon,
   userIcon,
   whiteLogo,
   vkIcon,
@@ -136,4 +143,7 @@ export {
   drill,
   sliderRightBlur,
   sliderLeftBlur,
+  blueNextArrow,
+  backArrow,
+  greyArrowNext,
 };
