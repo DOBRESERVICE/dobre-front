@@ -7,7 +7,9 @@ import { useRouter } from 'next/navigation';
 
 interface IAuthContext {
   isModalShown: boolean;
+  isResetModalShown: boolean;
   setIsModalShown: Dispatch<SetStateAction<boolean>>;
+  setIsResetModalShown: Dispatch<SetStateAction<boolean>>;
   handleRegister: (email: string, password: string) => void;
   handleLogin: (email: string, password: string) => void;
   errorText: string;
@@ -22,6 +24,7 @@ export const enum AuthStep {
 }
 export const AuthContext = createContext<IAuthContext>({
   isModalShown: false,
+  isResetModalShown: false,
   setIsModalShown: () => {},
   handleRegister: () => {},
   handleLogin: () => {},
@@ -29,11 +32,13 @@ export const AuthContext = createContext<IAuthContext>({
   userInfo: {},
   activeStep: AuthStep.LOGIN,
   setActiveStep: () => {},
+  setIsResetModalShown: () => {},
 });
 
 export const AuthProvider = ({ children }: any) => {
   const [userInfo, setUserInfo] = useState<User | {}>({});
   const [isModalShown, setIsModalShown] = useState(false);
+  const [isResetModalShown, setIsResetModalShown] = useState(false);
   const [errorText, setErrorText] = useState('');
   const [activeStep, setActiveStep] = useState<AuthStep>(AuthStep.LOGIN);
   const router = useRouter();
@@ -74,6 +79,8 @@ export const AuthProvider = ({ children }: any) => {
     userInfo,
     activeStep,
     setActiveStep,
+    isResetModalShown,
+    setIsResetModalShown,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;

@@ -10,9 +10,10 @@ import { emailRules } from '@/constants';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
+import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
 
 export const LogInComponent = () => {
-  const [isPassword, setIsPassword] = useState(false);
+  const [isPassword, setIsPassword] = useState(true);
   const [isSavePass, setIsSavePass] = useState(false);
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -28,7 +29,6 @@ export const LogInComponent = () => {
     setEmail(value);
     setEmailError(!isValidEmail);
   };
-
   return (
     <>
       <AuthHeader
@@ -49,24 +49,13 @@ export const LogInComponent = () => {
           onChange={handleEmailChange}
           helperText={emailError ? 'invalid email' : ''}
         />
-        <div>
-          <TextField
-            id='outlined-basic'
-            label='Пароль'
-            type={isPassword ? 'password' : 'text'}
-            variant='outlined'
-            size='small'
-            sx={authCustomInput}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <Image
-            src={isPassword ? eyeOpen : eyeClosed}
-            alt='open'
-            className={styles.passwordIcon}
-            onClick={() => setIsPassword(!isPassword)}
-          />
-        </div>
+        <PasswordInput
+          isPassword={isPassword}
+          passwordValue={password}
+          handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+          setIsPassword={setIsPassword}
+          label='Пароль'
+        />
         <div className={styles.passActionsWrapper}>
           <div className={styles.savePass}>
             <Checkbox sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />

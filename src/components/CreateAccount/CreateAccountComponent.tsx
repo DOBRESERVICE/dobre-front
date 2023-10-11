@@ -1,19 +1,18 @@
 'use client';
 import TextField from '@mui/material/TextField';
 import styles from './CreateAccount.module.scss';
-import Image from 'next/image';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
 import { ModalComponent } from '@/components/ModalComponent';
 import { CreateAccountMess } from '../NotificationMessageModal/CreateAccount';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { eyeClosed, eyeOpen } from '@/assets/image';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
-import { emailRules, mediumPasswordRules, strongPasswordRules } from '@/constants';
+import { emailRules } from '@/constants';
 import { DifficultyProgressBar } from '@/app/login/common/DifficultyProgressBar/DifficultyProgressBar';
 import { AuthStep, useAuthData } from '@/context/authContext';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
+import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
 
 export const CreateAccountComponent = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -23,8 +22,6 @@ export const CreateAccountComponent = () => {
   const [isVerified, setIsVerified] = useState<boolean>(false);
   const [emailValue, setEmailValue] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const [strengthPassword, setStrengthPassword] = useState(1);
-  const [strengthText, setStrengthText] = useState('Слабый');
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
@@ -41,23 +38,6 @@ export const CreateAccountComponent = () => {
     setEmailValue(value);
     setEmailError(!isValidEmail);
   };
-  const handlePasswordChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setPasswordValue(value);
-  };
-
-  useEffect(() => {
-    if (strongPasswordRules.test(passwordValue)) {
-      setStrengthPassword(3);
-      setStrengthText('Сильный');
-    } else if (mediumPasswordRules.test(passwordValue)) {
-      setStrengthPassword(2);
-      setStrengthText('Средний');
-    } else {
-      setStrengthPassword(1);
-      setStrengthText('Слабый');
-    }
-  }, [passwordValue, strengthPassword, strengthText]);
 
   return (
     <>
@@ -82,25 +62,14 @@ export const CreateAccountComponent = () => {
           onChange={handleEmailChange}
           helperText={emailError ? 'invalid email' : ''}
         />
-        <div>
-          <TextField
-            id='outlined-basic'
-            label='Пароль'
-            type={isPassword ? 'password' : 'text'}
-            variant='outlined'
-            size='small'
-            sx={authCustomInput}
-            value={passwordValue}
-            onChange={handlePasswordChange}
-          />
-          <Image
-            src={isPassword ? eyeOpen : eyeClosed}
-            alt='open'
-            className={styles.passwordIcon}
-            onClick={() => setIsPassword(!isPassword)}
-          />
-        </div>
-        <DifficultyProgressBar strength={strengthPassword} strengthText={strengthText} />
+        <PasswordInput
+          isPassword={isPassword}
+          passwordValue={passwordValue}
+          handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setPasswordValue(e.target.value)}
+          setIsPassword={setIsPassword}
+          label='Пароль'
+        />
+        <DifficultyProgressBar passwordValue={passwordValue} />
       </div>
 
       <ReCAPTCHA

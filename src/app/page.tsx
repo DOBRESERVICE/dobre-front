@@ -13,11 +13,12 @@ import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
 import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
+import { ResetModal } from '@/components/ResetModal/ResetModal';
 
 export default function HomePage() {
   const currentUrl = global?.window && window.location;
   const router = useRouter();
-  const [showModal, setIsShowModal] = useState<boolean>();
+  const [showModal, setIsShowModal] = useState<boolean>(false);
   useEffect(() => {
     setIsShowModal(!!currentUrl?.search.split('=')[1]);
   }, [currentUrl]);
@@ -32,6 +33,7 @@ export default function HomePage() {
       >
         <CreateAccountMess />
       </ModalComponent>
+      <ResetModal />
       <SearchBlock />
       <NewProducts />
       <PopularProducts />

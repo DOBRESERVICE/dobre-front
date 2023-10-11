@@ -1,8 +1,8 @@
 import acceptIcon from './acceptIcon.svg';
 import appleIcon from './apple.svg';
 import DOBRE from './DOBRE.svg';
-import eyeClosed from './eyeClosed.png';
-import eyeOpen from './eyeOpen.png';
+import eyeClosed from './eyeClosed.svg';
+import eyeOpen from './eyeOpen.svg';
 import googleIcon from './google.svg';
 import autorizBanner from './leftBanner.png';
 import markerIcon from './markerIcon.svg';
@@ -66,6 +66,8 @@ import metabo from './brands/metabo.svg';
 import drill from './drill.png';
 import sliderRightBlur from './sliderRightBlur.svg';
 import sliderLeftBlur from './sliderLeftBlur.svg';
+import emailIcon from './emailIcon.svg';
+import closeModalIcon from './closeModalIcon.svg';
 
 export {
   acceptIcon,
@@ -111,6 +113,7 @@ export {
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
   logoDobre,
+  emailIcon,
   iconVk,
   fbIcon,
   tgIcon,
@@ -136,4 +139,5 @@ export {
   drill,
   sliderRightBlur,
   sliderLeftBlur,
+  closeModalIcon,
 };
