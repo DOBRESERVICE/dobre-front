@@ -1,12 +1,15 @@
-import axios, { AxiosRequestConfig } from 'axios';
+import axios from 'axios';
 import { BASE_URL } from '@/constants/urls';
 
-export const authRequest = axios.create({
+export const tokenRequest = axios.create({
   withCredentials: true,
   baseURL: `${BASE_URL}`,
 });
+export const defaultRequest = axios.create({
+  baseURL: `${BASE_URL}`,
+});
 
-authRequest.interceptors.request.use((config) => {
+tokenRequest.interceptors.request.use((config) => {
   config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
   return config;
 });

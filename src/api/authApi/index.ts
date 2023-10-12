@@ -1,23 +1,22 @@
-import { AuthResponse, RequestData } from '@/interfaces';
-import { authRequest } from '@/api/axios/instances';
-import axios, { AxiosResponse } from 'axios';
-import { BASE_URL } from '@/constants/urls';
+import { AuthResponse } from '@/interfaces';
+import { defaultRequest } from '@/api/axios/instances';
+import { AxiosResponse } from 'axios';
 
 export const registerUser = async (email: string, password: string): Promise<AxiosResponse<AuthResponse>> => {
-  return authRequest.post('/auth/register', {
+  return defaultRequest.post('/auth/register', {
     email,
     password,
   });
 };
 export const loginUser = async (email: string, password: string): Promise<AxiosResponse<AuthResponse>> => {
-  return authRequest.post('/auth/login', {
+  return defaultRequest.post('/auth/login', {
     email,
     password,
   });
 };
 
 export const checkUser = async (email: string) => {
-  return axios.post(BASE_URL + '/auth/check-user', {
+  return defaultRequest.post('/auth/check-user', {
     email,
   });
 };
