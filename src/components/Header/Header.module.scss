@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 .header {
   width: calc(100% - 64px);
-  padding: 22px 0px 26px 0px;
+  padding: 22px 0 26px 0;
   display: flex;
   gap:30px;
   position: relative;
@@ -45,23 +45,38 @@
 .cartCircle > img {
   position: absolute;
 }
+
+.leftBlock {
+  display: flex;
+  gap: 30px;
+  width: 50%;
+
+  & > div:nth-child(2) {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+.header .leftBlock {
+  width: 50%;
+}
+.catalogHeader .leftBlock {
+  width: auto;
+}
 .content {
   display: flex;
   gap: 30px;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
+  width: 50%;
 }
-.logo {
-  display: flex;
-  flex: 1;
+.catalogHeader .content {
+  width: auto;
   justify-content: center;
-  align-items: center;
 }
-.logo > img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%)
-}
+
 .header .topBar {
   display: none;
 }
@@ -182,8 +197,4 @@
   padding-block: 4px;
   padding-inline: 10px;
   color: $deep-blue;
-}
-.catalogHeader .logo > img {
-  position: static;
-  transform: none;
 }
