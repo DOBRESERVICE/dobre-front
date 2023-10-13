@@ -9,7 +9,8 @@
   padding-inline: 14px;
   padding-block: 10px;
   border: 1px solid $light-graphite;
-
+  position: relative;
+  cursor: pointer;
 }
 
 .content {

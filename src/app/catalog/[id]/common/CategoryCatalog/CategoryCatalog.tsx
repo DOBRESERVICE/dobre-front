@@ -7,15 +7,18 @@ import { CustomDatePicker } from '@/app/catalog/[id]/common/CustomDatePicker/Cus
 import { Pagination } from '@mui/material';
 import { customPagination } from '@/styles/buttonStyles';
 import { useState } from 'react';
-
+import { CustomSelect } from '@/app/catalog/[id]/common/CustomSelect/CustomSelect';
+import { sortSvg } from '@/assets/image';
 export const CategoryCatalog = () => {
   const [page, setPage] = useState<unknown>(0);
-  console.log(page);
   return (
     <div className={styles.categoryCatalogWrapper}>
       <div className={styles.content}>
-        <AvailableNow />
-        <CustomDatePicker />
+        <div className={styles.buttonsWrapper}>
+          <AvailableNow />
+          <CustomDatePicker />
+        </div>
+        <CustomSelect label='Сначала новые' labelImage={sortSvg} />
       </div>
 
       <div className={styles.categoryCatalog}>

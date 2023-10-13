@@ -72,6 +72,20 @@ import greyArrowNext from './greyArrowNext.svg';
 import rentButtonIcon from './rentButtonIcon.svg';
 import blackArrowNext from './blackArrowNext.svg';
 import dateImage from './dateImage.svg';
+import electroic from './Electronic.svg';
+import houseHold from './houseHold.svg';
+import clothes from './clothes.svg';
+import forKids from './forKids.svg';
+import renovation from './renovation.svg';
+import houseAndyarn from './houseAndyarn.svg';
+import furniture from './furniture.svg';
+import camping from './camping.svg';
+import sport from './sport.svg';
+import previous from './previousSlideButton.svg';
+import next from './nextSlideButton.svg';
+import leftWhiteSliderIcon from './leftWhiteSliderIcon.svg';
+import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
+import sortSvg from './sortSvg.svg';
 
 export {
   acceptIcon,
@@ -105,6 +119,8 @@ export {
   mockUser,
   mockItem,
   starReviews,
+  rightWhiteSliderIcon,
+  leftWhiteSliderIcon,
   verified,
   favouriteIcon,
   linkArrow,
@@ -115,6 +131,7 @@ export {
   testimonialsImage,
   emoji,
   blueArrow,
+  sortSvg,
   checkedIcon,
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
@@ -148,4 +165,15 @@ export {
   backArrow,
   greyArrowNext,
   dateImage,
+  furniture,
+  renovation,
+  clothes,
+  electroic,
+  forKids,
+  camping,
+  sport,
+  houseHold,
+  houseAndyarn,
+  previous,
+  next,
 };

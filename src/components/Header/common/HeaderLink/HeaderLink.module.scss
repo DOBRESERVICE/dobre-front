@@ -1,0 +1,11 @@
+@import "src/styles/variables";
+.headerLinkWrapper {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  & > p {
+    color: $black;
+    font-size: 14px;
+    font-weight: $fweight-big;
+  }
+}

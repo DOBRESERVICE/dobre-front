@@ -1,28 +1,33 @@
 'use client';
 import styles from './CustomSelect.module.scss';
-import { FormControl, InputLabel, MenuItem, Select, SvgIcon } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { FC, useState } from 'react';
 import { customLabel, customSelect } from '@/styles/buttonStyles';
 import { SelectHeader } from '@/app/catalog/[id]/common/SelectHeader/SelectHeader';
-import { Arrow } from '@/app/catalog/[id]/common/Arrow/Arrow';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Image, { StaticImageData } from 'next/image';
 
 interface CustomSelect {
-  headerName: string;
+  headerName?: string;
   label: string;
+  labelImage?: StaticImageData;
 }
 
-export const CustomSelect: FC<CustomSelect> = ({ headerName, label }) => {
+export const CustomSelect: FC<CustomSelect> = ({ headerName, label, labelImage }) => {
   const [value, setValue] = useState('');
 
   return (
     <div className={styles.customSelectWrapper}>
-      <SelectHeader headerName={headerName} />
+      {headerName && <SelectHeader headerName={headerName} />}
       <FormControl fullWidth>
         <InputLabel sx={customLabel} id='demo-simple-select-label'>
-          {label}
+          <div className={styles.labelContent}>
+            {labelImage && <Image src={labelImage} alt='date' />}
+            {label}
+          </div>
         </InputLabel>
         <Select
-          IconComponent={Arrow}
+          IconComponent={ExpandMoreIcon}
           labelId='demo-simple-select-label'
           id='demo-simple-select'
           value={value}

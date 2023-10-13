@@ -108,6 +108,23 @@ export const customSearchButton = {
     boxShadow: 'none',
   },
 };
+export const customSearchHeaderButton = {
+  borderRadius: '8px',
+  padding: '0px',
+  height: '30px',
+  fontSize: '13px',
+  color: colors.white,
+  fontWeight: 700,
+  background: colors.orangeGradient,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+};
 
 export const howWeWorkButton = {
   borderRadius: '8px',
@@ -229,7 +246,8 @@ export const rentInfoCustomButton = {
 
 export const customDatePicker = {
   position: 'absolute',
-  zIndex: '2',
+  bottom: '0px',
+  zIndex: '1',
 };
 
 export const customPagination = {
@@ -269,4 +287,8 @@ export const customPagination = {
     backgroundColor: colors.deepBlue,
     fontWeight: '600',
   },
+};
+
+export const customArrow = {
+  color: colors.graphite,
 };

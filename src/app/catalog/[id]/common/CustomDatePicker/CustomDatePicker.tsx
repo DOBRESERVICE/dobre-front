@@ -17,7 +17,7 @@ export const CustomDatePicker = () => {
   };
   return (
     <>
-      <div className={styles.customDatePickerWrapper}>
+      <div className={styles.customDatePickerWrapper} role='button' onClick={() => setIsOpen(!isOpen)}>
         <div className={styles.content}>
           <Image src={dateImage} alt='dateImage' />
           <p>Выберите дату</p>

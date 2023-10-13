@@ -43,7 +43,7 @@ export const ProductItem: FC<ProductItem> = ({
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
-      <div>
+      <div className={styles.mainImageWrapper}>
         <Image src={photoUrl} alt='item' />
       </div>
       <div className={styles.content}>
