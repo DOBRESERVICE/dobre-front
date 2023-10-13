@@ -1,15 +1,16 @@
 @import "src/styles/variables";
-.subCategoriesList {
+.optionsWrapper {
   display: flex;
   flex-direction: column;
-}
-.subCategoriesContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+  gap: 15px;
+  & > h2 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
 }
 
-.seeAll {
+.content {
   display: flex;
   align-items: center;
   gap: 10px;

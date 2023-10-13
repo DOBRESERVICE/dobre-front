@@ -2,8 +2,12 @@
 .asideWrapper {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  width: 300px;
+  gap: 35px;
+  width: 296px;
+  & hr {
+    width: 100%;
+   border: 1px solid $light-graphite;
+  }
 }
 .title {
   display: flex;
@@ -17,7 +21,6 @@
 }
 .chooseContent {
   display: flex;
-  width: 276px;
   flex-direction: column;
   gap: 34px;
 }

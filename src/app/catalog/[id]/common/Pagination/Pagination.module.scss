@@ -1,0 +1,16 @@
+@import "src/styles/variables";
+
+.paginationWrapper {
+  max-width: 620px;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.paginationItem {
+  color:$white;
+  width: 30px;
+  height: 30px;
+  background-color: $deep-blue;
+  text-align: center;
+}

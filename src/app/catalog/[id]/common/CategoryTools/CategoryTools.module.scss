@@ -2,7 +2,7 @@
 .categoryToolsWrapper {
   display: flex;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 23px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -31,12 +31,4 @@
     font-weight: 600;
     width: max-content;
   }
-}
-.arrow {
-  border: solid $graphite;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  transition: transform .5s;
-  padding: 3px;
-  transform: rotate(45deg);
 }

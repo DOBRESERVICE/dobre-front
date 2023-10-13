@@ -71,6 +71,7 @@ import backArrow from './backArrow.svg';
 import greyArrowNext from './greyArrowNext.svg';
 import rentButtonIcon from './rentButtonIcon.svg';
 import blackArrowNext from './blackArrowNext.svg';
+import dateImage from './dateImage.svg';
 
 export {
   acceptIcon,
@@ -146,4 +147,5 @@ export {
   blueNextArrow,
   backArrow,
   greyArrowNext,
+  dateImage,
 };

@@ -16,7 +16,6 @@ import {
   customLoginButton,
   customRentButton,
   customSearchButton,
-  customSearchInput,
 } from '@/styles/buttonStyles';
 import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';

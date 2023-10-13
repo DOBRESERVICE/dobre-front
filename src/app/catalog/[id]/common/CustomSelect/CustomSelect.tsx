@@ -1,11 +1,10 @@
 'use client';
 import styles from './CustomSelect.module.scss';
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select, SvgIcon } from '@mui/material';
 import { FC, useState } from 'react';
 import { customLabel, customSelect } from '@/styles/buttonStyles';
 import { SelectHeader } from '@/app/catalog/[id]/common/SelectHeader/SelectHeader';
-import Image from 'next/image';
-import { blueArrow, rentButtonIcon } from '@/assets/image';
+import { Arrow } from '@/app/catalog/[id]/common/Arrow/Arrow';
 
 interface CustomSelect {
   headerName: string;
@@ -23,6 +22,7 @@ export const CustomSelect: FC<CustomSelect> = ({ headerName, label }) => {
           {label}
         </InputLabel>
         <Select
+          IconComponent={Arrow}
           labelId='demo-simple-select-label'
           id='demo-simple-select'
           value={value}

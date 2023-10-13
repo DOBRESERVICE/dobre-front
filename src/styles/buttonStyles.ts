@@ -139,6 +139,9 @@ export const authCustomInput = {
       color: colors.mainText,
     },
   },
+  '& label.Mui-error + div input': {
+    color: colors.inputError,
+  },
 };
 
 export const authButton = {
@@ -147,8 +150,12 @@ export const authButton = {
   textTransform: 'none',
 };
 export const authCheckBox = {
+  borderRadius: '4px',
   color: colors.lightGraphite,
   padding: '0px',
+  '& .MuiSvgIcon-root': {
+    borderRadius: '20',
+  },
 };
 
 export const customSelect = {
@@ -217,5 +224,49 @@ export const rentInfoCustomButton = {
   '&:active': {
     backgroundColor: colors.activeDeepBlue,
     boxShadow: 'none',
+  },
+};
+
+export const customDatePicker = {
+  position: 'absolute',
+  zIndex: '2',
+};
+
+export const customPagination = {
+  marginTop: '70px',
+  '& > ul': {
+    gap: '10px',
+  },
+  '& button': {
+    margin: 0,
+  },
+  '& li': {
+    backgroundColor: colors.white,
+    borderRadius: '8px',
+    color: colors.deepBlue,
+    borderColor: colors.white,
+  },
+  '&  li > button': {
+    borderColor: 'transparent',
+    color: colors.deepBlue,
+    backgroundColor: colors.white,
+    fontWeight: '600',
+  },
+  '&  li:first-child > button': {
+    backgroundColor: colors.lightBlue,
+  },
+  '&  li:last-child > button': {
+    backgroundColor: colors.lightBlue,
+  },
+  '&  li > button.Mui-selected': {
+    borderColor: 'transparent',
+    color: colors.white,
+    backgroundColor: colors.deepBlue,
+  },
+  '&  li > button.Mui-selected:hover': {
+    borderColor: 'transparent',
+    color: colors.white,
+    backgroundColor: colors.deepBlue,
+    fontWeight: '600',
   },
 };
