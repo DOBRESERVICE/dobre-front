@@ -38,7 +38,6 @@ export const CreateAccountComponent = () => {
     setEmailValue(value);
     setEmailError(!isValidEmail);
   };
-
   return (
     <>
       <div className={styles.content}>
@@ -73,7 +72,7 @@ export const CreateAccountComponent = () => {
       </div>
 
       <ReCAPTCHA
-        sitekey='6Le6LlYoAAAAADp_IBK6AYMf73sp2XnyNJKmPnyz'
+        sitekey='6LcJU5soAAAAANaKcvxeLPtkamAcYlnRlaNnAyUO'
         ref={recaptchaRef}
         onChange={handleCaptchaSubmission}
         style={{ transform: 'scale(1.26)', alignSelf: 'center' }}
