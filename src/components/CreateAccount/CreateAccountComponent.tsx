@@ -7,7 +7,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
 import { emailRules } from '@/constants';
 import { DifficultyProgressBar } from '@/app/login/common/DifficultyProgressBar/DifficultyProgressBar';
-import { AuthStep, useAuthData } from '@/context/authContext';
+import { useAuthData } from '@/context/authContext';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
