@@ -16,7 +16,7 @@ export const ResetPasswordComponent = () => {
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty;
   const router = useRouter();
-  const { isLetterSent, handleSendEmailLetter } = useAuthData();
+  const { isLetterSent, handleSendEmailLetter, setIsLetterSent } = useAuthData();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);

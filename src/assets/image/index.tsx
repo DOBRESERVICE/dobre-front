@@ -67,7 +67,6 @@ import drill from './drill.png';
 import sliderRightBlur from './sliderRightBlur.svg';
 import sliderLeftBlur from './sliderLeftBlur.svg';
 import emailIcon from './emailIcon.svg';
-import closeModalIcon from './closeModalIcon.svg';
 import electroic from './Electronic.svg';
 import houseHold from './houseHold.svg';
 import clothes from './clothes.svg';
@@ -79,6 +78,7 @@ import camping from './camping.svg';
 import sport from './sport.svg';
 import previous from './previousSlideButton.svg';
 import next from './nextSlideButton.svg';
+import successIcon from './successIcon.svg';
 
 export {
   acceptIcon,
@@ -161,4 +161,5 @@ export {
   houseAndyarn,
   previous,
   next,
+  successIcon,
 };

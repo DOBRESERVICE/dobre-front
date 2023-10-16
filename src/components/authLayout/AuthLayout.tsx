@@ -16,7 +16,7 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
       setIsLoading(true);
       router.push('/');
     }
-  }, []);
+  }, [isLoading]);
   if (isLoading) {
     return <div>Loading... </div>;
   }
@@ -30,7 +30,7 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
           <p>Легко арендовать и безопасно сдавать</p>
           <Image src={dobreBanner} alt='banner' />
         </div>
-        {children}
+        <div className={styles.wrapper}>{children}</div>
       </div>
       <div className={styles.dobreImage}>
         <Image src={DOBRE} alt='DOBRE' />

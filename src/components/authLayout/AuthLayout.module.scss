@@ -68,3 +68,9 @@
   height: 100%;
   object-fit: cover;
 }
+.wrapper {
+  display: flex;
+  max-width: 385px;
+  flex-direction: column;
+  gap: 36px;
+}

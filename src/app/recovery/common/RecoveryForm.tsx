@@ -21,9 +21,14 @@ export const RecoveryForm = () => {
   const params = useSearchParams();
   const newSearchParams = new URLSearchParams(params);
   newSearchParams.set('token', token);
+
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
-  }, []);
+    if (!token) {
+      router.push('/');
+    }
+  }, [token]);
+
   useEffect(() => {
     if (isSuccessfulRecovery) {
       router.push('/login');

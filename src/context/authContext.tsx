@@ -4,69 +4,78 @@ import { AxiosError } from 'axios';
 import { StatusCode } from '@/enums';
 
 interface IAuthContext {
-  isModalShown: boolean;
+  isSuccessModalShown: boolean;
   isResetModalShown: boolean;
-  setIsModalShown: Dispatch<SetStateAction<boolean>>;
+  setIsSuccessModalShown: Dispatch<SetStateAction<boolean>>;
   setIsResetModalShown: Dispatch<SetStateAction<boolean>>;
   handleRegister: (email: string, password: string) => void;
   handleLogin: (email: string, password: string) => void;
   handleRecoveryPassword: (token: string, password: string) => void;
   handleConfirmEmail: (token: string) => void;
   handleSendEmailLetter: (email: string) => void;
+  setIsLetterSent: Dispatch<SetStateAction<boolean>>;
+  setIsRegistered: Dispatch<SetStateAction<boolean>>;
+  setIsLogged: Dispatch<SetStateAction<boolean>>;
   errorText: string;
-  setActiveStep: Dispatch<SetStateAction<AuthStep>>;
-  activeStep: AuthStep;
   isSuccessfulRecovery: boolean;
   isEmailConfirmed: boolean;
   isLetterSent: boolean;
+  isRegistered: boolean;
+  isLogged: boolean;
+  userEmail: string;
 }
-export const enum AuthStep {
-  LOGIN = 'login',
-  CREATE = 'create',
-  RESET = 'reset',
-}
+
 export const AuthContext = createContext<IAuthContext>({
-  isModalShown: false,
-  isResetModalShown: false,
-  setIsModalShown: () => {},
+  setIsSuccessModalShown: () => {},
+  setIsRegistered: () => {},
+  setIsLetterSent: () => {},
   handleRegister: () => {},
   handleLogin: () => {},
   handleRecoveryPassword: () => {},
   handleConfirmEmail: () => {},
   handleSendEmailLetter: () => {},
-  errorText: '',
-  activeStep: AuthStep.LOGIN,
-  setActiveStep: () => {},
   setIsResetModalShown: () => {},
+  setIsLogged: () => {},
+  errorText: '',
+  isSuccessModalShown: false,
+  isResetModalShown: false,
   isEmailConfirmed: false,
   isSuccessfulRecovery: false,
   isLetterSent: false,
+  isRegistered: false,
+  isLogged: false,
+  userEmail: '',
 });
 
 export const AuthProvider = ({ children }: any) => {
-  const [isModalShown, setIsModalShown] = useState(false);
+  const [isSuccessModalShown, setIsSuccessModalShown] = useState(false);
   const [isLetterSent, setIsLetterSent] = useState(false);
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
   const [isEmailConfirmed, setIsEmailConfirmed] = useState(false);
   const [isSuccessfulRecovery, setIsSuccessfulRecovery] = useState(false);
   const [isResetModalShown, setIsResetModalShown] = useState(false);
   const [errorText, setErrorText] = useState('');
-  const [activeStep, setActiveStep] = useState<AuthStep>(AuthStep.LOGIN);
+  const [userEmail, setUserEmail] = useState('');
   const handleRegister = async (email: string, password: string) => {
     try {
-      await registerUser(email, password);
-      setIsModalShown(true);
+      const response = await registerUser(email, password);
+      setUserEmail(response.data.user.email);
+      setIsRegistered(true);
     } catch (error) {
       const axiosError = error as AxiosError;
       console.error('Error during registration:', axiosError.message);
-      setIsModalShown(false);
+      setIsRegistered(false);
     }
   };
   const handleLogin = async (email: string, password: string) => {
     try {
       const response = await loginUser(email, password);
       localStorage.setItem('token', response.data.authToken);
+      setIsLogged(true);
     } catch (error) {
       const axiosError = error as AxiosError;
+      setIsLogged(false);
       if (axiosError.response?.status === StatusCode.Unauthorized) {
         setErrorText('Доступ запрещен.');
       } else if (axiosError.response?.status === StatusCode.NotFound) {
@@ -109,7 +118,6 @@ export const AuthProvider = ({ children }: any) => {
     try {
       await sendEmailOnRecovery(email);
       setIsLetterSent(true);
-      setIsResetModalShown(true);
     } catch (error) {
       const axiosError = error as AxiosError;
       setIsLetterSent(false);
@@ -121,13 +129,11 @@ export const AuthProvider = ({ children }: any) => {
     }
   };
   const contextValue = {
-    isModalShown,
-    setIsModalShown,
+    isSuccessModalShown,
+    setIsSuccessModalShown,
     handleRegister,
     errorText,
     handleLogin,
-    activeStep,
-    setActiveStep,
     isResetModalShown,
     setIsResetModalShown,
     handleRecoveryPassword,
@@ -136,6 +142,12 @@ export const AuthProvider = ({ children }: any) => {
     handleConfirmEmail,
     handleSendEmailLetter,
     isLetterSent,
+    isRegistered,
+    isLogged,
+    userEmail,
+    setIsRegistered,
+    setIsLetterSent,
+    setIsLogged,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;

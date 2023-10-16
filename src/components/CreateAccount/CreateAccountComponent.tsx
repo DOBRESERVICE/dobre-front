@@ -1,10 +1,8 @@
 'use client';
 import TextField from '@mui/material/TextField';
 import styles from './CreateAccount.module.scss';
-import { ChangeEvent, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { Button, Checkbox } from '@mui/material';
-import { ModalComponent } from '@/components/ModalComponent';
-import { CreateAccountMess } from '../NotificationMessageModal/CreateAccount';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
 import { emailRules } from '@/constants';
@@ -13,6 +11,7 @@ import { AuthStep, useAuthData } from '@/context/authContext';
 import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
+import { useRouter } from 'next/navigation';
 
 export const CreateAccountComponent = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -25,8 +24,8 @@ export const CreateAccountComponent = () => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isModalShown, setIsModalShown, handleRegister, setActiveStep } = useAuthData();
-
+  const { isRegistered, handleRegister } = useAuthData();
+  const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
       setIsVerified(true);
@@ -38,15 +37,17 @@ export const CreateAccountComponent = () => {
     setEmailValue(value);
     setEmailError(!isValidEmail);
   };
+
+  useEffect(() => {
+    if (isRegistered) {
+      router.push('/');
+    }
+  }, [isRegistered]);
+
   return (
     <>
       <div className={styles.content}>
-        <AuthHeader
-          title='Создание аккаунта'
-          text='Вы уже зарегистрированы?'
-          actionType='Войти'
-          setActiveStep={() => setActiveStep(AuthStep.LOGIN)}
-        />
+        <AuthHeader title='Создание аккаунта' text='Вы уже зарегистрированы?' actionType='Войти' link='login' />
         <AuthServices />
       </div>
       <div className={styles.inputWrapper}>
@@ -92,9 +93,6 @@ export const CreateAccountComponent = () => {
       >
         Создать аккаунт
       </Button>
-      <ModalComponent open={isModalShown} handleClose={() => setIsModalShown(false)}>
-        <CreateAccountMess />
-      </ModalComponent>
     </>
   );
 };

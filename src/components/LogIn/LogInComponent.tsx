@@ -12,6 +12,7 @@ import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { authButton, authCheckBox, authCustomInput } from '@/styles/buttonStyles';
 import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export const LogInComponent = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -19,7 +20,7 @@ export const LogInComponent = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const { handleLogin, setActiveStep } = useAuthData();
+  const { handleLogin, isLogged, setIsLogged } = useAuthData();
   const isPasswordAcceptable = password.length >= 8;
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty || !isPasswordAcceptable;
@@ -30,20 +31,14 @@ export const LogInComponent = () => {
     setEmail(value);
     setEmailError(!isValidEmail);
   };
-  const token = localStorage.getItem('token');
   useEffect(() => {
-    if (token) {
+    if (isLogged) {
       router.push('/');
     }
-  }, [token]);
+  }, [isLogged]);
   return (
     <>
-      <AuthHeader
-        title='Вход'
-        text='Новый пользователь?'
-        actionType='Создать учетную запись'
-        setActiveStep={() => setActiveStep(AuthStep.CREATE)}
-      />
+      <AuthHeader title='Вход' text='Новый пользователь?' actionType='Создать учетную запись' link='create' />
       <div className={styles.inputWrapper}>
         <TextField
           id='outlined-basic'
@@ -68,9 +63,9 @@ export const LogInComponent = () => {
             <Checkbox sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />
             <p>Запомнить пароль</p>
           </div>
-          <div className={styles.hidePass} onClick={() => setActiveStep(AuthStep.RESET)}>
+          <Link className={styles.hidePass} href={'/reset'}>
             Забыли пароль?
-          </div>
+          </Link>
         </div>
       </div>
 
