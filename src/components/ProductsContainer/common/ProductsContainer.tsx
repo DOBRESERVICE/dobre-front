@@ -1,9 +1,10 @@
+'use client';
 import styles from './ProductsContainer.module.scss';
-import classNames from 'classnames';
+
 import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
 import { FC } from 'react';
-import Image from 'next/image';
-import { sliderLeftBlur, sliderRightBlur } from '@/assets/image';
+import { SwiperSlide } from 'swiper/react';
+import { Slider } from '@/components/Slider/Slider';
 
 interface ProductsContainer {
   productsData: ProductItem[];
@@ -11,30 +12,25 @@ interface ProductsContainer {
 export const ProductsContainer: FC<ProductsContainer> = ({ productsData }) => {
   return (
     <div className={styles.productsContainer}>
-      <div className={styles.productsWrapper}>
-        <div className={classNames(styles.blur, styles.leftBlur)}>
-          <Image src={sliderLeftBlur} alt='blur' />
-        </div>
-        <div className={classNames(styles.blur, styles.rightBlur)}>
-          <Image src={sliderRightBlur} alt='blur' />
-        </div>
+      <Slider>
         {productsData.map((product) => (
-          <ProductItem
-            key={product.id}
-            photoUrl={product.photoUrl}
-            userUrl={product.userUrl}
-            rentEndDate={product.rentEndDate}
-            itemName={product.itemName}
-            status={product.status}
-            rating={product.rating}
-            feedbackCount={product.feedbackCount}
-            sellerInfo={product.sellerInfo}
-            isAvailable={product.isAvailable}
-            isConfirmed={product.isConfirmed}
-            rentInfoArray={product.rentInfoArray}
-          />
+          <SwiperSlide key={product.id}>
+            <ProductItem
+              photoUrl={product.photoUrl}
+              userUrl={product.userUrl}
+              rentEndDate={product.rentEndDate}
+              itemName={product.itemName}
+              status={product.status}
+              rating={product.rating}
+              feedbackCount={product.feedbackCount}
+              sellerInfo={product.sellerInfo}
+              isAvailable={product.isAvailable}
+              isConfirmed={product.isConfirmed}
+              rentInfoArray={product.rentInfoArray}
+            />
+          </SwiperSlide>
         ))}
-      </div>
+      </Slider>
     </div>
   );
 };

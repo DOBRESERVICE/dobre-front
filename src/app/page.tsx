@@ -16,12 +16,6 @@ import { Recommendations } from '@/components/Recommendations/Recommendations';
 import { ResetModal } from '@/components/ResetModal/ResetModal';
 
 export default function HomePage() {
-  const currentUrl = global?.window && window.location;
-  const router = useRouter();
-  const [showModal, setIsShowModal] = useState<boolean>(false);
-  useEffect(() => {
-    setIsShowModal(!!currentUrl?.search.split('=')[1]);
-  }, [currentUrl]);
   return (
     <HomeLayout>
       <ModalComponent

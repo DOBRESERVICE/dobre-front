@@ -1,34 +1,35 @@
 'use client';
 
-import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
-import { AuthStep, useAuthData } from '@/context/authContext';
+import { useAuthData } from '@/context/authContext';
 import TextField from '@mui/material/TextField';
 import { authButton, authCustomInput } from '@/styles/buttonStyles';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { emailRules } from '@/constants';
 import { Button } from '@mui/material';
-import { ResetModal } from '@/components/ResetModal/ResetModal';
 import { useRouter } from 'next/navigation';
 import { ResetPasswordHeader } from '@/components/ResetPassword/common/ResetPasswordHeader/ResetPasswordHeader';
+import { sendEmailOnRecovery } from '@/api/authApi';
 
 export const ResetPasswordComponent = () => {
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const { handleLogin, setActiveStep } = useAuthData();
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty;
   const router = useRouter();
-  const { setIsResetModalShown } = useAuthData();
+  const { isLetterSent, handleSendEmailLetter } = useAuthData();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);
     setEmail(value);
     setEmailError(!isValidEmail);
   };
-  const handleClick = () => {
-    router.push('/');
-    setIsResetModalShown(true);
-  };
+
+  useEffect(() => {
+    if (isLetterSent) {
+      router.push('/');
+    }
+  }, [isLetterSent]);
+
   return (
     <>
       <ResetPasswordHeader
@@ -46,7 +47,7 @@ export const ResetPasswordComponent = () => {
         onChange={handleEmailChange}
         helperText={emailError ? 'invalid email' : ''}
       />
-      <Button variant='contained' disabled={isDisabled} sx={authButton} onClick={handleClick}>
+      <Button variant='contained' disabled={isDisabled} sx={authButton} onClick={() => handleSendEmailLetter(email)}>
         Получить ссылку
       </Button>
     </>

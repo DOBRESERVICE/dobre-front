@@ -1,0 +1,10 @@
+.headerLinks {
+  display: flex;
+  gap: 32px;
+  margin-left: 31px;
+  overflow-x: scroll;
+
+}
+.headerLinks::-webkit-scrollbar {
+   display: none;
+ }

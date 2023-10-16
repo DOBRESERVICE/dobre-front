@@ -1,23 +1,31 @@
-import { AuthResponse, RequestData } from '@/interfaces';
-import { authRequest } from '@/api/axios/instances';
-import axios, { AxiosResponse } from 'axios';
-import { BASE_URL } from '@/constants/urls';
+import { AuthResponse } from '@/interfaces';
+import { defaultRequest, tokenRequest } from '@/api/axios/instances';
+import { AxiosResponse } from 'axios';
 
 export const registerUser = async (email: string, password: string): Promise<AxiosResponse<AuthResponse>> => {
-  return authRequest.post('/auth/register', {
+  return defaultRequest.post('/auth/register', {
     email,
     password,
   });
 };
 export const loginUser = async (email: string, password: string): Promise<AxiosResponse<AuthResponse>> => {
-  return authRequest.post('/auth/login', {
+  return defaultRequest.post('/auth/login', {
     email,
     password,
   });
 };
 
-export const checkUser = async (email: string) => {
-  return axios.post(BASE_URL + '/auth/check-user', {
-    email,
+export const sendEmailOnRecovery = async (email: string) => {
+  return defaultRequest.get(`/auth/restore-email/${email}`);
+};
+
+export const recoveryPassword = async (token: string, password: string) => {
+  return defaultRequest.post('/auth/restore-email', {
+    token,
+    password,
   });
+};
+
+export const confirmEmail = async (token: string) => {
+  return defaultRequest.get(`/auth/confirm-email/${token}`);
 };

@@ -68,6 +68,17 @@ import sliderRightBlur from './sliderRightBlur.svg';
 import sliderLeftBlur from './sliderLeftBlur.svg';
 import emailIcon from './emailIcon.svg';
 import closeModalIcon from './closeModalIcon.svg';
+import electroic from './Electronic.svg';
+import houseHold from './houseHold.svg';
+import clothes from './clothes.svg';
+import forKids from './forKids.svg';
+import renovation from './renovation.svg';
+import houseAndyarn from './houseAndyarn.svg';
+import furniture from './furniture.svg';
+import camping from './camping.svg';
+import sport from './sport.svg';
+import previous from './previousSlideButton.svg';
+import next from './nextSlideButton.svg';
 
 export {
   acceptIcon,
@@ -139,5 +150,15 @@ export {
   drill,
   sliderRightBlur,
   sliderLeftBlur,
-  closeModalIcon,
+  furniture,
+  renovation,
+  clothes,
+  electroic,
+  forKids,
+  camping,
+  sport,
+  houseHold,
+  houseAndyarn,
+  previous,
+  next,
 };
