@@ -4,11 +4,23 @@
   display: flex;
   width: calc(100% - 272px);
   justify-content: space-between;
-  & > h3 {
+}
+.textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  &  > h3 {
     color: $black;
     font-size: 24px;
     font-weight: $fweight-big;
   }
+  & > p {
+      color: $graphite;
+      font-size: 13px;
+      font-weight: 600;
+    align-self: end;
+    }
 }
 .linkContainer {
   display: flex;

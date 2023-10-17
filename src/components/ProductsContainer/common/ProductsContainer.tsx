@@ -5,6 +5,8 @@ import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
 import { FC } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import { Slider } from '@/components/Slider/Slider';
+import { nextArrow, previous } from '@/assets/image';
+import { SwiperButtons } from '@/components/Slider/common/SwiperButtons/SwiperButtons';
 
 interface ProductsContainer {
   productsData: ProductItem[];
@@ -30,6 +32,7 @@ export const ProductsContainer: FC<ProductsContainer> = ({ productsData }) => {
             />
           </SwiperSlide>
         ))}
+        <SwiperButtons rightIcon={nextArrow} leftIcon={previous} />
       </Slider>
     </div>
   );

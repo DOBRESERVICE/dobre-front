@@ -66,6 +66,12 @@ import metabo from './brands/metabo.svg';
 import drill from './drill.png';
 import sliderRightBlur from './sliderRightBlur.svg';
 import sliderLeftBlur from './sliderLeftBlur.svg';
+import blueNextArrow from './blueNextArrow.svg';
+import backArrow from './backArrow.svg';
+import greyArrowNext from './greyArrowNext.svg';
+import rentButtonIcon from './rentButtonIcon.svg';
+import blackArrowNext from './blackArrowNext.svg';
+import dateImage from './dateImage.svg';
 import electroic from './Electronic.svg';
 import houseHold from './houseHold.svg';
 import clothes from './clothes.svg';
@@ -77,9 +83,14 @@ import camping from './camping.svg';
 import sport from './sport.svg';
 import previous from './previousSlideButton.svg';
 import next from './nextSlideButton.svg';
+import leftWhiteSliderIcon from './leftWhiteSliderIcon.svg';
+import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
+import sortSvg from './sortSvg.svg';
 
 export {
   acceptIcon,
+  blackArrowNext,
+  rentButtonIcon,
   userIcon,
   whiteLogo,
   vkIcon,
@@ -108,6 +119,8 @@ export {
   mockUser,
   mockItem,
   starReviews,
+  rightWhiteSliderIcon,
+  leftWhiteSliderIcon,
   verified,
   favouriteIcon,
   linkArrow,
@@ -118,6 +131,7 @@ export {
   testimonialsImage,
   emoji,
   blueArrow,
+  sortSvg,
   checkedIcon,
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
@@ -147,6 +161,10 @@ export {
   drill,
   sliderRightBlur,
   sliderLeftBlur,
+  blueNextArrow,
+  backArrow,
+  greyArrowNext,
+  dateImage,
   furniture,
   renovation,
   clothes,

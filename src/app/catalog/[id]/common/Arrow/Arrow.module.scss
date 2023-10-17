@@ -1,0 +1,15 @@
+@import "src/styles/variables";
+
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 10px;
+  height: 6px;
+  pointer-events: all;
+  transition: transform .3s;
+}
+.isOpen {
+  transform: rotate(180deg);
+}

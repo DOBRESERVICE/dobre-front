@@ -1,0 +1,21 @@
+@import "src/styles/variables";
+.optionsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  & > h2 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  & > p {
+    color: $deep-blue;
+    font-weight: $fweight-big;
+  }
+}
