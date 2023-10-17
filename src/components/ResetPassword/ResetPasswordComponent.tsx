@@ -1,29 +1,55 @@
 'use client';
+
+import { useAuthData } from '@/context/authContext';
 import TextField from '@mui/material/TextField';
-import styles from './ResetPassword.module.scss';
-import { useState } from 'react';
+import { authButton, authCustomInput } from '@/styles/buttonStyles';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { emailRules } from '@/constants';
 import { Button } from '@mui/material';
-import { ModalComponent } from '../ModalComponent';
-import { LinkResetMess } from '../NotificationMessageModal/LinkReset';
+import { useRouter } from 'next/navigation';
+import { ResetPasswordHeader } from '@/components/ResetPassword/common/ResetPasswordHeader/ResetPasswordHeader';
+import { sendEmailOnRecovery } from '@/api/authApi';
 
 export const ResetPasswordComponent = () => {
-  const [isShowModal, setIsShowModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState(false);
+  const isEmailDirty = email.length > 0;
+  const isDisabled = emailError || !isEmailDirty;
+  const router = useRouter();
+  const { isLetterSent, handleSendEmailLetter, setIsLetterSent } = useAuthData();
+  const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const isValidEmail = emailRules.test(value);
+    setEmail(value);
+    setEmailError(!isValidEmail);
+  };
+
+  useEffect(() => {
+    if (isLetterSent) {
+      router.push('/');
+    }
+  }, [isLetterSent]);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.title}>Восстановление пароля</div>
-      <div className={styles.resetText}>
-        Введите e-mail адрес на который был зарегистрирован ваш аккаунт и мы отправим ссылку для восстановления
-      </div>
-      <div className={styles.inputWrapper}>
-        <TextField id='outlined-basic' label='Email' variant='outlined' className={styles.inputSyle} size='small' />
-      </div>
-      <Button variant='contained' className={styles.logInButton}>
+    <>
+      <ResetPasswordHeader
+        title='Восстановление пароля'
+        text='Введите e-mail адрес на который был зарегистрирован ваш аккаунт и мы отправим ссылку для восстановления'
+      />
+      <TextField
+        id='outlined-basic'
+        label='Email'
+        error={emailError}
+        variant='outlined'
+        size='small'
+        value={email}
+        sx={authCustomInput}
+        onChange={handleEmailChange}
+        helperText={emailError ? 'invalid email' : ''}
+      />
+      <Button variant='contained' disabled={isDisabled} sx={authButton} onClick={() => handleSendEmailLetter(email)}>
         Получить ссылку
       </Button>
-      <ModalComponent open={isShowModal} handleClose={() => setIsShowModal(false)}>
-        <LinkResetMess />
-      </ModalComponent>
-    </div>
+    </>
   );
 };

@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+.modalContent {
+  display: flex;
+  gap: 30px;
+  padding-block: 50px;
+  padding-inline: 66px;
+  border-radius: 14px;
+  max-width: 520px;
+  background-color: $white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  & > h2 {
+    color: $black;
+    text-align: center;
+    font-size: 26px;
+    font-weight: $fweight-big;
+  }
+
+  & > p {
+    color: $black;
+    text-align: center;
+    font-size: 17px;
+  }
+
+}

@@ -19,25 +19,6 @@ export const customCategoriesButton = {
   },
 };
 
-export const customPremiumButton = {
-  height: '45px',
-  backgroundColor: colors.mainText,
-  gap: '10px',
-  boxShadow: 'none',
-  color: colors.white,
-  fontWeight: 700,
-  fontSize: '15px',
-  textTransform: 'none',
-  borderRadius: '8px',
-  '&:hover': {
-    backgroundColor: colors.hoverBlack,
-    boxShadow: 'none',
-  },
-  '&:active': {
-    backgroundColor: colors.activeBlack,
-    boxShadow: 'none',
-  },
-};
 export const customRentButton = {
   height: '45px',
   backgroundColor: colors.deepBlue,
@@ -159,12 +140,24 @@ export const authCustomInput = {
   '& label.Mui-error + div input': {
     color: colors.inputError,
   },
+  '& > label': {
+    fontSize: ' 15px',
+    fontWeight: '600',
+    color: colors.graphite,
+  },
 };
 
 export const authButton = {
   height: '50px',
   borderRadius: '8px',
   textTransform: 'none',
+  boxShadow: 'none',
+  '&:hover': {
+    boxShadow: 'none',
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
 };
 export const authCheckBox = {
   borderRadius: '4px',
@@ -240,6 +233,45 @@ export const rentInfoCustomButton = {
   },
   '&:active': {
     backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};
+
+export const customModalButton = {
+  height: '50px',
+  backgroundColor: colors.deepBlue,
+  paddingInline: '20px',
+  gap: '10px',
+  boxShadow: 'none',
+  color: colors.white,
+  fontWeight: 700,
+  fontSize: '15px',
+  textTransform: 'none',
+  borderRadius: '8px',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};
+export const customRecoveryLightButton = {
+  height: '50px',
+  backgroundColor: colors.lightBlue,
+  boxShadow: 'none',
+  color: colors.deepBlue,
+  fontWeight: 700,
+  fontSize: '15px',
+  textTransform: 'none',
+  borderRadius: '8px',
+  '&:hover': {
+    backgroundColor: colors.hoverLightBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeLightBlue,
     boxShadow: 'none',
   },
 };

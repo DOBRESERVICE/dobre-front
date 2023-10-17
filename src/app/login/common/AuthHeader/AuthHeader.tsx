@@ -1,26 +1,22 @@
 import styles from './AuthHeader.module.scss';
 import { FC } from 'react';
+import Link from 'next/link';
 
 interface AuthHeader {
-  setActiveStep: () => void;
-  actionType: string;
+  link: string;
+  actionType?: string;
   title: string;
   text: string;
 }
-export const AuthHeader: FC<AuthHeader> = ({ setActiveStep, actionType, text, title }) => {
-  const handle = () => {
-    setActiveStep();
-    console.log('sss');
-  };
-  console.log(title);
+export const AuthHeader: FC<AuthHeader> = ({ link, actionType, text, title }) => {
   return (
     <div className={styles.authHeaderWrapper}>
       <h2 className={styles.title}>{title}</h2>
       <p className={styles.text}>
         {text}
-        <span className={styles.blueText} onClick={handle}>
+        <Link className={styles.blueText} href={`/${link}`}>
           {actionType}
-        </span>
+        </Link>
       </p>
     </div>
   );

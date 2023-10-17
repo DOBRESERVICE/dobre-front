@@ -1,8 +1,8 @@
 import acceptIcon from './acceptIcon.svg';
 import appleIcon from './apple.svg';
 import DOBRE from './DOBRE.svg';
-import eyeClosed from './eyeClosed.png';
-import eyeOpen from './eyeOpen.png';
+import eyeClosed from './eyeClosed.svg';
+import eyeOpen from './eyeOpen.svg';
 import googleIcon from './google.svg';
 import autorizBanner from './leftBanner.png';
 import markerIcon from './markerIcon.svg';
@@ -72,6 +72,7 @@ import greyArrowNext from './greyArrowNext.svg';
 import rentButtonIcon from './rentButtonIcon.svg';
 import blackArrowNext from './blackArrowNext.svg';
 import dateImage from './dateImage.svg';
+import emailIcon from './emailIcon.svg';
 import electroic from './Electronic.svg';
 import houseHold from './houseHold.svg';
 import clothes from './clothes.svg';
@@ -83,6 +84,7 @@ import camping from './camping.svg';
 import sport from './sport.svg';
 import previous from './previousSlideButton.svg';
 import next from './nextSlideButton.svg';
+import successIcon from './successIcon.svg';
 import leftWhiteSliderIcon from './leftWhiteSliderIcon.svg';
 import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
 import sortSvg from './sortSvg.svg';
@@ -136,6 +138,7 @@ export {
   howWeWorkFirstGroup,
   howWeWorkSecondGroup,
   logoDobre,
+  emailIcon,
   iconVk,
   fbIcon,
   tgIcon,
@@ -176,4 +179,5 @@ export {
   houseAndyarn,
   previous,
   next,
+  successIcon,
 };
