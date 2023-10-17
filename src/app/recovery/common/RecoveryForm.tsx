@@ -16,11 +16,9 @@ export const RecoveryForm = () => {
   const router = useRouter();
   const pathName = usePathname();
   const { isSuccessfulRecovery, handleRecoveryPassword } = useAuthData();
-  const token =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk4ZDA4NjM5LWU3MjYtNGZmOC05ODk1LTEzYjQ3YzYyMWE1MSIsImVtYWlsIjoici5lbnRpaW5uQGdtYWlsLmNvbSIsImlhdCI6MTY5NzQ0MzQ0OCwiZXhwIjoxNjk4MDQ4MjQ4fQ.8l53XQGxory9FZd0IqIxQWJiaA9jetq50T311iwwvMk';
   const params = useSearchParams();
   const newSearchParams = new URLSearchParams(params);
-  newSearchParams.set('token', token);
+  const token = newSearchParams.get('token');
 
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
@@ -34,6 +32,11 @@ export const RecoveryForm = () => {
       router.push('/login');
     }
   }, [isSuccessfulRecovery]);
+
+  if (token === null) {
+    return;
+  }
+
   return (
     <div className={styles.formWrapper}>
       <div className={styles.content}>
