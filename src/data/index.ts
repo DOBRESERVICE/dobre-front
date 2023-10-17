@@ -405,22 +405,27 @@ export const brandsData = [
   {
     id: 1,
     imageUrl: bosch,
+    brandName: 'Bosch',
   },
   {
     id: 2,
     imageUrl: makita,
+    brandName: 'Makita',
   },
   {
     id: 3,
     imageUrl: karcher,
+    brandName: 'Karcher',
   },
   {
     id: 4,
     imageUrl: hilti,
+    brandName: 'Hilti',
   },
   {
     id: 5,
     imageUrl: dewalt,
+    brandName: 'DeWalt',
   },
   {
     id: 6,
@@ -686,6 +691,68 @@ export const catalogData = [
   },
 ];
 
+export const qualityButtonsData = [
+  {
+    id: 1,
+    qualityType: 'Новое',
+  },
+  {
+    id: 2,
+    qualityType: 'Как новое',
+  },
+  {
+    id: 3,
+    qualityType: 'Хорошее',
+  },
+  {
+    id: 4,
+    qualityType: 'Среднее',
+  },
+];
+
+export const subCategoriesData = [
+  {
+    id: 1,
+    text: 'Болгарки УШМ',
+  },
+  {
+    id: 2,
+    text: 'Дрели и шуруповерты',
+  },
+  {
+    id: 3,
+    text: 'Перфораторы',
+  },
+  {
+    id: 4,
+    text: 'Шлифовальные машины',
+  },
+  {
+    id: 5,
+    text: 'Электрорубанки',
+  },
+  {
+    id: 6,
+    text: 'Электрофрезеры',
+  },
+  {
+    id: 7,
+    text: 'Бензопилы и электрорезы',
+  },
+  {
+    id: 8,
+    text: 'Электропилы и электролобзики',
+  },
+  {
+    id: 9,
+    text: 'Аппараты высокого давления',
+  },
+  {
+    id: 10,
+    text: 'Болгарки УШМ',
+  },
+];
+
 export const headerLinks = [
   {
     id: 1,
@@ -741,5 +808,32 @@ export const headerLinks = [
     id: 11,
     linkName: 'Спорт и активный отдых',
     image: sport,
+  },
+];
+
+export const optionsData = [
+  {
+    id: 1,
+    optionText: 'От сети',
+  },
+  {
+    id: 2,
+    optionText: 'От сети',
+  },
+  {
+    id: 3,
+    optionText: 'От сети',
+  },
+  {
+    id: 4,
+    optionText: 'От сети',
+  },
+  {
+    id: 5,
+    optionText: 'От сети',
+  },
+  {
+    id: 6,
+    optionText: 'От сети',
   },
 ];

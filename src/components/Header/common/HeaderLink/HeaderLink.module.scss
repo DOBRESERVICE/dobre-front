@@ -2,7 +2,7 @@
 .headerLinkWrapper {
   display: flex;
   gap: 10px;
-  min-width: fit-content;
+  width: max-content;
   & > p {
     color: $black;
     font-size: 14px;

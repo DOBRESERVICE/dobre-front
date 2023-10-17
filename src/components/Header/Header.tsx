@@ -58,24 +58,28 @@ export const Header = () => {
             <p>Помощь</p>
           </div>
         </div>
-        <BurgerButton />
-        <div className={styles.content}>
-          <Button
-            disableRipple
-            variant='contained'
-            size='medium'
-            sx={customCategoriesButton}
-            onClick={() => router.push('/catalog')}
-          >
-            <Image src={categoriesIcon} alt='categories icon' />
-            Все категории
-          </Button>
-          <div className={styles.locationWrapper}>
-            <Image src={geolocationIcon} alt='location' />
-            <p>Вся Беларусь</p>
+        <div className={styles.leftBlock}>
+          <BurgerButton />
+          <div>
+            <Button
+              disableRipple
+              variant='contained'
+              size='medium'
+              sx={customCategoriesButton}
+              onClick={() => router.push('/catalog')}
+            >
+              <Image src={categoriesIcon} alt='categories icon' />
+              Все категории
+            </Button>
+            <div className={styles.locationWrapper}>
+              <Image src={geolocationIcon} alt='location' />
+              <p>Вся Беларусь</p>
+            </div>
           </div>
         </div>
-        <Image src={logo} alt='logo' className={styles.logo} />
+        <div className={styles.logoWrapper}>
+          <Image src={logo} alt='logo' />
+        </div>
         <div className={styles.inputWrapper}>
           <div className={styles.inputContent}>
             <Image src={searchIcon} alt='search' />

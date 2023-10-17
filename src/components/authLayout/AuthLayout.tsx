@@ -3,7 +3,7 @@ import styles from './AuthLayout.module.scss';
 import { FC, ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import { DOBRE, dobreBanner, dobreWhiteLogo } from '@/assets/image';
+import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '@/assets/image';
 
 interface FormLayoutProps {
   children: ReactNode;
@@ -30,6 +30,14 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
           <p>Легко арендовать и безопасно сдавать</p>
           <Image src={dobreBanner} alt='banner' />
         </div>
+        <Image
+          src={leftWhiteSliderIcon}
+          alt='prev'
+          role='button'
+          onClick={() => router.back()}
+          className={styles.arrowBack}
+        />
+
         <div className={styles.wrapper}>{children}</div>
       </div>
       <div className={styles.dobreImage}>

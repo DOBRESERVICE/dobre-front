@@ -32,8 +32,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 155px;
+  gap: 58px;
   margin-left: 40px;
+}
+.arrowBack {
+  cursor: pointer;
+  align-self: start;
+  width: 40px;
+  height: 40px;
 }
 .imageWrapper {
   position: relative;

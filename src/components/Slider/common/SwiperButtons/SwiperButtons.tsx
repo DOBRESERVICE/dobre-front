@@ -1,10 +1,16 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { useSwiper } from 'swiper/react';
 import styles from './SwiperButtons.module.scss';
 import { nextArrow, previous, sliderLeftBlur, sliderRightBlur } from '@/assets/image';
 import classNames from 'classnames';
+import { FC } from 'react';
 
-export const SwiperButtons = () => {
+interface SwiperButtonsProps {
+  rightIcon: StaticImageData;
+  leftIcon: StaticImageData;
+}
+
+export const SwiperButtons: FC<SwiperButtonsProps> = ({ rightIcon, leftIcon }) => {
   const swiper = useSwiper();
   return (
     <div className={styles.swiperButtonsWrapper}>
@@ -15,10 +21,10 @@ export const SwiperButtons = () => {
         <Image src={sliderRightBlur} alt='blur' />
       </div>
       <button onClick={() => swiper.slidePrev()}>
-        <Image src={previous} alt='prev' />
+        <Image src={leftIcon} alt='prev' />
       </button>
       <button onClick={() => swiper.slideNext()}>
-        <Image src={nextArrow} alt='next' />
+        <Image src={rightIcon} alt='next' />
       </button>
     </div>
   );

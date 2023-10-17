@@ -60,8 +60,8 @@ export const LogInComponent = () => {
         />
         <div className={styles.passActionsWrapper}>
           <div className={styles.savePass}>
-            <Checkbox sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />
-            <p>Запомнить пароль</p>
+            <Checkbox id='rememberMe' sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />
+            <label htmlFor='rememberMe'>Запомнить пароль</label>
           </div>
           <Link className={styles.hidePass} href={'/reset'}>
             Забыли пароль?

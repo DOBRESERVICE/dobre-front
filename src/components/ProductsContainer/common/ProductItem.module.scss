@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 320px;
+  max-width: 337px;
   position: relative;
 
   & > img:nth-child(1){
@@ -16,6 +16,10 @@
     left: 20px;
   }
 
+}
+.mainImageWrapper > img {
+  width: 100%;
+  height: 100%;
 }
 .imageWrapper {
   display: flex;

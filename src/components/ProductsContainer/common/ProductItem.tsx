@@ -43,7 +43,7 @@ export const ProductItem: FC<ProductItem> = ({
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
-      <div>
+      <div className={styles.mainImageWrapper}>
         <Image src={photoUrl} alt='item' />
       </div>
       <div className={styles.content}>
@@ -58,7 +58,6 @@ export const ProductItem: FC<ProductItem> = ({
           </p>
           <StatusBar status={status} />
         </div>
-        <RentInfoContainer rentInfoArray={rentInfoArray} />
         <div className={styles.infoWrapper}>
           <div
             className={classNames(styles.notification, {
@@ -77,6 +76,7 @@ export const ProductItem: FC<ProductItem> = ({
           </div>
         </div>
         <p className={styles.itemName}>{itemName}</p>
+        <RentInfoContainer rentInfoArray={rentInfoArray} />
         <div className={styles.sellerInfoContainer}>
           {isConfirmed && <Image src={verified} alt='verified' />}
           <p className={styles.sellerInfo}>{sellerInfo}</p>

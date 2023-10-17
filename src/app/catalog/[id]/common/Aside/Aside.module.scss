@@ -1,0 +1,26 @@
+@import "src/styles/variables";
+.asideWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 296px;
+  & hr {
+    width: 100%;
+   border: 1px solid $light-graphite;
+  }
+}
+.title {
+  display: flex;
+  gap: 10px;
+
+  & > h2 {
+    color: $black;
+    font-size: $font-medium;
+    font-weight: $fweight-big;
+  }
+}
+.chooseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}

@@ -137,6 +137,9 @@ export const authCustomInput = {
       color: colors.mainText,
     },
   },
+  '& label.Mui-error + div input': {
+    color: colors.inputError,
+  },
   '& > label': {
     fontSize: ' 15px',
     fontWeight: '600',
@@ -157,12 +160,80 @@ export const authButton = {
   },
 };
 export const authCheckBox = {
+  borderRadius: '4px',
+  color: colors.lightGraphite,
   padding: '0px',
-  '& input': {
-    height: '50px',
-    borderRadius: '4px',
-    textTransform: 'none',
-    border: `1px solid ${colors.lightGraphite}`,
+  '& .MuiSvgIcon-root': {
+    borderRadius: '20',
+  },
+};
+
+export const customSelect = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  borderRadius: '8px',
+  '& > div': {
+    padding: '6.5px 14px',
+  },
+};
+export const customLabel = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  top: '-8px',
+};
+export const customRentPriceInput = {
+  '& > div': {
+    height: '36px',
+    borderRadius: '8px',
+    color: colors.graphite,
+    fontSize: '15px',
+    fontWeight: '600',
+  },
+  '& > div input::placeholder': {
+    opacity: 1,
+  },
+};
+
+export const customSellerTypeButton = {
+  height: '36px',
+  width: '100%',
+  backgroundColor: colors.lightBlue,
+  boxShadow: 'none',
+  paddingInline: '20px',
+  color: colors.deepBlue,
+  fontWeight: 700,
+  fontSize: '12px',
+  textTransform: 'none',
+  borderRadius: '8px',
+  '&:hover': {
+    backgroundColor: colors.hoverLightBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeLightBlue,
+    boxShadow: 'none',
+  },
+};
+export const rentInfoCustomButton = {
+  borderRadius: '8px',
+  height: '36px',
+  gap: '10px',
+  fontSize: '15px',
+  color: colors.white,
+  width: '100%',
+  fontWeight: 700,
+  background: colors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
   },
 };
 
@@ -203,4 +274,53 @@ export const customRecoveryLightButton = {
     backgroundColor: colors.activeLightBlue,
     boxShadow: 'none',
   },
+};
+
+export const customDatePicker = {
+  position: 'absolute',
+  bottom: '0px',
+  zIndex: '1',
+};
+
+export const customPagination = {
+  marginTop: '70px',
+  '& > ul': {
+    gap: '10px',
+  },
+  '& button': {
+    margin: 0,
+  },
+  '& li': {
+    backgroundColor: colors.white,
+    borderRadius: '8px',
+    color: colors.deepBlue,
+    borderColor: colors.white,
+  },
+  '&  li > button': {
+    borderColor: 'transparent',
+    color: colors.deepBlue,
+    backgroundColor: colors.white,
+    fontWeight: '600',
+  },
+  '&  li:first-child > button': {
+    backgroundColor: colors.lightBlue,
+  },
+  '&  li:last-child > button': {
+    backgroundColor: colors.lightBlue,
+  },
+  '&  li > button.Mui-selected': {
+    borderColor: 'transparent',
+    color: colors.white,
+    backgroundColor: colors.deepBlue,
+  },
+  '&  li > button.Mui-selected:hover': {
+    borderColor: 'transparent',
+    color: colors.white,
+    backgroundColor: colors.deepBlue,
+    fontWeight: '600',
+  },
+};
+
+export const customArrow = {
+  color: colors.graphite,
 };
