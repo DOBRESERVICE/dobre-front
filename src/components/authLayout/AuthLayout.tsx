@@ -4,6 +4,7 @@ import { FC, ReactNode, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '@/assets/image';
+import { Loader } from '@/components/Loader/Loader';
 
 interface FormLayoutProps {
   children: ReactNode;
@@ -22,6 +23,7 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
   }
   return (
     <div className={styles.authWrapper}>
+      <Loader />
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
           <div>

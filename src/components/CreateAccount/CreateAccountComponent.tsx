@@ -12,6 +12,7 @@ import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
 import { useRouter } from 'next/navigation';
+import { Loader } from '@/components/Loader/Loader';
 
 export const CreateAccountComponent = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -24,13 +25,15 @@ export const CreateAccountComponent = () => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isRegistered, handleRegister } = useAuthData();
+  const { isRegistered, handleRegister, status } = useAuthData();
   const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
       setIsVerified(true);
     }
   }
+
+  console.log(status);
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);

@@ -5,10 +5,7 @@ import { RecoveryForm } from '@/app/recovery/common/RecoveryForm';
 export default function Recovery() {
   return (
     <AuthLayout>
-      <div className={styles.recoveryWrapper}>
-        <ResetPasswordHeader title='Восстановление пароля' text='Введите новый пароль' />
-        <RecoveryForm />
-      </div>
+      <RecoveryForm />
     </AuthLayout>
   );
 }

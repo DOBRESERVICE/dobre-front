@@ -1,7 +1,7 @@
 import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
 import { confirmEmail, loginUser, recoveryPassword, registerUser, sendEmailOnRecovery } from '@/api/authApi';
 import { AxiosError } from 'axios';
-import { StatusCode } from '@/enums';
+import { Status, StatusCode } from '@/enums';
 
 interface IAuthContext {
   isSuccessModalShown: boolean;
@@ -23,6 +23,7 @@ interface IAuthContext {
   isRegistered: boolean;
   isLogged: boolean;
   userEmail: string;
+  status: Status;
 }
 
 export const AuthContext = createContext<IAuthContext>({
@@ -45,6 +46,7 @@ export const AuthContext = createContext<IAuthContext>({
   isRegistered: false,
   isLogged: false,
   userEmail: '',
+  status: Status.LOADING,
 });
 
 export const AuthProvider = ({ children }: any) => {
@@ -57,23 +59,32 @@ export const AuthProvider = ({ children }: any) => {
   const [isResetModalShown, setIsResetModalShown] = useState(false);
   const [errorText, setErrorText] = useState('');
   const [userEmail, setUserEmail] = useState('');
+  const [status, setStatus] = useState<Status>(Status.INIT);
   const handleRegister = async (email: string, password: string) => {
     try {
+      setStatus(Status.LOADING);
       const response = await registerUser(email, password);
       setUserEmail(response.data.user.email);
       setIsRegistered(true);
+      setStatus(Status.SUCCESS);
     } catch (error) {
+      setStatus(Status.ERROR);
       const axiosError = error as AxiosError;
       console.error('Error during registration:', axiosError.message);
       setIsRegistered(false);
+    } finally {
+      setStatus(Status.INIT);
     }
   };
   const handleLogin = async (email: string, password: string) => {
     try {
+      setStatus(Status.LOADING);
       const response = await loginUser(email, password);
       localStorage.setItem('token', response.data.authToken);
       setIsLogged(true);
+      setStatus(Status.SUCCESS);
     } catch (error) {
+      setStatus(Status.ERROR);
       const axiosError = error as AxiosError;
       setIsLogged(false);
       if (axiosError.response?.status === StatusCode.Unauthorized) {
@@ -83,13 +94,18 @@ export const AuthProvider = ({ children }: any) => {
       } else {
         setErrorText(`Неизвестная ошибка`);
       }
+    } finally {
+      setStatus(Status.INIT);
     }
   };
   const handleRecoveryPassword = async (token: string, password: string) => {
     try {
+      setStatus(Status.LOADING);
       await recoveryPassword(token, password);
       setIsSuccessfulRecovery(true);
+      setStatus(Status.SUCCESS);
     } catch (error) {
+      setStatus(Status.ERROR);
       const axiosError = error as AxiosError;
       setIsSuccessfulRecovery(false);
       if (axiosError.response?.status === StatusCode.Unauthorized) {
@@ -97,28 +113,38 @@ export const AuthProvider = ({ children }: any) => {
       } else {
         setErrorText(`Неизвестная ошибка`);
       }
+    } finally {
+      setStatus(Status.INIT);
     }
   };
 
   const handleConfirmEmail = async (token: string) => {
     try {
+      setStatus(Status.LOADING);
       await confirmEmail(token);
       setIsEmailConfirmed(true);
+      setStatus(Status.SUCCESS);
     } catch (error) {
       const axiosError = error as AxiosError;
+      setStatus(Status.ERROR);
       setIsEmailConfirmed(false);
       if (axiosError.response?.status === StatusCode.Unauthorized) {
         setErrorText('Доступ запрещен.');
       } else {
         setErrorText(`Неизвестная ошибка`);
       }
+    } finally {
+      setStatus(Status.INIT);
     }
   };
   const handleSendEmailLetter = async (email: string) => {
     try {
+      setStatus(Status.LOADING);
       await sendEmailOnRecovery(email);
       setIsLetterSent(true);
+      setStatus(Status.SUCCESS);
     } catch (error) {
+      setStatus(Status.ERROR);
       const axiosError = error as AxiosError;
       setIsLetterSent(false);
       if (axiosError.response?.status === StatusCode.Unauthorized) {
@@ -126,6 +152,8 @@ export const AuthProvider = ({ children }: any) => {
       } else {
         setErrorText(`Неизвестная ошибка`);
       }
+    } finally {
+      setStatus(Status.INIT);
     }
   };
   const contextValue = {
@@ -148,6 +176,7 @@ export const AuthProvider = ({ children }: any) => {
     setIsRegistered,
     setIsLetterSent,
     setIsLogged,
+    status,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;
