@@ -70,7 +70,6 @@ export const AuthProvider = ({ children }: any) => {
     } catch (error) {
       setStatus(Status.ERROR);
       const axiosError = error as AxiosError;
-      console.error('Error during registration:', axiosError.message);
       setIsRegistered(false);
     } finally {
       setStatus(Status.INIT);

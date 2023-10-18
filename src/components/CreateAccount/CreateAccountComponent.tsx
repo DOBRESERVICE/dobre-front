@@ -33,7 +33,6 @@ export const CreateAccountComponent = () => {
     }
   }
 
-  console.log(status);
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);
