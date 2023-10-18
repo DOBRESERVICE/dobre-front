@@ -3,6 +3,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import styles from './ConfirmContent.module.scss';
 import { useEffect } from 'react';
 import { useAuthData } from '@/context/authContext';
+import { Loader } from '@/components/Loader/Loader';
 
 export const ConfirmContent = () => {
   const router = useRouter();
@@ -22,13 +23,12 @@ export const ConfirmContent = () => {
       router.push('/');
     }
   }, [isEmailConfirmed]);
-  if (!token) {
+  if (!token || !isEmailConfirmed) {
     return <div>ERROR : USER NOT FOUND</div>;
   }
   return (
     <div className={styles.content}>
-      <p>redirecting...</p>
-      <div className={styles.loader}></div>
+      <Loader />
     </div>
   );
 };

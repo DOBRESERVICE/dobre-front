@@ -23,6 +23,7 @@ import { mockUser, rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
 import { HeaderLinks } from '@/components/Header/common/HeaderLinks/HeaderLinks';
 import { useEffect, useState } from 'react';
+import { Menu } from '@/components/Menu/Menu';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -131,6 +132,7 @@ export const Header = () => {
             </Button>
           )}
         </div>
+        <Menu />
       </header>
       {notMainPage && <HeaderLinks />}
     </>

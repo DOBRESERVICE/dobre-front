@@ -14,6 +14,7 @@ export const ProductQuality = () => {
       <div className={styles.content}>
         {qualityButtonsData.map((item) => (
           <Button
+            key={item.id}
             className={item.id === activeButton ? styles.active : ''}
             disableRipple
             sx={customSellerTypeButton}
