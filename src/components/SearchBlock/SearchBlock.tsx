@@ -5,6 +5,7 @@ import { InputSearch } from '@/components/InputSearch/InputSearch';
 import { SearchCardsContainer } from '@/components/SearchCardsContainer/SearchCardsContainer';
 import { searchCardsData } from '@/data';
 import { SectionHeader } from '@/ui/SectionHeader/SectionHeader';
+import { Menu } from '@/components/Menu/Menu';
 
 export const SearchBlock = () => {
   return (

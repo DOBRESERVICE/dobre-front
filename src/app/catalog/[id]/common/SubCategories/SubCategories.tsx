@@ -5,6 +5,7 @@ import { blueNextArrow } from '@/assets/image';
 import { SubCategoryItem } from '@/app/catalog/[id]/common/SubCategoryItem/SubCategoryItem';
 import { useState } from 'react';
 import { subCategoriesData } from '@/data';
+import { useCategories } from '@/hooks/useCategories';
 export const SubCategories = () => {
   const [activeSubCategory, setActiveSubCategory] = useState(0);
   const [showAll, setShowAll] = useState(false);
