@@ -3,5 +3,5 @@ import { AxiosResponse } from 'axios';
 import { Categories } from '@/interfaces/categories';
 
 export const getCategories = async (): Promise<AxiosResponse<Categories[]>> => {
-  return await defaultRequest.get(`/categories`);
+  return defaultRequest.get(`/categories`);
 };

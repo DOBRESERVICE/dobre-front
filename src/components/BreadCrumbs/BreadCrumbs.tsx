@@ -6,7 +6,6 @@ import Link from 'next/link';
 export const BreadCrumbs = () => {
   const pathName = usePathname();
   const segments = pathName.split('/');
-  console.log(segments);
   return (
     <div className={styles.breadCrumbsWrapper}>
       {segments.map((segment) => (

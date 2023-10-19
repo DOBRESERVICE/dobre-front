@@ -15,3 +15,9 @@ export const enum StatusCode {
   Unauthorized = 403,
   NotFound = 422,
 }
+export enum Status {
+  LOADING = 'loading',
+  SUCCESS = 'success',
+  ERROR = 'error',
+  INIT = 'init',
+}

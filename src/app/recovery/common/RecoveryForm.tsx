@@ -7,6 +7,7 @@ import { Button } from '@mui/material';
 import { authButton, customRecoveryLightButton } from '@/styles/buttonStyles';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useAuthData } from '@/context/authContext';
+import { ResetPasswordHeader } from '@/components/ResetPassword/common/ResetPasswordHeader/ResetPasswordHeader';
 export const RecoveryForm = () => {
   const [isPassword, setIsPassword] = useState(true);
   const [isRepeatedPassword, setIsRepeatedPassword] = useState(true);
@@ -22,9 +23,6 @@ export const RecoveryForm = () => {
 
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
-    if (!token) {
-      router.push('/');
-    }
   }, [token]);
 
   useEffect(() => {
@@ -34,42 +32,46 @@ export const RecoveryForm = () => {
   }, [isSuccessfulRecovery]);
 
   if (token === null) {
-    return;
+    router.push('/');
+    return <div>Invalid</div>;
   }
 
   return (
-    <div className={styles.formWrapper}>
-      <div className={styles.content}>
-        <PasswordInput
-          isPassword={isPassword}
-          passwordValue={newPassword}
-          handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setNewPassword(e.target.value)}
-          setIsPassword={setIsPassword}
-          label='Введите новый пароль'
-        />
-        <PasswordInput
-          isPassword={isRepeatedPassword}
-          passwordValue={repeatedPassword}
-          handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setRepeatedPassword(e.target.value)}
-          setIsPassword={setIsRepeatedPassword}
-          label='Введите новый пароль еще раз'
-        />
-        <DifficultyProgressBar passwordValue={newPassword} />
+    <>
+      <ResetPasswordHeader title='Восстановление пароля' text='Введите новый пароль' />
+      <div className={styles.formWrapper}>
+        <div className={styles.content}>
+          <PasswordInput
+            isPassword={isPassword}
+            passwordValue={newPassword}
+            handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setNewPassword(e.target.value)}
+            setIsPassword={setIsPassword}
+            label='Введите новый пароль'
+          />
+          <PasswordInput
+            isPassword={isRepeatedPassword}
+            passwordValue={repeatedPassword}
+            handlePasswordChange={(e: ChangeEvent<HTMLInputElement>) => setRepeatedPassword(e.target.value)}
+            setIsPassword={setIsRepeatedPassword}
+            label='Введите новый пароль еще раз'
+          />
+          <DifficultyProgressBar passwordValue={newPassword} />
+        </div>
+        <div className={styles.content}>
+          <Button
+            disableRipple
+            variant='contained'
+            sx={authButton}
+            disabled={isDisabled}
+            onClick={() => handleRecoveryPassword(token, newPassword)}
+          >
+            Сохранить
+          </Button>
+          <Button disableRipple variant='contained' sx={customRecoveryLightButton} onClick={() => router.push('/')}>
+            Отменить восстановление
+          </Button>
+        </div>
       </div>
-      <div className={styles.content}>
-        <Button
-          disableRipple
-          variant='contained'
-          sx={authButton}
-          disabled={isDisabled}
-          onClick={() => handleRecoveryPassword(token, newPassword)}
-        >
-          Сохранить
-        </Button>
-        <Button disableRipple variant='contained' sx={customRecoveryLightButton} onClick={() => router.push('/')}>
-          Отменить восстановление
-        </Button>
-      </div>
-    </div>
+    </>
   );
 };

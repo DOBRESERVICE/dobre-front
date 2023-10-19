@@ -24,13 +24,14 @@ export const CreateAccountComponent = () => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isRegistered, handleRegister } = useAuthData();
+  const { isRegistered, handleRegister, status } = useAuthData();
   const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
       setIsVerified(true);
     }
   }
+
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isValidEmail = emailRules.test(value);
