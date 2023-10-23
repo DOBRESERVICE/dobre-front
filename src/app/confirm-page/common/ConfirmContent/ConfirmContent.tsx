@@ -4,11 +4,12 @@ import styles from './ConfirmContent.module.scss';
 import { useEffect } from 'react';
 import { useAuthData } from '@/context/authContext';
 import { Loader } from '@/components/Loader/Loader';
+import { Status } from '@/enums';
 
 export const ConfirmContent = () => {
   const router = useRouter();
   const pathName = usePathname();
-  const { isEmailConfirmed, handleConfirmEmail } = useAuthData();
+  const { isEmailConfirmed, handleConfirmEmail, status } = useAuthData();
   const params = useSearchParams();
   const newSearchParams = new URLSearchParams(params);
   const token = newSearchParams.get('token');
@@ -26,9 +27,5 @@ export const ConfirmContent = () => {
   if (!token || !isEmailConfirmed) {
     return <div>ERROR : USER NOT FOUND</div>;
   }
-  return (
-    <div className={styles.content}>
-      <Loader />
-    </div>
-  );
+  return <div className={styles.content}>{status === Status.LOADING && <Loader />}</div>;
 };

@@ -1,3 +1,4 @@
+'use client';
 import { descriptionData } from '@/data';
 import { FAQItem } from '@/components/FAQ/common/FAQItem/FAQItem';
 import { useState } from 'react';

@@ -1,7 +1,11 @@
 import { defaultRequest } from '@/api/axios/instances';
 import { AxiosResponse } from 'axios';
-import { Categories } from '@/interfaces/categories';
+import { Category, ExactCategory, SubCategory } from '@/interfaces/categories';
 
-export const getCategories = async (): Promise<AxiosResponse<Categories[]>> => {
-  return defaultRequest.get(`/categories`);
+export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
+  return await defaultRequest.get(`/categories/category/${categoryName}`);
+};
+
+export const getSubCategory = async (subCategory: string): Promise<AxiosResponse<SubCategory>> => {
+  return defaultRequest.get(`/categories/sub/${subCategory}`);
 };

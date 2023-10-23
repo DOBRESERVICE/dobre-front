@@ -1,9 +1,9 @@
 import styles from './CardItem.module.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { FC } from 'react';
 
 interface CardItem {
-  imageUrl?: StaticImageData;
+  imageUrl?: string;
   title: string;
 }
 export const CardItem: FC<CardItem> = ({ imageUrl, title }) => {

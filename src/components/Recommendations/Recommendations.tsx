@@ -7,7 +7,7 @@ export const Recommendations = () => {
   return (
     <section className={styles.recommendations}>
       <TopSectionBar hasLinkArrow barName='Рекомендации для вас' />
-      <ProductsContainer productsData={productsData} />
+      <ProductsContainer products={productsData} />
     </section>
   );
 };

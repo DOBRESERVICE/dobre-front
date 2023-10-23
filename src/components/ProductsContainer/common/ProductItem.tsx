@@ -21,7 +21,7 @@ export interface ProductItem {
   isAvailable: boolean;
   rentEndDate?: string;
   isConfirmed: boolean;
-  rentInfoArray: RentInfoData[];
+  rentInfoArray: RentInfoData[] | any;
 }
 
 export const ProductItem: FC<ProductItem> = ({

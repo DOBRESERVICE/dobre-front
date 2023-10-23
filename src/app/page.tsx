@@ -1,4 +1,3 @@
-'use client';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
@@ -16,7 +15,7 @@ export default function HomePage() {
     <HomeLayout>
       <AuthModals />
       <SearchBlock />
-      <NewProducts />
+      {/*<NewProducts />*/}
       <PopularProducts />
       <HowWeWork />
       <FirstItem />

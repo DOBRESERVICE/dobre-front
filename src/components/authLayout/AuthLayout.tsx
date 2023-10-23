@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '@/assets/image';
 import { Loader } from '@/components/Loader/Loader';
+import { useAuthData } from '@/context/authContext';
+import { Status } from '@/enums';
 
 interface FormLayoutProps {
   children: ReactNode;
@@ -12,6 +14,7 @@ interface FormLayoutProps {
 export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+  const { status } = useAuthData();
   useEffect(() => {
     if (localStorage.getItem('token')) {
       setIsLoading(true);
@@ -21,9 +24,11 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
   if (isLoading) {
     return <div>Loading... </div>;
   }
+  if (status === Status.LOADING) {
+    return <Loader />;
+  }
   return (
     <div className={styles.authWrapper}>
-      <Loader />
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
           <div>

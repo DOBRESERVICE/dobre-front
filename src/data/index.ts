@@ -99,12 +99,10 @@ export const popularProductsData = [
   },
   {
     id: 2,
-    imageUrl: travelling,
     title: 'Кемпинг и путешествия ',
   },
   {
     id: 3,
-    imageUrl: sportImage,
     title: 'Спорт и активный отдых ',
   },
   {
