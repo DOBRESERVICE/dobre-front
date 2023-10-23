@@ -15,6 +15,7 @@ interface ProductsContainer {
 }
 
 console.log('test');
+console.log('test');
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   const arr = [
     {
