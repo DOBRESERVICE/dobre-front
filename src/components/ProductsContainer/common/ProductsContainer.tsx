@@ -13,6 +13,8 @@ import { ProductStatus } from '@/enums';
 interface ProductsContainer {
   products: Product[] | any[];
 }
+
+console.log('test');
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   const arr = [
     {
