@@ -8,7 +8,7 @@ export const PopularProducts = () => {
       <TopSectionBar barName='Популярно сейчас' hasLinkArrow />
       <div className={styles.gridContainer}>
         {popularProductsData.map((product) => (
-          <CardItem key={product.id} imageUrl={product.imageUrl} title={product.title} />
+          <CardItem key={product.id} imageUrl={product.imageUrl} title={product.title} link='' />
         ))}
       </div>
     </section>

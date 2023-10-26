@@ -1,4 +1,3 @@
-'use client';
 import { HomeLayout } from '@/components/homeLayout/HomeLayout';
 import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
 import { AboutUs } from '@/components/AboutUs/AboutUs';
@@ -10,14 +9,14 @@ import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
 import { AuthModals } from '@/components/AuthModals/AuthModals';
-import { Menu } from '@/components/Menu/Menu';
+import { popularProductsData, productsData } from '@/data';
 
 export default function HomePage() {
   return (
     <HomeLayout>
       <AuthModals />
       <SearchBlock />
-      <NewProducts />
+      <NewProducts newProducts={productsData} />
       <PopularProducts />
       <HowWeWork />
       <FirstItem />

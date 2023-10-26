@@ -89,8 +89,10 @@ import leftWhiteSliderIcon from './leftWhiteSliderIcon.svg';
 import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
 import sortSvg from './sortSvg.svg';
 import blueClose from './blueClose.svg';
+import noImage from './NO_IMAGE.jpg';
 
 export {
+  noImage,
   acceptIcon,
   blackArrowNext,
   rentButtonIcon,

@@ -19,17 +19,19 @@ import {
 } from '@/styles/buttonStyles';
 import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';
-import { mockUser, rentImage, searchIcon } from '@/assets/image';
+import { blueClose, mockUser, rentImage, searchIcon } from '@/assets/image';
 import Input from '@mui/material/Input';
 import { HeaderLinks } from '@/components/Header/common/HeaderLinks/HeaderLinks';
 import { useEffect, useState } from 'react';
 import { Menu } from '@/components/Menu/Menu';
+import Link from 'next/link';
 
 export const Header = () => {
   const pathname = usePathname();
   const notMainPage = pathname !== '/';
   const router = useRouter();
   const [token, setToken] = useState<string | null>('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -67,9 +69,9 @@ export const Header = () => {
               variant='contained'
               size='medium'
               sx={customCategoriesButton}
-              onClick={() => router.push('/catalog')}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              <Image src={categoriesIcon} alt='categories icon' />
+              <Image src={isMenuOpen ? blueClose : categoriesIcon} alt='categories icon' />
               Все категории
             </Button>
             <div className={styles.locationWrapper}>
@@ -78,9 +80,9 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <div className={styles.logoWrapper}>
+        <Link href={'/'} className={styles.logoWrapper}>
           <Image src={logo} alt='logo' />
-        </div>
+        </Link>
         <div className={styles.inputWrapper}>
           <div className={styles.inputContent}>
             <Image src={searchIcon} alt='search' />
@@ -132,7 +134,7 @@ export const Header = () => {
             </Button>
           )}
         </div>
-        <Menu />
+        {isMenuOpen && <Menu />}
       </header>
       {notMainPage && <HeaderLinks />}
     </>

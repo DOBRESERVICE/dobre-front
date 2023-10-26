@@ -1,3 +1,4 @@
+'use client';
 import styles from './ButtonsContainer.module.scss';
 import classNames from 'classnames';
 import { Button } from '@mui/material';

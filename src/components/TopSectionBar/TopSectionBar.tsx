@@ -17,7 +17,7 @@ export const TopSectionBar: FC<TopSectionBar> = ({ barName, hasLinkArrow, announ
         <p>{announcements}</p>
       </div>
       {hasLinkArrow && (
-        <Link href='/catalog/1' className={styles.linkContainer}>
+        <Link href='/' className={styles.linkContainer}>
           <p>Смотреть все</p>
           <div className={styles.linkArrow}>
             <Image src={linkArrow} alt='link arrow' />

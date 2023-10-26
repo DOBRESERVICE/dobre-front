@@ -1,0 +1,35 @@
+@import "src/styles/variables";
+
+.subCategoryWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  & > h3 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+}
+.varietiesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.arrow {
+  border: solid $deep-blue;
+  border-width: 0 2px 2px 0;
+  transition: transform 0.5s;
+  padding: 3px;
+  transform:rotate(-45deg);
+}
+.seeAll {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  & > p {
+    color: $deep-blue;
+    font-size: 13px;
+    font-weight: $fweight-big;
+  }
+}

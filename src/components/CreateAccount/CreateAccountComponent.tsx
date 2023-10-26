@@ -12,7 +12,6 @@ import { AuthServices } from '@/app/login/common/AuthServices/AuthServices';
 import { AuthHeader } from '@/app/login/common/AuthHeader/AuthHeader';
 import { PasswordInput } from '@/app/login/common/PasswordInput/PasswordInput';
 import { useRouter } from 'next/navigation';
-import { Loader } from '@/components/Loader/Loader';
 
 export const CreateAccountComponent = () => {
   const [isPassword, setIsPassword] = useState(true);

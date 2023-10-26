@@ -17,9 +17,15 @@
   }
 
 }
+
+.mainImageWrapper {
+  border-radius: 14px;
+  overflow:hidden;
+}
+
 .mainImageWrapper > img {
-  width: 100%;
-  height: 100%;
+  width: 340px;
+  height: 260px;
 }
 .imageWrapper {
   display: flex;
@@ -69,6 +75,12 @@
   font-size: 18px;
   font-weight: $fweight-big;
   line-height: 24px;
+  display: -webkit-box;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+ -webkit-box-orient: vertical;
 }
 .infoWrapper {
   display: flex;

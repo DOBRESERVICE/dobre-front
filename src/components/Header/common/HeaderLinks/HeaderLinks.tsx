@@ -1,3 +1,4 @@
+'use client';
 import styles from './HeaderLinks.module.scss';
 import { constuctionData, headerLinks } from '@/data';
 import { HeaderLink } from '@/components/Header/common/HeaderLink/HeaderLink';
@@ -5,7 +6,9 @@ import { Slider } from '@/components/Slider/Slider';
 import { SwiperSlide } from 'swiper/react';
 import { SwiperButtons } from '@/components/Slider/common/SwiperButtons/SwiperButtons';
 import { leftWhiteSliderIcon, rightWhiteSliderIcon } from '@/assets/image';
+import { useCategories } from '@/hooks/useCategories';
 export const HeaderLinks = () => {
+  const { categories, isError, isLoading } = useCategories();
   return (
     <div className={styles.headerLinks}>
       <Slider>

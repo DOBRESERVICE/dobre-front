@@ -1,18 +1,14 @@
 import styles from './CatalogBlock.module.scss';
 import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
-import { ToolContainer } from '@/app/catalog/common/ToolContainer/ToolContainer';
 import { ProductsContainer } from '@/components/ProductsContainer/common/ProductsContainer';
-import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
 import { FC } from 'react';
+import { ToolContainer } from '@/app/category/common/ToolContainer/ToolContainer';
+import { Product, Variety } from '@/interfaces/categories';
 
-interface ToolsData {
-  id: number;
-  title: string;
-}
 interface CatalogBlock {
   barName: string;
-  toolsData: ToolsData[];
-  productsData: ProductItem[];
+  toolsData: Variety[];
+  productsData: Product[];
 }
 export const CatalogBlock: FC<CatalogBlock> = ({ barName, toolsData, productsData }) => {
   return (
@@ -21,7 +17,7 @@ export const CatalogBlock: FC<CatalogBlock> = ({ barName, toolsData, productsDat
         <TopSectionBar barName={barName} hasLinkArrow />
         <ToolContainer toolsData={toolsData} />
       </div>
-      <ProductsContainer productsData={productsData} />
+      <ProductsContainer products={productsData} />
     </>
   );
 };

@@ -1,9 +1,12 @@
+import useSWR from 'swr/immutable';
+import { Category } from '@/interfaces/categories';
 import { defaultRequest } from '@/api/axios/instances';
-import { useQuery } from '@tanstack/react-query';
-
+export const fetcher = (url: string, init?: RequestInit) => defaultRequest.get(url).then((res) => res.data);
 export function useCategories() {
-  return useQuery({
-    queryKey: ['categories'],
-    queryFn: () => defaultRequest.get('categories').then((res) => res.data),
-  });
+  const { data, error, isLoading } = useSWR<Category[]>('categories', fetcher);
+  return {
+    categories: data,
+    isLoading,
+    isError: error,
+  };
 }

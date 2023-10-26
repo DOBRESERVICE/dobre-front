@@ -36,7 +36,8 @@
   position: relative;
 }
 
-.constructionItemsWrapper {
-  width: 100%;
-
+.constructionItemsWrapper  a {
+  display: block;
+  min-height: 240px;
+  min-width: 340px;
 }
