@@ -19,7 +19,6 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
       price: '123',
     },
   ];
-  console.log('category catalog');
   return (
     <div className={styles.categoryCatalogWrapper}>
       <div className={styles.content}>

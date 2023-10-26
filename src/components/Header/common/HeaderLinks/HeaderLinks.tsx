@@ -9,7 +9,6 @@ import { leftWhiteSliderIcon, rightWhiteSliderIcon } from '@/assets/image';
 import { useCategories } from '@/hooks/useCategories';
 export const HeaderLinks = () => {
   const { categories, isError, isLoading } = useCategories();
-  console.log(categories);
   return (
     <div className={styles.headerLinks}>
       <Slider>

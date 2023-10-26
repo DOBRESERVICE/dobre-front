@@ -14,7 +14,6 @@ export default async function CategoryPage({
   const variety = searchParams.variety;
   const { data: certainSubCategoryData } = await getSubCategory(params.id);
   const { data: certainVarietyData } = await getCertainVariety(variety);
-  console.log(params.id);
   const products = variety === 'all' ? certainSubCategoryData.products : certainVarietyData.products;
   return (
     <>
