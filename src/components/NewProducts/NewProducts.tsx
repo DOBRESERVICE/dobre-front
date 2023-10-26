@@ -6,7 +6,7 @@ import { FC } from 'react';
 import { Product } from '@/interfaces/categories';
 
 interface NewProductsProps {
-  newProducts: Product[];
+  newProducts: Product[] | any[];
 }
 export const NewProducts: FC<NewProductsProps> = ({ newProducts }) => {
   return (

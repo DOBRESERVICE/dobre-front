@@ -6,6 +6,7 @@ import { CategoryMenuItem } from '@/components/Menu/common/CategoryMenuItem/Cate
 import { SubCategoryMenuItem } from '@/components/Menu/common/SubCategoryMenuItem/SubCategoryMenuItem';
 import { Loader } from '@/components/Loader/Loader';
 import { useRouter } from 'next/navigation';
+import { Category } from '@/interfaces/categories';
 
 export const Menu = () => {
   const router = useRouter();
@@ -13,10 +14,11 @@ export const Menu = () => {
     document.documentElement.classList.add(styles.disabledScroll);
     return () => document.documentElement.classList.remove(styles.disabledScroll);
   }, []);
-  const [activeCategory, setActiveCategory] = useState(1);
+
   const { categories, isError, isLoading } = useCategories();
-  const subCategories = categories && categories[activeCategory - 1].subcategories;
-  const currentCategoryName = categories && categories[activeCategory - 1].name_category;
+  const [selectedCategoryId, setSelectedCategoryId] = useState('3');
+
+  const selectedCategory = categories?.find((category) => category.id_category === selectedCategoryId);
   if (isLoading) {
     return <Loader />;
   }
@@ -24,25 +26,27 @@ export const Menu = () => {
     <div className={styles.menuWrapper}>
       <div className={styles.menuContent}>
         <aside className={styles.menuAside}>
-          {categories?.map((item) => (
+          {categories?.map((category) => (
             <CategoryMenuItem
-              isActive={activeCategory === Number(item.id_category)}
-              onClick={() => router.push(`/category/${item.tr_name_category}`)}
-              onMouseEnter={() => setActiveCategory(Number(item.id_category))}
-              categoryName={item.name_category}
-              key={item.id_category}
+              isActive={selectedCategory?.id_category === category.id_category}
+              onClick={() => router.push(`/category/${category.tr_name_category}`)}
+              onMouseEnter={() => setSelectedCategoryId(category.id_category)}
+              categoryName={category.name_category}
+              key={category.id_category}
             />
           ))}
         </aside>
         <hr className={styles.menuLine} />
         <div className={styles.subCategoriesContent}>
-          <h2 className={styles.currentCategory}>{currentCategoryName}</h2>
+          <h2 className={styles.currentCategory}>{selectedCategory?.name_category}</h2>
           <div className={styles.subCategoriesWrapper}>
-            {subCategories?.map((subCategory) => (
+            {selectedCategory?.subcategories?.map((subCategory) => (
               <SubCategoryMenuItem
                 key={subCategory.id_sub}
                 title={subCategory.name_sub}
                 varieties={subCategory.varieties}
+                category={selectedCategory.tr_name_category}
+                subcategory={subCategory.tr_name_sub}
               />
             ))}
           </div>

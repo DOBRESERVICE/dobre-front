@@ -26,6 +26,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
   & > p {
     color: $deep-blue;
     font-size: 13px;

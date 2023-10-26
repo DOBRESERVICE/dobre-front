@@ -12,7 +12,7 @@ export const PopularToolItem: FC<ToolItem> = ({ imageUrl, title }) => {
     <div className={styles.toolWrapper}>
       {imageUrl ? (
         <div className={styles.imageWrapper}>
-          <Image src={imageUrl ? imageUrl : constructionEquipment} alt='tool' />{' '}
+          <Image src={imageUrl} alt='tool' />
         </div>
       ) : (
         <div className={styles.emptyCard}> </div>

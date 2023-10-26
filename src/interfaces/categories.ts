@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image';
+
 export interface Category {
   id_category: string;
   name_category: string;
@@ -62,7 +64,25 @@ export interface Variety {
   id_variety: string;
   name_variety: string;
   tr_name_variety: string;
+  image_variety: string | StaticImageData;
+  rate_variety: number;
+  enabled_variety: boolean;
+}
+
+export interface ExactVariety {
+  id_variety: number;
+  name_variety: string;
+  tr_name_variety: string;
   image_variety: string;
   rate_variety: number;
   enabled_variety: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  categoryIdCategory: number;
+  subcategoryIdSub: number;
+  category: Category;
+  subcategory: Subcategory;
+  products: Product[];
+  brands: any[];
 }

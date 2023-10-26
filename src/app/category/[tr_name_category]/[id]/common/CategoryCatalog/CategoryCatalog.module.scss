@@ -4,11 +4,10 @@
   gap:20px;
 }
 .categoryCatalog {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
+  display: flex;
+  flex-wrap: wrap;
   column-gap:20px;
   row-gap: 30px;
-  flex-wrap: wrap;
 }
 .content {
   display: flex;

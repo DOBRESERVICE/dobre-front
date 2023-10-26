@@ -9,14 +9,21 @@ import { OptionsComponent } from '@/app/category/[tr_name_category]/[id]/common/
 import { RentPrice } from '@/app/category/[tr_name_category]/[id]/common/RentPrice/RentPrice';
 import { SellerType } from '@/app/category/[tr_name_category]/[id]/common/SellerType/SellerType';
 import { ProductQuality } from '@/app/category/[tr_name_category]/[id]/common/ProductQuality/ProductQuality';
-export const Aside = () => {
+import { FC } from 'react';
+import { Variety } from '@/interfaces/categories';
+
+interface AsideProps {
+  title: string;
+  varietiesList: Variety[];
+}
+export const Aside: FC<AsideProps> = ({ title, varietiesList }) => {
   return (
     <aside className={styles.asideWrapper}>
       <div className={styles.title}>
         <Image src={backArrow} alt='back' />
-        <h2>Электроинструмены</h2>
+        <h2>{title}</h2>
       </div>
-      <SubCategories />
+      <SubCategories varietiesList={varietiesList} />
       <hr />
       <div className={styles.chooseContent}>
         <CustomSelect label='Все бренды' headerName='Бренд' />

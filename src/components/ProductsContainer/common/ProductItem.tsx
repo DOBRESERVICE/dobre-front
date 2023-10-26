@@ -1,7 +1,7 @@
 import styles from './ProductItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { favouriteIcon, starReviews, verified } from '@/assets/image';
-import { ProductStatus } from '@/enums';
+import { favouriteIcon, mockUser, starReviews, verified } from '@/assets/image';
+import { ProductStatus, qualityMap } from '@/enums';
 import { FC } from 'react';
 import { availableNow, inRent, isGoodStatus } from '@/constants';
 import classNames from 'classnames';
@@ -12,9 +12,9 @@ import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
 export interface ProductItem {
   id?: number;
   itemName: string;
-  userUrl: string | StaticImageData;
+  userUrl: string | StaticImageData | null;
   photoUrl: string | StaticImageData;
-  status: ProductStatus;
+  status: number;
   rating: number;
   feedbackCount: number;
   sellerInfo: string;
@@ -22,6 +22,7 @@ export interface ProductItem {
   rentEndDate?: string;
   isConfirmed: boolean;
   rentInfoArray: RentInfoData[] | any;
+  description: string;
 }
 
 export const ProductItem: FC<ProductItem> = ({
@@ -35,16 +36,17 @@ export const ProductItem: FC<ProductItem> = ({
   feedbackCount,
   isConfirmed,
   photoUrl,
+  description,
   rentInfoArray,
 }) => {
   return (
     <div className={styles.newProductWrapper}>
-      <Image src={userUrl} alt='user' />
+      <Image src={userUrl ? userUrl : mockUser} alt='user' />
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
       <div className={styles.mainImageWrapper}>
-        <Image src={photoUrl} alt='item' />
+        <Image src={photoUrl} alt='item' width={340} height={260} />
       </div>
       <div className={styles.content}>
         <div className={styles.statusWrapper}>
@@ -54,7 +56,7 @@ export const ProductItem: FC<ProductItem> = ({
               [styles.mediumStatus]: !isGoodStatus(status),
             })}
           >
-            {status}
+            {qualityMap[status]}
           </p>
           <StatusBar status={status} />
         </div>
@@ -75,7 +77,10 @@ export const ProductItem: FC<ProductItem> = ({
             <span>({feedbackCount} отзывов)</span>
           </div>
         </div>
-        <p className={styles.itemName}>{itemName}</p>
+        <p className={styles.itemName}>
+          {itemName} {description}
+        </p>
+
         <RentInfoContainer rentInfoArray={rentInfoArray} />
         <div className={styles.sellerInfoContainer}>
           {isConfirmed && <Image src={verified} alt='verified' />}

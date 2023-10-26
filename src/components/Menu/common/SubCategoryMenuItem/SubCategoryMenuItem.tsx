@@ -7,8 +7,10 @@ import { useShownData } from '@/hooks/useShownData';
 interface SubCategoryItemProps {
   title: string;
   varieties: Variety[];
+  category: string;
+  subcategory: string;
 }
-export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties }) => {
+export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties, category, subcategory }) => {
   const { itemsToShow, shouldRenderExpandButton, handleShowAll } = useShownData(varieties, 6);
 
   return (
@@ -16,7 +18,13 @@ export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties
       <h3>{title}</h3>
       <div className={styles.varietiesWrapper}>
         {itemsToShow.map((item) => (
-          <VarietyMenuItem varietyName={item.name_variety} />
+          <VarietyMenuItem
+            varietyName={item.name_variety}
+            key={item.key}
+            category={category}
+            subcategory={subcategory}
+            tr_name_variety={item.tr_name_variety}
+          />
         ))}
       </div>
       {shouldRenderExpandButton && (

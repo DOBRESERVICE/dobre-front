@@ -24,6 +24,7 @@ import Input from '@mui/material/Input';
 import { HeaderLinks } from '@/components/Header/common/HeaderLinks/HeaderLinks';
 import { useEffect, useState } from 'react';
 import { Menu } from '@/components/Menu/Menu';
+import Link from 'next/link';
 
 export const Header = () => {
   const pathname = usePathname();
@@ -79,9 +80,9 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <div className={styles.logoWrapper}>
+        <Link href={'/'} className={styles.logoWrapper}>
           <Image src={logo} alt='logo' />
-        </div>
+        </Link>
         <div className={styles.inputWrapper}>
           <div className={styles.inputContent}>
             <Image src={searchIcon} alt='search' />

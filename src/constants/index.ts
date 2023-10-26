@@ -3,7 +3,7 @@ import { ProductStatus } from '@/enums';
 export const availableNow = 'Доступен сейчас';
 export const inRent = 'В аренде до';
 
-export const isGoodStatus = (status: ProductStatus) =>
+export const isGoodStatus = (status: number) =>
   [ProductStatus.NEW, ProductStatus.LIKE_NEW, ProductStatus.GOOD].includes(status);
 
 export const emailRules =

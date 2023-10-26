@@ -1,20 +1,24 @@
+'use client';
 import styles from './CardItem.module.scss';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
+import { noImage } from '@/assets/image';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 interface CardItem {
-  imageUrl?: string;
+  imageUrl?: string | StaticImageData | undefined;
   title: string;
+  link: string;
 }
-export const CardItem: FC<CardItem> = ({ imageUrl, title }) => {
+export const CardItem: FC<CardItem> = ({ imageUrl, title, link }) => {
+  const path = usePathname();
   return (
-    <div className={styles.cardWrapper}>
-      {imageUrl && (
-        <div className={styles.imageWrapper}>
-          <Image src={imageUrl} alt='image' />
-        </div>
-      )}
+    <Link href={`${path + '/' + link}`} className={styles.cardWrapper}>
+      <div className={styles.imageWrapper}>
+        <Image src={imageUrl ? imageUrl : noImage} alt='image' />
+      </div>
       <h3>{title}</h3>
-    </div>
+    </Link>
   );
 };

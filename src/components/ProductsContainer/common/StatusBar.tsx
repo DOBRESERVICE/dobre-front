@@ -4,7 +4,7 @@ import { FC } from 'react';
 import classNames from 'classnames';
 
 interface StatusBar {
-  status: ProductStatus;
+  status: number;
 }
 
 export const StatusBar: FC<StatusBar> = ({ status }) => {

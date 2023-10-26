@@ -11,6 +11,8 @@ export function useShownData(data: any[], shownCount: number) {
   return {
     itemsToShow,
     handleShowAll,
+    setShowAll,
+    showAll,
     shouldRenderExpandButton,
   };
 }

@@ -1,6 +1,5 @@
 'use client';
 import styles from './Construction.module.scss';
-import { constuctionData } from '@/data';
 import { CardItem } from '@/components/CardItem/CardItem';
 import { Slider } from '@/components/Slider/Slider';
 import { SwiperSlide } from 'swiper/react';
@@ -22,7 +21,7 @@ export const Construction: FC<ConstructionProps> = ({ title, subCategories }) =>
         <Slider>
           {subCategories.map((product) => (
             <SwiperSlide key={product.id_sub}>
-              <CardItem imageUrl={product.image_sub} title={product.name_sub} />
+              <CardItem imageUrl={product.image_sub} title={product.name_sub} link={product.tr_name_sub} />
             </SwiperSlide>
           ))}
           <SwiperButtons rightIcon={nextArrow} leftIcon={previous} />

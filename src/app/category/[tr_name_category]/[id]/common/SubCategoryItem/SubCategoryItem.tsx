@@ -1,22 +1,25 @@
 import styles from './SubCategoryItem.module.scss';
 import { FC } from 'react';
 import classNames from 'classnames';
+import Link from 'next/link';
 
 interface SubCategoryItem {
-  subCategoryName: string;
+  varietyName: string;
   isActive: boolean;
   onClick: () => void;
+  varietyTrName: string;
 }
-export const SubCategoryItem: FC<SubCategoryItem> = ({ subCategoryName, isActive, onClick }) => {
+export const SubCategoryItem: FC<SubCategoryItem> = ({ varietyName, isActive, onClick, varietyTrName }) => {
   return (
-    <li
+    <Link
+      href={`?${new URLSearchParams({ variety: varietyTrName })}`}
       className={classNames(styles.subCategoryItem, {
         [styles.active]: isActive,
       })}
       onClick={onClick}
       role='button'
     >
-      {subCategoryName}
-    </li>
+      {varietyName}
+    </Link>
   );
 };

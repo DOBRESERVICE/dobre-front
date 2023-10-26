@@ -12,6 +12,7 @@
 .seeAll {
   display: flex;
   align-items: center;
+  cursor: pointer;
   gap: 10px;
   & > p {
     color: $deep-blue;

@@ -9,13 +9,14 @@ import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
 import { AuthModals } from '@/components/AuthModals/AuthModals';
+import { popularProductsData, productsData } from '@/data';
 
 export default function HomePage() {
   return (
     <HomeLayout>
       <AuthModals />
       <SearchBlock />
-      {/*<NewProducts />*/}
+      <NewProducts newProducts={productsData} />
       <PopularProducts />
       <HowWeWork />
       <FirstItem />
