@@ -128,6 +128,7 @@ export const howWeWorkButton = {
 export const authCustomInput = {
   width: '385px',
   '& .MuiOutlinedInput-root': {
+    height: '50px',
     borderRadius: '8px',
     border: `1px solid ${colors.grayBorder}`,
     '& input': {
@@ -144,6 +145,7 @@ export const authCustomInput = {
     fontSize: ' 15px',
     fontWeight: '600',
     color: colors.graphite,
+    top: '5px',
   },
 };
 
