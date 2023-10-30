@@ -39,6 +39,8 @@
 .hidePass {
   color: $graphite;
   cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .hidePass {
@@ -60,6 +62,7 @@
 .otherLogInLine > p {
   font-size: 13px;
   color: $graphite;
+  font-weight: 600;
 }
 
 .savePass > span {
