@@ -19,6 +19,7 @@ export const Menu = () => {
   const [selectedCategoryId, setSelectedCategoryId] = useState('3');
 
   const selectedCategory = categories?.find((category) => category.id_category === selectedCategoryId);
+  console.log(selectedCategory);
   if (isLoading) {
     return <Loader />;
   }
