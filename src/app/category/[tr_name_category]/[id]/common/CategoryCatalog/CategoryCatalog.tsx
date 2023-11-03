@@ -7,6 +7,7 @@ import { CustomDatePicker } from '@/app/category/[tr_name_category]/[id]/common/
 import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/CustomSelect/CustomSelect';
 import { Product } from '@/interfaces/categories';
 import { CustomPagination } from '@/app/category/[tr_name_category]/[id]/common/CustomPagination/CustomPagination';
+import { customLabel, customSelect } from '@/styles/buttonStyles';
 
 interface CategoryCatalogProps {
   products: Product[];
@@ -15,8 +16,18 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
   const arr = [
     {
       id: 1,
-      timeInRent: 'string',
-      price: '123',
+      timeInRent: '1 неделя',
+      price: '1 799 руб.',
+    },
+    {
+      id: 2,
+      timeInRent: '1 месяц',
+      price: '3 930 руб.',
+    },
+    {
+      id: 3,
+      timeInRent: '2 месяца',
+      price: '13 450 руб.',
     },
   ];
   return (
@@ -26,7 +37,12 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
           <AvailableNow />
           <CustomDatePicker />
         </div>
-        <CustomSelect label='Сначала новые' labelImage={sortSvg} />
+        <CustomSelect
+          label='Сначала новые'
+          labelImage={sortSvg}
+          selectStyles={customSelect}
+          labelStyles={customLabel}
+        />
       </div>
 
       <div className={styles.categoryCatalog}>
@@ -41,7 +57,7 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
             status={product.quality_control}
             rating={2}
             feedbackCount={2}
-            sellerInfo={'asfasf'}
+            sellerInfo={'Организация'}
             isAvailable={product.enabled_product}
             isConfirmed={true}
             rentInfoArray={arr}

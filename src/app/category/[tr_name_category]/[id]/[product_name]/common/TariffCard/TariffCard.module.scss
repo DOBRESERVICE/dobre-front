@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+.tariffCard {
+  width: 113px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F4F4F4;
+  border-radius: 8px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding-block: 10px;
+  padding-inline: 15px;
+
+  & > p:nth-child(1) {
+    color: $graphite;
+    font-size: 11px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.44px;
+    text-transform: uppercase;
+  }
+  & > p:nth-child(2) {
+       color: $black;
+       font-size: 15px;
+       font-weight: $fweight-big;
+  }
+}

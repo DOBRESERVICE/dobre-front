@@ -1,0 +1,21 @@
+@import "src/styles/variables";
+
+.ratingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  & span {
+    color: $black;
+    font-weight: 600;
+  }
+  & > span {
+    font-size: 13px;
+  }
+  & > div:first-child > span {
+    margin-left: 6px;
+    font-size: 15px;
+  }
+
+}

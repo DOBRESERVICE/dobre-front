@@ -1,7 +1,8 @@
 import styles from './StatusBar.module.scss';
-import { ProductStatus } from '@/enums';
+import { ProductStatus, qualityMap } from '@/enums';
 import { FC } from 'react';
 import classNames from 'classnames';
+import { isGoodStatus } from '@/constants';
 
 interface StatusBar {
   status: number;
@@ -9,20 +10,30 @@ interface StatusBar {
 
 export const StatusBar: FC<StatusBar> = ({ status }) => {
   return (
-    <div
-      className={classNames(styles.statusBarContainer, {
-        [styles.newQuality]: status === ProductStatus.NEW,
-        [styles.likeNewQuality]: status === ProductStatus.LIKE_NEW,
-        [styles.goodQuality]: status === ProductStatus.GOOD,
-        [styles.usedQuality]: status === ProductStatus.USED,
-        [styles.badQuality]: status === ProductStatus.BAD,
-      })}
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
+    <div className={styles.statusWrapper}>
+      <p
+        className={classNames(styles.status, {
+          [styles.goodStatus]: isGoodStatus(status),
+          [styles.mediumStatus]: !isGoodStatus(status),
+        })}
+      >
+        {qualityMap[status]}
+      </p>
+      <div
+        className={classNames(styles.statusBarContainer, {
+          [styles.newQuality]: status === ProductStatus.NEW,
+          [styles.likeNewQuality]: status === ProductStatus.LIKE_NEW,
+          [styles.goodQuality]: status === ProductStatus.GOOD,
+          [styles.usedQuality]: status === ProductStatus.USED,
+          [styles.badQuality]: status === ProductStatus.BAD,
+        })}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   );
 };

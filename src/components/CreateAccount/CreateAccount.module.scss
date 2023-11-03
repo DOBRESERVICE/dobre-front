@@ -37,9 +37,11 @@
 }
 
 .savePass,
-.hidePass {
+.hidePass, .savePass > span {
   color: $graphite;
   cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .hidePass {

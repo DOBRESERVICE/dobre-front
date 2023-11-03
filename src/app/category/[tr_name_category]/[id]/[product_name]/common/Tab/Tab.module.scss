@@ -1,0 +1,32 @@
+@import "src/styles/variables";
+.tabWrapper {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  & > p {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+    transition: color .5s;
+  }
+  & > div {
+    background-color: $deep-blue;
+    opacity: 0;
+    height: 3px;
+    transition: opacity .5s;
+    border-radius: 90px;
+  }
+}
+.activeBar {
+  & > p {
+    color: $deep-blue;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+  & > div {
+    background-color: $deep-blue;
+    opacity: 1;
+ }
+}

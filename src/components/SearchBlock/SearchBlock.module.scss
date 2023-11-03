@@ -1,11 +1,9 @@
 @import '../../styles/variables.scss';
 .searchBlockWrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     width: calc(100% - 170px);
     margin-bottom: 110px;
-    padding-top: 34px;
     background-color: $deep-blue;
     border-radius: 23px;
     position: relative;
@@ -14,16 +12,19 @@
     display: flex;
     flex-direction: column;
     gap:35px;
-    padding-bottom: 90px;
+    padding-top: 68px;
+    padding-bottom: 142px;
 }
 .leftImageWrapper {
-    align-self: end;
-   height: 430px;
-    max-height: 430px;
+    height: 415px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
 }
 .rightImageWrapper {
-   max-height:450px;
-    height: 450px;
+    height: 100%;
+    position: absolute;
+    right: 0;
 }
 .rightImageWrapper > img , .leftImageWrapper > img {
     width: 100%;

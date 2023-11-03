@@ -6,7 +6,7 @@ import { CategoryMenuItem } from '@/components/Menu/common/CategoryMenuItem/Cate
 import { SubCategoryMenuItem } from '@/components/Menu/common/SubCategoryMenuItem/SubCategoryMenuItem';
 import { Loader } from '@/components/Loader/Loader';
 import { useRouter } from 'next/navigation';
-import { Category } from '@/interfaces/categories';
+import { Error } from '@/components/Error/Error';
 
 export const Menu = () => {
   const router = useRouter();
@@ -16,12 +16,14 @@ export const Menu = () => {
   }, []);
 
   const { categories, isError, isLoading } = useCategories();
-  const [selectedCategoryId, setSelectedCategoryId] = useState('3');
+  const [selectedCategoryId, setSelectedCategoryId] = useState(3);
 
   const selectedCategory = categories?.find((category) => category.id_category === selectedCategoryId);
-  console.log(selectedCategory);
   if (isLoading) {
     return <Loader />;
+  }
+  if (isError) {
+    return <Error />;
   }
   return (
     <div className={styles.menuWrapper}>
@@ -50,6 +52,7 @@ export const Menu = () => {
                 subcategory={subCategory.tr_name_sub}
               />
             ))}
+            {!selectedCategory?.subcategories && <p>Empty category</p>}
           </div>
         </div>
       </div>

@@ -1,0 +1,48 @@
+@import "src/styles/variables";
+.insuranceCard {
+  display: flex;
+  width: 362px;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #E7FFE7;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:8px;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: start;
+    gap: 8px;
+  }
+  & > div > p:first-child {
+    width: max-content;
+    color: #55C94D;
+    font-size: 15px;
+    font-weight: $fweight-big;
+  }
+  & > div > p:last-child {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 8px;
+  background: #FF4337;
+}
+.secureImageWrapper {
+  align-self: start;
+}

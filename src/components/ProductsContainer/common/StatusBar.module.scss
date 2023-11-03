@@ -1,11 +1,11 @@
-
+@import "src/styles/variables";
 .statusBarContainer > span {
   background-color: #D9D9D9;
 }
 
 .statusBarContainer {
   display: flex;
-  gap: 10px;
+  gap: 12px;
 
   & > span:nth-child(1),
   & > span:nth-child(2),
@@ -68,4 +68,22 @@
   & > span:nth-child(1) {
     background-color: #D4AA12;
   }
+}
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.status {
+  font-size: 13px;
+  font-weight: $fweight-big;
+}
+.goodStatus {
+  color: #55c94d;
+
+}
+
+.mediumStatus {
+  color: #D4AA12;
 }

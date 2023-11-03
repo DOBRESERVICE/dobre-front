@@ -44,7 +44,8 @@ export const CreateAccountComponent = () => {
       router.push('/');
     }
   }, [isRegistered]);
-
+  console.log(isDisabled, 'isDisabled');
+  console.log(isAccept, 'isDirty');
   return (
     <>
       <div className={styles.content}>

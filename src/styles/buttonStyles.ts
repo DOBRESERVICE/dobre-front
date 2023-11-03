@@ -128,6 +128,7 @@ export const howWeWorkButton = {
 export const authCustomInput = {
   width: '385px',
   '& .MuiOutlinedInput-root': {
+    height: '50px',
     borderRadius: '8px',
     border: `1px solid ${colors.grayBorder}`,
     '& input': {
@@ -144,6 +145,7 @@ export const authCustomInput = {
     fontSize: ' 15px',
     fontWeight: '600',
     color: colors.graphite,
+    top: '5px',
   },
 };
 
@@ -174,8 +176,23 @@ export const customSelect = {
   fontWeight: '600',
   borderRadius: '8px',
   '& > div': {
-    padding: '6.5px 14px',
+    padding: '8px 14px',
   },
+};
+export const customDateSelect = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  borderRadius: '8px',
+  '& > div': {
+    padding: '12px 14px',
+  },
+};
+export const customDateLabel = {
+  color: colors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  top: '-4px',
 };
 export const customLabel = {
   color: colors.graphite,
@@ -219,6 +236,26 @@ export const customSellerTypeButton = {
 export const rentInfoCustomButton = {
   borderRadius: '8px',
   height: '36px',
+  gap: '10px',
+  fontSize: '15px',
+  color: colors.white,
+  width: '100%',
+  fontWeight: 700,
+  background: colors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};
+export const rentInfoCustomBigButton = {
+  borderRadius: '8px',
+  height: '45px',
   gap: '10px',
   fontSize: '15px',
   color: colors.white,

@@ -11,6 +11,7 @@ import { SellerType } from '@/app/category/[tr_name_category]/[id]/common/Seller
 import { ProductQuality } from '@/app/category/[tr_name_category]/[id]/common/ProductQuality/ProductQuality';
 import { FC } from 'react';
 import { Variety } from '@/interfaces/categories';
+import { customLabel, customSelect } from '@/styles/buttonStyles';
 
 interface AsideProps {
   title: string;
@@ -26,8 +27,13 @@ export const Aside: FC<AsideProps> = ({ title, varietiesList }) => {
       <SubCategories varietiesList={varietiesList} />
       <hr />
       <div className={styles.chooseContent}>
-        <CustomSelect label='Все бренды' headerName='Бренд' />
-        <CustomSelect label='Все организации' headerName='Организация' />
+        <CustomSelect label='Все бренды' headerName='Бренд' selectStyles={customSelect} labelStyles={customLabel} />
+        <CustomSelect
+          label='Все организации'
+          headerName='Организация'
+          selectStyles={customSelect}
+          labelStyles={customLabel}
+        />
         <OptionsComponent title='Питание' optionsData={optionsData} />
         <RentPrice />
         <SellerType />

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|scss|md)\""
@@ -16,6 +16,7 @@
     "@mui/material": "^5.14.10",
     "@mui/system": "^5.14.11",
     "@mui/x-date-pickers": "^6.16.2",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^1.9.7",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",

@@ -34,6 +34,7 @@
   justify-content: center;
   align-items: center;
   gap: 58px;
+  height: calc(100% - 82px);
   margin-left: 40px;
 }
 .arrowBack {
@@ -44,6 +45,7 @@
 }
 .imageWrapper {
   position: relative;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -69,6 +71,7 @@
   height: 100%;
   position: absolute;
   right: 0;
+  bottom: 5px;
 }
 .dobreImage > img {
   width: 100%;

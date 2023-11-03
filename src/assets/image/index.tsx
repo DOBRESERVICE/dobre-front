@@ -90,8 +90,50 @@ import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
 import sortSvg from './sortSvg.svg';
 import blueClose from './blueClose.svg';
 import noImage from './NO_IMAGE.jpg';
+import secureProduct from './secureProduct.svg';
+import mock1Image from './mock1Image.png';
+import mock2Image from './mock2Image.png';
+import mock3Image from './mock3Image.png';
+import mockMainImage from './mockMainImage.png';
+import mockBrandImage from './mockBrandImage.png';
+import dateArrow from './dateArrow.svg';
+import sendMessageIcon from './sendMessageIcon.svg';
+import phoneIcon from './phoneIcon.svg';
+import dpd from './delivery/dpd.svg';
+import kce from './delivery/kce.svg';
+import russiaMail from './delivery/russiaMail.svg';
+import sdek from './delivery/sdek.svg';
+import yandexGo from './delivery/yandexGo.svg';
+import cardPayment from './payments/cardPayment.svg';
+import cashPayment from './payments/cashPayment.svg';
+import cryptoPayment from './payments/bitkoinPayment.svg';
+import cube from './cube.png';
+import infoIcon from './infoIcon.svg';
+import greenCheckedIcon from './greenCheckedIcon.svg';
+import imkliva from './brands/imkliva.svg';
 
 export {
+  imkliva,
+  greenCheckedIcon,
+  infoIcon,
+  cardPayment,
+  cashPayment,
+  cryptoPayment,
+  cube,
+  dpd,
+  kce,
+  sdek,
+  russiaMail,
+  yandexGo,
+  phoneIcon,
+  sendMessageIcon,
+  dateArrow,
+  mockBrandImage,
+  mockMainImage,
+  mock1Image,
+  mock2Image,
+  mock3Image,
+  secureProduct,
   noImage,
   acceptIcon,
   blackArrowNext,

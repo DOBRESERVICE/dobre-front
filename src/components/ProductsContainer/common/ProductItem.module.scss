@@ -51,14 +51,6 @@
   font-size: 13px;
   font-weight: $fweight-big;
 }
-.goodStatus {
-  color: #55c94d;
-
-}
-
-.mediumStatus {
-  color: #D4AA12;
-}
 
 .statusWrapper {
   display: flex;
@@ -89,25 +81,6 @@
 
 }
 
-.notification {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 10px 4px 10px;
-  border-radius: 4px;
-  & > p {
-    color: $white;
-    font-size: 12px;
-    font-weight: $fweight-big;
-  }
-}
-.availableItem {
-  background-color: #55C94D;
-}
-.unAvailableItem {
-  background: linear-gradient(104deg, #f59045 0%, #e65071 100%);
-
-}
 .sellerInfoContainer {
   display: flex;
   gap: 6px;
@@ -118,25 +91,7 @@
     font-weight: $fweight-big;
   }
 }
-.ratingWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 
-  & span {
-    color: $black;
-    font-weight: 600;
-  }
-& > span {
-  font-size: 13px;
-}
-  & > div:first-child > span {
-    margin-left: 6px;
-    font-size: 15px;
-  }
-
-}
 .content {
   display: flex;
   flex-direction: column;
