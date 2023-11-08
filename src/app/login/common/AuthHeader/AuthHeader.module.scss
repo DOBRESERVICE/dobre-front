@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .text {
   font-size: 15px;
   font-weight: 600;
@@ -18,5 +18,5 @@
 .authHeaderWrapper {
   display: flex;
   flex-direction: column;
-  gap:10px;
+  gap: 10px;
 }

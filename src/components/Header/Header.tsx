@@ -32,12 +32,10 @@ export const Header = () => {
   const router = useRouter();
   const [token, setToken] = useState<string | null>('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   useEffect(() => {
     const token = localStorage.getItem('token');
     setToken(token);
   }, []);
-
   return (
     <>
       <header

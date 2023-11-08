@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .ratingWrapper {
   display: flex;
@@ -10,12 +10,27 @@
     color: $black;
     font-weight: 600;
   }
+}
+.defaultRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
   & > span {
-    font-size: 13px;
-  }
-  & > div:first-child > span {
-    margin-left: 6px;
     font-size: 15px;
   }
+}
+.bigRating {
+  & > img {
+    width: 14px;
+    height: 13px;
+  }
 
+  & > span {
+    font-size: 22px;
+  }
+}
+.textFeedback {
+  font-size: 13px;
 }

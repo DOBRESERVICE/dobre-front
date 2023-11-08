@@ -2,7 +2,7 @@ import { Map, YMaps } from '@pbe/react-yandex-maps';
 
 export const YandexMaps = () => {
   return (
-    <YMaps query={{ apikey: 'ae2768f5-53c2-42c8-85c8-72bf0933808b' }}>
+    <YMaps query={{ apikey: process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY }}>
       <Map
         width={'100%'}
         height={240}

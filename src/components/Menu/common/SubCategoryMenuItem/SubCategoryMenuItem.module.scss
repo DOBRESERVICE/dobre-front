@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .subCategoryWrapper {
   display: flex;
@@ -20,7 +20,7 @@
   border-width: 0 2px 2px 0;
   transition: transform 0.5s;
   padding: 3px;
-  transform:rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .seeAll {
   display: flex;

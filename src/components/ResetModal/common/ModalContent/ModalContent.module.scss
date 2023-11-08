@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .modalContent {
   display: flex;
   gap: 30px;
@@ -11,7 +11,6 @@
   justify-content: center;
   align-items: center;
   outline: none;
-
 }
 .contentWrapper {
   display: flex;
@@ -32,5 +31,4 @@
     text-align: center;
     font-size: 17px;
   }
-
 }

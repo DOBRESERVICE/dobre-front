@@ -1,8 +1,6 @@
 'use client';
 import styles from './ProductAsideInfo.module.scss';
 import Image from 'next/image';
-import { Map, YMaps } from '@pbe/react-yandex-maps';
-
 import {
   cardPayment,
   cashPayment,
@@ -32,7 +30,7 @@ export const ProductAsideInfo = () => {
             <div>
               <p>Viola. K</p> <Image src={verified} alt='verified' />
             </div>
-            <RatingComponent rating={4.9} feedbackCount={31} />
+            <RatingComponent feedbackType='iconFeedback' rating={4.9} feedbackCount={31} />
           </div>
         </div>
         <div className={styles.content}>
@@ -69,7 +67,7 @@ export const ProductAsideInfo = () => {
             <div className={styles.paymentIconWrapper}>
               <Image src={cardPayment} alt='card' />
             </div>
-            <p>Картой</p>
+            <p>Безопасная оплата онлайн</p>
           </div>
           <div>
             <div className={styles.paymentIconWrapper}>

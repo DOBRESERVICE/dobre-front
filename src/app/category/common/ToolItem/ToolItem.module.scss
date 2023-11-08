@@ -1,4 +1,4 @@
-@import "/src/styles/variables";
+@import '/src/styles/variables';
 
 .toolWrapper {
   display: flex;
@@ -23,7 +23,7 @@
   align-self: start;
 }
 .imageWrapper {
-  background-color:$sky-blue;
+  background-color: $sky-blue;
   border-radius: 14px;
   width: 100%;
   display: flex;

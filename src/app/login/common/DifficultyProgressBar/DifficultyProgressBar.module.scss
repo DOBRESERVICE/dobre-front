@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .difficultyProgressBar {
   height: 2px;
@@ -9,13 +9,12 @@
 }
 .difficultyProgressBar::-webkit-progress-value {
   background: $deep-blue;
-  transition: width .5s;
-
+  transition: width 0.5s;
 }
 .progressWrapper {
   display: flex;
   flex-direction: column;
-  gap:12px;
+  gap: 12px;
 }
 .progressWrapper > div:first-child {
   display: flex;

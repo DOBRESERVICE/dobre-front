@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .brandSectionItem {
   display: flex;
   justify-content: space-between;
@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:20px;
+  gap: 20px;
 
   & > p {
     color: $black;

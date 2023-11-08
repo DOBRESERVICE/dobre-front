@@ -1,0 +1,108 @@
+@import 'src/styles/variables';
+.productInfo {
+  width: 410px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  border-radius: 14px;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+.productInfo > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.productInfo > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.dateHeaderWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > p:nth-child(1) {
+    color: $black;
+    font-size: 15px;
+    font-weight: $fweight-big;
+    line-height: 11px;
+  }
+  & > p:nth-child(2) {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 11px;
+  }
+}
+.selectWrapper {
+  display: flex;
+  gap: 16px;
+}
+.cardsWrapper {
+  display: flex;
+  gap: 16px;
+}
+.depositeWrapper {
+  display: flex;
+  justify-content: space-between;
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+    max-width: 170px;
+  }
+  & > div {
+    display: flex;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid $light-graphite;
+    padding-inline: 12px;
+  }
+  & > div > p {
+    color: $black;
+    font-size: 15px;
+    font-weight: $fweight-big;
+  }
+}
+.rentInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 14px;
+  background: #f4f4f4;
+  padding: 20px;
+}
+.rentInfoHeader {
+  display: flex;
+  justify-content: space-between;
+  & > p:nth-child(1) {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+
+  & > p:nth-child(2) {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+}
+.rentInfoContent {
+  display: flex;
+  justify-content: space-between;
+
+  & > p:nth-child(1) {
+    color: $graphite;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  & > p:nth-child(2) {
+    color: $black;
+    font-size: 15px;
+    font-weight: $fweight-big;
+  }
+}

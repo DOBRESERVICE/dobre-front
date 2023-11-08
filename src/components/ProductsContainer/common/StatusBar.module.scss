@@ -1,6 +1,6 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .statusBarContainer > span {
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
 }
 
 .statusBarContainer {
@@ -19,12 +19,12 @@
   & > span:nth-child(1),
   & > span:nth-child(2),
   & > span:nth-child(3) {
-    width: 23px;
+    width: 26px;
   }
 
   & > span:nth-child(4),
   & > span:nth-child(5) {
-    width: 13px;
+    width: 16px;
   }
 }
 .newQuality {
@@ -34,7 +34,6 @@
   & > span:nth-child(4),
   & > span:nth-child(5) {
     background-color: #55c94d;
-
   }
 }
 
@@ -44,7 +43,6 @@
   & > span:nth-child(3),
   & > span:nth-child(4) {
     background-color: #55c94d;
-
   }
 }
 
@@ -53,20 +51,19 @@
   & > span:nth-child(2),
   & > span:nth-child(3) {
     background-color: #55c94d;
-
   }
 }
 
 .usedQuality {
   & > span:nth-child(1),
   & > span:nth-child(2) {
-    background-color: #D4AA12;
+    background-color: #d4aa12;
   }
 }
 
 .badQuality {
   & > span:nth-child(1) {
-    background-color: #D4AA12;
+    background-color: #d4aa12;
   }
 }
 .statusWrapper {
@@ -78,12 +75,12 @@
 .status {
   font-size: 13px;
   font-weight: $fweight-big;
+  line-height: 9px;
 }
 .goodStatus {
   color: #55c94d;
-
 }
 
 .mediumStatus {
-  color: #D4AA12;
+  color: #d4aa12;
 }

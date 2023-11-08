@@ -31,7 +31,9 @@ export const PriceInfoCard = () => {
           <Image src={greenCheckedIcon} alt='checked' />
           <p> Товар можно выкупить</p>
         </div>
-        <Button sx={rentInfoCustomBigButton}>Отправить запрос</Button>
+        <Button disableRipple sx={rentInfoCustomBigButton}>
+          Отправить запрос
+        </Button>
       </div>
     </div>
   );

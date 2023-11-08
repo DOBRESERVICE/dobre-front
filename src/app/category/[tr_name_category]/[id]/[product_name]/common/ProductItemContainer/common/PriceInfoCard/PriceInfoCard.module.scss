@@ -1,13 +1,17 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .card {
   max-width: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:86px;
+  gap: 86px;
   border-radius: 14px;
   padding: 20px;
-  background: #F4F4F4;
+  background: #f4f4f4;
+
+  @include breakpoint(lg) {
+    gap: 16px;
+  }
 }
 .cardContent {
   display: flex;
@@ -19,11 +23,10 @@
     font-size: 18px;
     font-weight: $fweight-big;
   }
-
 }
 .wrapper {
   display: flex;
-  gap:16px;
+  gap: 16px;
 }
 .contentItem {
   display: flex;
@@ -34,7 +37,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:8px;
+    gap: 8px;
   }
   & > div > p {
     width: max-content;
@@ -54,7 +57,6 @@
 .contentItem:not(:last-child) {
   border-right: 1px solid $light-graphite;
   padding-right: 20px;
-
 }
 .additionalContent {
   display: flex;
@@ -63,15 +65,14 @@
 }
 .text {
   display: flex;
-  gap:8px;
+  gap: 8px;
   justify-content: center;
   align-items: center;
 
   & > p {
     width: max-content;
-    color: #55C94D;
+    color: #55c94d;
     font-size: 13px;
     font-weight: $fweight-big;
   }
-
 }

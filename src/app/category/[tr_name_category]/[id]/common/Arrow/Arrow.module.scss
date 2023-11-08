@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .arrow {
   display: flex;
@@ -8,7 +8,7 @@
   width: 10px;
   height: 6px;
   pointer-events: all;
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 .isOpen {
   transform: rotate(180deg);

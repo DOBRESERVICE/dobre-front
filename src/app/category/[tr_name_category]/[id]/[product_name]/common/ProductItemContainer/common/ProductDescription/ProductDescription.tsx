@@ -2,7 +2,7 @@ import styles from './ProductDescription.module.scss';
 import { FC } from 'react';
 import { PriceInfoCard } from '../PriceInfoCard/PriceInfoCard';
 import { InsuranceCard } from '../InsuranceCard/InsuranceCard';
-
+import { ProductDetails } from '../ProductDetails/ProductDetails';
 interface ProductDescriptionProps {
   firstDescription: string;
   mainAdvantages: any[];

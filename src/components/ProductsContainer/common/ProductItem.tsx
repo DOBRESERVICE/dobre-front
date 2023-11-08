@@ -2,8 +2,6 @@ import styles from './ProductItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { favouriteIcon, mockUser, starReviews, verified } from '@/assets/image';
 import { FC } from 'react';
-import { availableNow, inRent, isGoodStatus } from '@/constants';
-import classNames from 'classnames';
 import { RentInfoContainer } from '@/components/ProductsContainer/common/RentInfoContainer/RentInfoContainer';
 import { RentInfoData } from '@/interfaces';
 import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
@@ -53,7 +51,7 @@ export const ProductItem: FC<ProductItem> = ({
         <StatusBar status={status} />
         <div className={styles.infoWrapper}>
           <ProductRentStatus isAvailable={isAvailable} rentEndDate={rentEndDate} />
-          <RatingComponent rating={rating} feedbackCount={feedbackCount} />
+          <RatingComponent feedbackType='textFeedback' rating={rating} feedbackCount={feedbackCount} />
         </div>
         <p className={styles.itemName}>
           {itemName} {description}

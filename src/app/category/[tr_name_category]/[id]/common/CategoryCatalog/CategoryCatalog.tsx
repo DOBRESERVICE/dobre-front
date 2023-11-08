@@ -7,7 +7,7 @@ import { CustomDatePicker } from '@/app/category/[tr_name_category]/[id]/common/
 import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/CustomSelect/CustomSelect';
 import { Product } from '@/interfaces/categories';
 import { CustomPagination } from '@/app/category/[tr_name_category]/[id]/common/CustomPagination/CustomPagination';
-import { customLabel, customSelect } from '@/styles/buttonStyles';
+import { customDateFormSelect, customFormSelect, customLabel, customSelect } from '@/styles/selectStyles';
 
 interface CategoryCatalogProps {
   products: Product[];
@@ -42,6 +42,8 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
           labelImage={sortSvg}
           selectStyles={customSelect}
           labelStyles={customLabel}
+          formControlStyles={customFormSelect}
+          selectData={['sss']}
         />
       </div>
 

@@ -5,8 +5,9 @@ interface TabProps {
   name: string;
   isActive: boolean;
   onClick: () => void;
+  count: number;
 }
-export const Tab: FC<TabProps> = ({ isActive, name, onClick }) => {
+export const Tab: FC<TabProps> = ({ isActive, name, onClick, count }) => {
   return (
     <div
       className={classNames(styles.tabWrapper, {
@@ -15,8 +16,11 @@ export const Tab: FC<TabProps> = ({ isActive, name, onClick }) => {
       role='button'
       onClick={onClick}
     >
-      <p>{name}</p>
-      <div></div>
+      <div className={styles.content}>
+        <p>{name}</p>
+        <span className={styles.count}>{count}</span>
+      </div>
+      <div className={styles.tabActiveLine}></div>
     </div>
   );
 };

@@ -111,8 +111,18 @@ import cube from './cube.png';
 import infoIcon from './infoIcon.svg';
 import greenCheckedIcon from './greenCheckedIcon.svg';
 import imkliva from './brands/imkliva.svg';
+import feedbackIcon from './feedbackIcon.svg';
+import tesnimonialToolImage from './tesnimonialToolImage.png';
+import image31 from './image 31.png';
+import commentExclamation from './commentExclamation.svg';
+import tarrifInfo from './tarrifInfo.svg';
 
 export {
+  tarrifInfo,
+  commentExclamation,
+  image31,
+  tesnimonialToolImage,
+  feedbackIcon,
   imkliva,
   greenCheckedIcon,
   infoIcon,

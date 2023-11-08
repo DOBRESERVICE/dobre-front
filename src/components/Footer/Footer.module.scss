@@ -64,7 +64,7 @@
 
 .iconsWrapper {
   display: flex;
-  gap:20px;
+  gap: 20px;
 }
 
 .icon {
@@ -76,13 +76,13 @@
   height: 40px;
   width: 40px;
   cursor: pointer;
-  transition: background .3s;
+  transition: background 0.3s;
 }
 .icon:hover {
-  background: #D2E6FF;
+  background: #d2e6ff;
 }
 .icon:active {
-  background: #93C3FF;
+  background: #93c3ff;
 }
 .buttonWrapper {
   margin-top: 32px;

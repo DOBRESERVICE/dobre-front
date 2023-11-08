@@ -170,36 +170,6 @@ export const authCheckBox = {
   },
 };
 
-export const customSelect = {
-  color: colors.graphite,
-  fontSize: '15px',
-  fontWeight: '600',
-  borderRadius: '8px',
-  '& > div': {
-    padding: '8px 14px',
-  },
-};
-export const customDateSelect = {
-  color: colors.graphite,
-  fontSize: '15px',
-  fontWeight: '600',
-  borderRadius: '8px',
-  '& > div': {
-    padding: '12px 14px',
-  },
-};
-export const customDateLabel = {
-  color: colors.graphite,
-  fontSize: '15px',
-  fontWeight: '600',
-  top: '-4px',
-};
-export const customLabel = {
-  color: colors.graphite,
-  fontSize: '15px',
-  fontWeight: '600',
-  top: '-8px',
-};
 export const customRentPriceInput = {
   '& > div': {
     height: '36px',
@@ -253,13 +223,54 @@ export const rentInfoCustomButton = {
     boxShadow: 'none',
   },
 };
+export const FAQCustomButton = {
+  borderRadius: '8px',
+  height: '45px',
+  gap: '10px',
+  fontSize: '15px',
+  paddingInline: '15px',
+  color: colors.white,
+  fontWeight: 700,
+  background: colors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};
 export const rentInfoCustomBigButton = {
   borderRadius: '8px',
   height: '45px',
   gap: '10px',
   fontSize: '15px',
   color: colors.white,
-  width: '100%',
+  width: 'auto',
+  fontWeight: 700,
+  background: colors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};
+export const SeeAllCustomBigButton = {
+  borderRadius: '8px',
+  height: '45px',
+  gap: '10px',
+  fontSize: '15px',
+  color: colors.white,
+  width: 'fit-content',
+  paddingInline: '22px',
   fontWeight: 700,
   background: colors.deepBlue,
   boxShadow: 'none',

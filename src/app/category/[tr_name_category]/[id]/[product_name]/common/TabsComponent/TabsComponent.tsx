@@ -1,20 +1,21 @@
 'use client';
 import styles from './TabsComponent.module.scss';
 import { Tab } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Tab/Tab';
-import { useState } from 'react';
-export const TabsComponent = () => {
-  const [activeTab, setActiveTab] = useState(1);
+import { Dispatch, FC, SetStateAction, useState } from 'react';
+
+interface TabsComponentProps {
+  activeTab: number;
+  setActiveTab: Dispatch<SetStateAction<number>>;
+  countArray: number[];
+}
+export const TabsComponent: FC<TabsComponentProps> = ({ setActiveTab, activeTab, countArray }) => {
   const tabsData = [
     {
       id: 1,
-      tabName: 'Описание',
-    },
-    {
-      id: 2,
       tabName: 'Отзывы',
     },
     {
-      id: 3,
+      id: 2,
       tabName: 'Вопрос-ответ',
     },
   ];
@@ -22,7 +23,13 @@ export const TabsComponent = () => {
     <div>
       <div className={styles.tabsWrapper}>
         {tabsData.map((tab) => (
-          <Tab name={tab.tabName} isActive={activeTab === tab.id} key={tab.id} onClick={() => setActiveTab(tab.id)} />
+          <Tab
+            name={tab.tabName}
+            isActive={activeTab === tab.id}
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+            count={countArray[tab.id - 1]}
+          />
         ))}
       </div>
     </div>

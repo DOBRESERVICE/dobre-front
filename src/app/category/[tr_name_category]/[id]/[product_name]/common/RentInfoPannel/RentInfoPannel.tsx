@@ -1,0 +1,92 @@
+import styles from './RentInfoPannel.module.scss';
+import { ProductRentStatus } from '@/ui/ProductRentStatus/ProductRentStatus';
+import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/CustomSelect/CustomSelect';
+import {
+  customDateFormSelect,
+  customDateLabel,
+  customDateSelect,
+  customProductQuantityFormSelect,
+  customProductQuantitySelect,
+} from '@/styles/selectStyles';
+import { dateArrow, dateImage, rentButtonIcon } from '@/assets/image';
+import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
+import { Button } from '@mui/material';
+import { rentInfoCustomBigButton } from '@/styles/buttonStyles';
+import Image from 'next/image';
+import { FC } from 'react';
+
+interface RentInfoPannelProps {
+  count: number;
+  availableQuantityArray: number[];
+}
+
+export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray }) => {
+  return (
+    <div className={styles.productInfo}>
+      <div>
+        <div className={styles.dateHeaderWrapper}>
+          <p>Дата</p>
+          <ProductRentStatus isAvailable />
+        </div>
+        <div className={styles.selectWrapper}>
+          <CustomSelect
+            formControlStyles={customDateFormSelect}
+            selectStyles={customDateSelect}
+            labelStyles={customDateLabel}
+            labelImage={dateImage}
+            firstPartLabel='10 окт.'
+            secondPartLabel='12 окт.'
+            labelSecondImage={dateArrow}
+            selectData={['sss']}
+          />
+          {count > 0 && (
+            <CustomSelect
+              formControlStyles={customProductQuantityFormSelect}
+              labelStyles={customDateLabel}
+              selectStyles={customProductQuantitySelect}
+              label={`${count} шт.`}
+              selectData={availableQuantityArray}
+            />
+          )}
+        </div>
+      </div>
+      <div>
+        <div className={styles.dateHeaderWrapper}>
+          <p>Тарифы</p>
+          <p>Смотреть все</p>
+        </div>
+        <div className={styles.cardsWrapper}>
+          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon />
+          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon={false} />
+          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon={false} />
+        </div>
+      </div>
+      <div className={styles.depositeWrapper}>
+        <p>При оформлении аренды взымается залог</p>
+        <div>
+          <p>20 000 руб.</p>
+        </div>
+      </div>
+      <div className={styles.rentInfoWrapper}>
+        <div className={styles.rentInfoHeader}>
+          <p>Стоимость аренды :</p>
+          <p>300 руб.</p>
+        </div>
+        <div>
+          <div className={styles.rentInfoContent}>
+            <p>Тариф:</p>
+            <p>1-7 дней</p>
+          </div>
+          <div className={styles.rentInfoContent}>
+            <p>Кол-во дней:</p>
+            <p>2 дня</p>
+          </div>
+        </div>
+        <Button disableRipple sx={rentInfoCustomBigButton}>
+          <Image src={rentButtonIcon} alt='rent' />
+          Оформить аренду
+        </Button>
+      </div>
+    </div>
+  );
+};

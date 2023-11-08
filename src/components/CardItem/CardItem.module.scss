@@ -1,12 +1,12 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .cardWrapper {
   position: relative;
   height: 100%;
   & h3 {
     position: absolute;
-    bottom:42px;
-    left:36px;
-    color:$white;
+    bottom: 42px;
+    left: 36px;
+    color: $white;
     font-size: 18px;
     z-index: 2;
     font-weight: $fweight-big;
@@ -20,7 +20,6 @@
   overflow: hidden;
   height: 100%;
   width: 100%;
-
 }
 
 .imageWrapper > img {
@@ -30,10 +29,10 @@
 }
 
 .cardWrapper::after {
-  content:'';
+  content: '';
   position: absolute;
-  inset:0;
-  background: rgba(0,0,0,0.2);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
   border-radius: 14px;

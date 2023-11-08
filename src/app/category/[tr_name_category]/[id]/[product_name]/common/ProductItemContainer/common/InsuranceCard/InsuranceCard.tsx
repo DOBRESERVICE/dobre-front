@@ -5,10 +5,8 @@ export const InsuranceCard = () => {
   return (
     <div className={styles.insuranceCard}>
       <div className={styles.content}>
-        <div className={styles.secureImageWrapper}>
-          <Image src={secureProduct} alt='secure' />
-        </div>
-        <div>
+        <Image src={secureProduct} alt='secure' />
+        <div className={styles.textContent}>
           <p>Данный товар застрахован</p>
           <p>В случае повреждения товара, страховая компания возместит ущерб арендодателю.</p>
         </div>
