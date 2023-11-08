@@ -11,3 +11,12 @@ $fweight-medium: 500;
 $fweight-small: 400;
 $width-wrapper: 1330px;
 $deep-blue: #2540e4;
+$large-screen: 1679px;
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == lg {
+    @media screen and (max-width: $large-screen) {
+      @content;
+    }
+  }
+}

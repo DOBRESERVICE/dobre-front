@@ -1,8 +1,8 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .breadCrumbsWrapper {
   width: calc(100% - 272px);
   display: flex;
-  gap:8px;
+  gap: 8px;
   margin-top: 44px;
 }
 .breadCrumbsWrapper > a {

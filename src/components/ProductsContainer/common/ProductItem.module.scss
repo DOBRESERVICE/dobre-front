@@ -6,7 +6,7 @@
   max-width: 337px;
   position: relative;
 
-  & > img:nth-child(1){
+  & > img:nth-child(1) {
     position: absolute;
   }
 
@@ -15,12 +15,11 @@
     top: 18px;
     left: 20px;
   }
-
 }
 
 .mainImageWrapper {
   border-radius: 14px;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .mainImageWrapper > img {
@@ -39,25 +38,17 @@
   top: 18px;
   right: 20px;
   cursor: pointer;
-  transition: background-color .3s;
+  transition: background-color 0.3s;
 }
 .imageWrapper:hover {
-  background-color: #EEE;
+  background-color: #eee;
 }
 .imageWrapper:active {
-  background-color: #C9C9C9;
+  background-color: #c9c9c9;
 }
 .status {
   font-size: 13px;
   font-weight: $fweight-big;
-}
-.goodStatus {
-  color: #55c94d;
-
-}
-
-.mediumStatus {
-  color: #D4AA12;
 }
 
 .statusWrapper {
@@ -80,34 +71,14 @@
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
- -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical;
 }
 .infoWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
 
-.notification {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4px 10px 4px 10px;
-  border-radius: 4px;
-  & > p {
-    color: $white;
-    font-size: 12px;
-    font-weight: $fweight-big;
-  }
-}
-.availableItem {
-  background-color: #55C94D;
-}
-.unAvailableItem {
-  background: linear-gradient(104deg, #f59045 0%, #e65071 100%);
-
-}
 .sellerInfoContainer {
   display: flex;
   gap: 6px;
@@ -118,27 +89,9 @@
     font-weight: $fweight-big;
   }
 }
-.ratingWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
 
-  & span {
-    color: $black;
-    font-weight: 600;
-  }
-& > span {
-  font-size: 13px;
-}
-  & > div:first-child > span {
-    margin-left: 6px;
-    font-size: 15px;
-  }
-
-}
 .content {
   display: flex;
   flex-direction: column;
-  gap:20px;
+  gap: 20px;
 }

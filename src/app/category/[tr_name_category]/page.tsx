@@ -17,7 +17,10 @@ export default async function CatalogPage({ params }: { params: { tr_name_catego
       <PopularTools />
       <NewProducts newProducts={certainCategoryData.products} />
       <CatalogBlocks subcategories={certainCategoryData.subcategories} />
-      <Blog />
+      <Blog
+        text='Добро пожаловать в мир ремонта и стройки, где креативность встречается с качеством, а ваш дом становится идеальным местом для жизни! Мы - ваш надежный партнер в создании и обновлении вашего жилья. Независимо от того, нужен ли вам косметический ремонт или полноценное строительство, у нас есть решения, которые сделают вашу мечту о идеальном доме реальностью.'
+        header={'Профессиональный ремонт и стройка: ваш путь к идеальному дому'}
+      />
     </>
   );
 }

@@ -17,8 +17,18 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   const arr = [
     {
       id: 1,
-      timeInRent: 'rent range',
-      price: 'price ...',
+      timeInRent: '1 неделя',
+      price: '1 799 руб.',
+    },
+    {
+      id: 2,
+      timeInRent: '1 месяц',
+      price: '3 930 руб.',
+    },
+    {
+      id: 3,
+      timeInRent: '2 месяца',
+      price: '13 450 руб.',
     },
   ];
 
@@ -36,7 +46,7 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
               status={product.quality_control}
               rating={2}
               feedbackCount={2}
-              sellerInfo={'asfasf'}
+              sellerInfo={'Организация'}
               isAvailable={product.enabled_product}
               isConfirmed={true}
               rentInfoArray={arr}

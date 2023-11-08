@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .categoryItem {
   display: flex;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   border-width: 0 2px 2px 0;
   transition: transform 0.5s;
   padding: 3px;
-  transform:rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .textContent {
   display: flex;
@@ -27,14 +27,13 @@
     font-size: 15px;
     font-weight: 700;
   }
-
 }
 .activeItem {
-  background-color: #EFF6FF;
+  background-color: #eff6ff;
   & p {
     color: $deep-blue;
   }
- & > .arrow {
-   display: inline-block;
- }
+  & > .arrow {
+    display: inline-block;
+  }
 }

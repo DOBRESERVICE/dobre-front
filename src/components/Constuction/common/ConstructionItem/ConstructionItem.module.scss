@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .constructionItemWrapper {
   position: relative;
@@ -7,15 +7,14 @@
 
   & > h3 {
     position: absolute;
-    bottom:42px;
-    left:36px;
-    color:$white;
+    bottom: 42px;
+    left: 36px;
+    color: $white;
     font-size: 18px;
     z-index: 2;
     font-weight: $fweight-big;
     line-height: 24px;
   }
-
 }
 .constructionItemWrapper > img {
   width: 100%;
@@ -23,10 +22,10 @@
   object-fit: cover;
 }
 .constructionItemWrapper::after {
-  content:'';
+  content: '';
   position: absolute;
-  inset:0;
-  background: rgba(0,0,0,0.2);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
   width: 100%;
   height: 100%;
 }

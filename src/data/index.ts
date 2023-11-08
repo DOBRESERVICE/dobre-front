@@ -29,6 +29,8 @@ import {
   specialTechnique,
   sport,
   sportImage,
+  tesnimonialToolImage,
+  testimonialsImage,
   travelling,
 } from '@/assets/image';
 import { ProductStatus } from '@/enums';
@@ -916,5 +918,136 @@ export const optionsData = [
   {
     id: 6,
     optionText: 'От сети',
+  },
+];
+
+const advantages = [
+  {
+    id: 1,
+    info: 'производительность — 2760 уд/мин;',
+  },
+  {
+    id: 2,
+    info: 'диаметр ударного бурения — 12–40 мм;',
+  },
+  {
+    id: 3,
+    info: 'антивибрационная система;',
+  },
+
+  {
+    id: 4,
+    info: 'регулировка уровня мощности.',
+  },
+];
+
+export const descriptionProductData = {
+  id: 1,
+  firstDescription:
+    'Комбинированный перфоратор Hilti TE 70-ATC/AVR совместим с насадками диаметром 12–150 мм и предназначен для сверления отверстий, каналов, демонтажа кладки и декоративных покрытий, а также создания проемов. Устройство подходит для работ по бетону, камню, кирпичу, металлу, древесине.',
+  mainAdvantages: advantages,
+  secondDescription:
+    'Перфоратор оснащен дополнительной боковой ручкой, положение которой пользователь меняет в соответствии с собственными потребностями.',
+};
+
+export const generalInfo = [
+  {
+    id: 1,
+    title: 'Общая информация',
+    array: [
+      { key: 'Тип', value: 'Перфоратор' },
+      { key: 'Бренд', value: 'Hilti' },
+      { key: 'Модель', value: 'TE 70-AVR 230V 2208672' },
+      { key: 'Страна-изготовитель', value: 'Китай' },
+      { key: 'Цвет', value: 'Красный' },
+      { key: 'Класс инструмента', value: 'Профессиональный' },
+      { key: 'Особенности', value: 'Кейс в комплекте' },
+    ],
+  },
+  {
+    id: 2,
+    title: 'Технические характеристики',
+    array: [
+      { key: 'Тип питания', value: 'От сети' },
+      { key: 'Мощность, Вт', value: '780 Вт' },
+      { key: 'Режим работы', value: 'Сверление, Сверление с ударом, Долбление' },
+      { key: 'Тип потрона', value: 'SDS-Plus' },
+      { key: 'Количество ударов, уд./мин', value: '4500' },
+      { key: 'Количество скоростей', value: '1' },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Габариты',
+    array: [
+      { key: 'Тип упаковки', value: 'Кейс' },
+      { key: 'Габариты, см', value: '200х200х40' },
+      { key: 'Вес, кг', value: '1.5 ' },
+    ],
+  },
+];
+
+export const blueTypesArray = [
+  'Бренд',
+  'Страна-изготовитель',
+  'Класс инструмента',
+  'Особенности',
+  'Тип питания',
+  'Мощность, Вт',
+];
+
+export const userTestimonialsData = [
+  {
+    id: 1,
+    userImage: mockUser,
+    userName: 'Viola',
+    userComment: 'Дрель в очень хорошем состоянии, почти как новое. Ирина очень отзывчивая, помогла разобраться.',
+    status: 4,
+    images: [
+      {
+        id: 1,
+        img: tesnimonialToolImage,
+      },
+      {
+        id: 2,
+        img: tesnimonialToolImage,
+      },
+    ],
+    feedbackCount: 4.5,
+    feedbackDate: '1 сентября 2023',
+  },
+  {
+    id: 2,
+    userImage: mockUser,
+    userName: 'Anton',
+    userComment:
+      'Дрель отличная, рекомендую. Состояние очень хорошее, думаю почти как новое. Виола очень хороший человек, помогла с доставкой! Буду обращаться еще !',
+    status: 3,
+    feedbackCount: 4,
+    feedbackDate: '1 сентября 2023',
+    ownerResponse: 'Антон, спасибо! Обращайтесь ко мне снова!',
+    ownerImage: mockUser,
+  },
+  {
+    id: 3,
+    userImage: mockUser,
+    userName: 'Виктория',
+    userComment: 'Все ок!',
+    status: 3,
+    feedbackCount: 5,
+    feedbackDate: '1 сентября 2023',
+    ownerImage: mockUser,
+  },
+];
+
+export const FAQData = [
+  {
+    id: 1,
+    userImage: mockUser,
+    userName: 'Anton',
+    userComment: 'Подскажите, дрель сдается с кейсом?',
+    feedbackDate: '1 сентября 2023',
+    ownerResponse: 'Да, конечно. Дрель упакована в специальный кейс.',
+    ownerImage: mockUser,
   },
 ];

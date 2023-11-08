@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .buttonsWrapper {
   display: flex;
@@ -19,19 +19,18 @@
   width: 122px;
   height: 45px;
   border-radius: 8px;
-  background: linear-gradient(90deg, #F58F47 0%, #E8596C 100%);
+  background: linear-gradient(90deg, #f58f47 0%, #e8596c 100%);
   z-index: 1;
 
   & > p {
     font-weight: $fweight-big;
     color: $white;
   }
-  transition: transform .3s;
+  transition: transform 0.3s;
 }
 .take {
   transform: translateX(0px);
 }
 .rent {
   transform: translateX(130px);
-
 }

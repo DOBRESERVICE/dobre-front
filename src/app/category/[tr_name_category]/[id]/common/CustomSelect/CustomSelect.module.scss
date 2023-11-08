@@ -1,14 +1,14 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .customSelectWrapper {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  min-width: 240px;
+  width: 100%;
 }
 .labelContent {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:10px;
+  gap: 10px;
 }

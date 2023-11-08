@@ -1,7 +1,6 @@
 import styles from './RentPrice.module.scss';
-import Input from '@mui/material/Input';
 import TextField from '@mui/material/TextField';
-import { customRentPriceInput, customSelect } from '@/styles/buttonStyles';
+import { customRentPriceInput } from '@/styles/buttonStyles';
 import { SelectHeader } from '@/app/category/[tr_name_category]/[id]/common/SelectHeader/SelectHeader';
 export const RentPrice = () => {
   return (

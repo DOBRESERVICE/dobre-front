@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .faqSectionWrapper {
   width: calc(100% - 272px);
@@ -10,7 +10,7 @@
   height: 840px;
   border-radius: 14px;
   margin-top: 100px;
-  background-color: #EFF6FF;
+  background-color: #eff6ff;
 }
 
 .faqHeader {
@@ -24,7 +24,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap:64px;
+  gap: 64px;
 }
 .imageWrapper {
   position: absolute;

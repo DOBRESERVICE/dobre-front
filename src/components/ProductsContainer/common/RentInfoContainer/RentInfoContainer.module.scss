@@ -1,4 +1,3 @@
-
 @import '../../../../styles/variables.scss';
 
 .rentTimeContainer {
@@ -11,11 +10,10 @@
   border-radius: 8px;
   gap: 12px;
   padding-inline: 12px;
-
 }
 .content {
   display: flex;
-  gap:10px;
+  gap: 10px;
   & > div > p {
     font-size: 9px;
     font-weight: $fweight-big;

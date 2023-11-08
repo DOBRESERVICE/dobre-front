@@ -1,4 +1,4 @@
-import styles from '../CatalogLayout.module.scss';
+import styles from './CatalogLayout.module.scss';
 import { Header } from '@/components/Header/Header';
 import { Footer } from '@/components/Footer/Footer';
 import { Metadata } from 'next';

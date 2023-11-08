@@ -1,0 +1,50 @@
+@import 'src/styles/variables';
+.descriptionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 50px;
+  & > h3 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+    line-height: 13px;
+  }
+}
+.descriptionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  & p {
+    color: $black;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+}
+.advantagesContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.advantagesList {
+  margin-left: 20px;
+  & > li {
+    color: $black;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 20px;
+  }
+  & > li::before {
+    content: '\2022';
+    color: black;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+}
+.cardsWrapper {
+  display: flex;
+  gap: 20px;
+}

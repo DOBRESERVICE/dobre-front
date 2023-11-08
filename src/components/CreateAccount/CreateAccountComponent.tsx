@@ -44,7 +44,6 @@ export const CreateAccountComponent = () => {
       router.push('/');
     }
   }, [isRegistered]);
-
   return (
     <>
       <div className={styles.content}>
@@ -74,7 +73,7 @@ export const CreateAccountComponent = () => {
       </div>
 
       <ReCAPTCHA
-        sitekey='6LcJU5soAAAAANaKcvxeLPtkamAcYlnRlaNnAyUO'
+        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY as string}
         ref={recaptchaRef}
         onChange={handleCaptchaSubmission}
         style={{ transform: 'scale(1.26)', alignSelf: 'center' }}

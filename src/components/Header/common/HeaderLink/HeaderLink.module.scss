@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .headerLinkWrapper {
   display: flex;
   gap: 10px;
@@ -9,6 +9,6 @@
     font-weight: $fweight-big;
   }
   & > img svg path {
-      display: none;
+    display: none;
   }
 }

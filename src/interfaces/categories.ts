@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 
 export interface Category {
-  id_category: string;
+  id_category: number;
   name_category: string;
   tr_name_category: string;
   image_category: string;

@@ -1,18 +1,18 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 .content {
- display: grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 .active {
- background-color: $deep-blue;
- color: $white;
+  background-color: $deep-blue;
+  color: $white;
 }
 .active:hover {
- background-color: $deep-blue;
+  background-color: $deep-blue;
 }
 .productQualityContainer {
- display: flex;
- flex-direction: column;
- gap: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }

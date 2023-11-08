@@ -1,13 +1,12 @@
 import styles from './ProductItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { favouriteIcon, mockUser, starReviews, verified } from '@/assets/image';
-import { ProductStatus, qualityMap } from '@/enums';
 import { FC } from 'react';
-import { availableNow, inRent, isGoodStatus } from '@/constants';
-import classNames from 'classnames';
 import { RentInfoContainer } from '@/components/ProductsContainer/common/RentInfoContainer/RentInfoContainer';
 import { RentInfoData } from '@/interfaces';
 import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
+import { RatingComponent } from '@/ui/RatingComponent/RatingComponent';
+import { ProductRentStatus } from '@/ui/ProductRentStatus/ProductRentStatus';
 
 export interface ProductItem {
   id?: number;
@@ -49,33 +48,10 @@ export const ProductItem: FC<ProductItem> = ({
         <Image src={photoUrl} alt='item' width={340} height={260} />
       </div>
       <div className={styles.content}>
-        <div className={styles.statusWrapper}>
-          <p
-            className={classNames(styles.status, {
-              [styles.goodStatus]: isGoodStatus(status),
-              [styles.mediumStatus]: !isGoodStatus(status),
-            })}
-          >
-            {qualityMap[status]}
-          </p>
-          <StatusBar status={status} />
-        </div>
+        <StatusBar status={status} />
         <div className={styles.infoWrapper}>
-          <div
-            className={classNames(styles.notification, {
-              [styles.availableItem]: isAvailable,
-              [styles.unAvailableItem]: !isAvailable,
-            })}
-          >
-            <p>{isAvailable ? availableNow : `${inRent} ${rentEndDate}`}</p>
-          </div>
-          <div className={styles.ratingWrapper}>
-            <div>
-              <Image src={starReviews} alt='star' />
-              <span>{rating}</span>
-            </div>
-            <span>({feedbackCount} отзывов)</span>
-          </div>
+          <ProductRentStatus isAvailable={isAvailable} rentEndDate={rentEndDate} />
+          <RatingComponent feedbackType='textFeedback' rating={rating} feedbackCount={feedbackCount} />
         </div>
         <p className={styles.itemName}>
           {itemName} {description}

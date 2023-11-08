@@ -14,6 +14,7 @@ interface SubCategoriesProps {
 export const SubCategories: FC<SubCategoriesProps> = ({ varietiesList }) => {
   const [activeSubCategory, setActiveSubCategory] = useState('0');
   const { handleShowAll, itemsToShow, shouldRenderExpandButton } = useShownData(varietiesList, 9);
+  console.log(varietiesList);
   return (
     <div className={styles.subCategoriesContainer}>
       <ul className={styles.subCategoriesList}>

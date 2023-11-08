@@ -1,4 +1,4 @@
-@import "src/styles/variables";
+@import 'src/styles/variables';
 
 .constructionSectionWrapper {
   display: flex;
@@ -36,7 +36,7 @@
   position: relative;
 }
 
-.constructionItemsWrapper  a {
+.constructionItemsWrapper a {
   display: block;
   min-height: 240px;
   min-width: 340px;
