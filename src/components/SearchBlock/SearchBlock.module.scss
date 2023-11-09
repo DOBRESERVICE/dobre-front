@@ -1,12 +1,16 @@
 @import '../../styles/variables.scss';
 .searchBlockWrapper {
+  position: relative;
   display: flex;
   justify-content: center;
-  width: calc(100% - 170px);
+  width: 1510px;
   margin-bottom: 110px;
   background-color: $deep-blue;
   border-radius: 23px;
-  position: relative;
+
+  @include breakpoint(lg) {
+    width: 1230px;
+  }
 }
 .content {
   display: flex;

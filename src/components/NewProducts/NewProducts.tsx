@@ -1,7 +1,6 @@
 import styles from './NewProducts.module.scss';
 import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/components/ProductsContainer/common/ProductsContainer';
-import { productsData } from '@/data';
 import { FC } from 'react';
 import { Product } from '@/interfaces/categories';
 

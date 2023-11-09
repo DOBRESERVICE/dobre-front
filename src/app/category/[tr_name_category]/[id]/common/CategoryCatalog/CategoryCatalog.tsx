@@ -8,6 +8,7 @@ import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/Cust
 import { Product } from '@/interfaces/categories';
 import { CustomPagination } from '@/app/category/[tr_name_category]/[id]/common/CustomPagination/CustomPagination';
 import { customDateFormSelect, customFormSelect, customLabel, customSelect } from '@/styles/selectStyles';
+import { NoProductsFound } from '@/app/category/[tr_name_category]/[id]/common/NoProductsFound/NoProductsFound';
 
 interface CategoryCatalogProps {
   products: Product[];
@@ -32,23 +33,27 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
   ];
   return (
     <div className={styles.categoryCatalogWrapper}>
-      <div className={styles.content}>
-        <div className={styles.buttonsWrapper}>
-          <AvailableNow />
-          <CustomDatePicker />
+      {products?.length ? (
+        <div className={styles.content}>
+          <div className={styles.buttonsWrapper}>
+            <AvailableNow />
+            <CustomDatePicker />
+          </div>
+          <CustomSelect
+            label='Сначала новые'
+            labelImage={sortSvg}
+            selectStyles={customSelect}
+            labelStyles={customLabel}
+            formControlStyles={customFormSelect}
+            selectData={['sss']}
+          />
         </div>
-        <CustomSelect
-          label='Сначала новые'
-          labelImage={sortSvg}
-          selectStyles={customSelect}
-          labelStyles={customLabel}
-          formControlStyles={customFormSelect}
-          selectData={['sss']}
-        />
-      </div>
+      ) : (
+        ''
+      )}
 
       <div className={styles.categoryCatalog}>
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductItem
             description={product.description}
             key={product.id_product}
@@ -65,8 +70,9 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
             rentInfoArray={arr}
           />
         ))}
+        {products?.length === 0 && <NoProductsFound />}
       </div>
-      <CustomPagination />
+      {products?.length ? <CustomPagination /> : ''}
     </div>
   );
 };

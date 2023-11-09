@@ -1,6 +1,6 @@
 @import 'src/styles/variables';
 .header {
-  width: calc(100% - 64px);
+  width: 1510px;
   padding: 22px 0 26px 0;
   display: flex;
   gap: 30px;
@@ -8,6 +8,13 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+
+  @include breakpoint(lg) {
+    width: 1230px;
+  }
+}
+.header.catalogHeader {
+  width: 1408px;
 }
 .locationWrapper {
   display: flex;
@@ -39,12 +46,7 @@
     font-weight: $fweight-big;
   }
 }
-.cartCircle:hover {
-  background-color: #eee;
-}
-.cartCircle:active {
-  background-color: #c9c9c9;
-}
+
 .cartCircle > img {
   position: absolute;
 }
@@ -66,6 +68,7 @@
 }
 .catalogHeader .leftBlock {
   width: auto;
+  order: 1;
 }
 .content {
   display: flex;
@@ -78,7 +81,12 @@
   width: auto;
   justify-content: center;
 }
-
+.leftBlockContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
 .header .topBar {
   display: none;
 }
@@ -92,6 +100,9 @@
   flex: 0;
 }
 .catalogHeader .content > button:nth-child(2) {
+  display: none;
+}
+.catalogHeader  .leftBlockContent > button:nth-child(2) {
   display: none;
 }
 .catalogHeader .locationWrapper {
@@ -141,6 +152,7 @@
 .iconsWrapper {
   display: flex;
   gap: 30px;
+  cursor: pointer;
   & > div {
     display: flex;
     flex-direction: column;
@@ -151,6 +163,12 @@
     color: $black;
     font-size: 12px;
     font-weight: $fweight-big;
+  }
+  & > div:hover .cartCircle {
+      background-color: #eee;
+  }
+  & > div:active .cartCircle {
+      background-color: #c9c9c9;
   }
 }
 
@@ -197,3 +215,4 @@
   padding-inline: 10px;
   color: $deep-blue;
 }
+

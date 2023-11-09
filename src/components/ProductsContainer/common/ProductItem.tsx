@@ -56,7 +56,6 @@ export const ProductItem: FC<ProductItem> = ({
         <p className={styles.itemName}>
           {itemName} {description}
         </p>
-
         <RentInfoContainer rentInfoArray={rentInfoArray} />
         <div className={styles.sellerInfoContainer}>
           {isConfirmed && <Image src={verified} alt='verified' />}

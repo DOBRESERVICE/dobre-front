@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@mui/material';
 import { customRentButton } from '@/styles/buttonStyles';
+import { Wrapper } from '@/components/Wrapper/Wrapper';
 
 export const Footer = () => {
   return (

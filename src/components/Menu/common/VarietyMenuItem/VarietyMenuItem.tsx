@@ -1,6 +1,6 @@
 import styles from './VarietyMenuItem.module.scss';
 import Link from 'next/link';
-import { FC } from 'react';
+import { Dispatch, FC, SetStateAction } from 'react';
 
 interface VarietyMenuItemProps {
   varietyName: string;

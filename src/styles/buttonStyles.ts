@@ -372,3 +372,22 @@ export const customPagination = {
 export const customArrow = {
   color: colors.graphite,
 };
+export const customSmallRentButton = {
+  height: '24px',
+  backgroundColor: colors.deepBlue,
+  gap: '6px',
+  boxShadow: 'none',
+  color: colors.white,
+  fontWeight: 700,
+  fontSize: '12px',
+  textTransform: 'none',
+  borderRadius: '5px',
+  '&:hover': {
+    backgroundColor: colors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: colors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+};

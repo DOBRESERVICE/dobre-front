@@ -1,0 +1,14 @@
+@import "src/styles/variables";
+.noProductsWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+
+  & > p {
+    color: $black;
+    font-size: 16px;
+    font-weight: $fweight-big;
+  }
+}

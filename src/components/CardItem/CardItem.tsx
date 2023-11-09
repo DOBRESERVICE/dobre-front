@@ -14,7 +14,7 @@ interface CardItem {
 export const CardItem: FC<CardItem> = ({ imageUrl, title, link }) => {
   const path = usePathname();
   return (
-    <Link href={`${path + '/' + link}`} className={styles.cardWrapper}>
+    <Link href={`${path}/${link}`} className={styles.cardWrapper}>
       <div className={styles.imageWrapper}>
         <Image src={imageUrl ? imageUrl : noImage} alt='image' />
       </div>

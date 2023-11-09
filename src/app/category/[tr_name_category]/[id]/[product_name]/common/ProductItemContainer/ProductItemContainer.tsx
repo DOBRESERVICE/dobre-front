@@ -7,20 +7,36 @@ import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[prod
 import { descriptionProductData } from '@/data';
 import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
-export const ProductItemContainer = () => {
-  const count = 3;
-  const availableQuantityArray = Array.from({ length: count }, (_, index) => index + 1);
+import { FC } from 'react';
+
+interface ProductItemContainerProps {
+  productName: string;
+  productDescription: string;
+  qualityControl: number;
+  quantity: number;
+  price: string;
+  productImage: string;
+}
+export const ProductItemContainer: FC<ProductItemContainerProps> = ({
+  productDescription,
+  productImage,
+  productName,
+  quantity,
+  qualityControl,
+  price,
+}) => {
+  const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
   console.log(availableQuantityArray);
   return (
     <div className={styles.productContentWrapper}>
       <div className={styles.productHeader}>
         <div className={styles.headerInfo}>
-          <h2 className={styles.productName}>Комбинир. перфоратор Hilti TE 70-AVR 230V 2208672</h2>
+          <h2 className={styles.productName}>{productName}</h2>
           <div className={styles.content}>
             <RatingComponent feedbackType='textFeedback' rating={4.4} feedbackCount={31} />
-            <StatusBar status={4} />
+            <StatusBar status={qualityControl} />
             <div className={styles.availableCountWrapper}>
-              <p>Доступно {count} шт.</p>
+              <p>Доступно {quantity} шт.</p>
             </div>
           </div>
         </div>
@@ -28,7 +44,7 @@ export const ProductItemContainer = () => {
           <div className={styles.favouriteImageWrapper}>
             <Image src={favouriteIcon} alt='favourite' />
           </div>
-          <div className={styles.priceSegment}>от 450 руб.</div>
+          <div className={styles.priceSegment}>от {price} руб.</div>
         </div>
       </div>
       <div className={styles.productBody}>
@@ -47,13 +63,13 @@ export const ProductItemContainer = () => {
           <div className={styles.brandWrapper}>
             <Image src={mockBrandImage} alt='brand' />
           </div>
-          <Image src={mockMainImage} alt={'ss'} />
+          <Image src={productImage} width={500} height={500} alt={'ss'} />
         </div>
-        <RentInfoPannel count={count} availableQuantityArray={availableQuantityArray} />
+        <RentInfoPannel count={quantity} availableQuantityArray={availableQuantityArray} />
       </div>
       <ProductDescription
         secondDescription={descriptionProductData.secondDescription}
-        firstDescription={descriptionProductData.firstDescription}
+        firstDescription={productDescription}
         mainAdvantages={descriptionProductData.mainAdvantages}
       />
       <ProductDetails />

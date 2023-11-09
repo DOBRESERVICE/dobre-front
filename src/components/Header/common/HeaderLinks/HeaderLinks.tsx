@@ -7,8 +7,8 @@ import { SwiperSlide } from 'swiper/react';
 import { SwiperButtons } from '@/components/Slider/common/SwiperButtons/SwiperButtons';
 import { leftWhiteSliderIcon, rightWhiteSliderIcon } from '@/assets/image';
 import { useCategories } from '@/hooks/useCategories';
+import { Wrapper } from '@/components/Wrapper/Wrapper';
 export const HeaderLinks = () => {
-  const { categories, isError, isLoading } = useCategories();
   return (
     <div className={styles.headerLinks}>
       <Slider>

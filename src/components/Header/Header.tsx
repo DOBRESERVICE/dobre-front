@@ -16,10 +16,11 @@ import {
   customLoginButton,
   customRentButton,
   customSearchHeaderButton,
+  customSmallRentButton,
 } from '@/styles/buttonStyles';
 import { usePathname, useRouter } from 'next/navigation';
 import classNames from 'classnames';
-import { blueClose, mockUser, rentImage, searchIcon } from '@/assets/image';
+import { blueClose, mockUser, rentImage, searchIcon, smallPlus } from '@/assets/image';
 import Input from '@mui/material/Input';
 import { HeaderLinks } from '@/components/Header/common/HeaderLinks/HeaderLinks';
 import { useEffect, useState } from 'react';
@@ -56,12 +57,14 @@ export const Header = () => {
             <p>Как арендовать</p>
             <p>Как сдавать</p>
             <p>База знаний</p>
-            <p>Помощь</p>
+            <Button variant='contained' disableRipple size='medium' sx={customSmallRentButton}>
+              <Image src={smallPlus} alt={'plus'} />
+              Сдать в аренду
+            </Button>
           </div>
         </div>
         <div className={styles.leftBlock}>
-          <BurgerButton />
-          <div>
+          <div className={styles.leftBlockContent}>
             <Button
               disableRipple
               variant='contained'
@@ -72,9 +75,13 @@ export const Header = () => {
               <Image src={isMenuOpen ? blueClose : categoriesIcon} alt='categories icon' />
               Все категории
             </Button>
+            <Button variant='contained' disableRipple size='medium' sx={customRentButton}>
+              <Image src={plus} alt='plus' />
+              Сдать в аренду
+            </Button>
             <div className={styles.locationWrapper}>
               <Image src={geolocationIcon} alt='location' />
-              <p>Вся Беларусь</p>
+              <p>Беларусь</p>
             </div>
           </div>
         </div>
@@ -91,10 +98,6 @@ export const Header = () => {
           </Button>
         </div>
         <div className={styles.content}>
-          <Button variant='contained' disableRipple size='medium' sx={customRentButton}>
-            <Image src={plus} alt='plus' />
-            Сдать в аренду
-          </Button>
           <div className={styles.iconsWrapper}>
             <div>
               <div className={styles.cartCircle}>
@@ -132,7 +135,7 @@ export const Header = () => {
             </Button>
           )}
         </div>
-        {isMenuOpen && <Menu />}
+        {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
       </header>
       {notMainPage && <HeaderLinks />}
     </>

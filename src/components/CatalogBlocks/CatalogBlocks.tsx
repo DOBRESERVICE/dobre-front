@@ -24,14 +24,19 @@ export const CatalogBlocks: FC<CatalogBlocksProps> = async ({ subcategories }) =
   const subCategoriesData = await fetchData();
   return (
     <section className={styles.catalogBlocksSectionWrapper}>
-      {subCategoriesData?.map((subcategory) => (
-        <CatalogBlock
-          key={subcategory.id_sub}
-          barName={subcategory.name_sub}
-          toolsData={subcategory.varieties}
-          productsData={subcategory.products}
-        />
-      ))}
+      {subCategoriesData ? (
+        subCategoriesData.map((subcategory) => (
+          <CatalogBlock
+            key={subcategory.id_sub}
+            barName={subcategory.name_sub}
+            toolsData={subcategory.varieties}
+            productsData={subcategory.products}
+            subCategoryTrName={subcategory.tr_name_sub}
+          />
+        ))
+      ) : (
+        <p>ничего нет :(</p>
+      )}
     </section>
   );
 };

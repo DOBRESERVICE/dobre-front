@@ -21,7 +21,7 @@ export const Construction: FC<ConstructionProps> = ({ title, subCategories }) =>
         <Slider>
           {subCategories.map((product) => (
             <SwiperSlide key={product.id_sub}>
-              <CardItem imageUrl={product.image_sub} title={product.name_sub} link={product.tr_name_sub} />
+              <CardItem link={product.tr_name_sub} imageUrl={product.image_sub} title={product.name_sub} />
             </SwiperSlide>
           ))}
           <SwiperButtons rightIcon={nextArrow} leftIcon={previous} />

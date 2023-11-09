@@ -1,15 +1,20 @@
+'use client';
 import styles from './ToolItem.module.scss';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import { FC } from 'react';
-import { constructionEquipment } from '@/assets/image';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 interface ToolItem {
   imageUrl?: string;
   title: string;
+  subCategoryTrName: string;
+  varietyTrName: string;
 }
-export const PopularToolItem: FC<ToolItem> = ({ imageUrl, title }) => {
+export const PopularToolItem: FC<ToolItem> = ({ imageUrl, title, subCategoryTrName, varietyTrName }) => {
+  const path = usePathname();
   return (
-    <div className={styles.toolWrapper}>
+    <Link href={`${path}/${subCategoryTrName}?variety=${varietyTrName}`} className={styles.toolWrapper}>
       {imageUrl ? (
         <div className={styles.imageWrapper}>
           <Image src={imageUrl} alt='tool' />
@@ -18,6 +23,6 @@ export const PopularToolItem: FC<ToolItem> = ({ imageUrl, title }) => {
         <div className={styles.emptyCard}> </div>
       )}
       <p>{title}</p>
-    </div>
+    </Link>
   );
 };

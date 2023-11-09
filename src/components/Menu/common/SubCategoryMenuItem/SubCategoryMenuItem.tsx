@@ -1,6 +1,6 @@
 import styles from './SubCategoryMenuItem.module.scss';
 import { Variety } from '@/interfaces/categories';
-import { FC, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useState } from 'react';
 import { VarietyMenuItem } from '@/components/Menu/common/VarietyMenuItem/VarietyMenuItem';
 import { useShownData } from '@/hooks/useShownData';
 
@@ -9,6 +9,7 @@ interface SubCategoryItemProps {
   varieties: Variety[];
   category: string;
   subcategory: string;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties, category, subcategory }) => {
   const { itemsToShow, shouldRenderExpandButton, handleShowAll } = useShownData(varieties, 6);

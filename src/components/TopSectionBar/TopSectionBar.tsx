@@ -4,26 +4,30 @@ import Image from 'next/image';
 import { linkArrow } from '@/assets/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import { Wrapper } from '@/components/Wrapper/Wrapper';
 interface TopSectionBar {
   barName: string;
   hasLinkArrow: boolean;
   announcements?: string;
+  onClick?: () => void;
 }
-export const TopSectionBar: FC<TopSectionBar> = ({ barName, hasLinkArrow, announcements }) => {
+export const TopSectionBar: FC<TopSectionBar> = ({ barName, hasLinkArrow, announcements, onClick }) => {
   return (
-    <div className={styles.topSectionBar}>
-      <div className={styles.textContent}>
-        <h3>{barName}</h3>
-        <p>{announcements}</p>
-      </div>
-      {hasLinkArrow && (
-        <Link href='/' className={styles.linkContainer}>
-          <p>Смотреть все</p>
-          <div className={styles.linkArrow}>
-            <Image src={linkArrow} alt='link arrow' />
+    <Wrapper>
+      <div className={styles.topSectionBar}>
+        <div className={styles.textContent}>
+          <h3>{barName}</h3>
+          <p>{announcements}</p>
+        </div>
+        {hasLinkArrow && (
+          <div role='button' onClick={onClick} className={styles.linkContainer}>
+            <p>Смотреть все</p>
+            <div className={styles.linkArrow}>
+              <Image src={linkArrow} alt='link arrow' />
+            </div>
           </div>
-        </Link>
-      )}
-    </div>
+        )}
+      </div>
+    </Wrapper>
   );
 };

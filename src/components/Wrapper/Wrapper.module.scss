@@ -1,11 +1,6 @@
 @import "src/styles/variables";
-
-.headerLinks {
+.wrapper {
   width: 1408px;
-  overflow: hidden;
-  margin-inline: auto;
-  position: relative;
-
   @include breakpoint(lg) {
     width: 1230px;
   }

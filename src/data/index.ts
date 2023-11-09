@@ -29,6 +29,7 @@ import {
   specialTechnique,
   sport,
   sportImage,
+  stanki,
   tesnimonialToolImage,
   testimonialsImage,
   travelling,
@@ -513,12 +514,6 @@ export const brandsData = [
   {
     id: 12,
   },
-  {
-    id: 13,
-  },
-  {
-    id: 14,
-  },
 ];
 
 export const popularToolsData = [
@@ -532,6 +527,7 @@ export const popularToolsData = [
   },
   {
     id_variety: '2',
+    image_variety: stanki,
     name_variety: 'Аппараты высокого давления',
     tr_name_variety: 'sss',
     rate_variety: 1,

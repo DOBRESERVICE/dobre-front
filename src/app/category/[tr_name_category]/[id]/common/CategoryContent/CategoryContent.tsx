@@ -3,6 +3,7 @@ import { CategoryCatalog } from '@/app/category/[tr_name_category]/[id]/common/C
 import { Aside } from '@/app/category/[tr_name_category]/[id]/common/Aside/Aside';
 import { Product, SubCategory } from '@/interfaces/categories';
 import { FC } from 'react';
+import { Wrapper } from '@/components/Wrapper/Wrapper';
 
 interface CategoryContentProps {
   subCategoryData: SubCategory;
@@ -10,9 +11,11 @@ interface CategoryContentProps {
 }
 export const CategoryContent: FC<CategoryContentProps> = ({ subCategoryData, products }) => {
   return (
-    <div className={styles.categoryContent}>
-      <Aside title={subCategoryData.name_sub} varietiesList={subCategoryData.varieties} />
-      <CategoryCatalog products={products} />
-    </div>
+    <Wrapper>
+      <div className={styles.categoryContent}>
+        <Aside title={subCategoryData.name_sub} varietiesList={subCategoryData.varieties} products={products} />
+        <CategoryCatalog products={products} />
+      </div>
+    </Wrapper>
   );
 };

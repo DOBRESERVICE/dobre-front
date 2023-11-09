@@ -1,20 +1,31 @@
 'use client';
 import styles from './Menu.module.scss';
-import { useEffect, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { useCategories } from '@/hooks/useCategories';
 import { CategoryMenuItem } from '@/components/Menu/common/CategoryMenuItem/CategoryMenuItem';
 import { SubCategoryMenuItem } from '@/components/Menu/common/SubCategoryMenuItem/SubCategoryMenuItem';
 import { Loader } from '@/components/Loader/Loader';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Error } from '@/components/Error/Error';
 
-export const Menu = () => {
+interface MenuProps {
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+}
+export const Menu: FC<MenuProps> = ({ setIsMenuOpen }) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const search = searchParams.get('variety');
+  const [prevSearch, setPrevSearch] = useState(search);
   useEffect(() => {
     document.documentElement.classList.add(styles.disabledScroll);
     return () => document.documentElement.classList.remove(styles.disabledScroll);
   }, []);
-
+  useEffect(() => {
+    if (prevSearch !== search) {
+      setIsMenuOpen(false);
+    }
+    setPrevSearch(search);
+  }, [search]);
   const { categories, isError, isLoading } = useCategories();
   const [selectedCategoryId, setSelectedCategoryId] = useState(3);
 
@@ -50,6 +61,7 @@ export const Menu = () => {
                 varieties={subCategory.varieties}
                 category={selectedCategory.tr_name_category}
                 subcategory={subCategory.tr_name_sub}
+                setIsMenuOpen={setIsMenuOpen}
               />
             ))}
             {!selectedCategory?.subcategories && <p>Empty category</p>}

@@ -11,7 +11,9 @@
   z-index: 4;
   overflow: hidden;
 }
-
+.disabledScroll {
+  overflow-y: hidden;
+}
 .loader {
   width: 64px;
   height: 64px;

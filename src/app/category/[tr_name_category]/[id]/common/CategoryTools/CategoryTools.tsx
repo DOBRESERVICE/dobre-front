@@ -10,14 +10,15 @@ import { useShownData } from '@/hooks/useShownData';
 interface CategoryToolsProps {
   varietyProducts: Variety[];
   subCategoryTitle: string;
+  subCategoryTrName: string;
 }
-export const CategoryTools: FC<CategoryToolsProps> = ({ varietyProducts, subCategoryTitle }) => {
+export const CategoryTools: FC<CategoryToolsProps> = ({ varietyProducts, subCategoryTitle, subCategoryTrName }) => {
   const { shouldRenderExpandButton, itemsToShow, showAll, setShowAll } = useShownData(varietyProducts, 7);
   const barName = `${subCategoryTitle + ' ' + 'в аренду'}`;
   return (
     <section className={styles.categoryToolsWrapper}>
       <TopSectionBar barName={barName} hasLinkArrow={false} announcements='316 объявлений' />
-      <ToolContainer toolsData={itemsToShow} />
+      <ToolContainer toolsData={itemsToShow} subCategoryTrName={subCategoryTrName} />
       <div className={styles.seeAllContainer}>
         <hr />
         <div className={styles.content} role='button' onClick={() => setShowAll(!showAll)}>

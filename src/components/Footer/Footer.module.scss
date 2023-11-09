@@ -1,9 +1,13 @@
 @import '../../styles/variables.scss';
 
 .wrapper {
-  width: calc(100% - 272px);
+  width: 1408px;
   margin-top: 100px;
   margin-inline: auto;
+
+  @include breakpoint(lg) {
+    width: 1230px;
+  }
 }
 
 .linksWrapper {

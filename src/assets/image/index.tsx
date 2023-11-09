@@ -116,8 +116,14 @@ import tesnimonialToolImage from './tesnimonialToolImage.png';
 import image31 from './image 31.png';
 import commentExclamation from './commentExclamation.svg';
 import tarrifInfo from './tarrifInfo.svg';
+import smallPlus from './smallPlus.svg';
+import stanki from './stanki.png';
+import emptyProduct from './emptyProduct.svg';
 
 export {
+  emptyProduct,
+  stanki,
+  smallPlus,
   tarrifInfo,
   commentExclamation,
   image31,
