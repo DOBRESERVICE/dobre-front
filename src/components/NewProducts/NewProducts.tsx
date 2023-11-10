@@ -3,6 +3,7 @@ import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/components/ProductsContainer/common/ProductsContainer';
 import { FC } from 'react';
 import { Product } from '@/interfaces/categories';
+import { getNewProducts } from '@/api/categoriesApi';
 
 interface NewProductsProps {
   newProducts: Product[] | any[];

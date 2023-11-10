@@ -9,18 +9,20 @@ import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
 import { FAQ } from '@/components/FAQ/FAQ';
 import { Recommendations } from '@/components/Recommendations/Recommendations';
 import { AuthModals } from '@/components/AuthModals/AuthModals';
-import { popularProductsData, productsData } from '@/data';
+import { getNewProducts, getRecommendedProducts } from '@/api/categoriesApi';
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { data: newProductsData } = await getNewProducts();
+  const { data: recommendedProductsData } = await getRecommendedProducts();
   return (
     <HomeLayout>
       <AuthModals />
       <SearchBlock />
-      <NewProducts newProducts={productsData} />
+      <NewProducts newProducts={newProductsData} />
       <PopularProducts />
       <HowWeWork />
       <FirstItem />
-      <Recommendations />
+      <Recommendations recommendedProducts={recommendedProductsData} />
       <AboutUs />
       <Testimonials />
       <FAQ />

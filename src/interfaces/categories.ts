@@ -41,9 +41,6 @@ export interface Product {
   image: string;
   enabled_product: boolean;
   is_moderate: boolean;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt: any;
   userId: any;
   brandIdBrand: any;
   categoryIdCategory: number;
@@ -87,7 +84,7 @@ export interface ExactVariety {
   brands: any[];
 }
 
-export interface Product {
+export interface ProductItem {
   id_product: number;
   name_product: string;
   tr_name_product: string;

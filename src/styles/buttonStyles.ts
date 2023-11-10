@@ -324,12 +324,6 @@ export const customRecoveryLightButton = {
   },
 };
 
-export const customDatePicker = {
-  position: 'absolute',
-  bottom: '0px',
-  zIndex: '1',
-};
-
 export const customPagination = {
   marginTop: '70px',
   '& > ul': {

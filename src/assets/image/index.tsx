@@ -119,8 +119,18 @@ import tarrifInfo from './tarrifInfo.svg';
 import smallPlus from './smallPlus.svg';
 import stanki from './stanki.png';
 import emptyProduct from './emptyProduct.svg';
+import cleaningPopularTools from './popularNowImages/cleaning.png';
+import gamingPopularTools from './popularNowImages/gamingTools.png';
+import electroPopularTools from './popularNowImages/electroTools.png';
+import sportPopularTools from './popularNowImages/sportTools.png';
+import photographyPopularTools from './popularNowImages/photographyTools.png';
 
 export {
+  gamingPopularTools,
+  electroPopularTools,
+  photographyPopularTools,
+  sportPopularTools,
+  cleaningPopularTools,
   emptyProduct,
   stanki,
   smallPlus,

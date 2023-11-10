@@ -1,3 +1,4 @@
+'use client';
 import styles from './RentInfoContainer.module.scss';
 import { FC } from 'react';
 import { RentInfoItem } from '@/components/ProductsContainer/common/RentInfoItem/RentInfoItem';
@@ -6,11 +7,23 @@ import { Button } from '@mui/material';
 import Image from 'next/image';
 import { blackArrowNext, rentButtonIcon } from '@/assets/image';
 import { customRentButton, rentInfoCustomButton } from '@/styles/buttonStyles';
+import { useRouter } from 'next/navigation';
 
 interface RentInfoContainer {
   rentInfoArray: RentInfoData[];
+  trVarietyName: string;
+  trCategoryName: string;
+  trSubCategoryName: string;
+  productId: number;
 }
-export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
+export const RentInfoContainer: FC<RentInfoContainer> = ({
+  rentInfoArray,
+  trSubCategoryName,
+  trCategoryName,
+  trVarietyName,
+  productId,
+}) => {
+  const router = useRouter();
   return (
     <div className={styles.rentTimeContainer}>
       <div className={styles.content}>
@@ -18,7 +31,11 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
           <RentInfoItem key={item.id} timeInRent={item.timeInRent} price={item.price} />
         ))}
       </div>
-      <Button disableRipple sx={rentInfoCustomButton}>
+      <Button
+        disableRipple
+        sx={rentInfoCustomButton}
+        onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}
+      >
         <Image src={rentButtonIcon} alt='rent' />
         Арендовать
       </Button>

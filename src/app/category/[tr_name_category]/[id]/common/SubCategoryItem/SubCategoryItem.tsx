@@ -12,6 +12,7 @@ interface SubCategoryItem {
 export const SubCategoryItem: FC<SubCategoryItem> = ({ varietyName, isActive, onClick, varietyTrName }) => {
   return (
     <Link
+      scroll={false}
       href={`?${new URLSearchParams({ variety: varietyTrName })}`}
       className={classNames(styles.subCategoryItem, {
         [styles.active]: isActive,

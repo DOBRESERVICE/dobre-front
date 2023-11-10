@@ -1,7 +1,8 @@
 @import 'src/styles/variables';
 .testimonialsWrapper {
+  max-width: 1050px;
+  min-width: 930px;
   display: flex;
-  width: 74%;
   flex-direction: column;
   gap: 26px;
 }

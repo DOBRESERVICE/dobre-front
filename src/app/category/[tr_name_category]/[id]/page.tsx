@@ -14,7 +14,6 @@ export default async function CategoryPage({
   const variety = searchParams?.variety;
   const { data: certainSubCategoryData } = await getSubCategory(params.id);
   const { data: certainVarietyData } = await getCertainVariety(variety);
-  console.log(certainVarietyData, 'category');
   const breadCrumbsData = [
     {
       id: 1,

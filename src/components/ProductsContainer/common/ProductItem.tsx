@@ -22,6 +22,10 @@ export interface ProductItem {
   isConfirmed: boolean;
   rentInfoArray: RentInfoData[] | any;
   description: string;
+  trCategoryName?: string;
+  trSubCategoryName?: string;
+  trVarietyName?: string;
+  productId: number;
 }
 
 export const ProductItem: FC<ProductItem> = ({
@@ -37,6 +41,10 @@ export const ProductItem: FC<ProductItem> = ({
   photoUrl,
   description,
   rentInfoArray,
+  trVarietyName,
+  trCategoryName,
+  trSubCategoryName,
+  productId,
 }) => {
   return (
     <div className={styles.newProductWrapper}>
@@ -56,7 +64,13 @@ export const ProductItem: FC<ProductItem> = ({
         <p className={styles.itemName}>
           {itemName} {description}
         </p>
-        <RentInfoContainer rentInfoArray={rentInfoArray} />
+        <RentInfoContainer
+          rentInfoArray={rentInfoArray}
+          trVarietyName={trVarietyName}
+          trCategoryName={trCategoryName}
+          trSubCategoryName={trSubCategoryName}
+          productId={productId}
+        />
         <div className={styles.sellerInfoContainer}>
           {isConfirmed && <Image src={verified} alt='verified' />}
           <p className={styles.sellerInfo}>{sellerInfo}</p>

@@ -9,7 +9,6 @@ interface SubCategoryItemProps {
   varieties: Variety[];
   category: string;
   subcategory: string;
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties, category, subcategory }) => {
   const { itemsToShow, shouldRenderExpandButton, handleShowAll } = useShownData(varieties, 6);

@@ -7,28 +7,17 @@ import { SubCategoryMenuItem } from '@/components/Menu/common/SubCategoryMenuIte
 import { Loader } from '@/components/Loader/Loader';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Error } from '@/components/Error/Error';
+import { useAuthData } from '@/context/authContext';
 
-interface MenuProps {
-  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
-}
-export const Menu: FC<MenuProps> = ({ setIsMenuOpen }) => {
+export const Menu = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const search = searchParams.get('variety');
-  const [prevSearch, setPrevSearch] = useState(search);
   useEffect(() => {
     document.documentElement.classList.add(styles.disabledScroll);
     return () => document.documentElement.classList.remove(styles.disabledScroll);
   }, []);
-  useEffect(() => {
-    if (prevSearch !== search) {
-      setIsMenuOpen(false);
-    }
-    setPrevSearch(search);
-  }, [search]);
   const { categories, isError, isLoading } = useCategories();
-  const [selectedCategoryId, setSelectedCategoryId] = useState(3);
-
+  const [selectedCategoryId, setSelectedCategoryId] = useState(1);
+  const { setIsMenuOpen } = useAuthData();
   const selectedCategory = categories?.find((category) => category.id_category === selectedCategoryId);
   if (isLoading) {
     return <Loader />;
@@ -36,6 +25,7 @@ export const Menu: FC<MenuProps> = ({ setIsMenuOpen }) => {
   if (isError) {
     return <Error />;
   }
+
   return (
     <div className={styles.menuWrapper}>
       <div className={styles.menuContent}>
@@ -43,7 +33,10 @@ export const Menu: FC<MenuProps> = ({ setIsMenuOpen }) => {
           {categories?.map((category) => (
             <CategoryMenuItem
               isActive={selectedCategory?.id_category === category.id_category}
-              onClick={() => router.push(`/category/${category.tr_name_category}`)}
+              onClick={() => {
+                router.push(`/category/${category.tr_name_category}`);
+                setIsMenuOpen(false);
+              }}
               onMouseEnter={() => setSelectedCategoryId(category.id_category)}
               categoryName={category.name_category}
               key={category.id_category}
@@ -61,10 +54,9 @@ export const Menu: FC<MenuProps> = ({ setIsMenuOpen }) => {
                 varieties={subCategory.varieties}
                 category={selectedCategory.tr_name_category}
                 subcategory={subCategory.tr_name_sub}
-                setIsMenuOpen={setIsMenuOpen}
               />
             ))}
-            {!selectedCategory?.subcategories && <p>Empty category</p>}
+            {selectedCategory?.subcategories.length === 0 && <p>Empty category</p>}
           </div>
         </div>
       </div>

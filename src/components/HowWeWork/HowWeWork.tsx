@@ -9,7 +9,7 @@ export const HowWeWork = () => {
   return (
     <section className={styles.howWeWorkSection}>
       <div className={styles.imageWrapper}>
-        <Image src={howWeWorkFirstGroup} alt='first group' />
+        <Image src={howWeWorkFirstGroup} alt='first group' priority />
       </div>
       <div className={styles.content}>
         <SectionHeader>

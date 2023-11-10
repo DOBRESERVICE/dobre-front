@@ -10,7 +10,7 @@ import { SwiperButtons } from '@/components/Slider/common/SwiperButtons/SwiperBu
 import { Product } from '@/interfaces/categories';
 
 interface ProductsContainer {
-  products: Product[] | any[];
+  products: Product[];
 }
 
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
@@ -31,11 +31,10 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
       price: '13 450 руб.',
     },
   ];
-
   return (
     <div className={styles.productsContainer}>
       <Slider>
-        {products.map((product) => (
+        {products?.map((product) => (
           <SwiperSlide key={product.id_product}>
             <ProductItem
               photoUrl={product.image}
@@ -50,6 +49,10 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
               isAvailable={product.enabled_product}
               isConfirmed={true}
               rentInfoArray={arr}
+              // trCategoryName={product.category.tr_name_category}
+              // trSubCategoryName={product.subcategory.tr_name_sub}
+              // trVarietyName={product.variety.tr_name_variety}
+              productId={product.id_product}
             />
           </SwiperSlide>
         ))}

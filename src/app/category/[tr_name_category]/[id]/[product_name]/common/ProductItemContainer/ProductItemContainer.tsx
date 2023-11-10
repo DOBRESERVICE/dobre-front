@@ -26,7 +26,6 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   price,
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
-  console.log(availableQuantityArray);
   return (
     <div className={styles.productContentWrapper}>
       <div className={styles.productHeader}>

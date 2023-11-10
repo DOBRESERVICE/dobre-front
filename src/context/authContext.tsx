@@ -24,6 +24,8 @@ interface IAuthContext {
   isLogged: boolean;
   userEmail: string;
   status: Status;
+  isMenuOpen: boolean;
+  setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export const AuthContext = createContext<IAuthContext>({
@@ -47,6 +49,8 @@ export const AuthContext = createContext<IAuthContext>({
   isLogged: false,
   userEmail: '',
   status: Status.LOADING,
+  isMenuOpen: false,
+  setIsMenuOpen: () => {},
 });
 
 export const AuthProvider = ({ children }: any) => {
@@ -60,6 +64,8 @@ export const AuthProvider = ({ children }: any) => {
   const [errorText, setErrorText] = useState('');
   const [userEmail, setUserEmail] = useState('');
   const [status, setStatus] = useState<Status>(Status.INIT);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const handleRegister = async (email: string, password: string) => {
     try {
       setStatus(Status.LOADING);
@@ -176,6 +182,8 @@ export const AuthProvider = ({ children }: any) => {
     setIsLetterSent,
     setIsLogged,
     status,
+    isMenuOpen,
+    setIsMenuOpen,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;

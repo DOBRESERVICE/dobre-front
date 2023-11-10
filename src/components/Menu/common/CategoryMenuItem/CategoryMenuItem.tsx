@@ -3,6 +3,7 @@ import styles from './CategoryMenuItem.module.scss';
 import Image from 'next/image';
 import { furniture } from '@/assets/image';
 import classNames from 'classnames';
+import { useAuthData } from '@/context/authContext';
 interface CategoryMenuItemProps {
   categoryName: string;
   isActive: boolean;

@@ -51,27 +51,29 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
       ) : (
         ''
       )}
-
-      <div className={styles.categoryCatalog}>
-        {products?.map((product) => (
-          <ProductItem
-            description={product.description}
-            key={product.id_product}
-            photoUrl={product.image}
-            userUrl={product.userId}
-            rentEndDate={product.rent_terms}
-            itemName={product.name_product}
-            status={product.quality_control}
-            rating={2}
-            feedbackCount={2}
-            sellerInfo={'Организация'}
-            isAvailable={product.enabled_product}
-            isConfirmed={true}
-            rentInfoArray={arr}
-          />
-        ))}
-        {products?.length === 0 && <NoProductsFound />}
-      </div>
+      {products?.length ? (
+        <div className={styles.categoryCatalog}>
+          {products?.map((product) => (
+            <ProductItem
+              description={product.description}
+              key={product.id_product}
+              photoUrl={product.image}
+              userUrl={product.userId}
+              rentEndDate={product.rent_terms}
+              itemName={product.name_product}
+              status={product.quality_control}
+              rating={2}
+              feedbackCount={2}
+              sellerInfo={'Организация'}
+              isAvailable={product.enabled_product}
+              isConfirmed={true}
+              rentInfoArray={arr}
+            />
+          ))}
+        </div>
+      ) : (
+        <NoProductsFound />
+      )}
       {products?.length ? <CustomPagination /> : ''}
     </div>
   );

@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import { useSwiper } from 'swiper/react';
 import styles from './SwiperButtons.module.scss';
-import { nextArrow, previous, sliderLeftBlur, sliderRightBlur } from '@/assets/image';
+import { sliderLeftBlur, sliderRightBlur } from '@/assets/image';
 import classNames from 'classnames';
 import { FC } from 'react';
 

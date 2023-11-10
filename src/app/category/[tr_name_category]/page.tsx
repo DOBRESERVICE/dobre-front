@@ -7,6 +7,7 @@ import { CatalogBlocks } from '@/components/CatalogBlocks/CatalogBlocks';
 import { Blog } from '@/components/Blog/Blog';
 import { getCertainCategory } from '@/api/categoriesApi';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
+import { NoProductsFound } from '@/app/category/[tr_name_category]/[id]/common/NoProductsFound/NoProductsFound';
 
 export default async function CatalogPage({ params }: { params: { tr_name_category: string } }) {
   const { data: certainCategoryData } = await getCertainCategory(params.tr_name_category);
@@ -22,6 +23,7 @@ export default async function CatalogPage({ params }: { params: { tr_name_catego
       linkName: certainCategoryData.name_category,
     },
   ];
+  const isEveryVarietyEmpty = certainCategoryData.subcategories.every((item) => item.varieties.length === 0);
   return (
     <>
       <Wrapper>
@@ -30,8 +32,9 @@ export default async function CatalogPage({ params }: { params: { tr_name_catego
       <Construction title={certainCategoryData.name_category} subCategories={certainCategoryData.subcategories} />
       <Brands />
       <PopularTools />
-      <NewProducts newProducts={certainCategoryData.products} />
+      {certainCategoryData.products.length > 0 && <NewProducts newProducts={certainCategoryData.products} />}
       <CatalogBlocks subcategories={certainCategoryData.subcategories} />
+      {isEveryVarietyEmpty && <NoProductsFound />}
       <Blog
         text='Добро пожаловать в мир ремонта и стройки, где креативность встречается с качеством, а ваш дом становится идеальным местом для жизни! Мы - ваш надежный партнер в создании и обновлении вашего жилья. Независимо от того, нужен ли вам косметический ремонт или полноценное строительство, у нас есть решения, которые сделают вашу мечту о идеальном доме реальностью.'
         header={'Профессиональный ремонт и стройка: ваш путь к идеальному дому'}

@@ -3,7 +3,7 @@ import Image, { StaticImageData } from 'next/image';
 import { emailIcon } from '@/assets/image';
 import { Button } from '@mui/material';
 import { customModalButton } from '@/styles/buttonStyles';
-import { FC } from 'react';
+import { FC, ForwardedRef, forwardRef } from 'react';
 
 interface ModalContentProps {
   imageIcon: StaticImageData;
@@ -11,9 +11,11 @@ interface ModalContentProps {
   text: string;
   onClick: () => void;
 }
-export const ModalContent: FC<ModalContentProps> = ({ imageIcon, title, text, onClick }) => {
+export const ModalContent: FC<ModalContentProps> = forwardRef((props, ref: ForwardedRef<HTMLDivElement>) => {
+  const { imageIcon, title, text, onClick } = props;
+
   return (
-    <div className={styles.modalContent}>
+    <div className={styles.modalContent} ref={ref}>
       <div className={styles.contentWrapper}>
         <Image src={imageIcon} alt='email icon' />
         <h2>{title}</h2>
@@ -24,4 +26,4 @@ export const ModalContent: FC<ModalContentProps> = ({ imageIcon, title, text, on
       </Button>
     </div>
   );
-};
+});

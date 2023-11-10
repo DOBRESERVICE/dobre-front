@@ -26,13 +26,14 @@ import { HeaderLinks } from '@/components/Header/common/HeaderLinks/HeaderLinks'
 import { useEffect, useState } from 'react';
 import { Menu } from '@/components/Menu/Menu';
 import Link from 'next/link';
+import { useAuthData } from '@/context/authContext';
 
 export const Header = () => {
   const pathname = usePathname();
   const notMainPage = pathname !== '/';
   const router = useRouter();
   const [token, setToken] = useState<string | null>('');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { isMenuOpen, setIsMenuOpen } = useAuthData();
   useEffect(() => {
     const token = localStorage.getItem('token');
     setToken(token);
@@ -135,7 +136,7 @@ export const Header = () => {
             </Button>
           )}
         </div>
-        {isMenuOpen && <Menu setIsMenuOpen={setIsMenuOpen} />}
+        {isMenuOpen && <Menu />}
       </header>
       {notMainPage && <HeaderLinks />}
     </>

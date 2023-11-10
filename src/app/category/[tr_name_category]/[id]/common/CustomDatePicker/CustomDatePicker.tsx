@@ -1,13 +1,11 @@
 'use client';
-import styles from './CustomDatePicker.module.scss';
-import Image from 'next/image';
-import { dateImage } from '@/assets/image';
-import { LocalizationProvider, StaticDatePicker } from '@mui/x-date-pickers';
+import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { customDatePicker } from '@/styles/buttonStyles';
 import { useState } from 'react';
 import dayjs, { Dayjs } from 'dayjs';
-import { Arrow } from '@/app/category/[tr_name_category]/[id]/common/Arrow/Arrow';
+import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import { customDatePicker, customDatePickerContainer } from '@/styles/datePickerStyles';
+import { Dateicon } from '@/ui/DateIcon/Dateicon';
 
 export const CustomDatePicker = () => {
   const [value, setValue] = useState<Dayjs | null>(dayjs('2023-10-12'));
@@ -16,30 +14,10 @@ export const CustomDatePicker = () => {
     setValue(newValue);
   };
   return (
-    <>
-      <div className={styles.customDatePickerWrapper} role='button' onClick={() => setIsOpen(!isOpen)}>
-        <div className={styles.content}>
-          <Image src={dateImage} alt='dateImage' />
-          <p>Выберите дату</p>
-        </div>
-        <Arrow onClick={() => setIsOpen(!isOpen)} isOpen={isOpen} />
-      </div>
-      {isOpen && (
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
-          <StaticDatePicker
-            sx={customDatePicker}
-            value={value}
-            onClose={() => setIsOpen(false)}
-            onAccept={(newValue) => handleChange(newValue)}
-            onChange={(newValue) => handleChange(newValue)}
-            slotProps={{
-              actionBar: {
-                actions: ['cancel', 'accept'],
-              },
-            }}
-          />
-        </LocalizationProvider>
-      )}
-    </>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <DemoContainer components={['DatePicker']} sx={customDatePickerContainer}>
+        <DatePicker label='Выберите дату' sx={customDatePicker} slots={{ openPickerIcon: Dateicon }} />
+      </DemoContainer>
+    </LocalizationProvider>
   );
 };

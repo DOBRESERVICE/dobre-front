@@ -9,6 +9,9 @@ export const customSelect = {
   '& > div': {
     padding: '8px 14px',
   },
+  '& fieldset': {
+    borderColor: colors.lightGraphite,
+  },
 };
 export const customDateSelect = {
   color: colors.graphite,
@@ -17,6 +20,9 @@ export const customDateSelect = {
   borderRadius: '8px',
   '& > div': {
     padding: '12px 14px',
+  },
+  '& fieldset': {
+    borderColor: colors.lightGraphite,
   },
 };
 
@@ -27,6 +33,9 @@ export const customProductQuantitySelect = {
   borderRadius: '8px',
   '& > div': {
     padding: '12px 14px',
+  },
+  '& fieldset': {
+    borderColor: colors.lightGraphite,
   },
 };
 

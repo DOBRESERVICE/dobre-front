@@ -4,6 +4,8 @@ import { Product, Subcategory } from '@/interfaces/categories';
 import { FC } from 'react';
 import { getSubCategory } from '@/api/categoriesApi';
 
+export const dynamic = 'force-dynamic';
+
 interface CatalogBlocksProps {
   subcategories: Subcategory[];
 }
@@ -14,6 +16,7 @@ export const CatalogBlocks: FC<CatalogBlocksProps> = async ({ subcategories }) =
       return await Promise.all(
         subcategories.map(async (subCategory) => {
           const { data } = await getSubCategory(subCategory.tr_name_sub);
+          console.log(data, 'data');
           return data;
         })
       );
@@ -24,19 +27,15 @@ export const CatalogBlocks: FC<CatalogBlocksProps> = async ({ subcategories }) =
   const subCategoriesData = await fetchData();
   return (
     <section className={styles.catalogBlocksSectionWrapper}>
-      {subCategoriesData ? (
-        subCategoriesData.map((subcategory) => (
-          <CatalogBlock
-            key={subcategory.id_sub}
-            barName={subcategory.name_sub}
-            toolsData={subcategory.varieties}
-            productsData={subcategory.products}
-            subCategoryTrName={subcategory.tr_name_sub}
-          />
-        ))
-      ) : (
-        <p>ничего нет :(</p>
-      )}
+      {subCategoriesData?.map((subcategory) => (
+        <CatalogBlock
+          key={subcategory.id_sub}
+          barName={subcategory.name_sub}
+          toolsData={subcategory.varieties}
+          productsData={subcategory.products}
+          subCategoryTrName={subcategory.tr_name_sub}
+        />
+      ))}
     </section>
   );
 };
