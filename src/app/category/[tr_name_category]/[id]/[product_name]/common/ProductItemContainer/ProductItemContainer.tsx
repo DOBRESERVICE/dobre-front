@@ -1,7 +1,7 @@
 import { RatingComponent } from '@/ui/RatingComponent/RatingComponent';
 import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
 import styles from './ProductItemContainer.module.scss';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage, mockMainImage } from '@/assets/image';
 import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
 import { descriptionProductData } from '@/data';
@@ -15,7 +15,7 @@ interface ProductItemContainerProps {
   qualityControl: number;
   quantity: number;
   price: string;
-  productImage: string;
+  productImage: string | StaticImageData;
 }
 export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   productDescription,

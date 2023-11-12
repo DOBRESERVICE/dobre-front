@@ -66,9 +66,9 @@ export const ProductItem: FC<ProductItem> = ({
         </p>
         <RentInfoContainer
           rentInfoArray={rentInfoArray}
-          trVarietyName={trVarietyName}
-          trCategoryName={trCategoryName}
-          trSubCategoryName={trSubCategoryName}
+          // trVarietyName={trVarietyName}
+          // trCategoryName={trCategoryName}
+          // trSubCategoryName={trSubCategoryName}
           productId={productId}
         />
         <div className={styles.sellerInfoContainer}>

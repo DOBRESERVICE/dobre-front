@@ -11,9 +11,9 @@ import { useRouter } from 'next/navigation';
 
 interface RentInfoContainer {
   rentInfoArray: RentInfoData[];
-  trVarietyName: string;
-  trCategoryName: string;
-  trSubCategoryName: string;
+  trVarietyName?: string;
+  trCategoryName?: string;
+  trSubCategoryName?: string;
   productId: number;
 }
 export const RentInfoContainer: FC<RentInfoContainer> = ({

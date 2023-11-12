@@ -38,7 +38,7 @@ export interface Product {
   quantity: number;
   specs_product: string;
   price: string;
-  image: string;
+  image: string | StaticImageData;
   enabled_product: boolean;
   is_moderate: boolean;
   userId: any;

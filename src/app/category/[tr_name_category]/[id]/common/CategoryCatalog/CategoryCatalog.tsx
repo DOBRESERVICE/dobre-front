@@ -55,6 +55,7 @@ export const CategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
         <div className={styles.categoryCatalog}>
           {products?.map((product) => (
             <ProductItem
+              productId={product.id_product}
               description={product.description}
               key={product.id_product}
               photoUrl={product.image}
