@@ -4,10 +4,11 @@ import styles from './ProductsContainer.module.scss';
 import { ProductItem } from '@/components/ProductsContainer/common/ProductItem';
 import { FC } from 'react';
 import { SwiperSlide } from 'swiper/react';
-import { Slider } from '@/components/Slider/Slider';
 import { nextArrow, previous } from '@/assets/image';
 import { SwiperButtons } from '@/components/Slider/common/SwiperButtons/SwiperButtons';
 import { Product } from '@/interfaces/categories';
+import 'swiper/css';
+import { Carousel } from '@/components/Carousel/Carousel';
 
 interface ProductsContainer {
   products: Product[];
@@ -31,33 +32,26 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
       price: '13 450 руб.',
     },
   ];
+
   return (
-    <div className={styles.productsContainer}>
-      <Slider>
-        {products?.map((product) => (
-          <SwiperSlide key={product.id_product}>
-            <ProductItem
-              photoUrl={product.image}
-              userUrl={product.userId}
-              rentEndDate={product.rent_terms}
-              itemName={product.name_product}
-              description={product.description}
-              status={product.quality_control}
-              rating={2}
-              feedbackCount={2}
-              sellerInfo={'Организация'}
-              isAvailable={product.enabled_product}
-              isConfirmed={true}
-              rentInfoArray={arr}
-              // trCategoryName={product.category.tr_name_category}
-              // trSubCategoryName={product.subcategory.tr_name_sub}
-              // trVarietyName={product.variety.tr_name_variety}
-              productId={product.id_product}
-            />
-          </SwiperSlide>
-        ))}
-        <SwiperButtons rightIcon={nextArrow} leftIcon={previous} />
-      </Slider>
-    </div>
+    <Carousel>
+      {products.map((product) => (
+        <ProductItem
+          productId={product.id_product}
+          photoUrl={product.image}
+          userUrl={product.userId}
+          rentEndDate={product.rent_terms}
+          itemName={product.name_product}
+          description={product.description}
+          status={product.quality_control}
+          rating={2}
+          feedbackCount={2}
+          sellerInfo={'Организация'}
+          isAvailable={product.enabled_product}
+          isConfirmed={true}
+          rentInfoArray={arr}
+        />
+      ))}
+    </Carousel>
   );
 };

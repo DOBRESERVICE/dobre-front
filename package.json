@@ -26,20 +26,23 @@
     "classnames": "^2.3.2",
     "dayjs": "^1.11.10",
     "eslint": "8.49.0",
-    "eslint-config-next": "13.5.1",
-    "next": "13.5.1",
+    "eslint-config-next": "^14.0.2",
+    "next": "^14.0.2",
     "postcss": "8.4.30",
     "prettier": "^3.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
+    "react-slick": "^0.29.0",
     "sass": "^1.68.0",
+    "slick-carousel": "^1.8.1",
     "swiper": "^10.3.1",
     "swr": "^2.2.4",
     "typescript": "5.2.2"
   },
   "devDependencies": {
     "@types/react-google-recaptcha": "^2.1.5",
+    "@types/react-slick": "^0.23.12",
     "file-loader": "^6.2.0"
   }
 }

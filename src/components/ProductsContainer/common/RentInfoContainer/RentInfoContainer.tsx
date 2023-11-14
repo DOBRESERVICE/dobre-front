@@ -31,14 +31,14 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({
           <RentInfoItem key={item.id} timeInRent={item.timeInRent} price={item.price} />
         ))}
       </div>
-      <Button
-        disableRipple
-        sx={rentInfoCustomButton}
-        onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}
-      >
-        <Image src={rentButtonIcon} alt='rent' />
-        Арендовать
-      </Button>
+      {/*<Button*/}
+      {/*  disableRipple*/}
+      {/*  sx={rentInfoCustomButton}*/}
+      {/*  onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}*/}
+      {/*>*/}
+      {/*  <Image src={rentButtonIcon} alt='rent' />*/}
+      {/*  Арендовать*/}
+      {/*</Button>*/}
     </div>
   );
 };

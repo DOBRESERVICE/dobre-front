@@ -8,10 +8,10 @@ import { FC } from 'react';
 interface SwiperButtonsProps {
   rightIcon: StaticImageData;
   leftIcon: StaticImageData;
+  onNext: () => void;
 }
 
-export const SwiperButtons: FC<SwiperButtonsProps> = ({ rightIcon, leftIcon }) => {
-  const swiper = useSwiper();
+export const SwiperButtons: FC<SwiperButtonsProps> = ({ rightIcon, leftIcon, onNext }) => {
   return (
     <div className={styles.swiperButtonsWrapper}>
       <div className={classNames(styles.blur, styles.leftBlur)}>
@@ -20,10 +20,10 @@ export const SwiperButtons: FC<SwiperButtonsProps> = ({ rightIcon, leftIcon }) =
       <div className={classNames(styles.blur, styles.rightBlur)}>
         <Image src={sliderRightBlur} alt='blur' />
       </div>
-      <button onClick={() => swiper.slidePrev()}>
+      <button onClick={onNext}>
         <Image src={leftIcon} alt='prev' />
       </button>
-      <button onClick={() => swiper.slideNext()}>
+      <button onClick={onNext}>
         <Image src={rightIcon} alt='next' />
       </button>
     </div>

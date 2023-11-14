@@ -1,33 +1,17 @@
 import styles from './CatalogBlocks.module.scss';
 import { CatalogBlock } from '@/components/CatalogBlocks/common/CatalogBlock/CatalogBlock';
-import { Product, Subcategory } from '@/interfaces/categories';
+import { Product, SubCategory, Subcategory } from '@/interfaces/categories';
 import { FC } from 'react';
 import { getSubCategory } from '@/api/categoriesApi';
 
-export const dynamic = 'force-dynamic';
-
 interface CatalogBlocksProps {
-  subcategories: Subcategory[];
+  subcategories: SubCategory[];
 }
 
-export const CatalogBlocks: FC<CatalogBlocksProps> = async ({ subcategories }) => {
-  const fetchData = async () => {
-    try {
-      return await Promise.all(
-        subcategories.map(async (subCategory) => {
-          const { data } = await getSubCategory(subCategory.tr_name_sub);
-          console.log(data, 'data');
-          return data;
-        })
-      );
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
-  };
-  const subCategoriesData = await fetchData();
+export const CatalogBlocks: FC<CatalogBlocksProps> = ({ subcategories }) => {
   return (
     <section className={styles.catalogBlocksSectionWrapper}>
-      {subCategoriesData?.map((subcategory) => (
+      {subcategories?.map((subcategory) => (
         <CatalogBlock
           key={subcategory.id_sub}
           barName={subcategory.name_sub}

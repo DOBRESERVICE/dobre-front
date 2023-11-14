@@ -5,6 +5,7 @@
   overflow: hidden;
   margin-inline: auto;
   position: relative;
+  padding-block: 20px;
 
   @include breakpoint(lg) {
     width: 1230px;
