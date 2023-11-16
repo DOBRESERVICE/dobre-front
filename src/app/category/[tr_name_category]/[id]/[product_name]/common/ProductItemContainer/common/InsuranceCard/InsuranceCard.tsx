@@ -1,6 +1,6 @@
 import styles from './InsuranceCard.module.scss';
 import Image from 'next/image';
-import { imkliva, secureIcon, secureProduct } from '@/assets/image';
+import { imkliva, secureIcon, secureProduct } from '../../../../../../../../../shared/image';
 export const InsuranceCard = () => {
   return (
     <div className={styles.insuranceCard}>

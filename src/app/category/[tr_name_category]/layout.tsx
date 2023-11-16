@@ -1,6 +1,6 @@
 import styles from './CatalogLayout.module.scss';
-import { Header } from '@/components/Header/Header';
-import { Footer } from '@/components/Footer/Footer';
+import { Header } from '@/widgets/Header/Header';
+import { Footer } from '@/widgets/Footer/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -2,7 +2,6 @@ import './globals.scss';
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 import { Providers } from '@/app/providers';
-import Script from 'next/script';
 
 const manrope = Manrope({ subsets: ['latin'] });
 
@@ -17,7 +16,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={manrope.className}>
         <Providers>{children}</Providers>
       </body>
-      <Script src='https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js'></Script>
     </html>
   );
 }

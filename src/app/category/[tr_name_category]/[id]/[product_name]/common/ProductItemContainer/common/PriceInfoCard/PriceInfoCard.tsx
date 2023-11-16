@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import { greenCheckedIcon, infoIcon, rentButtonIcon } from '@/assets/image';
+import { greenCheckedIcon, infoIcon, rentButtonIcon } from '../../../../../../../../../shared/image';
 import styles from './PriceInfoCard.module.scss';
 import { Button } from '@mui/material';
-import { rentInfoCustomBigButton } from '@/styles/buttonStyles';
+import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 
 export const PriceInfoCard = () => {
   return (

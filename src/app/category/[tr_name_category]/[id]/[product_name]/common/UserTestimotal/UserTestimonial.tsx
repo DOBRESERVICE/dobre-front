@@ -1,9 +1,9 @@
 import styles from './UserTestimonial.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { emoji, mockUser } from '@/assets/image';
-import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
+import { emoji, mockUser } from '../../../../../../../shared/image';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { FC } from 'react';
-import { RatingComponent } from '@/ui/RatingComponent/RatingComponent';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 interface TestimonialImages {
   id: number;

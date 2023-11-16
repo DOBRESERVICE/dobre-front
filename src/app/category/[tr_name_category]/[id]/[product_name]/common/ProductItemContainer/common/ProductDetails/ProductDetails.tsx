@@ -1,5 +1,5 @@
 import styles from './ProductDetails.module.scss';
-import { blueTypesArray, generalInfo } from '@/data';
+import { blueTypesArray, generalInfo } from '../../../../../../../../../shared/data';
 import classNames from 'classnames';
 
 export const ProductDetails = () => {

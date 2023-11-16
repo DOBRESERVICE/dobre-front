@@ -1,10 +1,10 @@
-import { AuthLayout } from '@/components/authLayout/AuthLayout';
-import { ResetPasswordComponent } from '@/components/ResetPassword/ResetPasswordComponent';
+import { AuthLayout } from '@/layouts/AuthLayout/AuthLayout';
+import { ResetPasswordForm } from '@/features/forms/ResetPasswordForm/ResetPasswordForm';
 
 export default function LoginPage() {
   return (
     <AuthLayout>
-      <ResetPasswordComponent />
+      <ResetPasswordForm />
     </AuthLayout>
   );
 }

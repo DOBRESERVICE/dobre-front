@@ -1,11 +1,11 @@
 'use client';
 import styles from './Testimonials.module.scss';
-import { FAQData, userTestimonialsData } from '@/data';
+import { FAQData, userTestimonialsData } from '../../../../../../../shared/data';
 import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/UserTestimotal/UserTestimonial';
 import { TabsComponent } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TabsComponent/TabsComponent';
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import { FAQCustomButton, rentInfoCustomBigButton, SeeAllCustomBigButton } from '@/styles/buttonStyles';
+import { FAQCustomButton, rentInfoCustomBigButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
 
 export const Testimonials = () => {
   const [activeTab, setActiveTab] = useState(1);

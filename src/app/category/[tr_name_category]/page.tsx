@@ -1,13 +1,13 @@
-import { BreadCrumbs } from '@/components/BreadCrumbs/BreadCrumbs';
-import { Construction } from '@/components/Constuction/Construction';
-import { Brands } from '@/components/Brands/Brands';
-import { PopularTools } from '@/components/PopularTools/PopularTools';
-import { NewProducts } from '@/components/NewProducts/NewProducts';
-import { CatalogBlocks } from '@/components/CatalogBlocks/CatalogBlocks';
-import { Blog } from '@/components/Blog/Blog';
-import { getCertainCategory, getSubCategory } from '@/api/categoriesApi';
-import { Wrapper } from '@/components/Wrapper/Wrapper';
-import { NoProductsFound } from '@/app/category/[tr_name_category]/[id]/common/NoProductsFound/NoProductsFound';
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { Construction } from '@/widgets/Construction/Construction';
+import { Brands } from '@/widgets/Brands/Brands';
+import { PopularTools } from '@/widgets/PopularTools/PopularTools';
+import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
+import { Blog } from '@/widgets/Blog/Blog';
+import { getCertainCategory, getSubCategory } from '@/shared/api/categoriesApi';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 
 export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
   const { data: certainCategoryData } = await getCertainCategory(params.tr_name_category);
@@ -41,7 +41,6 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
   if (!subCategoriesData) {
     return <NoProductsFound />;
   }
-  console.log(subCategoriesData, 'subdatass111s');
   return (
     <>
       <Wrapper>

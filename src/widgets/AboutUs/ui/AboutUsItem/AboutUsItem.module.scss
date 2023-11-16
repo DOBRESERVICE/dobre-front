@@ -1,0 +1,45 @@
+@import '@/shared/styles/variables';
+
+.mainItem {
+  max-width: 381px;
+}
+
+.itemTitle {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 29px;
+  max-width: 305px;
+  position: relative;
+}
+
+.itemDescr {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.32px;
+  margin-top: 49px;
+}
+
+.lineTitle {
+  position: absolute;
+  left: 0;
+  bottom: -14px;
+}
+
+.left {
+  position: absolute;
+  left: -28px;
+  top: 7px;
+}
+
+.bottom {
+  position: absolute;
+  left: -28px;
+  bottom: 0;
+}
+
+.right {
+  position: absolute;
+  right: 48px;
+  bottom: 0;
+}

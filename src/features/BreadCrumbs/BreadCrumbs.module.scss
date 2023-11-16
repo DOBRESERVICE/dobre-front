@@ -1,0 +1,17 @@
+@import '@/shared/styles/variables';
+.breadCrumbsWrapper {
+  max-width: 1408px;
+  display: flex;
+  gap: 8px;
+  margin-top: 44px;
+  align-self: start;
+}
+.breadCrumbsWrapper > a {
+  color: $graphite;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.breadCrumbsWrapper > span:last-child {
+  display: none;
+}

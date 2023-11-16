@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import styles from './TariffCard.module.scss';
 import Image from 'next/image';
-import { tarrifInfo } from '@/assets/image';
+import { tarrifInfo } from '../../../../../../../shared/image';
 interface TariffCardProps {
   time: string;
   price: string;

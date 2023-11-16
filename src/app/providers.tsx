@@ -1,7 +1,7 @@
 'use client';
-import { AuthProvider } from '@/context/authContext';
+import { AuthProvider } from '@/shared/context/authContext';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { colors } from '@/constants/colors';
+import { MUIColors } from '@/shared/styles/MUIColors';
 import { Manrope } from 'next/font/google';
 import { ReactNode } from 'react';
 
@@ -13,7 +13,7 @@ const manrope = Manrope({
 const theme = createTheme({
   palette: {
     primary: {
-      main: colors.deepBlue,
+      main: MUIColors.deepBlue,
     },
   },
   typography: {

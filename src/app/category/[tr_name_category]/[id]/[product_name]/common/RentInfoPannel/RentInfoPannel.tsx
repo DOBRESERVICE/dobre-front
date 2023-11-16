@@ -1,17 +1,17 @@
 import styles from './RentInfoPannel.module.scss';
-import { ProductRentStatus } from '@/ui/ProductRentStatus/ProductRentStatus';
-import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/CustomSelect/CustomSelect';
+import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
+import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import {
   customDateFormSelect,
   customDateLabel,
   customDateSelect,
   customProductQuantityFormSelect,
   customProductQuantitySelect,
-} from '@/styles/selectStyles';
-import { dateArrow, dateImage, rentButtonIcon } from '@/assets/image';
+} from '@/shared/styles/selectStyles';
+import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../shared/image';
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
 import { Button } from '@mui/material';
-import { rentInfoCustomBigButton } from '@/styles/buttonStyles';
+import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import Image from 'next/image';
 import { FC } from 'react';
 

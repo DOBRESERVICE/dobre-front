@@ -1,16 +1,16 @@
-import { BreadCrumbs } from '@/components/BreadCrumbs/BreadCrumbs';
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 import styles from './ProductPage.module.scss';
 import { ProductAsideInfo } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductAsideInfo/ProductAsideInfo';
 import { ProductItemContainer } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/ProductItemContainer';
 import { Testimonials } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Testimonials/Testimonials';
 import { GeneralRating } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/GeneralRating/GeneralRating';
 import Image from 'next/image';
-import { commentExclamation } from '@/assets/image';
-import { TopSectionBar } from '@/components/TopSectionBar/TopSectionBar';
-import { ProductsContainer } from '@/components/ProductsContainer/common/ProductsContainer';
-import { productsData } from '@/data';
-import { Blog } from '@/components/Blog/Blog';
-import { getProductData, getSubCategory } from '@/api/categoriesApi';
+import { commentExclamation } from '../../../../../shared/image';
+import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
+import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
+import { productsData } from '../../../../../shared/data';
+import { Blog } from '@/widgets/Blog/Blog';
+import { getProductData, getSubCategory } from '../../../../../shared/api/categoriesApi';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const { data: productData } = await getProductData(params.product_name);

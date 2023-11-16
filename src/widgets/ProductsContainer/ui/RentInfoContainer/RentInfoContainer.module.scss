@@ -1,0 +1,31 @@
+@import '@/shared/styles/variables';
+
+.rentTimeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  gap: 12px;
+  padding-inline: 12px;
+}
+.content {
+  display: flex;
+  gap: 10px;
+  & > div > p {
+    font-size: 9px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    color: $graphite;
+  }
+
+  & > div > span {
+    font-size: 14px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.36px;
+    color: #000;
+  }
+}

@@ -2,8 +2,8 @@
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import styles from './ConfirmContent.module.scss';
 import { useEffect } from 'react';
-import { useAuthData } from '@/context/authContext';
-import { Loader } from '@/components/Loader/Loader';
+import { useAuthData } from '@/shared/context/authContext';
+import { Loader } from '@/features/Loader/Loader';
 import { Status } from '@/enums';
 
 export const ConfirmContent = () => {

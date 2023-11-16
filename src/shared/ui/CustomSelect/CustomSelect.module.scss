@@ -1,0 +1,14 @@
+@import '@/shared/styles/variables';
+
+.customSelectWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+}
+.labelContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}

@@ -1,7 +1,0 @@
-@import "src/styles/variables";
-.wrapper {
-  width: 1408px;
-  @include breakpoint(lg) {
-    width: 1230px;
-  }
-}

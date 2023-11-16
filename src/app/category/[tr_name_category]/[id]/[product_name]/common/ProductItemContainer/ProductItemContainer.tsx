@@ -1,10 +1,17 @@
-import { RatingComponent } from '@/ui/RatingComponent/RatingComponent';
-import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import styles from './ProductItemContainer.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage, mockMainImage } from '@/assets/image';
+import {
+  favouriteIcon,
+  mock1Image,
+  mock2Image,
+  mock3Image,
+  mockBrandImage,
+  mockMainImage,
+} from '../../../../../../../shared/image';
 import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
-import { descriptionProductData } from '@/data';
+import { descriptionProductData } from '../../../../../../../shared/data';
 import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { FC } from 'react';

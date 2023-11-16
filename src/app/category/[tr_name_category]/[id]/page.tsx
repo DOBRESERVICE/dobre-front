@@ -1,9 +1,9 @@
-import { BreadCrumbs } from '@/components/BreadCrumbs/BreadCrumbs';
-import { Blog } from '@/components/Blog/Blog';
-import { CategoryTools } from '@/app/category/[tr_name_category]/[id]/common/CategoryTools/CategoryTools';
-import { CategoryContent } from '@/app/category/[tr_name_category]/[id]/common/CategoryContent/CategoryContent';
-import { getCertainVariety, getSubCategory } from '@/api/categoriesApi';
-import { Wrapper } from '@/components/Wrapper/Wrapper';
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { Blog } from '@/widgets/Blog/Blog';
+import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
+import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
+import { getCertainCategory, getCertainVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 export default async function CategoryPage({
   params,
   searchParams,
@@ -41,12 +41,12 @@ export default async function CategoryPage({
       <Wrapper>
         <BreadCrumbs breadCrumbsData={breadCrumbsData} />
       </Wrapper>
-      <CategoryTools
+      <SubcategoryToolsContainer
         varietyProducts={certainSubCategoryData.varieties}
         subCategoryTitle={certainSubCategoryData.name_sub}
         subCategoryTrName={certainSubCategoryData.tr_name_sub}
       />
-      <CategoryContent products={certainVarietyData.products} subCategoryData={certainSubCategoryData} />
+      <SubcategoryContent products={certainVarietyData.products} subCategoryData={certainSubCategoryData} />
       <Blog
         header='Профессиональный ремонт и стройка: ваш путь к идеальному дому'
         text='Добро пожаловать в мир ремонта и стройки, где креативность встречается с качеством, а ваш дом становится идеальным местом для жизни! Мы - ваш надежный партнер в создании и обновлении вашего жилья. Независимо от того, нужен ли вам косметический ремонт или полноценное строительство, у нас есть решения, которые сделают вашу мечту о идеальном доме реальностью.'

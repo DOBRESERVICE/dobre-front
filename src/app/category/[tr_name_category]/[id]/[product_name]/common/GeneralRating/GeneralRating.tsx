@@ -1,6 +1,6 @@
 import styles from './Generalrating.module.scss';
-import { RatingComponent } from '@/ui/RatingComponent/RatingComponent';
-import { StatusBar } from '@/components/ProductsContainer/common/StatusBar';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
 export const GeneralRating = () => {
   return (
     <div className={styles.generalRatingWrapper}>
