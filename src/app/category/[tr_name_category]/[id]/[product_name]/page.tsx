@@ -1,16 +1,18 @@
-import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import Image from 'next/image';
+
 import styles from './ProductPage.module.scss';
+
+import { GeneralRating } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/GeneralRating/GeneralRating';
 import { ProductAsideInfo } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductAsideInfo/ProductAsideInfo';
 import { ProductItemContainer } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/ProductItemContainer';
 import { Testimonials } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Testimonials/Testimonials';
-import { GeneralRating } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/GeneralRating/GeneralRating';
-import Image from 'next/image';
-import { commentExclamation } from '../../../../../shared/image';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
-import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
-import { productsData } from '../../../../../shared/data';
 import { Blog } from '@/widgets/Blog/Blog';
-import { getProductData, getSubCategory } from '../../../../../shared/api/categoriesApi';
+import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
+
+import { getProductData } from '../../../../../shared/api/categoriesApi';
+import { productsData } from '../../../../../shared/data';
+import { commentExclamation } from '../../../../../shared/image';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const { data: productData } = await getProductData(params.product_name);
@@ -46,7 +48,7 @@ export default async function ProductPage({ params }: { params: { product_name: 
     <>
       <section className={styles.productSection}>
         <div className={styles.breadCrumbsWrapper}>
-          {/*<BreadCrumbs breadCrumbsData={breadCrumbsData} />*/}
+          {/* <BreadCrumbs breadCrumbsData={breadCrumbsData} /> */}
           <div className={styles.info}>
             <Image src={commentExclamation} alt='comment' />
             <p>ID объявления: 1325467</p>

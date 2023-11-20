@@ -1,8 +1,11 @@
 import Image from 'next/image';
+
 import styles from './GeneralTestimonials.module.scss';
-import { testimonialsImage } from '../../shared/image';
-import { CommentItem } from '@/widgets/GeneralTestimonials/ui/CommentItem';
+
 import { commentData } from '@/widgets/GeneralTestimonials/data';
+import { CommentItem } from '@/widgets/GeneralTestimonials/ui/CommentItem';
+
+import { testimonialsImage } from '../../shared/image';
 
 const GeneralTestimonials = () => {
   return (

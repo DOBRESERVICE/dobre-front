@@ -1,6 +1,10 @@
 'use client';
-import styles from './ProductAsideInfo.module.scss';
+
 import Image from 'next/image';
+
+import styles from './ProductAsideInfo.module.scss';
+
+import { YandexMaps } from '@/features/map/yandexMaps/YandexMaps';
 import {
   cardPayment,
   cashPayment,
@@ -17,7 +21,7 @@ import {
   yandexGo,
 } from '@/shared/image';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
-import { YandexMaps } from '@/features/map/yandexMaps/YandexMaps';
+
 export const ProductAsideInfo = () => {
   return (
     <aside className={styles.asideWrapper}>

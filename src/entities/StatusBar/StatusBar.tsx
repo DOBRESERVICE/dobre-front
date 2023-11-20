@@ -1,7 +1,9 @@
-import styles from './StatusBar.module.scss';
-import { ProductStatus, qualityMap } from '@/enums';
-import { FC } from 'react';
 import classNames from 'classnames';
+import { FC } from 'react';
+
+import styles from './StatusBar.module.scss';
+
+import { ProductStatus, qualityMap } from '@/enums';
 import { isGoodStatus } from '@/shared/lib';
 
 interface StatusBar {
@@ -28,11 +30,11 @@ export const StatusBar: FC<StatusBar> = ({ status }) => {
           [styles.badQuality]: status === ProductStatus.BAD,
         })}
       >
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
+        <span />
+        <span />
+        <span />
+        <span />
+        <span />
       </div>
     </div>
   );

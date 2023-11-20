@@ -1,9 +1,12 @@
-import styles from './UserTestimonial.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { emoji, mockUser } from '../../../../../../../shared/image';
-import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { FC } from 'react';
+
+import styles from './UserTestimonial.module.scss';
+
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+
+import { emoji } from '../../../../../../../shared/image';
 
 interface TestimonialImages {
   id: number;
@@ -51,7 +54,7 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
           {images && (
             <div className={styles.images}>
               {images.map((item) => (
-                <div className={styles.imageWrapper}>
+                <div className={styles.imageWrapper} key={item.id}>
                   <Image key={item.id} src={item.img} alt='img' />
                 </div>
               ))}
@@ -60,7 +63,7 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
           {ownerResponse && ownerImage && (
             <div className={styles.responseWrapper}>
               <div className={styles.ownerContent}>
-                <div className={styles.line}></div>
+                <div className={styles.line} />
                 <div className={styles.userImageWrapper}>
                   <Image src={ownerImage} alt='user' />
                 </div>

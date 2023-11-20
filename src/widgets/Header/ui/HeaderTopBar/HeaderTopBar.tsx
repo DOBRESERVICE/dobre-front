@@ -1,9 +1,12 @@
-import styles from './HeaderTopBar.module.scss';
-import Image from 'next/image';
-import geolocationIcon from '@/shared/image/geolocation.svg';
 import { Button } from '@mui/material';
-import { customSmallRentButton } from '@/shared/styles/buttonStyles';
+import Image from 'next/image';
+
+import styles from './HeaderTopBar.module.scss';
+
 import { smallPlus } from '@/shared/image';
+import geolocationIcon from '@/shared/image/geolocation.svg';
+import { customSmallRentButton } from '@/shared/styles/buttonStyles';
+
 export const HeaderTopBar = () => {
   return (
     <div className={styles.topBar}>
@@ -20,7 +23,7 @@ export const HeaderTopBar = () => {
         <p>Как сдавать</p>
         <p>База знаний</p>
         <Button variant='contained' disableRipple size='medium' sx={customSmallRentButton}>
-          <Image src={smallPlus} alt={'plus'} />
+          <Image src={smallPlus} alt='plus' />
           Сдать в аренду
         </Button>
       </div>

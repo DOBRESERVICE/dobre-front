@@ -1,10 +1,14 @@
 'use client';
-import styles from './OptionsComponent.module.scss';
-import { FC, useState } from 'react';
-import { Option } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/Option/Option';
+
 import Image from 'next/image';
-import { blueNextArrow } from '../../../../../../shared/image';
+import { FC } from 'react';
+
+import styles from './OptionsComponent.module.scss';
+
 import { useShownData } from '@/shared/hooks/useShownData';
+import { Option } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/Option/Option';
+
+import { blueNextArrow } from '../../../../../../shared/image';
 
 interface OptionsComponent {
   title: string;

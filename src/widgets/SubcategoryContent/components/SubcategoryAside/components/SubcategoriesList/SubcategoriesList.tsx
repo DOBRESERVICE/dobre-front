@@ -1,12 +1,15 @@
 'use client';
-import styles from './SubcategoriesList.module.scss';
+
 import Image from 'next/image';
-import { blueNextArrow } from '../../../../../../shared/image';
 import { FC, useState } from 'react';
-import { subCategoriesData } from '../../../../../../shared/data';
+
+import styles from './SubcategoriesList.module.scss';
+
+import { Variety } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
 import { SubCategoryItem } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoryListItem/SubcategoryListItem';
-import { Variety } from '@/interfaces/categories';
+
+import { blueNextArrow } from '../../../../../../shared/image';
 
 interface SubCategoriesProps {
   varietiesList: Variety[];

@@ -1,5 +1,7 @@
-import styles from './Blog.module.scss';
 import { FC } from 'react';
+
+import styles from './Blog.module.scss';
+
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 
 interface BlogProps {
@@ -7,12 +9,12 @@ interface BlogProps {
   text: string;
   image?: string;
 }
-export const Blog: FC<BlogProps> = ({ header, text, image }) => {
+export const Blog: FC<BlogProps> = ({ header, text }) => {
   return (
     <Wrapper>
       <section className={styles.sectionBlogWrapper}>
         <div className={styles.content}>
-          <div className={styles.emptyBlock}></div>
+          <div className={styles.emptyBlock} />
           <div className={styles.textBlock}>
             <h2>{header}</h2>
             <p>{text}</p>

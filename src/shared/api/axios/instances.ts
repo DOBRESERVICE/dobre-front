@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import { BASE_URL } from '@/shared/constants/urls';
 
 export const tokenRequest = axios.create({

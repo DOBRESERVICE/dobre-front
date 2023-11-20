@@ -1,6 +1,7 @@
-import styles from './AuthHeader.module.scss';
-import { FC } from 'react';
 import Link from 'next/link';
+import { FC } from 'react';
+
+import styles from './AuthHeader.module.scss';
 
 interface AuthHeader {
   link: string;

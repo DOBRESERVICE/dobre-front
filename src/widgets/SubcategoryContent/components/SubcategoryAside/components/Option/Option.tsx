@@ -1,7 +1,9 @@
-import styles from './Option.module.scss';
 import { Checkbox } from '@mui/material';
-import { authCheckBox } from '@/shared/styles/buttonStyles';
 import { FC } from 'react';
+
+import styles from './Option.module.scss';
+
+import { authCheckBox } from '@/shared/styles/buttonStyles';
 
 interface Option {
   optionText: string;

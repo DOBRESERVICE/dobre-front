@@ -1,10 +1,14 @@
 'use client';
-import styles from './ProductQualityFilter.module.scss';
+
 import { Button } from '@mui/material';
-import { customSellerTypeButton } from '@/shared/styles/buttonStyles';
 import { useState } from 'react';
-import { qualityButtonsData } from '../../../../../../shared/data';
+
+import styles from './ProductQualityFilter.module.scss';
+
+import { customSellerTypeButton } from '@/shared/styles/buttonStyles';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
+
+import { qualityButtonsData } from '../../../../../../shared/data';
 
 export const ProductQualityFilter = () => {
   const [activeButton, setActiveButton] = useState(0);

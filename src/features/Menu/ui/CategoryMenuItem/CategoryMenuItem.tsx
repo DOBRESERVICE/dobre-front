@@ -1,9 +1,11 @@
-import { FC } from 'react';
-import styles from './CategoryMenuItem.module.scss';
-import Image from 'next/image';
-import { furniture } from '../../../../shared/image';
 import classNames from 'classnames';
-import { useAuthData } from '@/shared/context/authContext';
+import Image from 'next/image';
+import { FC } from 'react';
+
+import styles from './CategoryMenuItem.module.scss';
+
+import { furniture } from '../../../../shared/image';
+
 interface CategoryMenuItemProps {
   categoryName: string;
   isActive: boolean;
@@ -24,7 +26,7 @@ export const CategoryMenuItem: FC<CategoryMenuItemProps> = ({ categoryName, onCl
         <Image src={furniture} alt='furniture' />
         <p>{categoryName}</p>
       </div>
-      <div className={styles.arrow}></div>
+      <div className={styles.arrow} />
     </div>
   );
 };

@@ -1,9 +1,12 @@
 'use client';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import styles from './Slider.module.scss';
-import { Children, FC, ReactNode } from 'react';
-import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
+
 import { StaticImageData } from 'next/image';
+import { Children, FC, ReactNode } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import styles from './Slider.module.scss';
+
+import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
 
 interface SliderProps {
   nextIcon: StaticImageData;
@@ -13,23 +16,21 @@ interface SliderProps {
 
 export const Slider: FC<SliderProps> = ({ children, prevIcon, nextIcon }) => {
   return (
-    <>
-      <Swiper
-        uniqueNavElements
-        allowTouchMove={false}
-        noSwiping={true}
-        slidesPerView='auto'
-        loop={true}
-        spaceBetween={20}
-        className={styles.swiper}
-      >
-        {Children.map(children, (child, index) => (
-          <SwiperSlide className={styles.slide} key={index}>
-            {child}
-          </SwiperSlide>
-        ))}
-        <SwiperButtons rightIcon={nextIcon} leftIcon={prevIcon} />
-      </Swiper>
-    </>
+    <Swiper
+      uniqueNavElements
+      allowTouchMove={false}
+      noSwiping
+      slidesPerView='auto'
+      loop
+      spaceBetween={20}
+      className={styles.swiper}
+    >
+      {Children.map(children, (child, index) => (
+        <SwiperSlide className={styles.slide} key={index}>
+          {child}
+        </SwiperSlide>
+      ))}
+      <SwiperButtons rightIcon={nextIcon} leftIcon={prevIcon} />
+    </Swiper>
   );
 };

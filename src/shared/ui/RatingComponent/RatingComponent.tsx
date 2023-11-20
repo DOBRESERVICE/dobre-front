@@ -1,8 +1,10 @@
-import styles from './RatingComponent.module.scss';
-import Image from 'next/image';
-import { feedbackIcon, starReviews } from '../../image';
-import { FC } from 'react';
 import classNames from 'classnames';
+import Image from 'next/image';
+import { FC } from 'react';
+
+import styles from './RatingComponent.module.scss';
+
+import { feedbackIcon, starReviews } from '../../image';
 
 type feedbackVariant = 'default' | 'textFeedback' | 'iconFeedback' | 'outOfFive';
 

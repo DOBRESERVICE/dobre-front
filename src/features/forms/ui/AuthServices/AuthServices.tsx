@@ -1,5 +1,7 @@
-import styles from './AuthServices.module.scss';
 import Image from 'next/image';
+
+import styles from './AuthServices.module.scss';
+
 import { appleIcon, googleIcon, vkIcon, yandexIcon } from '../../../../shared/image';
 
 export const AuthServices = () => {

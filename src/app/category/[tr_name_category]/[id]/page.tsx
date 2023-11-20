@@ -1,9 +1,11 @@
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { Blog } from '@/widgets/Blog/Blog';
-import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
-import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
-import { getCertainCategory, getCertainVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { Blog } from '@/widgets/Blog/Blog';
+import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
+import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
+
+import { getCertainVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
+
 export default async function CategoryPage({
   params,
   searchParams,

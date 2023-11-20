@@ -1,8 +1,10 @@
-import styles from './CatalogBlocks.module.scss';
-import { CatalogBlock } from '@/widgets/CatalogBlocks/ui/CatalogBlock/CatalogBlock';
-import { Product, SubCategory, Subcategory } from '@/interfaces/categories';
 import { FC } from 'react';
-import { getSubCategory } from '../../shared/api/categoriesApi';
+
+import styles from './CatalogBlocks.module.scss';
+
+import { SubCategory } from '@/interfaces/categories';
+import { CatalogBlock } from '@/widgets/CatalogBlocks/ui/CatalogBlock/CatalogBlock';
+
 
 interface CatalogBlocksProps {
   subcategories: SubCategory[];

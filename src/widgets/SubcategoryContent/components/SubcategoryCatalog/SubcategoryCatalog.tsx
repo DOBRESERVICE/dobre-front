@@ -1,14 +1,17 @@
-import styles from './SubcategoryCatalog.module.scss';
-import { ProductItem } from '@/entities/ProductItem/ProductItem';
 import { FC } from 'react';
-import { sortSvg } from '../../../../shared/image';
-import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
-import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
-import { Product } from '@/interfaces/categories';
-import { CustomPagination } from '@/shared/ui/CustomPagination/CustomPagination';
-import { customDateFormSelect, customFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
-import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
+
+import styles from './SubcategoryCatalog.module.scss';
+
 import { AvailableFilter } from '@/entities/AvailableFilter/AvailableNow';
+import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
+import { ProductItem } from '@/entities/ProductItem/ProductItem';
+import { Product } from '@/interfaces/categories';
+import { customFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
+import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
+import { CustomPagination } from '@/shared/ui/CustomPagination/CustomPagination';
+import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
+
+import { sortSvg } from '../../../../shared/image';
 
 interface CategoryCatalogProps {
   products: Product[];
@@ -65,9 +68,9 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
               status={product.quality_control}
               rating={2}
               feedbackCount={2}
-              sellerInfo={'Организация'}
+              sellerInfo='Организация'
               isAvailable={product.enabled_product}
-              isConfirmed={true}
+              isConfirmed
               rentInfoArray={arr}
             />
           ))}

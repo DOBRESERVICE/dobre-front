@@ -1,9 +1,13 @@
-import styles from './FAQ.module.scss';
-import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
-import Image from 'next/image';
-import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
 import { Button } from '@mui/material';
+import Image from 'next/image';
+
+import styles from './FAQ.module.scss';
+
 import { customRentButton } from '@/shared/styles/buttonStyles';
+import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
+
+import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
+
 export const FAQ = () => {
   return (
     <section className={styles.faqSectionWrapper}>

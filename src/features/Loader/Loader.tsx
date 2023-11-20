@@ -1,6 +1,8 @@
 'use client';
-import styles from './Loader.module.scss';
+
 import { useEffect } from 'react';
+
+import styles from './Loader.module.scss';
 
 export const Loader = () => {
   useEffect(() => {
@@ -10,7 +12,7 @@ export const Loader = () => {
 
   return (
     <div className={styles.loaderWrapper}>
-      <div className={styles.loader}></div>
+      <div className={styles.loader} />
     </div>
   );
 };

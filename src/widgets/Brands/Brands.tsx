@@ -1,8 +1,11 @@
 import styles from './Brands.module.scss';
-import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
+
 import { brandsData } from '@/shared/data';
-import { BrandItem } from './ui/BrandItem/BrandItem';
+import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+
+import { BrandItem } from './ui/BrandItem/BrandItem';
+
 export const Brands = () => {
   return (
     <Wrapper>

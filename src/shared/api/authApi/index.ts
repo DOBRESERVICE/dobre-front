@@ -1,6 +1,7 @@
-import { AuthResponse } from '@/interfaces';
-import { defaultRequest, tokenRequest } from '@/shared/api/axios/instances';
 import { AxiosResponse } from 'axios';
+
+import { AuthResponse } from '@/interfaces';
+import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const registerUser = async (email: string, password: string): Promise<AxiosResponse<AuthResponse>> => {
   return defaultRequest.post('/auth/register', {

@@ -1,7 +1,9 @@
-import styles from './CatalogLayout.module.scss';
-import { Header } from '@/widgets/Header/Header';
-import { Footer } from '@/widgets/Footer/Footer';
 import { Metadata } from 'next';
+
+import styles from './CatalogLayout.module.scss';
+
+import { Footer } from '@/widgets/Footer/Footer';
+import { Header } from '@/widgets/Header/Header';
 
 export const metadata: Metadata = {
   title: 'Dobre | Catalog',

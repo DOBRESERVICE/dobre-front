@@ -1,11 +1,16 @@
 'use client';
-import styles from './SellerTypeFilter.module.scss';
+
 import { Button, Checkbox } from '@mui/material';
-import { authCheckBox, customSellerTypeButton } from '@/shared/styles/buttonStyles';
 import Image from 'next/image';
-import { verified } from '../../../../../../shared/image';
 import { useState } from 'react';
+
+import styles from './SellerTypeFilter.module.scss';
+
+import { authCheckBox, customSellerTypeButton } from '@/shared/styles/buttonStyles';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
+
+import { verified } from '../../../../../../shared/image';
+
 export const SellerTypeFilter = () => {
   const [activeButton, setActiveButton] = useState(0);
   return (

@@ -1,20 +1,22 @@
-import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
-import { StatusBar } from '@/entities/StatusBar/StatusBar';
-import styles from './ProductItemContainer.module.scss';
 import Image, { StaticImageData } from 'next/image';
+import { FC } from 'react';
+
+import styles from './ProductItemContainer.module.scss';
+
+import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
+import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
+import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+
+import { descriptionProductData } from '../../../../../../../shared/data';
 import {
   favouriteIcon,
   mock1Image,
   mock2Image,
   mock3Image,
   mockBrandImage,
-  mockMainImage,
 } from '../../../../../../../shared/image';
-import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
-import { descriptionProductData } from '../../../../../../../shared/data';
-import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
-import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
-import { FC } from 'react';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -69,7 +71,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
           <div className={styles.brandWrapper}>
             <Image src={mockBrandImage} alt='brand' />
           </div>
-          <Image src={productImage} width={500} height={500} alt={'ss'} />
+          <Image src={productImage} width={500} height={500} alt='ss' />
         </div>
         <RentInfoPannel count={quantity} availableQuantityArray={availableQuantityArray} />
       </div>

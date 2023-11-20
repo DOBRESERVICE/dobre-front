@@ -1,11 +1,14 @@
 'use client';
-import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
-import styles from './SubcategoryToolsContainer.module.scss';
-import { ToolContainer } from '@/widgets/ToolContainer/ToolContainer';
-import { Arrow } from '@/shared/ui/Arrow/Arrow';
-import { Product, Variety } from '@/interfaces/categories';
+
 import { FC } from 'react';
+
+import styles from './SubcategoryToolsContainer.module.scss';
+
+import { Variety } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
+import { Arrow } from '@/shared/ui/Arrow/Arrow';
+import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
+import { ToolContainer } from '@/widgets/ToolContainer/ToolContainer';
 
 interface CategoryToolsProps {
   varietyProducts: Variety[];
@@ -18,7 +21,7 @@ export const SubcategoryToolsContainer: FC<CategoryToolsProps> = ({
   subCategoryTrName,
 }) => {
   const { shouldRenderExpandButton, itemsToShow, showAll, setShowAll } = useShownData(varietyProducts, 7);
-  const barName = `${subCategoryTitle + ' ' + 'в аренду'}`;
+  const barName = `${`${subCategoryTitle} ` + `в аренду`}`;
   return (
     <section className={styles.categoryToolsWrapper}>
       <TopSectionBar barName={barName} hasLinkArrow={false} announcements='316 объявлений' />

@@ -1,7 +1,10 @@
 'use client';
+
+import { Dispatch, FC, SetStateAction } from 'react';
+
 import styles from './TabsComponent.module.scss';
+
 import { Tab } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Tab/Tab';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
 
 interface TabsComponentProps {
   activeTab: number;

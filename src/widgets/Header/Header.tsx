@@ -1,13 +1,24 @@
 'use client';
-import styles from './Header.module.scss';
+
 import { Button } from '@mui/material';
+import Input from '@mui/material/Input';
+import classNames from 'classnames';
 import Image from 'next/image';
-import categoriesIcon from '@/shared/image/categoriesIcon.svg';
-import geolocationIcon from '@/shared/image/geolocation.svg';
-import logo from '@/shared/image/dobreLogo.svg';
-import plus from '@/shared/image/plusIcon.svg';
-import group from '@/shared/image/iconGroup.svg';
+import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
+import styles from './Header.module.scss';
+
+import { Menu } from '@/features/Menu/Menu';
+import { useAuthData } from '@/shared/context/authContext';
+import { blueClose, mockUser, rentImage, searchIcon } from '@/shared/image';
 import cart from '@/shared/image/cart.svg';
+import categoriesIcon from '@/shared/image/categoriesIcon.svg';
+import logo from '@/shared/image/dobreLogo.svg';
+import geolocationIcon from '@/shared/image/geolocation.svg';
+import group from '@/shared/image/iconGroup.svg';
+import plus from '@/shared/image/plusIcon.svg';
 import userIcon from '@/shared/image/userIcon.svg';
 import {
   customCategoriesButton,
@@ -15,17 +26,8 @@ import {
   customLoginButton,
   customRentButton,
   customSearchHeaderButton,
-  customSmallRentButton,
 } from '@/shared/styles/buttonStyles';
-import { usePathname, useRouter } from 'next/navigation';
-import classNames from 'classnames';
-import { blueClose, mockUser, rentImage, searchIcon, smallPlus } from '@/shared/image';
-import Input from '@mui/material/Input';
 import { HeaderLinks } from '@/widgets/Header/ui/HeaderLinks/HeaderLinks';
-import { useEffect, useState } from 'react';
-import { Menu } from '@/features/Menu/Menu';
-import Link from 'next/link';
-import { useAuthData } from '@/shared/context/authContext';
 import { HeaderTopBar } from '@/widgets/Header/ui/HeaderTopBar/HeaderTopBar';
 
 export const Header = () => {
@@ -68,7 +70,7 @@ export const Header = () => {
             </div>
           </div>
         </div>
-        <Link href={'/'} className={styles.logoWrapper}>
+        <Link href='/' className={styles.logoWrapper}>
           <Image src={logo} alt='logo' />
         </Link>
         <div className={styles.inputWrapper}>

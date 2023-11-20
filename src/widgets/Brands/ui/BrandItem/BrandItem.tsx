@@ -1,6 +1,7 @@
-import styles from './BrandItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
+
+import styles from './BrandItem.module.scss';
 
 interface BrandItem {
   imageUrl: StaticImageData;

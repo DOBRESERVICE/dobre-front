@@ -1,17 +1,20 @@
 'use client';
-import TextField from '@mui/material/TextField';
-import styles from './CreateAccountForm.module.scss';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+
 import { Button, Checkbox } from '@mui/material';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { authButton, authCheckBox, authCustomInput } from '@/shared/styles/buttonStyles';
-import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
-import { useAuthData } from '@/shared/context/authContext';
-import { AuthServices } from '@/features/forms/ui/AuthServices/AuthServices';
-import { AuthHeader } from '@/features/forms/ui/AuthHeader/AuthHeader';
-import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
+import TextField from '@mui/material/TextField';
 import { useRouter } from 'next/navigation';
+import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+
+import styles from './CreateAccountForm.module.scss';
+
+import { AuthHeader } from '@/features/forms/ui/AuthHeader/AuthHeader';
+import { AuthServices } from '@/features/forms/ui/AuthServices/AuthServices';
+import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
+import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
 import { emailRules } from '@/shared/constants/validation';
+import { useAuthData } from '@/shared/context/authContext';
+import { authButton, authCheckBox, authCustomInput } from '@/shared/styles/buttonStyles';
 
 export const CreateAccountForm = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -24,7 +27,7 @@ export const CreateAccountForm = () => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isRegistered, handleRegister, status } = useAuthData();
+  const { isRegistered, handleRegister } = useAuthData();
   const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
@@ -33,7 +36,7 @@ export const CreateAccountForm = () => {
   }
 
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const { value } = event.target;
     const isValidEmail = emailRules.test(value);
     setEmailValue(value);
     setEmailError(!isValidEmail);
@@ -43,7 +46,7 @@ export const CreateAccountForm = () => {
     if (isRegistered) {
       router.push('/');
     }
-  }, [isRegistered]);
+  }, [isRegistered, router]);
   return (
     <>
       <div className={styles.content}>

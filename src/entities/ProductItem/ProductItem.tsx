@@ -1,12 +1,15 @@
-import styles from './ProductItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
-import { favouriteIcon, mockUser, starReviews, verified } from '../../shared/image';
 import { FC } from 'react';
-import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
-import { RentInfoData } from '@/interfaces';
+
+import styles from './ProductItem.module.scss';
+
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
-import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+import { RentInfoData } from '@/interfaces';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
+
+import { favouriteIcon, mockUser, verified } from '../../shared/image';
 
 export interface ProductItem {
   id?: number;
@@ -41,9 +44,6 @@ export const ProductItem: FC<ProductItem> = ({
   photoUrl,
   description,
   rentInfoArray,
-  trVarietyName,
-  trCategoryName,
-  trSubCategoryName,
   productId,
 }) => {
   return (

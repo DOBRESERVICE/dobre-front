@@ -1,9 +1,11 @@
-import styles from './ModalContent.module.scss';
-import Image, { StaticImageData } from 'next/image';
-import { emailIcon } from '../../../../shared/image';
 import { Button } from '@mui/material';
-import { customModalButton } from '@/shared/styles/buttonStyles';
+import Image, { StaticImageData } from 'next/image';
 import { FC, ForwardedRef, forwardRef } from 'react';
+
+import styles from './ModalContent.module.scss';
+
+import { customModalButton } from '@/shared/styles/buttonStyles';
+
 
 interface ModalContentProps {
   imageIcon: StaticImageData;

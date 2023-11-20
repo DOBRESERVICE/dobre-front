@@ -1,8 +1,10 @@
+import { FC } from 'react';
+
 import styles from './Recommendations.module.scss';
+
+import { Product } from '@/interfaces/categories';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
-import { FC } from 'react';
-import { Product } from '@/interfaces/categories';
 
 interface RecommendationsProps {
   recommendedProducts: Product[];

@@ -1,7 +1,9 @@
 import Image from 'next/image';
+
 import styles from './AboutUs.module.scss';
-import { aboutUsAccept, aboutUsImage } from '../../shared/image';
+
 import { AboutUsItem } from './ui/AboutUsItem/AboutUsItem';
+import { aboutUsAccept, aboutUsImage } from '../../shared/image';
 
 export const AboutUs = () => {
   return (

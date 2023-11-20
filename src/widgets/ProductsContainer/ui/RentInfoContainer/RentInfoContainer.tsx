@@ -1,13 +1,17 @@
 'use client';
-import styles from './RentInfoContainer.module.scss';
-import { FC } from 'react';
-import { RentInfoItem } from '@/widgets/ProductsContainer/ui/RentInfoItem/RentInfoItem';
-import { RentInfoData } from '@/interfaces';
+
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import { blackArrowNext, rentButtonIcon } from '../../../../shared/image';
-import { customRentButton, rentInfoCustomButton } from '@/shared/styles/buttonStyles';
 import { useRouter } from 'next/navigation';
+import { FC } from 'react';
+
+import styles from './RentInfoContainer.module.scss';
+
+import { RentInfoData } from '@/interfaces';
+import { rentInfoCustomButton } from '@/shared/styles/buttonStyles';
+import { RentInfoItem } from '@/widgets/ProductsContainer/ui/RentInfoItem/RentInfoItem';
+
+import { rentButtonIcon } from '../../../../shared/image';
 
 interface RentInfoContainer {
   rentInfoArray: RentInfoData[];

@@ -1,7 +1,9 @@
-import { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
-import { confirmEmail, loginUser, recoveryPassword, registerUser, sendEmailOnRecovery } from '../api/authApi';
 import { AxiosError } from 'axios';
+import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
+
 import { Status, StatusCode } from '@/enums';
+
+import { confirmEmail, loginUser, recoveryPassword, registerUser, sendEmailOnRecovery } from '../api/authApi';
 
 interface IAuthContext {
   isSuccessModalShown: boolean;
@@ -53,7 +55,7 @@ export const AuthContext = createContext<IAuthContext>({
   setIsMenuOpen: () => {},
 });
 
-export const AuthProvider = ({ children }: any) => {
+export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isSuccessModalShown, setIsSuccessModalShown] = useState(false);
   const [isLetterSent, setIsLetterSent] = useState(false);
   const [isRegistered, setIsRegistered] = useState(false);
@@ -75,7 +77,6 @@ export const AuthProvider = ({ children }: any) => {
       setStatus(Status.SUCCESS);
     } catch (error) {
       setStatus(Status.ERROR);
-      const axiosError = error as AxiosError;
       setIsRegistered(false);
     } finally {
       setStatus(Status.INIT);

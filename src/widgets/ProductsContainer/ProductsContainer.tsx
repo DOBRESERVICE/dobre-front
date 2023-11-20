@@ -1,12 +1,16 @@
 'use client';
-import { ProductItem } from '@/entities/ProductItem/ProductItem';
+
 import { FC } from 'react';
-import { Product } from '@/interfaces/categories';
 import 'swiper/css';
-import { Slider } from '@/features/Slider/Slider';
-import 'swiper/css';
-import { nextArrow, previous } from '../../shared/image';
+
 import styles from './ProductsContainer.module.scss';
+
+import { ProductItem } from '@/entities/ProductItem/ProductItem';
+import { Slider } from '@/features/Slider/Slider';
+import { Product } from '@/interfaces/categories';
+
+import { nextArrow, previous } from '../../shared/image';
+
 interface ProductsContainer {
   products: Product[];
 }
@@ -45,9 +49,9 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
             status={product.quality_control}
             rating={2}
             feedbackCount={2}
-            sellerInfo={'Организация'}
+            sellerInfo='Организация'
             isAvailable={product.enabled_product}
-            isConfirmed={true}
+            isConfirmed
             rentInfoArray={arr}
           />
         ))}

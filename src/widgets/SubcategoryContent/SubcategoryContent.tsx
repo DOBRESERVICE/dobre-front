@@ -1,9 +1,11 @@
-import styles from './SubcategoryContent.module.scss';
-import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
-import { SubcategoryAside } from '@/widgets/SubcategoryContent/components/SubcategoryAside/SubcategoryAside';
-import { Product, SubCategory } from '@/interfaces/categories';
 import { FC } from 'react';
+
+import styles from './SubcategoryContent.module.scss';
+
+import { Product, SubCategory } from '@/interfaces/categories';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { SubcategoryAside } from '@/widgets/SubcategoryContent/components/SubcategoryAside/SubcategoryAside';
+import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 
 interface CategoryContentProps {
   subCategoryData: SubCategory;

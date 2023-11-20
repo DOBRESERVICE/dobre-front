@@ -1,13 +1,13 @@
-import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
-import { AboutUs } from '@/widgets/AboutUs/AboutUs';
-import { NewProducts } from '@/widgets/NewProducts/NewProducts';
-import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
-import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
-import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
-import { FAQ } from '@/widgets/FAQ/FAQ';
-// import { Recommendations } from '@/widgets/Recommendations/Recommendations';
-import { getNewProducts, getRecommendedProducts } from '@/shared/api/categoriesApi';
 import dynamic from 'next/dynamic';
+
+import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
+import { getNewProducts, getRecommendedProducts } from '@/shared/api/categoriesApi';
+import { AboutUs } from '@/widgets/AboutUs/AboutUs';
+import { FAQ } from '@/widgets/FAQ/FAQ';
+import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
+import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
+import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
 
 const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
 const DynamicSearchBlock = dynamic(() => import('@/widgets/SearchBlock/SearchBlock'));

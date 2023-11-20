@@ -1,7 +1,9 @@
 import Image from 'next/image';
-import styles from './AboutUsItem.module.scss';
-import { aboutUsBlob, aboutUsLine } from '../../../../shared/image';
 import { FC } from 'react';
+
+import styles from './AboutUsItem.module.scss';
+
+import { aboutUsBlob, aboutUsLine } from '../../../../shared/image';
 
 type AboutItemType = {
   title: string;

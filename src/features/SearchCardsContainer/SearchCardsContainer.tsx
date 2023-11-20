@@ -1,7 +1,9 @@
-import styles from './SearchCardsContainer.module.scss';
-import { SearchBlockCard } from '@/features/SearchCardsContainer/ui/SearchBlockCard/SearchBlockCard';
-import { FC } from 'react';
 import classNames from 'classnames';
+import { FC } from 'react';
+
+import styles from './SearchCardsContainer.module.scss';
+
+import { SearchBlockCard } from '@/features/SearchCardsContainer/ui/SearchBlockCard/SearchBlockCard';
 
 interface SearchCardsContainer {
   cardsData: SearchBlockCard[];

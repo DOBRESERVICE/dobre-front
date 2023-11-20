@@ -1,6 +1,9 @@
-import styles from './NoProductsFound.module.scss';
 import Image from 'next/image';
-import { emptyProduct, noImage } from '../../shared/image';
+
+import styles from './NoProductsFound.module.scss';
+
+import { emptyProduct } from '../../shared/image';
+
 export const NoProductsFound = () => {
   return (
     <div className={styles.noProductsWrapper}>

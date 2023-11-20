@@ -1,10 +1,13 @@
 'use client';
+
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import styles from './ConfirmContent.module.scss';
 import { useEffect } from 'react';
-import { useAuthData } from '@/shared/context/authContext';
-import { Loader } from '@/features/Loader/Loader';
+
+import styles from './ConfirmContent.module.scss';
+
 import { Status } from '@/enums';
+import { Loader } from '@/features/Loader/Loader';
+import { useAuthData } from '@/shared/context/authContext';
 
 export const ConfirmContent = () => {
   const router = useRouter();
@@ -23,7 +26,7 @@ export const ConfirmContent = () => {
       localStorage.setItem('token', token);
       router.push('/');
     }
-  }, [isEmailConfirmed]);
+  }, [isEmailConfirmed, handleConfirmEmail, router, token]);
   if (!token || !isEmailConfirmed) {
     return <div>ERROR : USER NOT FOUND</div>;
   }

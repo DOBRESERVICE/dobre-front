@@ -1,9 +1,12 @@
-import { fbIcon, iconVk, inIcon, instIcon, logoDobre, tgIcon, ytIcon } from '../../shared/image';
-import styles from './Footer.module.scss';
+import { Button } from '@mui/material';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@mui/material';
+
+import styles from './Footer.module.scss';
+
 import { customRentButton } from '@/shared/styles/buttonStyles';
+
+import { fbIcon, iconVk, inIcon, instIcon, logoDobre, tgIcon, ytIcon } from '../../shared/image';
 
 export const Footer = () => {
   return (
@@ -35,41 +38,41 @@ export const Footer = () => {
         </div>
         <div className={styles.colWrapper}>
           <div className={styles.linksTitle}>DOBRE</div>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             О проекте
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Как арендовать
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Как сдавать
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             База знаний
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Правовые документы
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Правила размещения
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Вопрос-ответ
           </Link>
         </div>
 
         <div className={styles.colWrapper}>
           <div className={styles.linksTitle}>Для бизнеса</div>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Тарифы
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Партнёрская программа
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Стать частью DOBRE
           </Link>
-          <Link href={'#'} className={styles.linkText}>
+          <Link href='/' className={styles.linkText}>
             Реклама
           </Link>
         </div>
@@ -77,7 +80,7 @@ export const Footer = () => {
         <div className={styles.colWrapper}>
           <div className={styles.linksTitle}>Контакты</div>
           <div className={styles.linkText}>
-            Пн-Пт: 10:00 – 18:00; Сб, Вс: Выходной  ООО «Процесс Диджитал Эдженси»,  УНП 191767445 220030, г. Минск,
+            Пн-Пт: 10:00 – 18:00; Сб, Вс: Выходной ООО «Процесс Диджитал Эдженси», УНП 191767445 220030, г. Минск,
             Старовиленский тракт, 87 (пом. 77) <div className={styles.mail}>help@dobre.by</div>
           </div>
           <div className={styles.buttonWrapper}>

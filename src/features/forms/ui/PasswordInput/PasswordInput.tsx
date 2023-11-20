@@ -1,9 +1,12 @@
-import styles from './PasswordInput.module.scss';
 import TextField from '@mui/material/TextField';
-import { authCustomInput } from '@/shared/styles/buttonStyles';
 import Image from 'next/image';
-import { eyeClosed, eyeOpen } from '../../../../shared/image';
 import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react';
+
+import styles from './PasswordInput.module.scss';
+
+import { authCustomInput } from '@/shared/styles/buttonStyles';
+
+import { eyeClosed, eyeOpen } from '../../../../shared/image';
 
 interface PasswordInput {
   isPassword: boolean;

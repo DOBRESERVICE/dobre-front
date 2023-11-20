@@ -1,9 +1,11 @@
-import styles from './SubCategoryMenuItem.module.scss';
-import { Variety } from '@/interfaces/categories';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
-import { VarietyMenuItem } from '@/features/Menu/ui/VarietyMenuItem/VarietyMenuItem';
-import { useShownData } from '@/shared/hooks/useShownData';
 import classNames from 'classnames';
+import { FC } from 'react';
+
+import styles from './SubCategoryMenuItem.module.scss';
+
+import { VarietyMenuItem } from '@/features/Menu/ui/VarietyMenuItem/VarietyMenuItem';
+import { Variety } from '@/interfaces/categories';
+import { useShownData } from '@/shared/hooks/useShownData';
 
 interface SubCategoryItemProps {
   title: string;
@@ -35,7 +37,7 @@ export const SubCategoryMenuItem: FC<SubCategoryItemProps> = ({ title, varieties
             className={classNames(styles.arrow, {
               [styles.rotateArrow]: showAll,
             })}
-          ></div>
+          />
         </div>
       )}
     </div>

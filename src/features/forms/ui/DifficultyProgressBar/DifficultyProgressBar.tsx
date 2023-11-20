@@ -1,6 +1,9 @@
 import { FC } from 'react';
+
 import styles from './DifficultyProgressBar.module.scss';
+
 import { usePasswordStrength } from '@/shared/hooks/usePasswordStrength';
+
 interface DifficultyProgressBar {
   passwordValue: string;
 }

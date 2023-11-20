@@ -1,13 +1,14 @@
 'use client';
 
-import { useAuthData } from '@/shared/context/authContext';
-import TextField from '@mui/material/TextField';
-import { authButton, authCustomInput } from '@/shared/styles/buttonStyles';
-import { ChangeEvent, useEffect, useState } from 'react';
 import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
 import { useRouter } from 'next/navigation';
+import { ChangeEvent, useEffect, useState } from 'react';
+
 import { ResetPasswordHeader } from '@/features/forms/ResetPasswordForm/ui/ResetPasswordHeader/ResetPasswordHeader';
 import { emailRules } from '@/shared/constants/validation';
+import { useAuthData } from '@/shared/context/authContext';
+import { authButton, authCustomInput } from '@/shared/styles/buttonStyles';
 
 export const ResetPasswordForm = () => {
   const [email, setEmail] = useState('');
@@ -15,9 +16,9 @@ export const ResetPasswordForm = () => {
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty;
   const router = useRouter();
-  const { isLetterSent, handleSendEmailLetter, setIsLetterSent } = useAuthData();
+  const { isLetterSent, handleSendEmailLetter } = useAuthData();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const { value } = event.target;
     const isValidEmail = emailRules.test(value);
     setEmail(value);
     setEmailError(!isValidEmail);
@@ -27,7 +28,7 @@ export const ResetPasswordForm = () => {
     if (isLetterSent) {
       router.push('/');
     }
-  }, [isLetterSent]);
+  }, [isLetterSent, router]);
 
   return (
     <>

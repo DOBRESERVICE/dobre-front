@@ -1,6 +1,7 @@
-import styles from './FAQItem.module.scss';
-import { Dispatch, FC, SetStateAction, useState } from 'react';
 import classNames from 'classnames';
+import { Dispatch, FC, SetStateAction } from 'react';
+
+import styles from './FAQItem.module.scss';
 
 interface FAQItem {
   title: string;
@@ -28,7 +29,7 @@ export const FAQItem: FC<FAQItem> = ({ text, title, setActiveCard, activeCard, i
               [styles.arrowUp]: isSelected,
               [styles.arrowDown]: !isSelected,
             })}
-          ></div>
+          />
         </div>
       </div>
       <div

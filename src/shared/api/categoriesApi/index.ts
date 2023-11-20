@@ -1,9 +1,10 @@
-import { defaultRequest } from '@/shared/api/axios/instances';
 import { AxiosResponse } from 'axios';
-import { Category, ExactCategory, ExactVariety, Product, SubCategory, Variety } from '@/interfaces/categories';
+
+import { ExactCategory, ExactVariety, Product, SubCategory } from '@/interfaces/categories';
+import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
-  return await defaultRequest.get(`/categories/category/${categoryName}`);
+  return defaultRequest.get(`/categories/category/${categoryName}`);
 };
 
 export const getSubCategory = async (subCategory: string): Promise<AxiosResponse<SubCategory>> => {

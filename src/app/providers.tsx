@@ -1,9 +1,11 @@
 'use client';
-import { AuthProvider } from '@/shared/context/authContext';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import { MUIColors } from '@/shared/styles/MUIColors';
+
+import { createTheme,ThemeProvider } from '@mui/material/styles';
 import { Manrope } from 'next/font/google';
 import { ReactNode } from 'react';
+
+import { AuthProvider } from '@/shared/context/authContext';
+import { MUIColors } from '@/shared/styles/MUIColors';
 
 const manrope = Manrope({
   style: ['normal'],
@@ -20,10 +22,10 @@ const theme = createTheme({
     fontFamily: manrope.style.fontFamily,
   },
 });
-export function Providers({ children }: { children: ReactNode }) {
+export const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>{children}</AuthProvider>
     </ThemeProvider>
   );
-}
+};

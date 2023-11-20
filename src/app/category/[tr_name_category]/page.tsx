@@ -1,28 +1,24 @@
+import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { Construction } from '@/widgets/Construction/Construction';
-import { Brands } from '@/widgets/Brands/Brands';
-import { PopularTools } from '@/widgets/PopularTools/PopularTools';
-import { NewProducts } from '@/widgets/NewProducts/NewProducts';
-import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
-import { Blog } from '@/widgets/Blog/Blog';
 import { getCertainCategory, getSubCategory } from '@/shared/api/categoriesApi';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
+import { Blog } from '@/widgets/Blog/Blog';
+import { Brands } from '@/widgets/Brands/Brands';
+import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
+import { Construction } from '@/widgets/Construction/Construction';
+import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { PopularTools } from '@/widgets/PopularTools/PopularTools';
 
 export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
   const { data: certainCategoryData } = await getCertainCategory(params.tr_name_category);
-  const subcategories = certainCategoryData.subcategories;
+  const { subcategories } = certainCategoryData;
   const fetchSubCategoriesData = async () => {
-    try {
-      return await Promise.all(
-        subcategories.map(async (subCategory) => {
-          const { data } = await getSubCategory(subCategory.tr_name_sub);
-          return data;
-        })
-      );
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
+    return await Promise.all(
+      subcategories.map(async (subCategory) => {
+        const { data } = await getSubCategory(subCategory.tr_name_sub);
+        return data;
+      })
+    );
   };
   const subCategoriesData = await fetchSubCategoriesData();
   const breadCrumbsData = [
@@ -54,7 +50,7 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
       {isEveryVarietyEmpty && <NoProductsFound />}
       <Blog
         text='Добро пожаловать в мир ремонта и стройки, где креативность встречается с качеством, а ваш дом становится идеальным местом для жизни! Мы - ваш надежный партнер в создании и обновлении вашего жилья. Независимо от того, нужен ли вам косметический ремонт или полноценное строительство, у нас есть решения, которые сделают вашу мечту о идеальном доме реальностью.'
-        header={'Профессиональный ремонт и стройка: ваш путь к идеальному дому'}
+        header='Профессиональный ремонт и стройка: ваш путь к идеальному дому'
       />
     </>
   );

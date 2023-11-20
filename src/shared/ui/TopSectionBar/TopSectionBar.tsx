@@ -1,10 +1,12 @@
-import styles from './TopSectionBar.module.scss';
-import { FC } from 'react';
 import Image from 'next/image';
-import { linkArrow } from '../../image';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { FC } from 'react';
+
+import styles from './TopSectionBar.module.scss';
+
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+
+import { linkArrow } from '../../image';
+
 interface TopSectionBar {
   barName: string;
   hasLinkArrow: boolean;

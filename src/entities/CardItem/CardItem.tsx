@@ -1,10 +1,13 @@
 'use client';
-import styles from './CardItem.module.scss';
+
 import Image, { StaticImageData } from 'next/image';
-import { FC } from 'react';
-import { noImage } from '../../shared/image';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { FC } from 'react';
+
+import styles from './CardItem.module.scss';
+
+import { noImage } from '../../shared/image';
 
 interface CardItem {
   imageUrl?: string | StaticImageData | undefined;

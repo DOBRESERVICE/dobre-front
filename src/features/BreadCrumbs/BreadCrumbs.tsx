@@ -1,8 +1,9 @@
 'use client';
-import styles from './BreadCrumbs.module.scss';
-import { usePathname } from 'next/navigation';
+
 import Link from 'next/link';
 import React, { FC } from 'react';
+
+import styles from './BreadCrumbs.module.scss';
 
 interface BreadCrumbsSegment {
   id: number;

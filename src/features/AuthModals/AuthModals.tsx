@@ -1,10 +1,15 @@
 'use client';
-import styles from './AuthModals.module.scss';
-import { useEffect } from 'react';
-import { useAuthData } from '@/shared/context/authContext';
+
 import Modal from '@mui/material/Modal';
+import { useEffect } from 'react';
+
+import styles from './AuthModals.module.scss';
+
 import { ModalContent } from '@/features/AuthModals/ui/ModalContent/ModalContent';
+import { useAuthData } from '@/shared/context/authContext';
+
 import { emailIcon, successIcon } from '../../shared/image';
+
 const AuthModals = () => {
   const {
     setIsResetModalShown,
@@ -26,7 +31,7 @@ const AuthModals = () => {
     if (isRegistered) {
       setIsSuccessModalShown(true);
     }
-  }, [isRegistered, isLetterSent]);
+  }, [isRegistered, isLetterSent, setIsResetModalShown, setIsSuccessModalShown]);
   const onResetModalClose = () => {
     setIsLetterSent(false);
     setIsResetModalShown(false);

@@ -1,13 +1,17 @@
 'use client';
-import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
-import { ChangeEvent, useEffect, useState } from 'react';
-import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
-import styles from './RecoveryForm.module.scss';
+
 import { Button } from '@mui/material';
-import { authButton, customRecoveryLightButton } from '@/shared/styles/buttonStyles';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useAuthData } from '@/shared/context/authContext';
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import styles from './RecoveryForm.module.scss';
+
 import { ResetPasswordHeader } from '@/features/forms/ResetPasswordForm/ui/ResetPasswordHeader/ResetPasswordHeader';
+import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
+import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
+import { useAuthData } from '@/shared/context/authContext';
+import { authButton, customRecoveryLightButton } from '@/shared/styles/buttonStyles';
+
 export const RecoveryForm = () => {
   const [isPassword, setIsPassword] = useState(true);
   const [isRepeatedPassword, setIsRepeatedPassword] = useState(true);
@@ -23,13 +27,13 @@ export const RecoveryForm = () => {
 
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
-  }, [token]);
+  }, [token, newSearchParams, pathName, router]);
 
   useEffect(() => {
     if (isSuccessfulRecovery) {
       router.push('/login');
     }
-  }, [isSuccessfulRecovery]);
+  }, [isSuccessfulRecovery, router]);
 
   if (token === null) {
     router.push('/');

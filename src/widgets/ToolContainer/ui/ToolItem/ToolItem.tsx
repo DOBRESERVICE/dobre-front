@@ -1,9 +1,11 @@
 'use client';
-import styles from './ToolItem.module.scss';
+
 import Image from 'next/image';
-import { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { FC } from 'react';
+
+import styles from './ToolItem.module.scss';
 
 interface ToolItem {
   imageUrl?: string;

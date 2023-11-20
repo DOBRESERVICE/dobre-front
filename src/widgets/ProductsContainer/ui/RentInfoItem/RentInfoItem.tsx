@@ -1,5 +1,7 @@
 import { FC } from 'react';
+
 import styles from './RentInfoItem.module.scss';
+
 interface RentInfoItem {
   timeInRent: string;
   price: string;

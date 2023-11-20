@@ -1,7 +1,8 @@
-import styles from './SubcategoryListItem.module.scss';
-import { FC } from 'react';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { FC } from 'react';
+
+import styles from './SubcategoryListItem.module.scss';
 
 interface SubcategoryListItem {
   varietyName: string;

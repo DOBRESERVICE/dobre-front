@@ -1,7 +1,10 @@
 import { Button } from '@mui/material';
-import styles from './RentIntroduction.module.scss';
-import { customRentButton } from '@/shared/styles/buttonStyles';
 import Image from 'next/image';
+
+import styles from './RentIntroduction.module.scss';
+
+import { customRentButton } from '@/shared/styles/buttonStyles';
+
 import { plusIcon } from '../../shared/image';
 
 export const RentIntroduction = () => {

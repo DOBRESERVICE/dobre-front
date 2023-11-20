@@ -1,8 +1,11 @@
-import styles from './ToolContainer.module.scss';
 import { FC } from 'react';
-import { ToolItem } from '@/widgets/ToolContainer/ui/ToolItem/ToolItem';
+
+import styles from './ToolContainer.module.scss';
+
 import { Variety } from '@/interfaces/categories';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+
+import { ToolItem } from './ui/ToolItem/ToolItem';
 
 interface TollContainer {
   toolsData: Variety[] | any[];

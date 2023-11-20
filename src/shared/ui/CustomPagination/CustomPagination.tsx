@@ -1,19 +1,19 @@
 'use client';
+
 import { Pagination } from '@mui/material';
+
 import { customPagination } from '@/shared/styles/buttonStyles';
-import { useState } from 'react';
 
 export const CustomPagination = () => {
-  const [page, setPage] = useState<unknown>(0);
-
+  // const [page, setPage] = useState<unknown>(0);
   return (
     <Pagination
       siblingCount={4}
-      onChange={(_, page) => {
-        if (page !== null) {
-          setPage(page);
-        }
-      }}
+      // onChange={(_, page) => {
+      //   if (page !== null) {
+      //     setPage(page);
+      //   }
+      // }}
       sx={customPagination}
       count={64}
       variant='outlined'

@@ -1,7 +1,9 @@
 import classNames from 'classnames';
-import styles from './ProductRentStatus.module.scss';
-import { availableNow, inRent } from '../../constants';
 import { FC } from 'react';
+
+import styles from './ProductRentStatus.module.scss';
+
+import { availableNow, inRent } from '../../constants';
 
 interface ProductRentStatusProps {
   isAvailable: boolean;

@@ -1,13 +1,15 @@
 'use client';
+
+import { FC } from 'react';
+
 import styles from './Construction.module.scss';
+
 import { CardItem } from '@/entities/CardItem/CardItem';
 import { Slider } from '@/features/Slider/Slider';
-import { SwiperSlide } from 'swiper/react';
-import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
-import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
-import { nextArrow, previous } from '../../shared/image';
-import { FC } from 'react';
 import { Subcategory } from '@/interfaces/categories';
+import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
+
+import { nextArrow, previous } from '../../shared/image';
 
 interface ConstructionProps {
   title: string;

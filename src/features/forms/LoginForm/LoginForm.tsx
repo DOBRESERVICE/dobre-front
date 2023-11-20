@@ -1,16 +1,19 @@
 'use client';
-import TextField from '@mui/material/TextField';
-import styles from './LogInForm.module.scss';
-import { ChangeEvent, FC, useEffect, useState } from 'react';
+
 import { Button, Checkbox } from '@mui/material';
-import { useAuthData } from '@/shared/context/authContext';
-import { AuthServices } from '@/features/forms/ui/AuthServices/AuthServices';
-import { AuthHeader } from '@/features/forms/ui/AuthHeader/AuthHeader';
-import { authButton, authCheckBox, authCustomInput } from '@/shared/styles/buttonStyles';
-import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
-import { useRouter } from 'next/navigation';
+import TextField from '@mui/material/TextField';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, useEffect, useState } from 'react';
+
+import styles from './LogInForm.module.scss';
+
+import { AuthHeader } from '@/features/forms/ui/AuthHeader/AuthHeader';
+import { AuthServices } from '@/features/forms/ui/AuthServices/AuthServices';
+import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
 import { emailRules } from '@/shared/constants/validation';
+import { useAuthData } from '@/shared/context/authContext';
+import { authButton, authCheckBox, authCustomInput } from '@/shared/styles/buttonStyles';
 
 export const LoginForm = () => {
   const [isPassword, setIsPassword] = useState(true);
@@ -18,13 +21,13 @@ export const LoginForm = () => {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [emailError, setEmailError] = useState(false);
-  const { handleLogin, isLogged, setIsLogged } = useAuthData();
+  const { handleLogin, isLogged } = useAuthData();
   const isPasswordAcceptable = password.length >= 8;
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty || !isPasswordAcceptable;
   const router = useRouter();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
+    const { value } = event.target;
     const isValidEmail = emailRules.test(value);
     setEmail(value);
     setEmailError(!isValidEmail);
@@ -33,7 +36,7 @@ export const LoginForm = () => {
     if (isLogged) {
       router.push('/');
     }
-  }, [isLogged]);
+  }, [isLogged, router]);
   return (
     <>
       <AuthHeader title='Вход' text='Новый пользователь?' actionType='Создать учетную запись' link='create' />
@@ -61,7 +64,7 @@ export const LoginForm = () => {
             <Checkbox id='rememberMe' sx={authCheckBox} onChange={() => setIsSavePass(!isSavePass)} />
             <label htmlFor='rememberMe'>Запомнить пароль</label>
           </div>
-          <Link className={styles.hidePass} href={'/reset'}>
+          <Link className={styles.hidePass} href='/reset'>
             Забыли пароль?
           </Link>
         </div>

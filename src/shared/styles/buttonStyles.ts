@@ -1,4 +1,5 @@
 import { MUIColors } from '@/shared/styles/MUIColors';
+
 export const customCategoriesButton = {
   height: '45px',
   backgroundColor: MUIColors.lightBlue,

@@ -1,6 +1,8 @@
-import styles from './VarietyMenuItem.module.scss';
 import Link from 'next/link';
-import { Dispatch, FC, SetStateAction } from 'react';
+import { FC } from 'react';
+
+import styles from './VarietyMenuItem.module.scss';
+
 import { useAuthData } from '@/shared/context/authContext';
 
 interface VarietyMenuItemProps {

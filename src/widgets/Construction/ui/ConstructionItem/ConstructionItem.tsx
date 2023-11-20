@@ -1,6 +1,7 @@
-import styles from './ConstructionItem.module.scss';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
+
+import styles from './ConstructionItem.module.scss';
 
 interface ConstructionItem {
   imageUrl: StaticImageData;

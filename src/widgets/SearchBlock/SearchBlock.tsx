@@ -1,10 +1,13 @@
-import styles from './SearchBlock.module.scss';
 import Image from 'next/image';
-import { firstLampGroup, secondLampGroup } from '../../shared/image';
-import { InputSearch } from '@/widgets/SearchBlock/ui/InputSearch/InputSearch';
+
+import styles from './SearchBlock.module.scss';
+
 import { SearchCardsContainer } from '@/features/SearchCardsContainer/SearchCardsContainer';
-import { searchCardsData } from '../../shared/data';
 import { SectionHeader } from '@/shared/ui/SectionHeader/SectionHeader';
+import { InputSearch } from '@/widgets/SearchBlock/ui/InputSearch/InputSearch';
+
+import { searchCardsData } from '../../shared/data';
+import { firstLampGroup, secondLampGroup } from '../../shared/image';
 
 const SearchBlock = () => {
   return (

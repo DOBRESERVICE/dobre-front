@@ -1,5 +1,6 @@
-import styles from './SubcategoryAsideHeader.module.scss';
 import { FC } from 'react';
+
+import styles from './SubcategoryAsideHeader.module.scss';
 
 interface SubcategoryAsideHeader {
   headerName: string;

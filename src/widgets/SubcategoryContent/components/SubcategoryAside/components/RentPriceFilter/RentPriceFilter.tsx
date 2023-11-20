@@ -1,7 +1,10 @@
-import styles from './RentPriceFilter.module.scss';
 import TextField from '@mui/material/TextField';
+
+import styles from './RentPriceFilter.module.scss';
+
 import { customRentPriceInput } from '@/shared/styles/buttonStyles';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
+
 export const RentPriceFilter = () => {
   return (
     <div className={styles.rentPriceContainer}>

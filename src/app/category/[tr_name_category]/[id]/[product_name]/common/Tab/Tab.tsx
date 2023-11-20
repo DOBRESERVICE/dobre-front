@@ -1,6 +1,8 @@
-import { FC } from 'react';
-import styles from './Tab.module.scss';
 import classNames from 'classnames';
+import { FC } from 'react';
+
+import styles from './Tab.module.scss';
+
 interface TabProps {
   name: string;
   isActive: boolean;
@@ -20,7 +22,7 @@ export const Tab: FC<TabProps> = ({ isActive, name, onClick, count }) => {
         <p>{name}</p>
         <span className={styles.count}>{count}</span>
       </div>
-      <div className={styles.tabActiveLine}></div>
+      <div className={styles.tabActiveLine} />
     </div>
   );
 };

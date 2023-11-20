@@ -1,12 +1,16 @@
 'use client';
-import styles from './AuthLayout.module.scss';
-import { FC, ReactNode, useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+
 import Image from 'next/image';
-import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '../../shared/image';
+import { useRouter } from 'next/navigation';
+import { FC, ReactNode, useEffect, useState } from 'react';
+
+import styles from './AuthLayout.module.scss';
+
+import { Status } from '@/enums';
 import { Loader } from '@/features/Loader/Loader';
 import { useAuthData } from '@/shared/context/authContext';
-import { Status } from '@/enums';
+
+import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '../../shared/image';
 
 interface FormLayoutProps {
   children: ReactNode;
@@ -15,12 +19,13 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { status } = useAuthData();
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       setIsLoading(true);
       router.push('/');
     }
-  }, [isLoading]);
+  }, [isLoading, router]);
   if (isLoading) {
     return <div>Loading... </div>;
   }

@@ -1,5 +1,6 @@
-import styles from './SectionHeader.module.scss';
 import { FC, ReactNode } from 'react';
+
+import styles from './SectionHeader.module.scss';
 
 interface SectionHeader {
   children: ReactNode;

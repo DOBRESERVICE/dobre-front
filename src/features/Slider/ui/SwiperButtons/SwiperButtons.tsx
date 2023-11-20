@@ -1,9 +1,11 @@
-import Image, { StaticImageData } from 'next/image';
-import { useSwiper } from 'swiper/react';
-import styles from './SwiperButtons.module.scss';
-import { nextArrow, previous, sliderLeftBlur, sliderRightBlur } from '../../../../shared/image';
 import classNames from 'classnames';
+import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
+import { useSwiper } from 'swiper/react';
+
+import styles from './SwiperButtons.module.scss';
+
+import { sliderLeftBlur, sliderRightBlur } from '../../../../shared/image';
 
 interface SwiperButtonsProps {
   rightIcon: StaticImageData;

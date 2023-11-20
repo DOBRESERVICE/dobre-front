@@ -1,11 +1,14 @@
 'use client';
+
+import { FC } from 'react';
+
 import styles from './CatalogBlock.module.scss';
-import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
-import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
-import { FC, useState } from 'react';
-import { ToolContainer } from '@/widgets/ToolContainer/ToolContainer';
+
 import { Product, Variety } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
+import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
+import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
+import { ToolContainer } from '@/widgets/ToolContainer/ToolContainer';
 
 interface CatalogBlock {
   barName: string;

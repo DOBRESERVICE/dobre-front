@@ -1,7 +1,8 @@
-import styles from './SearchBlockCard.module.scss';
+import classNames from 'classnames';
 import Image from 'next/image';
 import { FC } from 'react';
-import classNames from 'classnames';
+
+import styles from './SearchBlockCard.module.scss';
 
 export interface SearchBlockCard {
   id?: number;

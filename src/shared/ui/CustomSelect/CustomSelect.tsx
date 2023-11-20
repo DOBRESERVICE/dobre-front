@@ -1,10 +1,12 @@
 'use client';
-import styles from './CustomSelect.module.scss';
-import { FormControl, InputLabel, MenuItem, Select, Theme } from '@mui/material';
-import { FC, useState } from 'react';
+
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Image, { StaticImageData } from 'next/image';
+import { FormControl, InputLabel, MenuItem, Select, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
+import Image, { StaticImageData } from 'next/image';
+import { FC, useState } from 'react';
+
+import styles from './CustomSelect.module.scss';
 
 type selectData = string[] | number[];
 
@@ -39,7 +41,7 @@ export const CustomSelect: FC<CustomSelect> = ({
           {labelImage && <Image src={labelImage} alt='date' />}
           {label && label}
           {firstPartLabel && firstPartLabel}
-          {labelSecondImage && <Image src={labelSecondImage} alt={'image'} />}
+          {labelSecondImage && <Image src={labelSecondImage} alt='image' />}
           {secondPartLabel && secondPartLabel}
         </div>
       </InputLabel>

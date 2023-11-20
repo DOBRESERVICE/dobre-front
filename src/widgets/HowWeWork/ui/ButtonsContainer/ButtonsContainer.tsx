@@ -1,10 +1,13 @@
 'use client';
-import styles from './ButtonsContainer.module.scss';
-import classNames from 'classnames';
+
 import { Button } from '@mui/material';
-import { howWeWorkButton } from '@/shared/styles/buttonStyles';
+import classNames from 'classnames';
 import { useState } from 'react';
+
+import styles from './ButtonsContainer.module.scss';
+
 import { RentState } from '@/enums';
+import { howWeWorkButton } from '@/shared/styles/buttonStyles';
 
 export const ButtonsContainer = () => {
   const [currentType, setCurrentType] = useState<RentState>(RentState.TakeRent);

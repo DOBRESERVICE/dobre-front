@@ -1,10 +1,14 @@
-import styles from './HowWeWork.module.scss';
-import { SectionHeader } from '@/shared/ui/SectionHeader/SectionHeader';
-import { SearchCardsContainer } from '@/features/SearchCardsContainer/SearchCardsContainer';
-import { howWeWorkData } from '../../shared/data';
-import { ButtonsContainer } from '@/widgets/HowWeWork/ui/ButtonsContainer/ButtonsContainer';
 import Image from 'next/image';
-import { howWeWorkFirstGroup, howWeWorkSecondGroup } from '../../shared/image';
+
+import styles from './HowWeWork.module.scss';
+
+import { SearchCardsContainer } from '@/features/SearchCardsContainer/SearchCardsContainer';
+import { SectionHeader } from '@/shared/ui/SectionHeader/SectionHeader';
+import { ButtonsContainer } from '@/widgets/HowWeWork/ui/ButtonsContainer/ButtonsContainer';
+
+import { howWeWorkData } from '../../shared/data';
+import { howWeWorkFirstGroup } from '../../shared/image';
+
 export const HowWeWork = () => {
   return (
     <section className={styles.howWeWorkSection}>

@@ -1,7 +1,9 @@
-import Link from 'next/link';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
+
 import styles from './HeaderLink.module.scss';
+
 interface HeaderLink {
   linkName: string;
   image: StaticImageData;

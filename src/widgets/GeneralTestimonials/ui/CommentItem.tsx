@@ -1,6 +1,8 @@
 import Image from 'next/image';
-import styles from './CommentItem.module.scss';
 import { FC } from 'react';
+
+import styles from './CommentItem.module.scss';
+
 import { emoji } from '../../../shared/image';
 
 type AboutItemType = {
@@ -19,7 +21,7 @@ export const CommentItem: FC<AboutItemType> = ({ title, description, userName, u
       </div>
       <div className={styles.itemDescr}>{description}</div>
       <div className={styles.userWrapper}>
-        <div className={styles.userIcon}></div>
+        <div className={styles.userIcon} />
         <div>
           <div className={styles.userStatus}>{userStatus}</div>
           <div className={styles.userName}>{userName}</div>

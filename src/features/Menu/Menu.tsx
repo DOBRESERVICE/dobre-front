@@ -1,13 +1,16 @@
 'use client';
+
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 import styles from './Menu.module.scss';
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
-import { useCategories } from '@/shared/hooks/useCategories';
+
+import { Error } from '@/features/Error/Error';
+import { Loader } from '@/features/Loader/Loader';
 import { CategoryMenuItem } from '@/features/Menu/ui/CategoryMenuItem/CategoryMenuItem';
 import { SubCategoryMenuItem } from '@/features/Menu/ui/SubCategoryMenuItem/SubCategoryMenuItem';
-import { Loader } from '@/features/Loader/Loader';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { Error } from '@/features/Error/Error';
 import { useAuthData } from '@/shared/context/authContext';
+import { useCategories } from '@/shared/hooks/useCategories';
 
 export const Menu = () => {
   const router = useRouter();

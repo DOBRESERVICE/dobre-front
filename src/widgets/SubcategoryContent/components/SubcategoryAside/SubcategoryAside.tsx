@@ -1,18 +1,20 @@
-import styles from './SubcategoryAside.module.scss';
 import Image from 'next/image';
-import { backArrow } from '../../../../shared/image';
-
-import { optionsData } from '../../../../shared/data';
-import { SubcategoriesList } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoriesList/SubcategoriesList';
-import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
-import { OptionsComponent } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/OptionsComponent/OptionsComponent';
-import { RentPriceFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/RentPriceFilter/RentPriceFilter';
-import { SellerTypeFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SellerTypeFilter/SellerTypeFilter';
-import { ProductQualityFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/ProductQualityFilter/ProductQualityFilter';
 import { FC } from 'react';
+
+import styles from './SubcategoryAside.module.scss';
+
 import { Product, Variety } from '@/interfaces/categories';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
+import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
+import { OptionsComponent } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/OptionsComponent/OptionsComponent';
+import { ProductQualityFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/ProductQualityFilter/ProductQualityFilter';
+import { RentPriceFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/RentPriceFilter/RentPriceFilter';
+import { SellerTypeFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SellerTypeFilter/SellerTypeFilter';
+import { SubcategoriesList } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoriesList/SubcategoriesList';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
+
+import { optionsData } from '../../../../shared/data';
+import { backArrow } from '../../../../shared/image';
 
 interface AsideProps {
   title: string;
@@ -31,7 +33,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
       {products?.length ? (
         <div className={styles.chooseContent}>
           <div>
-            <SelectHeader headerName={'Бренд'} />
+            <SelectHeader headerName='Бренд' />
             <CustomSelect
               formControlStyles={customDateFormSelect}
               selectData={['sss']}

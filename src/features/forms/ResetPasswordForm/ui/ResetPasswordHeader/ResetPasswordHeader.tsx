@@ -1,5 +1,6 @@
-import styles from './ResetPasswordHeader.module.scss';
 import { FC } from 'react';
+
+import styles from './ResetPasswordHeader.module.scss';
 
 interface ResetPasswordHeader {
   title: string;
