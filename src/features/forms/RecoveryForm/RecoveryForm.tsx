@@ -22,6 +22,7 @@ export const RecoveryForm = () => {
   const pathName = usePathname();
   const { isSuccessfulRecovery, handleRecoveryPassword } = useAuthData();
   const params = useSearchParams();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const newSearchParams = new URLSearchParams(params);
   const token = newSearchParams.get('token');
   useEffect(() => {

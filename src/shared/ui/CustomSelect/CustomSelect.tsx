@@ -1,7 +1,7 @@
 'use client';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box,FormControl, MenuItem, Select, Theme } from '@mui/material';
+import { Box, FormControl, MenuItem, Select, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
@@ -25,17 +25,7 @@ interface CustomSelect {
   selectData: selectData;
 }
 
-export const CustomSelect: FC<CustomSelect> = ({
-  label,
-  labelImage,
-  labelSecondImage,
-  secondPartLabel,
-  firstPartLabel,
-  selectStyles,
-  labelStyles,
-  formControlStyles,
-  selectData,
-}) => {
+export const CustomSelect: FC<CustomSelect> = ({ labelImage, selectStyles, formControlStyles, selectData }) => {
   const [value, setValue] = useState(selectData[0]);
   return (
     <FormControl sx={formControlStyles}>
