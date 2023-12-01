@@ -10,7 +10,6 @@ import { useEffect, useState } from 'react';
 
 import styles from './Header.module.scss';
 
-import { Menu } from '@/features/Menu/Menu';
 import { useAuthData } from '@/shared/context/authContext';
 import { blueClose, mockUser, rentImage, searchIcon } from '@/shared/image';
 import cart from '@/shared/image/cart.svg';
@@ -27,8 +26,12 @@ import {
   customRentButton,
   customSearchHeaderButton,
 } from '@/shared/styles/buttonStyles';
-import { HeaderLinks } from '@/widgets/Header/ui/HeaderLinks/HeaderLinks';
-import { HeaderTopBar } from '@/widgets/Header/ui/HeaderTopBar/HeaderTopBar';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import dynamic from 'next/dynamic';
+
+const DynamicMenu = dynamic(() => import('@/features/Menu/Menu'));
+const DynamicHeaderLinks = dynamic(() => import('@/widgets/Header/ui/HeaderLinks/HeaderLinks'));
+const DynamicHeaderTopBar = dynamic(() => import('@/widgets/Header/ui/HeaderTopBar/HeaderTopBar'));
 
 export const Header = () => {
   const pathname = usePathname();
@@ -41,13 +44,13 @@ export const Header = () => {
     setToken(token);
   }, []);
   return (
-    <>
+    <Wrapper>
       <header
         className={classNames(styles.header, {
           [styles.catalogHeader]: notMainPage,
         })}
       >
-        {notMainPage && <HeaderTopBar />}
+        {notMainPage && <DynamicHeaderTopBar />}
         <div className={styles.leftBlock}>
           <div className={styles.leftBlockContent}>
             <Button
@@ -120,9 +123,9 @@ export const Header = () => {
             </Button>
           )}
         </div>
-        {isMenuOpen && <Menu />}
+        {isMenuOpen && <DynamicMenu />}
       </header>
-      {notMainPage && <HeaderLinks />}
-    </>
+      {notMainPage && <DynamicHeaderLinks />}
+    </Wrapper>
   );
 };

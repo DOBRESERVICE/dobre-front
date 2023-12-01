@@ -1,10 +1,12 @@
 @import '@/shared/styles/variables';
 .testimonialsWrapper {
-  max-width: 1050px;
-  min-width: 930px;
+  width: 1052px;
   display: flex;
   flex-direction: column;
   gap: 26px;
+  @include breakpoint(lg) {
+    width: 927px;
+  }
 }
 .askAQuestion {
   display: flex;

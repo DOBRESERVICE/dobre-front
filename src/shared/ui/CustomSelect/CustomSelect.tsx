@@ -1,12 +1,15 @@
 'use client';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { FormControl, InputLabel, MenuItem, Select, Theme } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select, Theme, Menu, Paper, MenuList, SvgIcon, Box } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
 
 import styles from './CustomSelect.module.scss';
+import { customMenuItem } from '@/shared/styles/selectStyles';
+import { whiteChecked } from '@/shared/image';
+import { Arrow } from '@/shared/ui/Arrow/Arrow';
 
 type selectData = string[] | number[];
 
@@ -33,18 +36,18 @@ export const CustomSelect: FC<CustomSelect> = ({
   formControlStyles,
   selectData,
 }) => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState(selectData[0]);
   return (
     <FormControl sx={formControlStyles}>
-      <InputLabel sx={labelStyles} id='demo-simple-select-label'>
-        <div className={styles.labelContent}>
-          {labelImage && <Image src={labelImage} alt='date' />}
-          {label && label}
-          {firstPartLabel && firstPartLabel}
-          {labelSecondImage && <Image src={labelSecondImage} alt='image' />}
-          {secondPartLabel && secondPartLabel}
-        </div>
-      </InputLabel>
+      {/*<InputLabel shrink={false} sx={labelStyles} id='demo-simple-select-label'>*/}
+      {/*  <div className={styles.labelContent}>*/}
+      {/*    {labelImage && <Image src={labelImage} alt='date' />}*/}
+      {/*    {label && value}*/}
+      {/*    {firstPartLabel && firstPartLabel}*/}
+      {/*    {labelSecondImage && <Image src={labelSecondImage} alt='image' />}*/}
+      {/*    {secondPartLabel && secondPartLabel}*/}
+      {/*  </div>*/}
+      {/*</InputLabel>*/}
       <Select
         MenuProps={{
           disableScrollLock: true,
@@ -55,10 +58,18 @@ export const CustomSelect: FC<CustomSelect> = ({
         id='demo-simple-select'
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        renderValue={(value) => {
+          return (
+            <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+              {labelImage && <Image src={labelImage} alt='saf' />}
+              {value}
+            </Box>
+          );
+        }}
       >
         {selectData.map((item) => (
-          <MenuItem key={item} value={item}>
-            {item}
+          <MenuItem key={item} value={item} sx={customMenuItem} disableRipple>
+            {item} <Image src={whiteChecked} alt='checked' className={styles.checked} />
           </MenuItem>
         ))}
       </Select>

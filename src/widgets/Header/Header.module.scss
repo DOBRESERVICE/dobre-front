@@ -1,6 +1,5 @@
 @import '@/shared/styles/variables';
 .header {
-  width: 1510px;
   padding: 22px 0 26px 0;
   display: flex;
   gap: 30px;
@@ -9,12 +8,8 @@
   justify-content: center;
   margin: 0 auto;
 
-  @include breakpoint(lg) {
-    width: 1230px;
-  }
 }
 .header.catalogHeader {
-  width: 1408px;
   padding-bottom: 10px;
 }
 .locationWrapper {

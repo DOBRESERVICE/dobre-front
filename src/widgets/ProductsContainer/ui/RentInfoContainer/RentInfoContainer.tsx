@@ -3,7 +3,7 @@
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './RentInfoContainer.module.scss';
 
@@ -11,7 +11,7 @@ import { RentInfoData } from '@/interfaces';
 import { rentInfoCustomButton } from '@/shared/styles/buttonStyles';
 import { RentInfoItem } from '@/widgets/ProductsContainer/ui/RentInfoItem/RentInfoItem';
 
-import { rentButtonIcon } from '../../../../shared/image';
+import { rentButtonIcon, rentTimeArrow } from '../../../../shared/image';
 
 interface RentInfoContainer {
   rentInfoArray: RentInfoData[];
@@ -28,21 +28,30 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({
   productId,
 }) => {
   const router = useRouter();
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, [setIsClient, isClient]);
   return (
     <div className={styles.rentTimeContainer}>
-      <div className={styles.content}>
-        {rentInfoArray.map((item) => (
-          <RentInfoItem key={item.id} timeInRent={item.timeInRent} price={item.price} />
-        ))}
+      <div className={styles.rentContent}>
+        <div className={styles.content}>
+          {rentInfoArray.map((item) => (
+            <RentInfoItem key={item.id} timeInRent={item.timeInRent} price={item.price} />
+          ))}
+        </div>
+        <Image src={rentTimeArrow} alt='arrow' />
       </div>
-      <Button
-        disableRipple
-        sx={rentInfoCustomButton}
-        onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}
-      >
-        <Image src={rentButtonIcon} alt='rent' />
-        Арендовать
-      </Button>
+      {isClient && (
+        <Button
+          disableRipple
+          sx={rentInfoCustomButton}
+          onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}
+        >
+          <Image src={rentButtonIcon} alt='rent' />
+          Арендовать
+        </Button>
+      )}
     </div>
   );
 };

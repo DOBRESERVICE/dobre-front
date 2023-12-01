@@ -48,7 +48,7 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
             selectStyles={customSelect}
             labelStyles={customLabel}
             formControlStyles={customFormSelect}
-            selectData={['sss']}
+            selectData={['Сначала новые', 'Популярные', 'Сначала дешевые', 'Сначала дорогие', 'Сначала с отзывами']}
           />
         </div>
       ) : (

@@ -139,6 +139,9 @@ export const authCustomInput = {
       color: MUIColors.mainText,
     },
   },
+  '& .MuiOutlinedInput-root.Mui-focused': {
+    border: `none`,
+  },
   '& label.Mui-error + div input': {
     color: MUIColors.inputError,
   },
@@ -326,7 +329,7 @@ export const customRecoveryLightButton = {
 };
 
 export const customPagination = {
-  marginTop: '70px',
+  marginTop: 'auto',
   '& > ul': {
     gap: '10px',
   },
@@ -385,4 +388,5 @@ export const customSmallRentButton = {
     backgroundColor: MUIColors.activeDeepBlue,
     boxShadow: 'none',
   },
+  padding: '6px 10px',
 };

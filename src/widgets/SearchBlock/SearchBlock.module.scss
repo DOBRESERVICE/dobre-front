@@ -3,14 +3,9 @@
   position: relative;
   display: flex;
   justify-content: center;
-  width: 1510px;
   margin-bottom: 110px;
   background-color: $deep-blue;
   border-radius: 23px;
-
-  @include breakpoint(lg) {
-    width: 1230px;
-  }
 }
 .content {
   display: flex;

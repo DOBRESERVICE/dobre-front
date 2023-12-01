@@ -1,6 +1,7 @@
 @import '@/shared/styles/variables';
 .wrapper {
   width: 1408px;
+  margin: 0 auto;
   @include breakpoint(lg) {
     width: 1230px;
   }

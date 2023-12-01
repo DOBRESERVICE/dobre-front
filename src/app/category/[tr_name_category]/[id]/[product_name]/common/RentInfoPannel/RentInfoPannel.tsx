@@ -24,6 +24,23 @@ interface RentInfoPannelProps {
 }
 
 export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray }) => {
+  // const selectData = [
+  //   {
+  //     id: 1,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  //   {
+  //     id: 2,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  //   {
+  //     id: 3,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  // ];
   return (
     <div className={styles.productInfo}>
       <div>

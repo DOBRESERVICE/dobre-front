@@ -37,7 +37,7 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   return (
     <div className={styles.productsWrapper}>
       <Slider nextIcon={nextArrow} prevIcon={previous}>
-        {products.map((product) => (
+        {products?.map((product) => (
           <ProductItem
             key={product.id_product}
             productId={product.id_product}

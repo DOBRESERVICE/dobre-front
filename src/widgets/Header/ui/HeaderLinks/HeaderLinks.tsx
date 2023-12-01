@@ -8,7 +8,7 @@ import { HeaderLink } from '@/widgets/Header/ui/HeaderLink/HeaderLink';
 import { headerLinks } from '../../../../shared/data';
 import { leftWhiteSliderIcon, rightWhiteSliderIcon } from '../../../../shared/image';
 
-export const HeaderLinks = () => {
+const HeaderLinks = () => {
   return (
     <div className={styles.headerLinks}>
       <Slider nextIcon={rightWhiteSliderIcon} prevIcon={leftWhiteSliderIcon}>
@@ -19,3 +19,4 @@ export const HeaderLinks = () => {
     </div>
   );
 };
+export default HeaderLinks;

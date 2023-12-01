@@ -124,8 +124,12 @@ import iconVk from './vkIcon.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
+import whiteChecked from './whiteChecked.svg';
+import rentTimeArrow from './rentTimeArrow.svg';
 
 export {
+  rentTimeArrow,
+  whiteChecked,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,

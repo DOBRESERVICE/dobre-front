@@ -17,14 +17,13 @@ export const RecoveryForm = () => {
   const [isRepeatedPassword, setIsRepeatedPassword] = useState(true);
   const [newPassword, setNewPassword] = useState('');
   const [repeatedPassword, setRepeatedPassword] = useState('');
-  const isDisabled = newPassword.length < 8;
+  const isDisabled = newPassword.length < 8 || newPassword !== repeatedPassword;
   const router = useRouter();
   const pathName = usePathname();
   const { isSuccessfulRecovery, handleRecoveryPassword } = useAuthData();
   const params = useSearchParams();
   const newSearchParams = new URLSearchParams(params);
   const token = newSearchParams.get('token');
-
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
   }, [token, newSearchParams, pathName, router]);
@@ -33,10 +32,12 @@ export const RecoveryForm = () => {
     if (isSuccessfulRecovery) {
       router.push('/login');
     }
-  }, [isSuccessfulRecovery, router]);
+    if (!token) {
+      router.push('/');
+    }
+  }, [token, isSuccessfulRecovery, router]);
 
-  if (token === null) {
-    router.push('/');
+  if (!token) {
     return <div>Invalid</div>;
   }
 

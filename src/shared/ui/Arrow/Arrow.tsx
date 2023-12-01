@@ -2,7 +2,7 @@
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classNames from 'classnames';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './Arrow.module.scss';
 
@@ -13,6 +13,10 @@ interface ArrowProps {
   isOpen?: boolean;
 }
 export const Arrow: FC<ArrowProps> = ({ onClick, isOpen }) => {
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
   return (
     <div
       className={classNames(styles.arrow, {
@@ -21,7 +25,7 @@ export const Arrow: FC<ArrowProps> = ({ onClick, isOpen }) => {
       role='button'
       onClick={onClick}
     >
-      <ExpandMoreIcon sx={customArrow} />
+      {isClient && <ExpandMoreIcon sx={customArrow} />}
     </div>
   );
 };

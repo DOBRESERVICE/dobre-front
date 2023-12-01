@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import { FC } from 'react';
 
@@ -15,6 +16,7 @@ import { SelectHeader } from '@/widgets/SubcategoryContent/components/Subcategor
 
 import { optionsData } from '../../../../shared/data';
 import { backArrow } from '../../../../shared/image';
+import { useRouter } from 'next/navigation';
 
 interface AsideProps {
   title: string;
@@ -22,10 +24,11 @@ interface AsideProps {
   products: Product[];
 }
 export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, products }) => {
+  const router = useRouter();
   return (
     <aside className={styles.asideWrapper}>
       <div className={styles.title}>
-        <Image src={backArrow} alt='back' />
+        <Image src={backArrow} className={styles.arrowBack} alt='back' role='button' onClick={() => router.back()} />
         <h2>{title}</h2>
       </div>
       <SubcategoriesList varietiesList={varietiesList} />
@@ -34,13 +37,6 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
         <div className={styles.chooseContent}>
           <div>
             <SelectHeader headerName='Бренд' />
-            <CustomSelect
-              formControlStyles={customDateFormSelect}
-              selectData={['sss']}
-              label='Все бренды'
-              selectStyles={customSelect}
-              labelStyles={customLabel}
-            />
           </div>
           <div>
             <SelectHeader headerName='Организация' />

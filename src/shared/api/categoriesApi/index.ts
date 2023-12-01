@@ -1,6 +1,6 @@
 import { AxiosResponse } from 'axios';
 
-import { ExactCategory, ExactVariety, Product, SubCategory } from '@/interfaces/categories';
+import { ExactCategory, ExactVariety, Product, ProductItem, SubCategory } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
@@ -13,7 +13,7 @@ export const getSubCategory = async (subCategory: string): Promise<AxiosResponse
 export const getCertainVariety = async (variety: string): Promise<AxiosResponse<ExactVariety>> => {
   return defaultRequest.get(`/categories/variety/${variety}`);
 };
-export const getProductData = async (productId: string): Promise<AxiosResponse<Product>> => {
+export const getProductData = async (productId: string): Promise<AxiosResponse<ProductItem>> => {
   return defaultRequest.get(`/products/${productId}`);
 };
 export const getNewProducts = async (): Promise<AxiosResponse<Product[]>> => {

@@ -1,11 +1,15 @@
 @import '@/shared/styles/variables';
 
 .generalRatingWrapper {
-  max-width: 338px;
+  min-width: 200px;
+  max-width: 336px;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding: 20px;
+  @include breakpoint(lg) {
+    width: 288px;
+  }
 }
 .ratingContent {
   display: flex;

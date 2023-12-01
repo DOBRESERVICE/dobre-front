@@ -7,7 +7,7 @@ import { smallPlus } from '@/shared/image';
 import geolocationIcon from '@/shared/image/geolocation.svg';
 import { customSmallRentButton } from '@/shared/styles/buttonStyles';
 
-export const HeaderTopBar = () => {
+const HeaderTopBar = () => {
   return (
     <div className={styles.topBar}>
       <div className={styles.contentGroup}>
@@ -30,3 +30,4 @@ export const HeaderTopBar = () => {
     </div>
   );
 };
+export default HeaderTopBar;

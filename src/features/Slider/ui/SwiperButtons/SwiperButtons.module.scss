@@ -1,5 +1,8 @@
 .swiperButtonsWrapper {
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   width: 100%;
   height: 100%;
@@ -14,14 +17,13 @@
   transition: opacity 0.3s;
   cursor: pointer;
   z-index: 2;
-  top: 50%;
   pointer-events: all;
 }
 .swiperButtonsWrapper > button:first-of-type {
-  left: 32px;
+  left: 0;
 }
 .swiperButtonsWrapper > button:last-of-type {
-  right: 32px;
+  right: 0;
 }
 .swiperButtonsWrapper > button:hover {
   opacity: 1;

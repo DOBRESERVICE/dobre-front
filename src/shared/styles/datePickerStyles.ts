@@ -13,7 +13,7 @@ export const customDatePicker = {
     fontWeight: 700,
   },
   '& label': {
-    fontSize: '13px',
+    fontSize: '15px',
   },
   '& .MuiInputBase-root': {
     borderRadius: '8px',
@@ -21,7 +21,7 @@ export const customDatePicker = {
     paddingTop: '0px',
   },
   '& .MuiInputLabel-root': {
-    top: '-6px',
+    top: '-8px',
     color: MUIColors.graphite,
     fontWeight: '600',
   },

@@ -28,8 +28,8 @@ export const ProductDescription: FC<ProductDescriptionProps> = ({
               <li key={advantage.id}>{advantage.info}</li>
             ))}
           </ul>
+          <p>{secondDescription}</p>
         </div>
-        <p>{secondDescription}</p>
       </div>
       <div className={styles.cardsWrapper}>
         <PriceInfoCard />

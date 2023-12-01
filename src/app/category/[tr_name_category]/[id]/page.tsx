@@ -13,7 +13,7 @@ export default async function CategoryPage({
   params: { id: string };
   searchParams?: { [key: string]: string | undefined };
 }) {
-  const variety = searchParams?.variety ?? 'ss';
+  const variety = searchParams?.variety ?? 'all';
   const { data: certainSubCategoryData } = await getSubCategory(params.id);
   const { data: certainVarietyData } = await getCertainVariety(variety);
   const breadCrumbsData = [
