@@ -1,9 +1,12 @@
-@import 'src/styles/variables';
+@import '@/shared/styles/variables';
 .testimonialsWrapper {
+  width: 1052px;
   display: flex;
-  width: 74%;
   flex-direction: column;
   gap: 26px;
+  @include breakpoint(lg) {
+    width: 927px;
+  }
 }
 .askAQuestion {
   display: flex;

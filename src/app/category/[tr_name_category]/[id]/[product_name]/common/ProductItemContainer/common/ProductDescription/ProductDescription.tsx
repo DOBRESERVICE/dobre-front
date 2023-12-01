@@ -1,8 +1,10 @@
-import styles from './ProductDescription.module.scss';
 import { FC } from 'react';
-import { PriceInfoCard } from '../PriceInfoCard/PriceInfoCard';
+
+import styles from './ProductDescription.module.scss';
+
 import { InsuranceCard } from '../InsuranceCard/InsuranceCard';
-import { ProductDetails } from '../ProductDetails/ProductDetails';
+import { PriceInfoCard } from '../PriceInfoCard/PriceInfoCard';
+
 interface ProductDescriptionProps {
   firstDescription: string;
   mainAdvantages: any[];
@@ -26,8 +28,8 @@ export const ProductDescription: FC<ProductDescriptionProps> = ({
               <li key={advantage.id}>{advantage.info}</li>
             ))}
           </ul>
+          <p>{secondDescription}</p>
         </div>
-        <p>{secondDescription}</p>
       </div>
       <div className={styles.cardsWrapper}>
         <PriceInfoCard />

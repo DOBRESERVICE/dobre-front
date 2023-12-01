@@ -1,0 +1,51 @@
+@import '@/shared/styles/variables';
+
+.toolWrapper {
+  max-width: 184px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  align-self: start;
+  cursor: pointer;
+}
+
+.emptyCard {
+  background: $light-graphite;
+  width: 100%;
+  border-radius: 14px;
+  height: 140px;
+
+  @include breakpoint(lg) {
+    height: 120px;
+  }
+}
+.toolWrapper > p {
+  color: $black;
+  font-size: $font-default;
+  font-weight: $fweight-big;
+  align-self: start;
+  @include breakpoint(lg) {
+    text-align: center;
+  }
+}
+.imageWrapper {
+  background-color: $sky-blue;
+  border-radius: 14px;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @include breakpoint(lg) {
+    height: 120px;
+
+  }
+}

@@ -1,10 +1,10 @@
-import { AuthLayout } from '@/components/authLayout/AuthLayout';
-import { CreateAccountComponent } from '@/components/CreateAccount/CreateAccountComponent';
+import { CreateAccountForm } from '@/features/forms/CreateAccountForm/CreateAccountForm';
+import { AuthLayout } from '@/layouts/AuthLayout/AuthLayout';
 
 export default function CreatePage() {
   return (
     <AuthLayout>
-      <CreateAccountComponent />
+      <CreateAccountForm />
     </AuthLayout>
   );
 }

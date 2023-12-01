@@ -1,7 +1,6 @@
-import { AuthLayout } from '@/components/authLayout/AuthLayout';
-import styles from './Recovery.module.scss';
-import { ResetPasswordHeader } from '@/components/ResetPassword/common/ResetPasswordHeader/ResetPasswordHeader';
-import { RecoveryForm } from '@/app/recovery/common/RecoveryForm';
+import { RecoveryForm } from '@/features/forms/RecoveryForm/RecoveryForm';
+import { AuthLayout } from '@/layouts/AuthLayout/AuthLayout';
+
 export default function Recovery() {
   return (
     <AuthLayout>

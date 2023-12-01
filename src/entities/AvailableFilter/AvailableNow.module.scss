@@ -1,0 +1,16 @@
+@import '@/shared/styles/variables';
+.avalableNowWrapper {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  gap: 10px;
+  background: $white;
+  border-radius: 8px;
+  padding-inline: 14px;
+  border: 1px solid $light-graphite;
+  & > p {
+    color: $black;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}

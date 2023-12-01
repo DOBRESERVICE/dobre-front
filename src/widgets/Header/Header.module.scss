@@ -1,0 +1,171 @@
+@import '@/shared/styles/variables';
+.header {
+  padding: 22px 0 26px 0;
+  display: flex;
+  gap: 30px;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+}
+.header.catalogHeader {
+  padding-bottom: 10px;
+}
+.locationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.locationWrapper > p {
+  font-size: 15px;
+  font-weight: 700;
+}
+.logoWrapper {
+  cursor: pointer;
+}
+.cartCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.3s;
+
+  & > p {
+    color: $black;
+    font-size: 12px;
+    font-weight: $fweight-big;
+  }
+}
+
+.cartCircle > img {
+  position: absolute;
+}
+
+.leftBlock {
+  display: flex;
+  gap: 30px;
+  width: 50%;
+
+  & > div:nth-child(2) {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.header .leftBlock {
+  width: 50%;
+}
+.catalogHeader .leftBlock {
+  width: auto;
+  order: 1;
+}
+.content {
+  display: flex;
+  gap: 30px;
+  justify-content: end;
+  align-items: center;
+  width: 50%;
+}
+.catalogHeader .content {
+  width: auto;
+  justify-content: center;
+}
+.leftBlockContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+}
+
+.inputWrapper {
+  display: none;
+}
+.catalogHeader {
+  padding-top: 44px;
+}
+.catalogHeader .logo {
+  flex: 0;
+}
+.catalogHeader .content > button:nth-child(2) {
+  display: none;
+}
+.catalogHeader  .leftBlockContent > button:nth-child(2) {
+  display: none;
+}
+.catalogHeader .locationWrapper {
+  display: none;
+}
+.catalogHeader .content {
+  order: 1;
+}
+
+.catalogHeader .inputWrapper {
+  display: flex;
+  flex: 1;
+  height: 45px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  border: 2px solid $light-graphite;
+  background-color: $white;
+  & input::placeholder {
+    opacity: 1;
+  }
+  order: 1;
+  padding: 8px 10px 8px 20px;
+}
+
+.inputContent {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 80%;
+}
+
+.iconsWrapper {
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  & p {
+    color: $black;
+    font-size: 12px;
+    font-weight: $fweight-big;
+  }
+  & > div:hover .cartCircle {
+      background-color: #eee;
+  }
+  & > div:active .cartCircle {
+      background-color: #c9c9c9;
+  }
+}
+
+.circleInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #e42553;
+  color: $white;
+  font-size: 11px;
+  font-weight: $fweight-big;
+}
+
+

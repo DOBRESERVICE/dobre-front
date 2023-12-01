@@ -1,9 +1,9 @@
-@import 'src/styles/variables';
+@import '@/shared/styles/variables';
 .asideWrapper {
+  min-width: 140px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 24%;
 }
 .userInfo {
   display: flex;
@@ -88,6 +88,14 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
+  & > img {
+    object-fit: contain;
+  }
+  & > img {
+    @include breakpoint(lg) {
+      max-width: 40px;
+    }
+  }
 }
 .deliveryText {
   color: $graphite;

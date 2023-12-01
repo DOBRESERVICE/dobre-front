@@ -1,23 +1,23 @@
 import styles from './ProductDetails.module.scss';
-import { blueTypesArray, generalInfo } from '@/data';
-import classNames from 'classnames';
+
+import { blueTypesArray, generalInfo } from '../../../../../../../../../shared/data';
 
 export const ProductDetails = () => {
   return (
     <div className={styles.detailsWrapper}>
       {generalInfo.map((section) => (
-        <div className={styles.contentWrapper}>
+        <div className={styles.contentWrapper} key={section.id}>
           <h3>{section.title}</h3>
           <div key={section.id} className={styles.detailsContent}>
             <div className={styles.detailsColumn}>
               {section.array.map((item, index) => (
-                <div className={styles.detailTypesWrapper}>
+                <div className={styles.detailTypesWrapper} key={item.value}>
                   <span key={index}>{item.key}</span>
                   <div className={styles.dashedLine}> </div>
                 </div>
               ))}
             </div>
-            <div></div>
+            <div />
             <div className={styles.detailsColumn}>
               {section.array.map((item) => (
                 <span className={blueTypesArray.includes(item.key) ? styles.blueType : ''} key={item.value}>

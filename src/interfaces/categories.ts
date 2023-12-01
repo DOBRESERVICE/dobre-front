@@ -38,12 +38,9 @@ export interface Product {
   quantity: number;
   specs_product: string;
   price: string;
-  image: string;
+  image: string | StaticImageData;
   enabled_product: boolean;
   is_moderate: boolean;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt: any;
   userId: any;
   brandIdBrand: any;
   categoryIdCategory: number;
@@ -85,4 +82,46 @@ export interface ExactVariety {
   subcategory: Subcategory;
   products: Product[];
   brands: any[];
+}
+
+export interface ProductItem {
+  id_product: number;
+  name_product: string;
+  tr_name_product: string;
+  description: string;
+  quality_control: number;
+  price_segment: string;
+  rent_period: string;
+  rent_terms: string;
+  quantity: number;
+  specs_product: string;
+  price: string;
+  image: string;
+  enabled_product: boolean;
+  is_moderate: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  userId: any;
+  brandIdBrand: any;
+  categoryIdCategory: number;
+  subcategoryIdSub: number;
+  varietyIdVariety: number;
+  category: Category;
+  subcategory: Subcategory;
+  variety: Variety;
+  terms: Term[];
+}
+
+export interface Term {
+  id_term: number;
+  teek: string;
+  period: string;
+  price: number;
+  term_visible: boolean;
+  is_moderate: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  productIdProduct: number;
 }

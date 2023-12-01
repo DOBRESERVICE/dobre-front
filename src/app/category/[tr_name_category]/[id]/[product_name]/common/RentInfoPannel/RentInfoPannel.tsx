@@ -1,19 +1,22 @@
+import { Button } from '@mui/material';
+import Image from 'next/image';
+import { FC } from 'react';
+
 import styles from './RentInfoPannel.module.scss';
-import { ProductRentStatus } from '@/ui/ProductRentStatus/ProductRentStatus';
-import { CustomSelect } from '@/app/category/[tr_name_category]/[id]/common/CustomSelect/CustomSelect';
+
+import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
+import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import {
   customDateFormSelect,
   customDateLabel,
   customDateSelect,
   customProductQuantityFormSelect,
   customProductQuantitySelect,
-} from '@/styles/selectStyles';
-import { dateArrow, dateImage, rentButtonIcon } from '@/assets/image';
-import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
-import { Button } from '@mui/material';
-import { rentInfoCustomBigButton } from '@/styles/buttonStyles';
-import Image from 'next/image';
-import { FC } from 'react';
+} from '@/shared/styles/selectStyles';
+import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
+import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
+
+import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../shared/image';
 
 interface RentInfoPannelProps {
   count: number;
@@ -21,6 +24,23 @@ interface RentInfoPannelProps {
 }
 
 export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray }) => {
+  // const selectData = [
+  //   {
+  //     id: 1,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  //   {
+  //     id: 2,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  //   {
+  //     id: 3,
+  //     firstDate: '10 окт.',
+  //     secondDate: '12 окт.',
+  //   },
+  // ];
   return (
     <div className={styles.productInfo}>
       <div>
@@ -56,9 +76,9 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
           <p>Смотреть все</p>
         </div>
         <div className={styles.cardsWrapper}>
-          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon />
-          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon={false} />
-          <TariffCard time={'1 час'} price={'450 руб.'} hasInfoIcon={false} />
+          <TariffCard time='1 час' price='450 руб.' hasInfoIcon />
+          <TariffCard time='1 час' price='450 руб.' hasInfoIcon={false} />
+          <TariffCard time='1 час' price='450 руб.' hasInfoIcon={false} />
         </div>
       </div>
       <div className={styles.depositeWrapper}>

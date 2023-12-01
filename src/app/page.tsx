@@ -1,28 +1,32 @@
-import { HomeLayout } from '@/components/homeLayout/HomeLayout';
-import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
-import { AboutUs } from '@/components/AboutUs/AboutUs';
-import { NewProducts } from '@/components/NewProducts/NewProducts';
-import { FirstItem } from '@/components/FirstItem/FirstItem';
-import { Testimonials } from '@/components/Testimonials/Testimonials';
-import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
-import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
-import { FAQ } from '@/components/FAQ/FAQ';
-import { Recommendations } from '@/components/Recommendations/Recommendations';
-import { AuthModals } from '@/components/AuthModals/AuthModals';
-import { popularProductsData, productsData } from '@/data';
+import dynamic from 'next/dynamic';
 
-export default function HomePage() {
+import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
+import { getNewProducts, getRecommendedProducts } from '@/shared/api/categoriesApi';
+import { AboutUs } from '@/widgets/AboutUs/AboutUs';
+import { FAQ } from '@/widgets/FAQ/FAQ';
+import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
+import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
+import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
+
+const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
+const DynamicSearchBlock = dynamic(() => import('@/widgets/SearchBlock/SearchBlock'));
+const DynamicGeneralTestimonials = dynamic(() => import('@/widgets/GeneralTestimonials/GeneralTestimonials'));
+const DynamicRecommendations = dynamic(() => import('@/widgets/Recommendations/Recommendations'));
+export default async function HomePage() {
+  const { data: newProductsData } = await getNewProducts();
+  const { data: recommendedProductsData } = await getRecommendedProducts();
   return (
     <HomeLayout>
-      <AuthModals />
-      <SearchBlock />
-      <NewProducts newProducts={productsData} />
+      <DynamicAuthModals />
+      <DynamicSearchBlock />
+      <NewProducts newProducts={newProductsData} />
       <PopularProducts />
       <HowWeWork />
-      <FirstItem />
-      <Recommendations />
+      <RentIntroduction />
+      <DynamicRecommendations recommendedProducts={recommendedProductsData} />
       <AboutUs />
-      <Testimonials />
+      <DynamicGeneralTestimonials />
       <FAQ />
     </HomeLayout>
   );

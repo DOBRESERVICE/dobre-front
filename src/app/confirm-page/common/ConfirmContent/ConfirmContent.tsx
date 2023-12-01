@@ -1,21 +1,25 @@
 'use client';
+
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import styles from './ConfirmContent.module.scss';
 import { useEffect } from 'react';
-import { useAuthData } from '@/context/authContext';
-import { Loader } from '@/components/Loader/Loader';
+
+import styles from './ConfirmContent.module.scss';
+
 import { Status } from '@/enums';
+import { Loader } from '@/features/Loader/Loader';
+import { useAuthData } from '@/shared/context/authContext';
 
 export const ConfirmContent = () => {
   const router = useRouter();
   const pathName = usePathname();
   const { isEmailConfirmed, handleConfirmEmail, status } = useAuthData();
   const params = useSearchParams();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const newSearchParams = new URLSearchParams(params);
   const token = newSearchParams.get('token');
   useEffect(() => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
-  }, []);
+  }, [newSearchParams, pathName, router]);
   useEffect(() => {
     if (!token) return;
     handleConfirmEmail(token);
@@ -23,7 +27,7 @@ export const ConfirmContent = () => {
       localStorage.setItem('token', token);
       router.push('/');
     }
-  }, [isEmailConfirmed]);
+  }, [isEmailConfirmed, handleConfirmEmail, router, token]);
   if (!token || !isEmailConfirmed) {
     return <div>ERROR : USER NOT FOUND</div>;
   }

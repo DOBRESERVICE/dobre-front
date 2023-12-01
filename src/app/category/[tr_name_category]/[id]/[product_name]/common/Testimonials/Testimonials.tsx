@@ -1,11 +1,15 @@
 'use client';
-import styles from './Testimonials.module.scss';
-import { FAQData, userTestimonialsData } from '@/data';
-import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/UserTestimotal/UserTestimonial';
-import { TabsComponent } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TabsComponent/TabsComponent';
-import { useState } from 'react';
+
 import { Button } from '@mui/material';
-import { FAQCustomButton, rentInfoCustomBigButton, SeeAllCustomBigButton } from '@/styles/buttonStyles';
+import { useState } from 'react';
+
+import styles from './Testimonials.module.scss';
+
+import { TabsComponent } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TabsComponent/TabsComponent';
+import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/UserTestimotal/UserTestimonial';
+import { FAQCustomButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
+
+import { FAQData, userTestimonialsData } from '../../../../../../../shared/data';
 
 export const Testimonials = () => {
   const [activeTab, setActiveTab] = useState(1);
@@ -36,6 +40,7 @@ export const Testimonials = () => {
           </div>
           {FAQData.map((faqItem) => (
             <UserTestimonial
+              key={faqItem.id}
               userImage={faqItem.userImage}
               userName={faqItem.userName}
               userComment={faqItem.userComment}
