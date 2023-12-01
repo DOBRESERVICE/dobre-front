@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic';
 
-import { Error } from '@/features/Error/Error';
 import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
 import { getNewProducts, getRecommendedProducts } from '@/shared/api/categoriesApi';
 import { AboutUs } from '@/widgets/AboutUs/AboutUs';

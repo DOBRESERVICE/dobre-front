@@ -10,7 +10,6 @@ interface NewProductsProps {
   newProducts: Product[] | any[];
 }
 export const NewProducts: FC<NewProductsProps> = ({ newProducts }) => {
-  console.log(newProducts, 'new products');
   return (
     <section className={styles.newProductsSection}>
       <TopSectionBar hasLinkArrow barName='Новинки' />

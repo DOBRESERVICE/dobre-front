@@ -95,6 +95,7 @@ import previous from './previousSlideButton.svg';
 import renovation from './renovation.svg';
 import rentButtonIcon from './rentButtonIcon.svg';
 import rentImage from './rentImage.svg';
+import rentTimeArrow from './rentTimeArrow.svg';
 import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
 import searchIcon from './searchIcon.svg';
 import secondLampGroup from './secondLampGroup.svg';
@@ -121,15 +122,12 @@ import userIcon from './userIcon.svg';
 import verified from './verified.svg';
 import vkIcon from './vk.svg';
 import iconVk from './vkIcon.svg';
+import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
-import whiteChecked from './whiteChecked.svg';
-import rentTimeArrow from './rentTimeArrow.svg';
 
 export {
-  rentTimeArrow,
-  whiteChecked,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,
@@ -223,6 +221,7 @@ export {
   renovation,
   rentButtonIcon,
   rentImage,
+  rentTimeArrow,
   rightWhiteSliderIcon,
   russiaMail,
   sdek,
@@ -252,6 +251,7 @@ export {
   userIcon,
   verified,
   vkIcon,
+  whiteChecked,
   whiteLogo,
   yandexGo,
   yandexIcon,

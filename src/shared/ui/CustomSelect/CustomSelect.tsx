@@ -1,15 +1,15 @@
 'use client';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { FormControl, InputLabel, MenuItem, Select, Theme, Menu, Paper, MenuList, SvgIcon, Box } from '@mui/material';
+import { Box,FormControl, MenuItem, Select, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
 
 import styles from './CustomSelect.module.scss';
-import { customMenuItem } from '@/shared/styles/selectStyles';
+
 import { whiteChecked } from '@/shared/image';
-import { Arrow } from '@/shared/ui/Arrow/Arrow';
+import { customMenuItem } from '@/shared/styles/selectStyles';
 
 type selectData = string[] | number[];
 

@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { FC } from 'react';
 
 import styles from './SubcategoryAside.module.scss';
@@ -16,7 +17,6 @@ import { SelectHeader } from '@/widgets/SubcategoryContent/components/Subcategor
 
 import { optionsData } from '../../../../shared/data';
 import { backArrow } from '../../../../shared/image';
-import { useRouter } from 'next/navigation';
 
 interface AsideProps {
   title: string;

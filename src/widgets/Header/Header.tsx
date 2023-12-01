@@ -3,6 +3,7 @@
 import { Button } from '@mui/material';
 import Input from '@mui/material/Input';
 import classNames from 'classnames';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
@@ -27,7 +28,6 @@ import {
   customSearchHeaderButton,
 } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-import dynamic from 'next/dynamic';
 
 const DynamicMenu = dynamic(() => import('@/features/Menu/Menu'));
 const DynamicHeaderLinks = dynamic(() => import('@/widgets/Header/ui/HeaderLinks/HeaderLinks'));

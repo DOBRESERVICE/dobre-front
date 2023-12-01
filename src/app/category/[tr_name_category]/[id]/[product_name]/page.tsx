@@ -6,6 +6,7 @@ import { GeneralRating } from '@/app/category/[tr_name_category]/[id]/[product_n
 import { ProductAsideInfo } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductAsideInfo/ProductAsideInfo';
 import { ProductItemContainer } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/ProductItemContainer';
 import { Testimonials } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Testimonials/Testimonials';
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { Blog } from '@/widgets/Blog/Blog';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
@@ -13,7 +14,6 @@ import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer
 import { getProductData } from '../../../../../shared/api/categoriesApi';
 import { productsData } from '../../../../../shared/data';
 import { commentExclamation } from '../../../../../shared/image';
-import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const { data: productData } = await getProductData(params.product_name);

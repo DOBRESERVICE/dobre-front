@@ -1,13 +1,15 @@
 'use client';
 import Image from 'next/image';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
+
 import styles from './SubcategoriesList.module.scss';
+
 import { Variety } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
 import { SubCategoryItem } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoryListItem/SubcategoryListItem';
 
 import { blueNextArrow } from '../../../../../../shared/image';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 interface SubCategoriesProps {
   varietiesList: Variety[];

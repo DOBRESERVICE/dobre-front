@@ -3,11 +3,11 @@
 import { DatePicker, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import dayjs, { Dayjs } from 'dayjs';
+import { useState } from 'react';
 
 import { customDatePicker, customDatePickerContainer } from '@/shared/styles/datePickerStyles';
 import { Dateicon } from '@/shared/ui/DateIcon/Dateicon';
-import { useState } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
 
 export const CustomDatePicker = () => {
   const [value, setValue] = useState<Dayjs | null>(dayjs('2023-10-12'));
@@ -15,13 +15,12 @@ export const CustomDatePicker = () => {
   const handleChange = (newValue: dayjs.Dayjs | null) => {
     setValue(newValue);
   };
-  console.log(value);
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <DemoContainer components={['DatePicker']} sx={customDatePickerContainer}>
         <DatePicker
           onChange={handleChange}
-          label={'Выберите дату'}
+          label="Выберите дату"
           sx={customDatePicker}
           slots={{ openPickerIcon: Dateicon }}
         />

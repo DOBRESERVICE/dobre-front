@@ -11,8 +11,6 @@ import { CategoryMenuItem } from '@/features/Menu/ui/CategoryMenuItem/CategoryMe
 import { SubCategoryMenuItem } from '@/features/Menu/ui/SubCategoryMenuItem/SubCategoryMenuItem';
 import { useAuthData } from '@/shared/context/authContext';
 import { useCategories } from '@/shared/hooks/useCategories';
-import { BASE_URL } from '@/shared/constants/urls';
-import axios from 'axios';
 
 const Menu = () => {
   const router = useRouter();
