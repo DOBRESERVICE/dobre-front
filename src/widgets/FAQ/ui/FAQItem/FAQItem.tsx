@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { Dispatch, FC, SetStateAction } from 'react';
+
 import styles from './FAQItem.module.scss';
 
 interface FAQItem {

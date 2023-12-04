@@ -1,9 +1,8 @@
 import { AxiosResponse } from 'axios';
 
+import { Post } from '@/interfaces';
 import { ExactCategory, ExactVariety, Product, ProductItem, SubCategory } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
-import { Post } from '@/interfaces';
-import { SectionType } from '@/enums';
 
 export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
   return defaultRequest.get(`/categories/category/${categoryName}`);

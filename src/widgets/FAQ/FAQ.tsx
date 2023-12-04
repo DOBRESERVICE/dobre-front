@@ -1,12 +1,15 @@
 import { Button } from '@mui/material';
 import Image from 'next/image';
+
 import styles from './FAQ.module.scss';
+
+import { SectionType } from '@/enums';
+import { getPost } from '@/shared/api/categoriesApi';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
-import { getPost } from '@/shared/api/categoriesApi';
-import { SectionType } from '@/enums';
 import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
+
+import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
 
 export const FAQ = async () => {
   const { data: FAQData } = await getPost(SectionType.FAQ);

@@ -4,10 +4,9 @@ import { FC, useState } from 'react';
 
 import styles from './FAQContainer.module.scss';
 
+import { Post } from '@/interfaces';
 import { FAQItem } from '@/widgets/FAQ/ui/FAQItem/FAQItem';
 
-import { descriptionData } from '../../../../shared/data';
-import { Post } from '@/interfaces';
 
 interface FAQContainerProps {
   FAQData: Post[];
