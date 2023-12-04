@@ -9,8 +9,11 @@ import { InputSearch } from '@/widgets/SearchBlock/ui/InputSearch/InputSearch';
 
 import { searchCardsData } from '../../shared/data';
 import { firstLampGroup, secondLampGroup } from '../../shared/image';
+import { getPost } from '@/shared/api/categoriesApi';
+import { SectionType } from '@/enums';
 
-const SearchBlock = () => {
+const SearchBlock = async () => {
+  // const { data: searchCardsData } = await getPost(SectionType.MAIN_HEADER);
   return (
     <Wrapper>
       <section className={styles.searchBlockWrapper}>

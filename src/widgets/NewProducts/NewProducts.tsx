@@ -7,7 +7,7 @@ import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 
 interface NewProductsProps {
-  newProducts: Product[] | any[];
+  newProducts: Product[];
 }
 export const NewProducts: FC<NewProductsProps> = ({ newProducts }) => {
   return (

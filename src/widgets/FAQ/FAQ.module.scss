@@ -12,6 +12,15 @@
   margin-top: 100px;
   background-color: #eff6ff;
 }
+.faqContainer {
+  display: flex;
+  max-width: 1100px;
+  margin-inline: 20px;
+  margin-top: 34px;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+}
 
 .faqHeader {
   color: $black;
