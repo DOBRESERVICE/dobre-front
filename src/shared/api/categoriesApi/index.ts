@@ -1,5 +1,6 @@
 import { AxiosResponse } from 'axios';
 
+import { Post } from '@/interfaces';
 import { ExactCategory, ExactVariety, Product, ProductItem, SubCategory } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
 
@@ -21,4 +22,7 @@ export const getNewProducts = async (): Promise<AxiosResponse<Product[]>> => {
 };
 export const getRecommendedProducts = async (): Promise<AxiosResponse<Product[]>> => {
   return defaultRequest.get(`/products/recommended`);
+};
+export const getPost = async (section: string): Promise<AxiosResponse<Post[]>> => {
+  return defaultRequest.get(`/posts/list/${section}`);
 };

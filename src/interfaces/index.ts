@@ -31,3 +31,15 @@ export interface User {
   createdAt: string;
   deletedAt: string | null;
 }
+export interface Post {
+  id_post: number;
+  header_post: string;
+  body_post: string;
+  description: string;
+  section_post: string;
+  key_section: any;
+  rate_post: number;
+  redirect_url: any;
+  post_visible: boolean;
+  is_moderate: boolean;
+}

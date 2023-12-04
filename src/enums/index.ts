@@ -29,3 +29,12 @@ export enum Status {
   ERROR = 'error',
   INIT = 'init',
 }
+export enum SectionType {
+  FAQ = 'faq_popular',
+  NEWS = 'news',
+  MAIN_POPULAR_NOW = 'page_main_block_popular_now',
+  MAIN_CATEGORIES = 'page_main_categories',
+  MAIN_HEADER = 'page_main_header',
+  MAIN_HOW_WORKS = 'page_main_how_works',
+  MAIN_MARKETPLACE = 'page_main_marketplace',
+}

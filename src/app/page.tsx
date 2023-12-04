@@ -8,7 +8,6 @@ import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
 import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
 import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
-
 const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
 const DynamicSearchBlock = dynamic(() => import('@/widgets/SearchBlock/SearchBlock'));
 const DynamicGeneralTestimonials = dynamic(() => import('@/widgets/GeneralTestimonials/GeneralTestimonials'));

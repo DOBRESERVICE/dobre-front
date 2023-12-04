@@ -1,25 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './FAQContainer.module.scss';
 
+import { Post } from '@/interfaces';
 import { FAQItem } from '@/widgets/FAQ/ui/FAQItem/FAQItem';
 
-import { descriptionData } from '../../../../shared/data';
 
-export const FAQContainer = () => {
+interface FAQContainerProps {
+  FAQData: Post[];
+}
+
+export const FAQContainer: FC<FAQContainerProps> = ({ FAQData }) => {
   const [activeCard, setActiveCard] = useState(0);
   return (
     <div className={styles.faqContainer}>
-      {descriptionData.map((item) => (
+      {FAQData.map((item) => (
         <FAQItem
-          key={item.id}
-          title={item.title}
-          text={item.text}
+          key={item.id_post}
+          title={item.header_post}
+          text={item.body_post}
           setActiveCard={setActiveCard}
           activeCard={activeCard}
-          id={item.id}
+          id={item.id_post}
         />
       ))}
     </div>

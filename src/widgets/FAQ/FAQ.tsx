@@ -3,13 +3,16 @@ import Image from 'next/image';
 
 import styles from './FAQ.module.scss';
 
+import { SectionType } from '@/enums';
+import { getPost } from '@/shared/api/categoriesApi';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
 
 import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
 
-export const FAQ = () => {
+export const FAQ = async () => {
+  const { data: FAQData } = await getPost(SectionType.FAQ);
   return (
     <Wrapper>
       <section className={styles.faqSectionWrapper}>
@@ -21,7 +24,7 @@ export const FAQ = () => {
         </div>
         <h2 className={styles.faqHeader}>Ответы на популярные вопросы</h2>
         <div className={styles.content}>
-          <FAQContainer />
+          <FAQContainer FAQData={FAQData} />
           <Button variant='contained' disableRipple size='medium' sx={customRentButton}>
             Смотреть все
             <Image src={linkButtonArrow} alt='plus' />
