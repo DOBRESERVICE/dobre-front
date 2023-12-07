@@ -16,15 +16,7 @@ interface SliderProps {
 
 export const Slider: FC<SliderProps> = ({ children, prevIcon, nextIcon }) => {
   return (
-    <Swiper
-      allowTouchMove={false}
-      noSwiping
-      slidesPerView='auto'
-      centeredSlidesBounds={true}
-      centerInsufficientSlides={true}
-      spaceBetween={20}
-      className={styles.swiper}
-    >
+    <Swiper allowTouchMove={false} noSwiping slidesPerView='auto' spaceBetween={20} className={styles.swiper}>
       {Children.map(children, (child, index) => (
         <SwiperSlide className={styles.slide} key={index}>
           {child}

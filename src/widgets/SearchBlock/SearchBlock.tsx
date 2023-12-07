@@ -11,11 +11,6 @@ import { searchCardsData } from '../../shared/data';
 import { firstLampGroup, secondLampGroup } from '../../shared/image';
 
 const SearchBlock = async () => {
-  // const { data: searchCardsData } = await getPost(SectionType.MAIN_HEADER);
-  console.log('ssss');
-  const handleClick = () => {
-    console.log('f1');
-  };
   return (
     <Wrapper>
       <section className={styles.searchBlockWrapper}>
