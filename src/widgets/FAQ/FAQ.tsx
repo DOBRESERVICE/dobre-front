@@ -1,18 +1,23 @@
+'use client';
 import { Button } from '@mui/material';
 import Image from 'next/image';
 
 import styles from './FAQ.module.scss';
 
 import { SectionType } from '@/enums';
-import { getPost } from '@/shared/api/categoriesApi';
+import { usePost } from '@/shared/hooks/useCategories';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
 
 import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
+import { Loader } from '@/features/Loader/Loader';
 
-export const FAQ = async () => {
-  const { data: FAQData } = await getPost(SectionType.FAQ);
+export const FAQ = () => {
+  const { postData: FAQData } = usePost(SectionType.FAQ);
+  if (!FAQData) {
+    return <Loader />;
+  }
   return (
     <Wrapper>
       <section className={styles.faqSectionWrapper}>

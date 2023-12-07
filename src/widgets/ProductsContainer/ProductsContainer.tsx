@@ -32,6 +32,41 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
       timeInRent: '2 месяца',
       price: '13 450 руб.',
     },
+    {
+      id: 4,
+      timeInRent: '3 месяца',
+      price: '24450 руб.',
+    },
+    {
+      id: 5,
+      timeInRent: '5 месяцев',
+      price: '12450 руб.',
+    },
+    {
+      id: 6,
+      timeInRent: '4 месяца',
+      price: '12450 руб.',
+    },
+    {
+      id: 7,
+      timeInRent: '1 месяца',
+      price: '14450 руб.',
+    },
+    {
+      id: 8,
+      timeInRent: '2 месяца',
+      price: '14450 руб.',
+    },
+    {
+      id: 9,
+      timeInRent: '2 месяца',
+      price: '1340 руб.',
+    },
+    {
+      id: 10,
+      timeInRent: '2 месяца',
+      price: '13450 руб.',
+    },
   ];
 
   return (

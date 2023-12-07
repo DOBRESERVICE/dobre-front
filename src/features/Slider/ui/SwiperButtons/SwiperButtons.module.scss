@@ -20,10 +20,10 @@
   pointer-events: all;
 }
 .swiperButtonsWrapper > button:first-of-type {
-  left: 0;
+  left: 30px;
 }
 .swiperButtonsWrapper > button:last-of-type {
-  right: 0;
+  right: 30px;
 }
 .swiperButtonsWrapper > button:hover {
   opacity: 1;
@@ -47,10 +47,10 @@
 }
 .leftBlur {
   top: 0;
-  left: 0;
+  left: -150px;
 }
 
 .rightBlur {
   top: 0;
-  right: 0;
+  right: -150px;
 }

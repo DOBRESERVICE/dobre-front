@@ -15,6 +15,7 @@ const DynamicRecommendations = dynamic(() => import('@/widgets/Recommendations/R
 export default async function HomePage() {
   const { data: newProductsData } = await getNewProducts();
   const { data: recommendedProductsData } = await getRecommendedProducts();
+
   return (
     <HomeLayout>
       <DynamicAuthModals />

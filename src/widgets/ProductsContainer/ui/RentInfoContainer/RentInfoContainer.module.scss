@@ -14,6 +14,9 @@
 .content {
   display: flex;
   gap: 10px;
+  max-width: 274px;
+  transition: transform .3s;
+  pointer-events: none;
   & > div > p {
     font-size: 9px;
     font-weight: $fweight-big;
@@ -34,4 +37,27 @@
   justify-content: center;
   align-items: center;
   gap:16px;
+  overflow: hidden;
+}
+.rentTimeButton {
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  transition: opacity .3s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  & > .rentTimeButton:first-child {
+    opacity: 0;
+    pointer-events: none;
+    transform: rotate(180deg);
+  }
+& > .rentTimeButton:first-child.prevVisible {
+  opacity: 1;
+  pointer-events: all;
+}
 }

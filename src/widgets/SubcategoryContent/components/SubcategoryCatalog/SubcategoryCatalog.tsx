@@ -30,7 +30,7 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
     },
     {
       id: 3,
-      timeInRent: '2 месяца',
+      timeInRent: '22 месяца',
       price: '13 450 руб.',
     },
   ];

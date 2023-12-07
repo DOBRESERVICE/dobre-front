@@ -17,11 +17,11 @@ interface SliderProps {
 export const Slider: FC<SliderProps> = ({ children, prevIcon, nextIcon }) => {
   return (
     <Swiper
-      uniqueNavElements
       allowTouchMove={false}
       noSwiping
       slidesPerView='auto'
-      loop
+      centeredSlidesBounds={true}
+      centerInsufficientSlides={true}
       spaceBetween={20}
       className={styles.swiper}
     >

@@ -38,3 +38,9 @@ export enum SectionType {
   MAIN_HOW_WORKS = 'page_main_how_works',
   MAIN_MARKETPLACE = 'page_main_marketplace',
 }
+
+type Person = {
+  name: string;
+  age: number;
+};
+type PartialP = Partial<Person>;

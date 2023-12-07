@@ -7,7 +7,6 @@ import styles from './FAQContainer.module.scss';
 import { Post } from '@/interfaces';
 import { FAQItem } from '@/widgets/FAQ/ui/FAQItem/FAQItem';
 
-
 interface FAQContainerProps {
   FAQData: Post[];
 }
