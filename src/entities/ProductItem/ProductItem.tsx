@@ -10,6 +10,7 @@ import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
 
 import { favouriteIcon, mockUser, verified } from '../../shared/image';
+import { Term } from '@/interfaces/categories';
 
 export interface ProductItem {
   id?: number;
@@ -23,7 +24,7 @@ export interface ProductItem {
   isAvailable: boolean;
   rentEndDate?: string;
   isConfirmed: boolean;
-  rentInfoArray: RentInfoData[] | any;
+  rentInfoArray: Term[];
   description: string;
   trCategoryName?: string;
   trSubCategoryName?: string;

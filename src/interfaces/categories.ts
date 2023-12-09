@@ -46,6 +46,15 @@ export interface Product {
   categoryIdCategory: number;
   subcategoryIdSub: number;
   varietyIdVariety: number;
+  terms: Term[];
+}
+export interface Term {
+  id_term: number;
+  teek: string;
+  period: string;
+  price: number;
+  term_visible: boolean;
+  is_moderate: boolean;
 }
 export interface Subcategory {
   id_sub: string;
