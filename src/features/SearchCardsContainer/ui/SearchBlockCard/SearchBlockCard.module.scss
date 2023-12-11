@@ -4,15 +4,23 @@
   border: 1px solid #e2e5e9;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(25px);
-  max-width: 456px;
+  width: 422px;
   position: relative;
+  padding: 30px 16px 35px 38px;
+  @include breakpoint(lg) {
+    width: 363px;
+  }
+}
+.howWeWorkCard {
+  width: 456px;
+  @include breakpoint(lg) {
+    width: 397px;
+  }
 }
 .textContent {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 23px 16px 40px 36px;
-
+  gap: 10px;
   & > h3 {
     color: $black;
     font-size: $font-medium;

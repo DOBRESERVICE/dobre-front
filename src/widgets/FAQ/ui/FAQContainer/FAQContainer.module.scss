@@ -1,3 +1,4 @@
+@import "src/shared/styles/variables";
 .faqContainer {
   display: flex;
   max-width: 1100px;
@@ -6,4 +7,7 @@
   flex-direction: column;
   gap: 20px;
   z-index: 1;
+  @include breakpoint(lg) {
+    max-width: 926px;
+  }
 }

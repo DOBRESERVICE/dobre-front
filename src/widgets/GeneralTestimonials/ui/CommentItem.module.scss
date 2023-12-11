@@ -7,14 +7,16 @@
   position: relative;
 }
 
-.emoji {
-  position: absolute;
-  right: 26px;
-  top: 56px;
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
 }
-
 .itemWrapper {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .imageItem {
@@ -22,22 +24,26 @@
   height: 60px;
   width: 60px;
   border-radius: 6px;
-  margin-right: 19px;
 }
 
 .itemTitle {
+  width: 576px;
   font-size: 22px;
   font-weight: 700;
   line-height: 29px;
-  max-width: 525px;
+  @include breakpoint(lg) {
+    width: 490px;
+  }
 }
 
 .itemDescr {
+  width: 658px;
   font-size: 16px;
   font-weight: 400;
   line-height: 26px;
   letter-spacing: 0.32px;
   margin-top: 24px;
+
 }
 
 .userWrapper {

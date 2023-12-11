@@ -16,8 +16,11 @@ export const CommentItem: FC<AboutItemType> = ({ title, description, userName, u
   return (
     <div className={styles.mainItem}>
       <div className={styles.itemWrapper}>
-        <div className={styles.imageItem} />
-        <div className={styles.itemTitle}>{title}</div>
+        <div className={styles.content}>
+          <div className={styles.imageItem} />
+          <p className={styles.itemTitle}>{title}</p>
+        </div>
+        <Image src={emoji} alt='emoji' className={styles.emoji} />
       </div>
       <div className={styles.itemDescr}>{description}</div>
       <div className={styles.userWrapper}>
@@ -27,7 +30,6 @@ export const CommentItem: FC<AboutItemType> = ({ title, description, userName, u
           <div className={styles.userName}>{userName}</div>
         </div>
       </div>
-      <Image src={emoji} alt='emoji' className={styles.emoji} />
     </div>
   );
 };
