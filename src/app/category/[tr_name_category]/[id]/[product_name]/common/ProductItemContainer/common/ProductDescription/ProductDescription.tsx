@@ -31,10 +31,6 @@ export const ProductDescription: FC<ProductDescriptionProps> = ({
           <p>{secondDescription}</p>
         </div>
       </div>
-      <div className={styles.cardsWrapper}>
-        <PriceInfoCard />
-        <InsuranceCard />
-      </div>
     </div>
   );
 };

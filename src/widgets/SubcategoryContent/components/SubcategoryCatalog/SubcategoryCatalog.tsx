@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 
 import styles from './SubcategoryCatalog.module.scss';
@@ -17,23 +18,6 @@ interface CategoryCatalogProps {
   products: Product[];
 }
 export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
-  const arr = [
-    {
-      id: 1,
-      timeInRent: '1 неделя',
-      price: '1 799 руб.',
-    },
-    {
-      id: 2,
-      timeInRent: '1 месяц',
-      price: '3 930 руб.',
-    },
-    {
-      id: 3,
-      timeInRent: '22 месяца',
-      price: '13 450 руб.',
-    },
-  ];
   return (
     <div className={styles.categoryCatalogWrapper}>
       {products?.length ? (
@@ -71,7 +55,7 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
               sellerInfo='Организация'
               isAvailable={product.enabled_product}
               isConfirmed
-              rentInfoArray={arr}
+              rentInfoArray={product.terms}
             />
           ))}
         </div>

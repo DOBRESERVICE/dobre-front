@@ -13,9 +13,10 @@ import { RentInfoItem } from '@/widgets/ProductsContainer/ui/RentInfoItem/RentIn
 
 import { rentButtonIcon, rentTimeArrow } from '../../../../shared/image';
 import classNames from 'classnames';
+import { Term } from '@/interfaces/categories';
 
 interface RentInfoContainer {
-  rentInfoArray: RentInfoData[];
+  rentInfoArray: Term[];
   trVarietyName?: string;
   trCategoryName?: string;
   trSubCategoryName?: string;
@@ -54,15 +55,16 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({
         >
           <Image src={rentTimeArrow} alt='arrow' />
         </button>
-
         <div className={styles.rentContent}>
           <div className={styles.content} style={{ transform: `translateX(${offset}px)` }}>
-            {rentInfoArray.map((item) => (
-              <RentInfoItem key={item.id} timeInRent={item.timeInRent} price={item.price} />
-            ))}
+            {rentInfoArray ? (
+              rentInfoArray.map((term) => <RentInfoItem key={term.id_term} term={term} />)
+            ) : (
+              <p>здесь ничего нет</p>
+            )}
           </div>
         </div>
-        {rentInfoArray.length > 3 ? (
+        {rentInfoArray?.length > 3 ? (
           <button className={styles.rentTimeButton} onClick={scrollNext} disabled={rentInfoArray.length === count}>
             <Image src={rentTimeArrow} alt='arrow' />
           </button>

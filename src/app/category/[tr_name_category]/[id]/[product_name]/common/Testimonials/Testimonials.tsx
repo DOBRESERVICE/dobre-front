@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@mui/material';
-import { useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './Testimonials.module.scss';
 
@@ -10,26 +10,35 @@ import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product
 import { FAQCustomButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
 
 import { FAQData, userTestimonialsData } from '../../../../../../../shared/data';
+import { ProductTestimonial } from '@/interfaces';
 
-export const Testimonials = () => {
+interface TestimonialsProps {
+  testimonialsData: ProductTestimonial[];
+}
+
+export const Testimonials: FC<TestimonialsProps> = ({ testimonialsData }) => {
   const [activeTab, setActiveTab] = useState(1);
+  const [isClient, setIsClient] = useState(false);
   const countArray = [3, 11];
+  useEffect(() => {
+    setIsClient(true);
+  }, [isClient]);
   return (
     <div className={styles.testimonialsWrapper}>
       <TabsComponent activeTab={activeTab} setActiveTab={setActiveTab} countArray={countArray} />
       {activeTab === 1 &&
-        userTestimonialsData.map((testimonialItem) => (
+        testimonialsData.map((testimonialItem) => (
           <UserTestimonial
-            key={testimonialItem.id}
-            userImage={testimonialItem.userImage}
-            userName={testimonialItem.userName}
-            feedBackDate={testimonialItem.feedbackDate}
-            ownerImage={testimonialItem.ownerImage}
-            status={testimonialItem.status}
-            ratingCount={testimonialItem.feedbackCount}
-            ownerResponse={testimonialItem.ownerResponse}
-            userComment={testimonialItem.userComment}
-            images={testimonialItem.images}
+            key={testimonialItem.id_testimonial}
+            userImage={testimonialItem.user.avatar}
+            userName={testimonialItem.user.email}
+            feedBackDate={testimonialItem.text}
+            ownerImage={testimonialItem.user.avatar}
+            status={testimonialItem.id_testimonial}
+            ratingCount={testimonialItem.id_testimonial}
+            ownerResponse={testimonialItem.userId}
+            userComment={testimonialItem.userId}
+            // images={testimonialItem.images}
           />
         ))}
       {activeTab === 2 && (
@@ -52,9 +61,11 @@ export const Testimonials = () => {
         </>
       )}
       <div className={styles.seeAll}>
-        <Button disableRipple sx={SeeAllCustomBigButton}>
-          Просмотреть все
-        </Button>
+        {isClient && (
+          <Button disableRipple sx={SeeAllCustomBigButton}>
+            Просмотреть все
+          </Button>
+        )}
         <p>Отзывы могут оставлять только те, кто совершил аренду. Так мы формируем честный рейтинг.</p>
       </div>
     </div>

@@ -38,6 +38,7 @@ import {
   tesnimonialToolImage,
   travelling,
 } from '../image';
+import { Product } from '@/interfaces/categories';
 
 export const searchCardsData = [
   {
@@ -181,6 +182,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 7,
@@ -203,6 +214,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 8,
@@ -225,6 +246,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 9,
@@ -247,6 +278,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 16,
@@ -269,6 +310,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 12,
@@ -291,6 +342,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 116,
@@ -313,6 +374,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 126,
@@ -335,6 +406,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 136,
@@ -357,6 +438,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 146,
@@ -379,6 +470,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
   {
     id_product: 156,
@@ -401,6 +502,16 @@ export const productsData = [
     categoryIdCategory: 6,
     subcategoryIdSub: 24,
     varietyIdVariety: 104,
+    terms: [
+      {
+        id_term: 1,
+        teek: '1',
+        period: 'D',
+        price: 1,
+        term_visible: true,
+        is_moderate: true,
+      },
+    ],
   },
 ];
 

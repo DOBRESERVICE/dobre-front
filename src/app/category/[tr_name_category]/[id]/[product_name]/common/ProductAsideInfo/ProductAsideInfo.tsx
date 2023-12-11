@@ -21,8 +21,14 @@ import {
   yandexGo,
 } from '@/shared/image';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
+import { FC } from 'react';
 
-export const ProductAsideInfo = () => {
+interface ProductAsideInfoProps {
+  lon: number;
+  lan: number;
+}
+
+export const ProductAsideInfo: FC<ProductAsideInfoProps> = ({ lon, lan }) => {
   return (
     <aside className={styles.asideWrapper}>
       <div className={styles.userInfo}>
@@ -46,7 +52,7 @@ export const ProductAsideInfo = () => {
           </div>
         </div>
       </div>
-      <YandexMaps />
+      <YandexMaps lon={lon} lan={lan} />
       <div className={styles.wrapper}>
         <div className={styles.deliveryHeader}>
           <Image src={cube} alt='cube' />

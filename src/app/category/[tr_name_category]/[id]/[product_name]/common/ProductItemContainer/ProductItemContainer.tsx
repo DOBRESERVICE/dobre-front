@@ -10,13 +10,9 @@ import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 import { descriptionProductData } from '../../../../../../../shared/data';
-import {
-  favouriteIcon,
-  mock1Image,
-  mock2Image,
-  mock3Image,
-  mockBrandImage,
-} from '../../../../../../../shared/image';
+import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage } from '../../../../../../../shared/image';
+import { PriceInfoCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/PriceInfoCard';
+import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -25,6 +21,7 @@ interface ProductItemContainerProps {
   quantity: number;
   price: string;
   productImage: string | StaticImageData;
+  hasInsurance: boolean;
 }
 export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   productDescription,
@@ -33,6 +30,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   quantity,
   qualityControl,
   price,
+  hasInsurance,
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
   return (
@@ -80,6 +78,10 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
         firstDescription={productDescription}
         mainAdvantages={descriptionProductData.mainAdvantages}
       />
+      <div className={styles.cardsWrapper}>
+        <PriceInfoCard />
+        {hasInsurance && <InsuranceCard />}
+      </div>
       <ProductDetails />
     </div>
   );

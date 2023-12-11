@@ -87,7 +87,7 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
             sellerInfo='Организация'
             isAvailable={product.enabled_product}
             isConfirmed
-            rentInfoArray={arr}
+            rentInfoArray={product.terms}
           />
         ))}
       </Slider>

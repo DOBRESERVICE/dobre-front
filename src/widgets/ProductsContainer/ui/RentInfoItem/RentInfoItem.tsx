@@ -1,16 +1,28 @@
+'use client';
 import { FC } from 'react';
 
 import styles from './RentInfoItem.module.scss';
+import { Term } from '@/interfaces/categories';
 
 interface RentInfoItem {
-  timeInRent: string;
-  price: string;
+  term: Term;
 }
-export const RentInfoItem: FC<RentInfoItem> = ({ timeInRent, price }) => {
+export const RentInfoItem: FC<RentInfoItem> = ({ term }) => {
+  const PeriodMapping: Record<string, string> = {
+    D: 'день',
+    W: 'неделя',
+    M: 'месяц',
+    Y: 'год',
+  };
+
+  const { teek, price, period } = term;
+  const periodText = PeriodMapping[period];
   return (
     <div className={styles.rentInfoItem}>
-      <p>{timeInRent}</p>
-      <span>{price}</span>
+      <p>
+        {teek} {periodText}
+      </p>
+      <span>{price} руб.</span>
     </div>
   );
 };

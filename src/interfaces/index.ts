@@ -43,3 +43,50 @@ export interface Post {
   post_visible: boolean;
   is_moderate: boolean;
 }
+export interface SEOContent {
+  id_seo: number;
+  header_seo: string;
+  body_seo: string;
+  description: string;
+  section_seo: string;
+  key_section: string;
+  region: string;
+  image: any;
+  seo_visible: boolean;
+}
+
+export interface ProductTestimonial {
+  id_testimonial: number;
+  text: string;
+  group: string;
+  testimonial_visible: boolean;
+  is_moderate: boolean;
+  productIdProduct: number;
+  userId: string;
+  answ_id: any;
+  user: User;
+  product: ProductInfo;
+  answers: Answer[];
+}
+
+export interface User {
+  id: string;
+  email: string;
+  role: string;
+  avatar: any;
+}
+
+export interface ProductInfo {
+  id_product: number;
+}
+
+export interface Answer {
+  answer: number;
+  testimonial: Testimonial;
+}
+
+export interface Testimonial {
+  id_testimonial: number;
+  text: string;
+  user: User;
+}

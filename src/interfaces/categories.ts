@@ -46,6 +46,15 @@ export interface Product {
   categoryIdCategory: number;
   subcategoryIdSub: number;
   varietyIdVariety: number;
+  terms: Term[];
+}
+export interface Term {
+  id_term: number;
+  teek: string;
+  period: string;
+  price: number;
+  term_visible: boolean;
+  is_moderate: boolean;
 }
 export interface Subcategory {
   id_sub: string;
@@ -93,6 +102,7 @@ export interface ProductItem {
   price_segment: string;
   rent_period: string;
   rent_terms: string;
+  insurance: boolean;
   quantity: number;
   specs_product: string;
   price: string;
@@ -111,17 +121,55 @@ export interface ProductItem {
   subcategory: Subcategory;
   variety: Variety;
   terms: Term[];
+  properties: Property[];
+  address: Address;
+}
+export interface Property {
+  id_prop: number;
+  name_prop: string;
+  tr_name_prop: string;
+  description: any;
+  value: number;
+  enabled_prop: any;
+  productIdProduct: number;
+  featureIdFeature: any;
+}
+export interface Address {
+  id_address: number;
+  lan: string;
+  lon: string;
+  description: string;
+  region: string;
+  icon: any;
+  userId: string;
 }
 
-export interface Term {
-  id_term: number;
-  teek: string;
-  period: string;
-  price: number;
-  term_visible: boolean;
+export interface NewProduct {
+  id_product: number;
+  name_product: string;
+  tr_name_product: string;
+  description: string;
+  quality_control: number;
+  price_segment: string;
+  rent_period: string;
+  rent_terms: string;
+  quantity: number;
+  specs_product: string;
+  price: string;
+  residual: number;
+  ransom: number;
+  image: string;
+  insurance: boolean;
+  enabled_product: boolean;
   is_moderate: boolean;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt: any;
-  productIdProduct: number;
+  userId: any;
+  addressIdAddress: any;
+  brandIdBrand: any;
+  categoryIdCategory: number;
+  subcategoryIdSub: number;
+  varietyIdVariety: number;
+  category: Category;
+  subcategory: Subcategory;
+  variety: Variety;
+  terms: Term[];
 }

@@ -1,3 +1,4 @@
+'use client';
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import { FC } from 'react';
@@ -59,7 +60,7 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
             labelSecondImage={dateArrow}
             selectData={['sss']}
           />
-          {count > 0 && (
+          {count > 0 ? (
             <CustomSelect
               formControlStyles={customProductQuantityFormSelect}
               labelStyles={customDateLabel}
@@ -67,6 +68,8 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
               label={`${count} шт.`}
               selectData={availableQuantityArray}
             />
+          ) : (
+            ''
           )}
         </div>
       </div>
