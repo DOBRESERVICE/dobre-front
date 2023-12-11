@@ -17,7 +17,7 @@ export const getCertainVariety = async (variety: string): Promise<AxiosResponse<
 export const getProductData = async (productId: string): Promise<AxiosResponse<ProductItem>> => {
   return defaultRequest.get(`/products/${productId}`);
 };
-export const getNewProducts = async (): Promise<AxiosResponse<Product[]>> => {
+export const getNewProducts = async (): Promise<AxiosResponse<NewProduct[]>> => {
   return defaultRequest.get(`/products/new`);
 };
 export const getRecommendedProducts = async (): Promise<AxiosResponse<Product[]>> => {

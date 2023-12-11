@@ -143,18 +143,6 @@ export interface Address {
   icon: any;
   userId: string;
 }
-export interface Term {
-  id_term: number;
-  teek: string;
-  period: string;
-  price: number;
-  term_visible: boolean;
-  is_moderate: boolean;
-  createdAt: string;
-  updatedAt: string;
-  deletedAt: any;
-  productIdProduct: number;
-}
 
 export interface NewProduct {
   id_product: number;
