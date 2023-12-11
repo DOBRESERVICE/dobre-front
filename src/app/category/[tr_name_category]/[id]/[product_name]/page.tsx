@@ -11,12 +11,15 @@ import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { Blog } from '@/widgets/Blog/Blog';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 
-import { getProductData } from '../../../../../shared/api/categoriesApi';
+import { getProductData, getProductTestimonials } from '../../../../../shared/api/categoriesApi';
 import { productsData } from '../../../../../shared/data';
 import { commentExclamation } from '../../../../../shared/image';
+import { getSEOContent } from '@/shared/api/contentApi';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const { data: productData } = await getProductData(params.product_name);
+  const { data: SEOData } = await getSEOContent('variety', params.product_name);
+  const { data: testimonialsData } = await getProductTestimonials(productData.id_product);
   const breadCrumbsData = [
     {
       id: 1,
@@ -44,7 +47,8 @@ export default async function ProductPage({ params }: { params: { product_name: 
       linkName: productData.name_product,
     },
   ];
-
+  const lan = Number(productData.address.lan);
+  const lon = Number(productData.address.lon);
   return (
     <>
       <section className={styles.productSection}>
@@ -66,11 +70,12 @@ export default async function ProductPage({ params }: { params: { product_name: 
             price={productData.price}
             qualityControl={productData.quality_control}
             quantity={productData.quantity}
+            hasInsurance={productData.insurance}
           />
-          <ProductAsideInfo />
+          <ProductAsideInfo lan={lan} lon={lon} />
         </div>
         <div className={styles.ratingWrapper}>
-          <Testimonials />
+          <Testimonials testimonialsData={testimonialsData} />
           <GeneralRating />
         </div>
       </section>
@@ -78,10 +83,7 @@ export default async function ProductPage({ params }: { params: { product_name: 
         <TopSectionBar hasLinkArrow barName='Похожие товары' />
         <ProductsContainer products={productsData} />
       </section>
-      <Blog
-        header='Аренда Комбинир. перфоратор Hilti TE 70-AVR 230V 2208672'
-        text='Прокат дрели в Минске – это чрезвычайно выгодное вложение средств. Мы сдаём свои инструменты в аренду физическим и юридическим лицам. Нашим клиентом может быть любой совершеннолетний гражданин Беларуси. У нас представлены такие проверенные бренды, как MAKITA, BOSCH, WORTEX и др. При желании клиент может продлить срок аренды, предварительно позвонив нам по телефону. При аренде товара более, чем на сутки, предусмотрена система скидок. Для того, чтобы арендовать у нас инструмент либо вернуть его обратно, потребителю достаточно посетить офис нашей компании.'
-      />
+      <Blog SEOData={SEOData} />
     </>
   );
 }

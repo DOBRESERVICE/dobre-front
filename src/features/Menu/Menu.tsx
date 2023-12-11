@@ -10,7 +10,7 @@ import { Loader } from '@/features/Loader/Loader';
 import { CategoryMenuItem } from '@/features/Menu/ui/CategoryMenuItem/CategoryMenuItem';
 import { SubCategoryMenuItem } from '@/features/Menu/ui/SubCategoryMenuItem/SubCategoryMenuItem';
 import { useAuthData } from '@/shared/context/authContext';
-import { useCategories } from '@/shared/hooks/useCategories';
+import { useCategories } from '@/shared/hooks/APIHooks/useCategories';
 
 const Menu = () => {
   const router = useRouter();

@@ -14,11 +14,3 @@ export function useCategories() {
     isError: error,
   };
 }
-export function usePost(section: string) {
-  const { data, error, isLoading } = useSWR<Post[]>(`posts/list/${section}`, fetcher);
-  return {
-    postData: data,
-    isLoading,
-    isError: error,
-  };
-}

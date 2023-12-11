@@ -5,6 +5,7 @@ import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryCont
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
 
 import { getCertainVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
+import { getSEOContent } from '@/shared/api/contentApi';
 
 export default async function CategoryPage({
   params,
@@ -16,6 +17,7 @@ export default async function CategoryPage({
   const variety = searchParams?.variety ?? 'all';
   const { data: certainSubCategoryData } = await getSubCategory(params.id);
   const { data: certainVarietyData } = await getCertainVariety(variety);
+  const { data: SEOData } = await getSEOContent('subcategory', params.id);
   const breadCrumbsData = [
     {
       id: 1,
@@ -49,10 +51,7 @@ export default async function CategoryPage({
         subCategoryTrName={certainSubCategoryData.tr_name_sub}
       />
       <SubcategoryContent products={certainVarietyData.products} subCategoryData={certainSubCategoryData} />
-      <Blog
-        header='Профессиональный ремонт и стройка: ваш путь к идеальному дому'
-        text='Добро пожаловать в мир ремонта и стройки, где креативность встречается с качеством, а ваш дом становится идеальным местом для жизни! Мы - ваш надежный партнер в создании и обновлении вашего жилья. Независимо от того, нужен ли вам косметический ремонт или полноценное строительство, у нас есть решения, которые сделают вашу мечту о идеальном доме реальностью.'
-      />
+      <Blog SEOData={SEOData} />
     </>
   );
 }

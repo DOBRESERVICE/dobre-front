@@ -2,21 +2,20 @@ import { FC } from 'react';
 
 import styles from './Blog.module.scss';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { SEOContent } from '@/interfaces';
 
 interface BlogProps {
-  header: string;
-  text: string;
-  image?: string;
+  SEOData: SEOContent;
 }
-export const Blog: FC<BlogProps> = ({ header, text }) => {
+export const Blog: FC<BlogProps> = ({ SEOData }) => {
   return (
     <Wrapper>
       <section className={styles.sectionBlogWrapper}>
         <div className={styles.content}>
           <div className={styles.emptyBlock} />
           <div className={styles.textBlock}>
-            <h2>{header}</h2>
-            <p>{text}</p>
+            <h2>{SEOData.header_seo || 'здесь будет хедер'}</h2>
+            <p>{SEOData.body_seo || 'здесь будет тело '}</p>
           </div>
         </div>
       </section>

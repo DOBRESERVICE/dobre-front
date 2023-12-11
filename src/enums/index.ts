@@ -45,3 +45,8 @@ export enum Period {
   M = 'месяц',
   Y = 'год',
 }
+export enum SECTION_SEO {
+  CATEGORY = 'category',
+  SUBCATEGORY = 'subcategory',
+  VARIETY = 'variety',
+}
