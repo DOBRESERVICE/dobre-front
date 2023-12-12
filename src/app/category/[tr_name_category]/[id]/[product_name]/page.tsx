@@ -7,19 +7,20 @@ import { ProductAsideInfo } from '@/app/category/[tr_name_category]/[id]/[produc
 import { ProductItemContainer } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/ProductItemContainer';
 import { Testimonials } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Testimonials/Testimonials';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { getSEOContent } from '@/shared/api/contentApi';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { Blog } from '@/widgets/Blog/Blog';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 
-import { getProductData, getProductTestimonials } from '../../../../../shared/api/categoriesApi';
+import { getProductData, getProductFAQ, getProductTestimonials } from '../../../../../shared/api/categoriesApi';
 import { productsData } from '../../../../../shared/data';
 import { commentExclamation } from '../../../../../shared/image';
-import { getSEOContent } from '@/shared/api/contentApi';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const { data: productData } = await getProductData(params.product_name);
   const { data: SEOData } = await getSEOContent('variety', params.product_name);
   const { data: testimonialsData } = await getProductTestimonials(productData.id_product);
+  const { data: FAQData } = await getProductFAQ(productData.id_product);
   const breadCrumbsData = [
     {
       id: 1,
@@ -75,7 +76,7 @@ export default async function ProductPage({ params }: { params: { product_name: 
           <ProductAsideInfo lan={lan} lon={lon} />
         </div>
         <div className={styles.ratingWrapper}>
-          <Testimonials testimonialsData={testimonialsData} />
+          <Testimonials testimonialsData={testimonialsData} FAQData={FAQData} />
           <GeneralRating />
         </div>
       </section>

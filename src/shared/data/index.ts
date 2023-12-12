@@ -1,3 +1,4 @@
+
 import {
   aeg,
   blueArrow,
@@ -38,7 +39,6 @@ import {
   tesnimonialToolImage,
   travelling,
 } from '../image';
-import { Product } from '@/interfaces/categories';
 
 export const searchCardsData = [
   {

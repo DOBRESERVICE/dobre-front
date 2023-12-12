@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 import styles from './NewProducts.module.scss';
 
-import { NewProduct, Product } from '@/interfaces/categories';
+import { NewProduct } from '@/interfaces/categories';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 

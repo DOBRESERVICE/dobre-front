@@ -1,4 +1,5 @@
 import useSWR from 'swr/immutable';
+
 import { Post } from '@/interfaces';
 import { fetcher } from '@/shared/hooks/APIHooks/useCategories';
 

@@ -16,59 +16,6 @@ interface ProductsContainer {
 }
 
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
-  const arr = [
-    {
-      id: 1,
-      timeInRent: '1 неделя',
-      price: '1 799 руб.',
-    },
-    {
-      id: 2,
-      timeInRent: '1 месяц',
-      price: '3 930 руб.',
-    },
-    {
-      id: 3,
-      timeInRent: '2 месяца',
-      price: '13 450 руб.',
-    },
-    {
-      id: 4,
-      timeInRent: '3 месяца',
-      price: '24450 руб.',
-    },
-    {
-      id: 5,
-      timeInRent: '5 месяцев',
-      price: '12450 руб.',
-    },
-    {
-      id: 6,
-      timeInRent: '4 месяца',
-      price: '12450 руб.',
-    },
-    {
-      id: 7,
-      timeInRent: '1 месяца',
-      price: '14450 руб.',
-    },
-    {
-      id: 8,
-      timeInRent: '2 месяца',
-      price: '14450 руб.',
-    },
-    {
-      id: 9,
-      timeInRent: '2 месяца',
-      price: '1340 руб.',
-    },
-    {
-      id: 10,
-      timeInRent: '2 месяца',
-      price: '13450 руб.',
-    },
-  ];
-
   return (
     <div className={styles.productsWrapper}>
       <Slider nextIcon={nextArrow} prevIcon={previous}>
@@ -88,6 +35,7 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
             isAvailable={product.enabled_product}
             isConfirmed
             rentInfoArray={product.terms}
+            id={product.id_product}
           />
         ))}
       </Slider>

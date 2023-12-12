@@ -1,6 +1,7 @@
 import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 import { getCertainCategory, getNewCategoryProducts, getSubCategory } from '@/shared/api/categoriesApi';
+import { getSEOContent } from '@/shared/api/contentApi';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { Brands } from '@/widgets/Brands/Brands';
@@ -8,7 +9,6 @@ import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
 import { Construction } from '@/widgets/Construction/Construction';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
 import { PopularTools } from '@/widgets/PopularTools/PopularTools';
-import { getSEOContent } from '@/shared/api/contentApi';
 
 export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
   const { data: certainCategoryData } = await getCertainCategory(params.tr_name_category);
@@ -40,7 +40,6 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
   if (!subCategoriesData) {
     return <NoProductsFound />;
   }
-  console.log(newProductsData);
   return (
     <>
       <Wrapper>

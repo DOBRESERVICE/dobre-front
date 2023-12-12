@@ -2,8 +2,6 @@ import { FC } from 'react';
 
 import styles from './ProductDescription.module.scss';
 
-import { InsuranceCard } from '../InsuranceCard/InsuranceCard';
-import { PriceInfoCard } from '../PriceInfoCard/PriceInfoCard';
 
 interface ProductDescriptionProps {
   firstDescription: string;

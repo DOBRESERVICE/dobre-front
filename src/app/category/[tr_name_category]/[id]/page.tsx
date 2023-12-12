@@ -1,11 +1,11 @@
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { getSEOContent } from '@/shared/api/contentApi';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
 
 import { getCertainVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
-import { getSEOContent } from '@/shared/api/contentApi';
 
 export default async function CategoryPage({
   params,

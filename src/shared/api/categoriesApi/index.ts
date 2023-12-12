@@ -29,9 +29,9 @@ export const getPost = async (section: string): Promise<AxiosResponse<Post[]>> =
 export const getNewCategoryProducts = async (id: string): Promise<AxiosResponse<NewProduct[]>> => {
   return defaultRequest.get(`/products/new`, { params: { id: id } });
 };
-export const getProductTestimonials = async (
-  productID: number,
-  faq?: boolean
-): Promise<AxiosResponse<ProductTestimonial[]>> => {
-  return defaultRequest.get(`/testimonials/product/${productID}`, { params: { faq: faq } });
+export const getProductTestimonials = async (productID: number): Promise<AxiosResponse<ProductTestimonial[]>> => {
+  return defaultRequest.get(`/testimonials/product/${productID}`);
+};
+export const getProductFAQ = async (productID: number): Promise<AxiosResponse<ProductTestimonial[]>> => {
+  return defaultRequest.get(`/testimonials/product/${productID}`, { params: { faq: true } });
 };

@@ -15,14 +15,28 @@
   display: flex;
   margin-top: 18px;
   gap: 20px;
-}
+ }
 
 .testimonialsImage {
   border-radius: 16px;
 }
+.imageWrapper {
+  width: 575px;
+  height: 690px;
+  @include breakpoint(lg) {
+    width: 500px;
+  }
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
 .commentWrapper {
-  width: 100%;
   display: flex;
+  width: 813px;
   flex-direction: column;
   gap: 20px;
+  @include breakpoint(lg) {
+    width: 710px;
+  }
 }

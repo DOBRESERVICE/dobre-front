@@ -8,7 +8,6 @@ import { ButtonsContainer } from '@/widgets/HowWeWork/ui/ButtonsContainer/Button
 
 import { howWeWorkData } from '../../shared/data';
 import { howWeWorkFirstGroup } from '../../shared/image';
-import { useState } from 'react';
 
 export const HowWeWork = () => {
   return (

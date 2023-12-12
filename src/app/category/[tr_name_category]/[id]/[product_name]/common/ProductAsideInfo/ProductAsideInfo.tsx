@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { FC } from 'react';
 
 import styles from './ProductAsideInfo.module.scss';
 
@@ -21,7 +22,8 @@ import {
   yandexGo,
 } from '@/shared/image';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
-import { FC } from 'react';
+
+import { blueNextArrow } from '../../../../../../../shared/image';
 
 interface ProductAsideInfoProps {
   lon: number;
@@ -40,7 +42,7 @@ export const ProductAsideInfo: FC<ProductAsideInfoProps> = ({ lon, lan }) => {
             <div>
               <p>Viola. K</p> <Image src={verified} alt='verified' />
             </div>
-            <RatingComponent feedbackType='iconFeedback' rating={4.9} feedbackCount={31} />
+            <RatingComponent feedbackType='textFeedback' rating={4.9} feedbackCount={0} />
           </div>
         </div>
         <div className={styles.content}>
@@ -55,8 +57,14 @@ export const ProductAsideInfo: FC<ProductAsideInfoProps> = ({ lon, lan }) => {
       <YandexMaps lon={lon} lan={lan} />
       <div className={styles.wrapper}>
         <div className={styles.deliveryHeader}>
-          <Image src={cube} alt='cube' />
-          <p>Доставка</p>
+          <div>
+            <Image src={cube} alt='cube' />
+            <p>Доставка</p>
+          </div>
+          <div className={styles.headerTerms}>
+            <p>Условия доставки</p>
+            <Image src={blueNextArrow} alt='delivery terms' />
+          </div>
         </div>
         <div className={styles.deliveryServices}>
           <Image src={yandexGo} alt='yandex go' />
@@ -65,13 +73,15 @@ export const ProductAsideInfo: FC<ProductAsideInfoProps> = ({ lon, lan }) => {
           <Image src={kce} alt='kce' />
           <Image src={russiaMail} alt='russia mail' />
         </div>
-        <p className={styles.deliveryText}>
-          Бесплатная доставка при аренде от 7 дней по Москве. В остальных случаях стоимость доставки рассчитывается
-          курьерской службой исход из вашего местоположения.
-        </p>
       </div>
       <div className={styles.wrapper}>
-        <p className={styles.paymentMethods}>Способы оплаты</p>
+        <div className={styles.deliveryHeader}>
+          <p className={styles.paymentMethods}>Оплата</p>
+          <div className={styles.headerTerms}>
+            <p>Условия оплаты</p>
+            <Image src={blueNextArrow} alt='payment terms' />
+          </div>
+        </div>
         <div className={styles.paymentMethodsContent}>
           <div>
             <div className={styles.paymentIconWrapper}>

@@ -1,9 +1,7 @@
 import useSWR from 'swr/immutable';
 
-import { Post } from '@/interfaces';
 import { Category } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
-import { SectionType } from '@/enums';
 
 export const fetcher = (url: string) => defaultRequest.get(url).then((res) => res.data);
 export function useCategories() {

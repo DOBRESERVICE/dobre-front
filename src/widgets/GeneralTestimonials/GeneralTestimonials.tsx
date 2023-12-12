@@ -14,7 +14,7 @@ const GeneralTestimonials = () => {
       <div className={styles.wrapper}>
         <div className={styles.title}>Истории, которые нас сближают</div>
         <div className={styles.contentWrapper}>
-          <div>
+          <div className={styles.imageWrapper}>
             <Image src={testimonialsImage} alt='testimonialsImage' className={styles.testimonialsImage} />
           </div>
           <div className={styles.commentWrapper}>

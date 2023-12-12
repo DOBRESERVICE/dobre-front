@@ -1,19 +1,18 @@
 'use client';
 
 import { Button } from '@mui/material';
+import classNames from 'classnames';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './RentInfoContainer.module.scss';
 
-import { RentInfoData } from '@/interfaces';
+import { Term } from '@/interfaces/categories';
 import { rentInfoCustomButton } from '@/shared/styles/buttonStyles';
 import { RentInfoItem } from '@/widgets/ProductsContainer/ui/RentInfoItem/RentInfoItem';
 
 import { rentButtonIcon, rentTimeArrow } from '../../../../shared/image';
-import classNames from 'classnames';
-import { Term } from '@/interfaces/categories';
 
 interface RentInfoContainer {
   rentInfoArray: Term[];

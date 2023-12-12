@@ -1,19 +1,20 @@
+'use client';
 import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
 import styles from './ProductItem.module.scss';
 
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
-import { RentInfoData } from '@/interfaces';
+import { Term } from '@/interfaces/categories';
+import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
 
 import { favouriteIcon, mockUser, verified } from '../../shared/image';
-import { Term } from '@/interfaces/categories';
 
 export interface ProductItem {
-  id?: number;
+  id: number;
   itemName: string;
   userUrl: string | StaticImageData | null;
   photoUrl: string | StaticImageData;
@@ -46,15 +47,16 @@ export const ProductItem: FC<ProductItem> = ({
   description,
   rentInfoArray,
   productId,
+  id,
 }) => {
   return (
     <div className={styles.newProductWrapper}>
-      <Image src={userUrl ? userUrl : mockUser} alt='user' />
+      <Image width={45} height={45} src={mockUser} alt='user' />
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
       <div className={styles.mainImageWrapper}>
-        <Image src={photoUrl} alt='item' width={340} height={260} />
+        <Image src={`${IMAGE_BASE_URL}${photoUrl}`} alt='item' width={340} height={260} />
       </div>
       <div className={styles.content}>
         <StatusBar status={status} />

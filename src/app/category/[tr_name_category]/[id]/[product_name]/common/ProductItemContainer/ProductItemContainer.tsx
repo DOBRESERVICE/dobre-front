@@ -3,16 +3,17 @@ import { FC } from 'react';
 
 import styles from './ProductItemContainer.module.scss';
 
+import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
+import { PriceInfoCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/PriceInfoCard';
 import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
 import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 import { descriptionProductData } from '../../../../../../../shared/data';
 import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage } from '../../../../../../../shared/image';
-import { PriceInfoCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/PriceInfoCard';
-import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -69,7 +70,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
           <div className={styles.brandWrapper}>
             <Image src={mockBrandImage} alt='brand' />
           </div>
-          <Image src={productImage} width={500} height={500} alt='ss' />
+          <Image src={`${IMAGE_BASE_URL}${productImage}`} width={500} height={500} alt='ss' />
         </div>
         <RentInfoPannel count={quantity} availableQuantityArray={availableQuantityArray} />
       </div>

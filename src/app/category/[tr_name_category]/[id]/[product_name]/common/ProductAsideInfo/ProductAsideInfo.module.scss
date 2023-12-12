@@ -1,6 +1,6 @@
 @import '@/shared/styles/variables';
 .asideWrapper {
-  min-width: 140px;
+  min-width: 338px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -75,9 +75,13 @@
 }
 .deliveryHeader {
   display: flex;
-  gap: 10px;
-
-  & p {
+  align-items: center;
+  justify-content: space-between;
+  & > div:first-child {
+    display: flex;
+    gap: 10px;
+  }
+  & > div:first-child p {
     font-size: 16px;
     color: $black;
     font-weight: $fweight-big;
@@ -133,6 +137,16 @@
   border-radius: 50%;
   border: 1px solid $light-graphite;
 }
-.yMap {
-  width: 100%;
+
+.headerTerms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  & > p {
+    color: $deep-blue;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+  }
 }

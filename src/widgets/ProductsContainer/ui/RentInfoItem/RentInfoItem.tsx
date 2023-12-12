@@ -2,6 +2,7 @@
 import { FC } from 'react';
 
 import styles from './RentInfoItem.module.scss';
+
 import { Term } from '@/interfaces/categories';
 
 interface RentInfoItem {
