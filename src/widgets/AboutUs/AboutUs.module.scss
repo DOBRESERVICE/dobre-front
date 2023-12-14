@@ -6,7 +6,6 @@
   border-top-right-radius: 16px;
   border-top-left-radius: 16px;
   border-bottom: 1px solid #d9d9d9;
-  padding-bottom: 99px;
 }
 
 .header {
@@ -18,7 +17,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background: $sky-blue;
   width: 100%;
   border-top-right-radius: 16px;
@@ -26,7 +24,10 @@
 }
 
 .titleTextWrapper {
-  padding-left: 30px;
+  margin-left: 220px;
+  @include breakpoint(lg) {
+    margin-left: 210px;
+  }
 }
 
 .titleText {
@@ -48,17 +49,24 @@
 
 .acceptImage {
   position: absolute;
-  left: 26%;
+  left: 30%;
   bottom: 10px;
   z-index: 1;
 }
 
 .itemsWrapper {
   display: flex;
-  justify-content: space-around;
-  margin-top: 79px;
+  gap: 20px;
+  padding-top: 40px;
+  padding-bottom: 100px;
 }
 
 .imageWrapper {
   position: relative;
+  & > img {
+  @include breakpoint(lg) {
+    width: 502px;
+  }
+  }
+
 }
