@@ -30,14 +30,17 @@
     "postcss": "8.4.30",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
+    "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-google-recaptcha": "^3.1.0",
+    "react-multi-date-picker": "^4.4.1",
     "sass": "^1.68.0",
     "swiper": "^10.3.1",
     "swr": "^2.2.4",
     "typescript": "5.2.2"
   },
   "devDependencies": {
+    "@types/react-date-range": "^1.4.9",
     "@types/react-google-recaptcha": "^2.1.5",
     "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^6.11.0",

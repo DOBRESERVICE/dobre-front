@@ -1,7 +1,7 @@
 'use client';
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import styles from './RentInfoPannel.module.scss';
 
@@ -18,6 +18,9 @@ import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
 
 import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../shared/image';
+import DatePicker from 'react-multi-date-picker';
+import type { Value } from 'react-multi-date-picker';
+import InputIcon from 'react-multi-date-picker/components/input_icon';
 
 interface RentInfoPannelProps {
   count: number;
@@ -42,6 +45,20 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
   //     secondDate: '12 окт.',
   //   },
   // ];
+  const [values, setValues] = useState<Value>(new Date());
+  const strSVG = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='9' viewBox='0 0 11 9' fill='none'>
+      <path
+        d='M9.7885 3.38505L6.40345 0L5.2885 1.11495L7.88505 3.71149H0V5.28851H7.88505L5.2885 7.88505L6.40345 9L9.7885 5.61495C10.0841 5.31921 10.2502 4.91817 10.2502 4.5C10.2502 4.08183 10.0841 3.68079 9.7885 3.38505Z'
+        fill='#646E74'
+      />
+    </svg>`;
+  const [isClient, setIsClient] = useState(false);
+  useEffect(() => {
+    setIsClient(true);
+  }, [isClient, setIsClient]);
+  const svg = new Blob([strSVG], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(svg);
+
   return (
     <div className={styles.productInfo}>
       <div>
@@ -50,16 +67,7 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
           <ProductRentStatus isAvailable />
         </div>
         <div className={styles.selectWrapper}>
-          <CustomSelect
-            formControlStyles={customDateFormSelect}
-            selectStyles={customDateSelect}
-            labelStyles={customDateLabel}
-            labelImage={dateImage}
-            firstPartLabel='10 окт.'
-            secondPartLabel='12 окт.'
-            labelSecondImage={dateArrow}
-            selectData={['sss']}
-          />
+          <DatePicker render={<InputIcon />} range value={values} onChange={setValues} />
           {count > 0 ? (
             <CustomSelect
               formControlStyles={customProductQuantityFormSelect}
