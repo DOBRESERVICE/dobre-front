@@ -126,8 +126,10 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
+import defaultWhiteArrow from './default-white-arrow.svg';
 
 export {
+  defaultWhiteArrow,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,

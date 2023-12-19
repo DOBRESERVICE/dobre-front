@@ -47,6 +47,15 @@ export interface Product {
   subcategoryIdSub: number;
   varietyIdVariety: number;
   terms: Term[];
+  variety: {
+    tr_name_variety: string;
+  };
+  category: {
+    tr_name_category: string;
+  };
+  subcategory: {
+    tr_name_sub: string;
+  };
 }
 export interface Term {
   id_term: number;

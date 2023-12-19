@@ -12,6 +12,7 @@ import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
 
 import { favouriteIcon, mockUser, verified } from '../../shared/image';
+import Link from 'next/link';
 
 export interface ProductItem {
   id: number;
@@ -48,6 +49,8 @@ export const ProductItem: FC<ProductItem> = ({
   rentInfoArray,
   productId,
   id,
+  trSubCategoryName,
+  trCategoryName,
 }) => {
   return (
     <div className={styles.newProductWrapper}>
@@ -55,9 +58,9 @@ export const ProductItem: FC<ProductItem> = ({
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
-      <div className={styles.mainImageWrapper}>
+      <Link href={`/category/${trCategoryName}/${trSubCategoryName}/${productId}`} className={styles.mainImageWrapper}>
         <Image src={`${IMAGE_BASE_URL}${photoUrl}`} alt='item' width={340} height={260} />
-      </div>
+      </Link>
       <div className={styles.content}>
         <StatusBar status={status} />
         <div className={styles.infoWrapper}>
@@ -67,13 +70,7 @@ export const ProductItem: FC<ProductItem> = ({
         <p className={styles.itemName}>
           {itemName} {description}
         </p>
-        <RentInfoContainer
-          rentInfoArray={rentInfoArray}
-          // trVarietyName={trVarietyName}
-          // trCategoryName={trCategoryName}
-          // trSubCategoryName={trSubCategoryName}
-          productId={productId}
-        />
+        <RentInfoContainer rentInfoArray={rentInfoArray} productId={productId} />
         <div className={styles.sellerInfoContainer}>
           {isConfirmed && <Image src={verified} alt='verified' />}
           <p className={styles.sellerInfo}>{sellerInfo}</p>

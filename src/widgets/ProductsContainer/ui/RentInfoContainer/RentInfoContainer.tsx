@@ -16,19 +16,9 @@ import { rentButtonIcon, rentTimeArrow } from '../../../../shared/image';
 
 interface RentInfoContainer {
   rentInfoArray: Term[];
-  trVarietyName?: string;
-  trCategoryName?: string;
-  trSubCategoryName?: string;
   productId: number;
 }
-export const RentInfoContainer: FC<RentInfoContainer> = ({
-  rentInfoArray,
-  trSubCategoryName,
-  trCategoryName,
-  trVarietyName,
-  productId,
-}) => {
-  const router = useRouter();
+export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
   const [isClient, setIsClient] = useState(false);
   const [offset, setOffset] = useState(0);
   const [count, setCount] = useState(2);
@@ -70,11 +60,7 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({
         ) : null}
       </div>
       {isClient && (
-        <Button
-          disableRipple
-          sx={rentInfoCustomButton}
-          onClick={() => router.push(`/category/${trCategoryName}/${trSubCategoryName}/${trVarietyName}/${productId}`)}
-        >
+        <Button disableRipple sx={rentInfoCustomButton}>
           <Image src={rentButtonIcon} alt='rent' />
           Арендовать
         </Button>

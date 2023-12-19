@@ -12,11 +12,13 @@ export const RentIntroduction = () => {
   return (
     <Wrapper>
       <div className={styles.wrapper}>
-        <div className={styles.title}>
-          Разместите свою первую вещь
-          <span> легко и быстро</span>
+        <div className={styles.textContent}>
+          <h2 className={styles.title}>
+            Разместите свою первую вещь
+            <span> легко и быстро</span>
+          </h2>
+          <h3 className={styles.description}>Получай деньги за аренду, когда удобно на любую вашу карту</h3>
         </div>
-        <div className={styles.description}>Получай деньги за аренду, когда удобно на любую вашу карту</div>
         <Button variant='contained' disableRipple size='medium' sx={customRentButton}>
           <Image src={plusIcon} alt='plus' />
           Сдать в аренду

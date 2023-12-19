@@ -3,7 +3,7 @@
 .mainItem {
   position: relative;
   width: 456px;
-  padding: 38px;
+  padding: 32px;
   @include breakpoint(lg) {
     width: 400px;
   }
@@ -27,24 +27,24 @@
   & > p {
     font-size: 22px;
     font-weight: 700;
-    line-height: 29px;
+    line-height: 31px;
     max-width: 300px;
   }
 }
 .bottom {
   position: absolute;
-  top:87px;
-  left:10px;
+  top:81px;
+  left:0;
 }
 .left {
   position: absolute;
   top:41px;
-  left:10px;
+  left:0;
 }
 .right {
   position: absolute;
-  top:91px;
-  right:146px;
+  top:90px;
+  right:157px;
   @include breakpoint(lg) {
     right: 120px;
   }

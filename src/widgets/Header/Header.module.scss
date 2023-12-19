@@ -21,6 +21,11 @@
   font-size: 15px;
   font-weight: 700;
 }
+.locationWrapper span {
+  @include breakpoint(lg) {
+    display: none;
+  }
+}
 .logoWrapper {
   cursor: pointer;
 }

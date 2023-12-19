@@ -69,7 +69,9 @@ export const Header = () => {
             </Button>
             <div className={styles.locationWrapper}>
               <Image src={geolocationIcon} alt='location' />
-              <p>Беларусь</p>
+              <p>
+                <span>Вся</span> Беларусь
+              </p>
             </div>
           </div>
         </div>

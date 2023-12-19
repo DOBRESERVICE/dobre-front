@@ -14,6 +14,7 @@ import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 import { descriptionProductData } from '../../../../../../../shared/data';
 import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage } from '../../../../../../../shared/image';
+import { Term } from '@/interfaces/categories';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -23,6 +24,7 @@ interface ProductItemContainerProps {
   price: string;
   productImage: string | StaticImageData;
   hasInsurance: boolean;
+  terms: Term[];
 }
 export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   productDescription,
@@ -32,6 +34,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   qualityControl,
   price,
   hasInsurance,
+  terms,
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
   return (
@@ -72,7 +75,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
           </div>
           <Image src={`${IMAGE_BASE_URL}${productImage}`} width={500} height={500} alt='ss' />
         </div>
-        <RentInfoPannel count={quantity} availableQuantityArray={availableQuantityArray} />
+        <RentInfoPannel count={quantity} availableQuantityArray={availableQuantityArray} terms={terms} />
       </div>
       <ProductDescription
         secondDescription={descriptionProductData.secondDescription}

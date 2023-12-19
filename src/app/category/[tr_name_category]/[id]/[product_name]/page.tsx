@@ -21,40 +21,40 @@ export default async function ProductPage({ params }: { params: { product_name: 
   const { data: SEOData } = await getSEOContent('variety', params.product_name);
   const { data: testimonialsData } = await getProductTestimonials(productData.id_product);
   const { data: FAQData } = await getProductFAQ(productData.id_product);
-  const breadCrumbsData = [
-    {
-      id: 1,
-      link: '/',
-      linkName: 'Главная',
-    },
-    {
-      id: 2,
-      link: `/category/${productData.category.tr_name_category}`,
-      linkName: productData.category.name_category,
-    },
-    {
-      id: 3,
-      link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}`,
-      linkName: productData.subcategory.name_sub,
-    },
-    {
-      id: 4,
-      link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}`,
-      linkName: productData.variety.name_variety,
-    },
-    {
-      id: 5,
-      link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}/${productData.id_product}`,
-      linkName: productData.name_product,
-    },
-  ];
+  // const breadCrumbsData = [
+  //   {
+  //     id: 1,
+  //     link: '/',
+  //     linkName: 'Главная',
+  //   },
+  //   {
+  //     id: 2,
+  //     link: `/category/${productData.category.tr_name_category}`,
+  //     linkName: productData.category.name_category,
+  //   },
+  //   {
+  //     id: 3,
+  //     link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}`,
+  //     linkName: productData.subcategory.name_sub,
+  //   },
+  //   {
+  //     id: 4,
+  //     link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}`,
+  //     linkName: productData.variety.name_variety,
+  //   },
+  //   {
+  //     id: 5,
+  //     link: `/category/${productData.category.tr_name_category}/${productData.subcategory.tr_name_sub}/${productData.id_product}`,
+  //     linkName: productData.name_product,
+  //   },
+  // ];
   const lan = Number(productData.address.lan);
   const lon = Number(productData.address.lon);
   return (
     <>
       <section className={styles.productSection}>
         <div className={styles.breadCrumbsWrapper}>
-          <BreadCrumbs breadCrumbsData={breadCrumbsData} />
+          {/*<BreadCrumbs breadCrumbsData={breadCrumbsData} />*/}
           <div className={styles.info}>
             <Image src={commentExclamation} alt='comment' />
             <p>ID объявления: 1325467</p>
@@ -72,6 +72,7 @@ export default async function ProductPage({ params }: { params: { product_name: 
             qualityControl={productData.quality_control}
             quantity={productData.quantity}
             hasInsurance={productData.insurance}
+            terms={productData.terms}
           />
           <ProductAsideInfo lan={lan} lon={lon} />
         </div>
@@ -82,7 +83,7 @@ export default async function ProductPage({ params }: { params: { product_name: 
       </section>
       <section className={styles.similarProducts}>
         <TopSectionBar hasLinkArrow barName='Похожие товары' />
-        <ProductsContainer products={productsData} />
+        {/*<ProductsContainer products={productsData} />*/}
       </section>
       <Blog SEOData={SEOData} />
     </>
