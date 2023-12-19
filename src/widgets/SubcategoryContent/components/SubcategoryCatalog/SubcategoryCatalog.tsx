@@ -56,6 +56,9 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products }) => {
               isAvailable={product.enabled_product}
               isConfirmed
               rentInfoArray={product.terms}
+              trCategoryName={product.category.tr_name_category}
+              trSubCategoryName={product.subcategory.tr_name_sub}
+              id={product.id_product}
             />
           ))}
         </div>

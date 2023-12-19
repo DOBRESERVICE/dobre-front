@@ -1,7 +1,9 @@
 import classNames from 'classnames';
 import { Dispatch, FC, SetStateAction } from 'react';
+import { defaultWhiteArrow } from '@/shared/image';
 
 import styles from './FAQItem.module.scss';
+import Image from 'next/image';
 
 interface FAQItem {
   title: string;
@@ -16,27 +18,21 @@ export const FAQItem: FC<FAQItem> = ({ text, title, setActiveCard, activeCard, i
     setActiveCard(isSelected ? 0 : id);
   };
   return (
-    <div className={styles.faqItem} role='button' aria-label='question' onClick={handleToggle}>
+    <div
+      className={classNames(styles.faqItem, {
+        [styles.opened]: isSelected,
+      })}
+      role='button'
+      aria-label='question'
+      onClick={handleToggle}
+    >
       <div className={styles.content}>
         <h2>{title}</h2>
-        <div
-          className={classNames(styles.arrowContainer, {
-            [styles.activeArrow]: isSelected,
-          })}
-        >
-          <div
-            className={classNames(styles.arrow, {
-              [styles.arrowUp]: isSelected,
-              [styles.arrowDown]: !isSelected,
-            })}
-          />
-        </div>
+        <button className={styles.arrow}>
+          <Image src={defaultWhiteArrow} alt='arrow' />
+        </button>
       </div>
-      <div
-        className={classNames(styles.description, {
-          [styles.opened]: isSelected,
-        })}
-      >
+      <div className={styles.description}>
         <p>{text}</p>
       </div>
     </div>

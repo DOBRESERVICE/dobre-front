@@ -4,30 +4,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
+  gap: 16px;
 
   & > h1 {
     font-size: 55px;
     font-weight: $fweight-big;
     color: $white;
-    line-height: 62px;
+    line-height: 60.5px;
+    @include breakpoint(lg) {
+      line-height: 57px;
+    }
   }
   & > h2 {
     font-size: 36px;
     font-weight: $fweight-big;
     color: $white;
+    line-height: 43px;
   }
   & > h3 {
     font-size: $font-medium;
     color: $white;
-    font-weight: $fweight-medium;
+    font-weight: $fweight-small;
   }
 }
 
-@media screen and (min-width: 1680px) {
-  .sectionHeaderWrapper {
-    & > h1 {
-      font-size: $font-big;
-    }
-  }
-}

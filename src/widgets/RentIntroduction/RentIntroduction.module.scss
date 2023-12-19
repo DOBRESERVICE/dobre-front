@@ -9,18 +9,29 @@
   align-items: center;
   flex-direction: column;
 }
-
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 34px;
+}
 .title {
   font-size: 36px;
   font-weight: 700;
-  line-height: 50px;
+  line-height: 43px;
 
   span {
     color: $deep-blue;
+    font-size: 36px;
+    font-weight: 700;
   }
 }
 
 .description {
   font-size: 20px;
-  margin: 9px 0 19px 0;
+  font-weight: $fweight-small;
+  line-height: 28px;
+  letter-spacing: 0.4px
 }

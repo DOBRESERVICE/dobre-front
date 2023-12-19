@@ -21,13 +21,15 @@ import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../share
 import DatePicker from 'react-multi-date-picker';
 import type { Value } from 'react-multi-date-picker';
 import InputIcon from 'react-multi-date-picker/components/input_icon';
+import { Term } from '@/interfaces/categories';
 
 interface RentInfoPannelProps {
   count: number;
   availableQuantityArray: number[];
+  terms: Term[];
 }
 
-export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray }) => {
+export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray, terms }) => {
   // const selectData = [
   //   {
   //     id: 1,
@@ -46,18 +48,10 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
   //   },
   // ];
   const [values, setValues] = useState<Value>(new Date());
-  const strSVG = `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='11' height='9' viewBox='0 0 11 9' fill='none'>
-      <path
-        d='M9.7885 3.38505L6.40345 0L5.2885 1.11495L7.88505 3.71149H0V5.28851H7.88505L5.2885 7.88505L6.40345 9L9.7885 5.61495C10.0841 5.31921 10.2502 4.91817 10.2502 4.5C10.2502 4.08183 10.0841 3.68079 9.7885 3.38505Z'
-        fill='#646E74'
-      />
-    </svg>`;
   const [isClient, setIsClient] = useState(false);
   useEffect(() => {
     setIsClient(true);
   }, [isClient, setIsClient]);
-  const svg = new Blob([strSVG], { type: 'image/svg+xml' });
-  const url = URL.createObjectURL(svg);
 
   return (
     <div className={styles.productInfo}>
@@ -87,9 +81,9 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
           <p>Смотреть все</p>
         </div>
         <div className={styles.cardsWrapper}>
-          <TariffCard time='1 час' price='450 руб.' hasInfoIcon />
-          <TariffCard time='1 час' price='450 руб.' hasInfoIcon={false} />
-          <TariffCard time='1 час' price='450 руб.' hasInfoIcon={false} />
+          {terms.map((term) => (
+            <TariffCard term={term} key={term.id_term} />
+          ))}
         </div>
       </div>
       <div className={styles.depositeWrapper}>

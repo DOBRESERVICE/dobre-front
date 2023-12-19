@@ -20,7 +20,7 @@ export const SubcategoryContent: FC<CategoryContentProps> = ({ subCategoryData, 
           varietiesList={subCategoryData.varieties}
           products={products}
         />
-        <SubcategoryCatalog products={products} />
+        {/*<SubcategoryCatalog products={products} />*/}
       </div>
     </Wrapper>
   );

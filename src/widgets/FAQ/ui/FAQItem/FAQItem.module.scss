@@ -1,12 +1,13 @@
 @import '@/shared/styles/variables';
 
 .faqItem {
+  position: relative;
   display: flex;
   flex-direction: column;
-  padding: 28px 28px 12px 40px;
+  padding: 32px 32px 12px;
   border-radius: 14px;
   background-color: $white;
-  gap: 14px;
+  gap: 8px;
   cursor: pointer;
 }
 .description {
@@ -23,44 +24,40 @@
   transition: all 0.5s;
 }
 
-.opened {
-  grid-template-rows: 1fr;
-  padding-bottom: 20px;
-}
 .content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   & > h2 {
     color: $black;
     font-size: 22px;
     font-weight: $fweight-big;
+    line-height: 30px;
   }
 }
-.arrowContainer {
+.arrow {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: $deep-blue;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
-  transition: background-color 0.5s;
+  transition: background-color 0.5s , transform 0.5s;
+  cursor: pointer;
 }
-.activeArrow {
-  background-color: $light-graphite;
+.faqItem:hover .arrow {
+  background-color: $hover-deep-blue;
+}.faqItem:active .arrow {
+  background-color: $light-gray;
 }
-.arrow {
-  border: solid black;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  transition: transform 0.5s;
-  padding: 3px;
+
+.arrow:active {
+  transform: rotate(180deg);
 }
-.arrowUp {
-  border-color: $black;
-  transform: rotate(-135deg);
-}
-.arrowDown {
-  transform: rotate(45deg);
-  border-color: $white;
-}
+.opened {
+   & > .description {
+     grid-template-rows: 1fr;
+     padding-bottom: 20px;
+   }
+ }
