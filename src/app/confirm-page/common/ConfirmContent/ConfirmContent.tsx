@@ -14,7 +14,6 @@ export const ConfirmContent = () => {
   const pathName = usePathname();
   const { isEmailConfirmed, handleConfirmEmail, status } = useAuthData();
   const params = useSearchParams();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const newSearchParams = new URLSearchParams(params);
   const token = newSearchParams.get('token');
   useEffect(() => {

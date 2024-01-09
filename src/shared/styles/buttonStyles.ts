@@ -169,8 +169,8 @@ export const authCheckBox = {
   borderRadius: '4px',
   color: MUIColors.lightGraphite,
   padding: '0px',
-  '& .MuiSvgIcon-root': {
-    borderRadius: '20',
+  '&.Mui-disabled': {
+    color: MUIColors.deepBlue,
   },
 };
 

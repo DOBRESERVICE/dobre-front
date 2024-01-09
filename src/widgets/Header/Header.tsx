@@ -1,5 +1,4 @@
 'use client';
-
 import { Button } from '@mui/material';
 import Input from '@mui/material/Input';
 import classNames from 'classnames';
@@ -7,7 +6,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import styles from './Header.module.scss';
 
@@ -16,7 +15,6 @@ import { blueClose, mockUser, rentImage, searchIcon } from '@/shared/image';
 import cart from '@/shared/image/cart.svg';
 import categoriesIcon from '@/shared/image/categoriesIcon.svg';
 import logo from '@/shared/image/dobreLogo.svg';
-import geolocationIcon from '@/shared/image/geolocation.svg';
 import group from '@/shared/image/iconGroup.svg';
 import plus from '@/shared/image/plusIcon.svg';
 import userIcon from '@/shared/image/userIcon.svg';
@@ -28,7 +26,7 @@ import {
   customSearchHeaderButton,
 } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
-
+import { UserPopup } from '@/widgets/Header/ui/UserPopup/UserPopup';
 const DynamicMenu = dynamic(() => import('@/features/Menu/Menu'));
 const DynamicHeaderLinks = dynamic(() => import('@/widgets/Header/ui/HeaderLinks/HeaderLinks'));
 const DynamicHeaderTopBar = dynamic(() => import('@/widgets/Header/ui/HeaderTopBar/HeaderTopBar'));
@@ -37,12 +35,16 @@ export const Header = () => {
   const pathname = usePathname();
   const notMainPage = pathname !== '/';
   const router = useRouter();
-  const [token, setToken] = useState<string | null>('');
-  const { isMenuOpen, setIsMenuOpen } = useAuthData();
+
+  const { isMenuOpen, setIsMenuOpen, isLogged, setIsLogged, isUserMenuOpen, setIsUserMenuOpen } = useAuthData();
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    setToken(token);
-  }, []);
+    if (localStorage.getItem('token')) {
+      setIsLogged(true);
+    } else {
+      setIsLogged(false);
+    }
+  }, [setIsLogged]);
+
   return (
     <Wrapper>
       <header
@@ -67,12 +69,6 @@ export const Header = () => {
               <Image src={plus} alt='plus' />
               Сдать в аренду
             </Button>
-            <div className={styles.locationWrapper}>
-              <Image src={geolocationIcon} alt='location' />
-              <p>
-                <span>Вся</span> Беларусь
-              </p>
-            </div>
           </div>
         </div>
         <Link href='/' className={styles.logoWrapper}>
@@ -110,8 +106,14 @@ export const Header = () => {
               <p>Аренда</p>
             </div>
           </div>
-          {token ? (
-            <Image src={mockUser} alt='mock user' />
+          {isLogged ? (
+            <Image
+              className={styles.userImage}
+              src={mockUser}
+              alt='mock user'
+              role='button'
+              onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+            />
           ) : (
             <Button
               variant='outlined'
@@ -124,6 +126,7 @@ export const Header = () => {
               Войти
             </Button>
           )}
+          {isUserMenuOpen && <UserPopup />}
         </div>
         {isMenuOpen && <DynamicMenu />}
       </header>

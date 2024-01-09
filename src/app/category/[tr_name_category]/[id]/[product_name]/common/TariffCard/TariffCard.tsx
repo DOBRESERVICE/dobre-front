@@ -1,9 +1,7 @@
-import Image from 'next/image';
 import { FC } from 'react';
 
 import styles from './TariffCard.module.scss';
 
-import { tarrifInfo } from '../../../../../../../shared/image';
 import { Term } from '@/interfaces/categories';
 import { PeriodMapping } from '@/shared/lib';
 

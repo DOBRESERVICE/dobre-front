@@ -5,7 +5,6 @@ import Image from 'next/image';
 import styles from './FAQ.module.scss';
 
 import { SectionType } from '@/enums';
-import { Loader } from '@/features/Loader/Loader';
 import { usePost } from '@/shared/hooks/APIHooks/usePost';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
@@ -15,9 +14,6 @@ import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image
 
 export const FAQ = () => {
   const { postData: FAQData } = usePost(SectionType.FAQ);
-  if (!FAQData) {
-    return <Loader />;
-  }
   return (
     <Wrapper>
       <section className={styles.faqSectionWrapper}>

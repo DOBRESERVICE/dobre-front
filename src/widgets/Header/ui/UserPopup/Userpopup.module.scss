@@ -1,0 +1,55 @@
+@import "src/shared/styles/variables";
+
+.userPopup {
+  position: absolute;
+  z-index: 3;
+  top:64px;
+  right:0;
+  display: flex;
+  flex-direction: column;
+  width: 190px;
+  border-radius: 8px;
+  background: $white;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.14);
+}
+.popupHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 8px;
+  border-bottom: 1px solid $light-gray;
+  & > img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+  & > p {
+    color: $deep-blue;
+    font-size: 13px;
+    font-weight: $fweight-big;
+    line-height: 16px;
+  }
+}
+.popupOptions {
+  margin-block: 8px;
+}
+.option {
+  cursor: pointer;
+  padding-block: 10px;
+  padding-left: 18px;
+}
+.optionContent {
+  display:flex;
+  align-items: center;
+  gap: 18px;
+
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: $fweight-big;
+    line-height: 16px;
+  }
+}
+.option:hover, .active {
+  background-color: $light-gray;
+}

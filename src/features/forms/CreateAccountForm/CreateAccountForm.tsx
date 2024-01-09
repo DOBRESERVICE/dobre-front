@@ -83,10 +83,10 @@ export const CreateAccountForm = () => {
       />
 
       <div className={styles.createWrapperAccept}>
-        <Checkbox onChange={() => setIsAccept(!isAccept)} sx={authCheckBox} />
-        <div className={styles.savePass}>
+        <Checkbox id='rules' onChange={() => setIsAccept(!isAccept)} sx={authCheckBox} />
+        <label htmlFor='rules' className={styles.savePass}>
           Я принимаю <span>условия пользовательского соглашения</span>
-        </div>
+        </label>
       </div>
       <Button
         variant='contained'

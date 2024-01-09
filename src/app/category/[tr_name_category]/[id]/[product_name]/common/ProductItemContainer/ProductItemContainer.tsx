@@ -9,12 +9,12 @@ import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[prod
 import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { Term } from '@/interfaces/categories';
 import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 import { descriptionProductData } from '../../../../../../../shared/data';
 import { favouriteIcon, mock1Image, mock2Image, mock3Image, mockBrandImage } from '../../../../../../../shared/image';
-import { Term } from '@/interfaces/categories';
 
 interface ProductItemContainerProps {
   productName: string;

@@ -1,5 +1,14 @@
 import { AxiosError } from 'axios';
-import { createContext, Dispatch, ReactNode, SetStateAction, useContext, useState } from 'react';
+import {
+  createContext,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  TransitionStartFunction,
+  useContext,
+  useState,
+  useTransition,
+} from 'react';
 
 import { Status, StatusCode } from '@/enums';
 
@@ -28,6 +37,11 @@ interface IAuthContext {
   status: Status;
   isMenuOpen: boolean;
   setIsMenuOpen: Dispatch<SetStateAction<boolean>>;
+  isPending: boolean;
+  startTransition: TransitionStartFunction;
+  isUserMenuOpen: boolean;
+  setIsUserMenuOpen: Dispatch<SetStateAction<boolean>>;
+  setStatus: Dispatch<SetStateAction<Status>>;
 }
 
 export const AuthContext = createContext<IAuthContext>({
@@ -53,6 +67,11 @@ export const AuthContext = createContext<IAuthContext>({
   status: Status.LOADING,
   isMenuOpen: false,
   setIsMenuOpen: () => {},
+  isPending: false,
+  startTransition: () => {},
+  isUserMenuOpen: false,
+  setIsUserMenuOpen: () => {},
+  setStatus: () => {},
 });
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -67,7 +86,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [userEmail, setUserEmail] = useState('');
   const [status, setStatus] = useState<Status>(Status.INIT);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
   const handleRegister = async (email: string, password: string) => {
     try {
       setStatus(Status.LOADING);
@@ -185,6 +205,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     status,
     isMenuOpen,
     setIsMenuOpen,
+    isPending,
+    startTransition,
+    isUserMenuOpen,
+    setStatus,
+    setIsUserMenuOpen,
   };
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>;

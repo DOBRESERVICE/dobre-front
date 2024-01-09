@@ -29,6 +29,7 @@ export const customMenuItem = {
   justifyContent: 'center',
   borderRadius: '8px',
   marginInline: '10px',
+  marginBlock: '10px',
   '&:hover': {
     backgroundColor: MUIColors.lightGraphite,
   },
@@ -100,4 +101,11 @@ export const customLabel = {
   fontSize: '15px',
   fontWeight: '600',
   top: '-8px',
+};
+export const customSortLabel = {
+  color: MUIColors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  top: '-8px',
+  left: '24px',
 };

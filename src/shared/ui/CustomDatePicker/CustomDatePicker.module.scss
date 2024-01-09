@@ -25,3 +25,16 @@
     font-weight: 600;
   }
 }
+.datePicker div[role='combobox'] {
+
+}
+.datePicker div[role='combobox']:hover {
+  border-color: red;
+
+}
+.datePicker div[role='combobox'] input[type='text'] + span {
+  color:$deep-blue;
+}
+.datePicker div[role='combobox'] button {
+   color:$deep-blue;
+ }

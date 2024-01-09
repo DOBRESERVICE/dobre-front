@@ -1,27 +1,25 @@
 'use client';
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
+import type { Value } from 'react-multi-date-picker';
+import DatePicker from 'react-multi-date-picker';
+import InputIcon from 'react-multi-date-picker/components/input_icon';
 
 import styles from './RentInfoPannel.module.scss';
 
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
+import { Term } from '@/interfaces/categories';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import {
-  customDateFormSelect,
   customDateLabel,
-  customDateSelect,
   customProductQuantityFormSelect,
   customProductQuantitySelect,
 } from '@/shared/styles/selectStyles';
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
 
-import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../shared/image';
-import DatePicker from 'react-multi-date-picker';
-import type { Value } from 'react-multi-date-picker';
-import InputIcon from 'react-multi-date-picker/components/input_icon';
-import { Term } from '@/interfaces/categories';
+import { rentButtonIcon } from '../../../../../../../shared/image';
 
 interface RentInfoPannelProps {
   count: number;
@@ -30,29 +28,7 @@ interface RentInfoPannelProps {
 }
 
 export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray, terms }) => {
-  // const selectData = [
-  //   {
-  //     id: 1,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  //   {
-  //     id: 2,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  //   {
-  //     id: 3,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  // ];
   const [values, setValues] = useState<Value>(new Date());
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, [isClient, setIsClient]);
-
   return (
     <div className={styles.productInfo}>
       <div>

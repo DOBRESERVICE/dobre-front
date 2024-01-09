@@ -1,9 +1,12 @@
 import classNames from 'classnames';
+import Image from 'next/image';
 import { Dispatch, FC, SetStateAction } from 'react';
-import { defaultWhiteArrow } from '@/shared/image';
 
 import styles from './FAQItem.module.scss';
-import Image from 'next/image';
+
+import { defaultWhiteArrow } from '@/shared/image';
+
+import { openedArrow } from '../../../../shared/image/index';
 
 interface FAQItem {
   title: string;
@@ -28,8 +31,8 @@ export const FAQItem: FC<FAQItem> = ({ text, title, setActiveCard, activeCard, i
     >
       <div className={styles.content}>
         <h2>{title}</h2>
-        <button className={styles.arrow}>
-          <Image src={defaultWhiteArrow} alt='arrow' />
+        <button className={classNames(styles.arrow)}>
+          <Image src={isSelected ? openedArrow : defaultWhiteArrow} alt='arrow' />
         </button>
       </div>
       <div className={styles.description}>

@@ -1,27 +1,40 @@
 import classNames from 'classnames';
-import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import { FC } from 'react';
 
 import styles from './SubcategoryListItem.module.scss';
 
+import { useAuthData } from '@/shared/context/authContext';
+
 interface SubcategoryListItem {
   varietyName: string;
   isActive: boolean;
-  onClick: () => void;
+  setActiveVariety: () => void;
   varietyTrName: string;
 }
-export const SubCategoryItem: FC<SubcategoryListItem> = ({ varietyName, isActive, onClick, varietyTrName }) => {
+export const SubCategoryItem: FC<SubcategoryListItem> = ({
+  varietyName,
+  isActive,
+  setActiveVariety,
+  varietyTrName,
+}) => {
+  const { startTransition } = useAuthData();
+  const router = useRouter();
+  const pathname = usePathname();
+  const handleClick = () => {
+    setActiveVariety();
+    startTransition(() => {
+      router.push(`${pathname}?variety=${varietyTrName}`, { scroll: false });
+    });
+  };
   return (
-    <Link
-      scroll={false}
-      href={`?${new URLSearchParams({ variety: varietyTrName })}`}
+    <button
       className={classNames(styles.subCategoryItem, {
         [styles.active]: isActive,
       })}
-      onClick={onClick}
-      role='button'
+      onClick={handleClick}
     >
       {varietyName}
-    </Link>
+    </button>
   );
 };

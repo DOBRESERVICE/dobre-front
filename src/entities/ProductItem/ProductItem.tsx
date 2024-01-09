@@ -1,5 +1,6 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
 import { FC } from 'react';
 
 import styles from './ProductItem.module.scss';
@@ -12,7 +13,6 @@ import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
 
 import { favouriteIcon, mockUser, verified } from '../../shared/image';
-import Link from 'next/link';
 
 export interface ProductItem {
   id: number;

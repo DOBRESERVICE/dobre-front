@@ -1,32 +1,35 @@
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
+import { Loader } from '@/features/Loader/Loader';
 import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
-import { getNewProducts, getRecommendedProducts } from '@/shared/api/categoriesApi';
 import { AboutUs } from '@/widgets/AboutUs/AboutUs';
 import { FAQ } from '@/widgets/FAQ/FAQ';
+import GeneralTestimonials from '@/widgets/GeneralTestimonials/GeneralTestimonials';
 import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
 import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
+import Recommendations from '@/widgets/Recommendations/Recommendations';
 import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
+import SearchBlock from '@/widgets/SearchBlock/SearchBlock';
+import { getNewCategoryProducts, getNewProducts } from '@/shared/api/categoriesApi';
 const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
-const DynamicSearchBlock = dynamic(() => import('@/widgets/SearchBlock/SearchBlock'));
-const DynamicGeneralTestimonials = dynamic(() => import('@/widgets/GeneralTestimonials/GeneralTestimonials'));
-const DynamicRecommendations = dynamic(() => import('@/widgets/Recommendations/Recommendations'));
 export default async function HomePage() {
   const { data: newProductsData } = await getNewProducts();
-  const { data: recommendedProductsData } = await getRecommendedProducts();
 
   return (
     <HomeLayout>
       <DynamicAuthModals />
-      <DynamicSearchBlock />
-      <NewProducts newProducts={newProductsData} />
+      <SearchBlock />
+      <Suspense fallback={<Loader />}>
+        <NewProducts newProducts={newProductsData} />
+      </Suspense>
       <PopularProducts />
       <HowWeWork />
       <RentIntroduction />
-      <DynamicRecommendations recommendedProducts={recommendedProductsData} />
+      <Recommendations />
       <AboutUs />
-      <DynamicGeneralTestimonials />
+      <GeneralTestimonials />
       <FAQ />
     </HomeLayout>
   );

@@ -3,7 +3,6 @@
 import { Button } from '@mui/material';
 import classNames from 'classnames';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
 
 import styles from './RentInfoContainer.module.scss';
@@ -21,7 +20,7 @@ interface RentInfoContainer {
 export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
   const [isClient, setIsClient] = useState(false);
   const [offset, setOffset] = useState(0);
-  const [count, setCount] = useState(2);
+  const [count, setCount] = useState(3);
   useEffect(() => {
     setIsClient(true);
   }, [setIsClient, isClient]);
@@ -33,12 +32,13 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
     setCount((prev) => prev - 1);
     setOffset((prev) => prev + 84);
   };
+
   return (
     <div className={styles.rentTimeContainer}>
       <div className={styles.container}>
         <button
           className={classNames(styles.rentTimeButton, {
-            [styles.prevVisible]: count > 2,
+            [styles.prevVisible]: count > 3,
           })}
           onClick={scrollPrev}
         >
@@ -54,17 +54,21 @@ export const RentInfoContainer: FC<RentInfoContainer> = ({ rentInfoArray }) => {
           </div>
         </div>
         {rentInfoArray?.length > 3 ? (
-          <button className={styles.rentTimeButton} onClick={scrollNext} disabled={rentInfoArray.length === count}>
+          <button
+            className={classNames(styles.rentTimeButton, {
+              [styles.prevVisible]: count != rentInfoArray.length,
+            })}
+            onClick={scrollNext}
+            disabled={rentInfoArray.length === count}
+          >
             <Image src={rentTimeArrow} alt='arrow' />
           </button>
         ) : null}
       </div>
-      {isClient && (
-        <Button disableRipple sx={rentInfoCustomButton}>
-          <Image src={rentButtonIcon} alt='rent' />
-          Арендовать
-        </Button>
-      )}
+      <Button disableRipple sx={rentInfoCustomButton}>
+        <Image src={rentButtonIcon} alt='rent' />
+        Арендовать
+      </Button>
     </div>
   );
 };

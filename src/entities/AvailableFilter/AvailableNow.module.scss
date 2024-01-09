@@ -8,9 +8,10 @@
   border-radius: 8px;
   padding-inline: 14px;
   border: 1px solid $light-graphite;
-  & > p {
+  & > label {
     color: $black;
     font-size: 15px;
     font-weight: 600;
+    cursor: pointer;
   }
 }

@@ -1,0 +1,26 @@
+@import "src/shared/styles/variables";
+.featureButton{
+  height: 36px;
+  font-family: inherit;
+  border-radius: 8px;
+  background: $sky-blue;
+  color: $deep-blue;
+  text-align: center;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: $fweight-big;
+  line-height: 29px;
+  cursor: pointer;
+}
+.featureButton:hover {
+  background: $hover-light-blue;
+}
+.featureButton.active {
+  background: $deep-blue;
+  color:$white;
+}
+.featureButton[disabled] {
+  cursor: inherit;
+  background:$light-gray;
+  color:white;
+}

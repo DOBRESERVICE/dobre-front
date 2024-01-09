@@ -10,7 +10,7 @@ import { InputSearch } from '@/widgets/SearchBlock/ui/InputSearch/InputSearch';
 import { searchCardsData } from '../../shared/data';
 import { firstLampGroup, secondLampGroup } from '../../shared/image';
 
-const SearchBlock = async () => {
+const SearchBlock = () => {
   return (
     <Wrapper>
       <section className={styles.searchBlockWrapper}>
@@ -27,7 +27,7 @@ const SearchBlock = async () => {
           <InputSearch />
         </div>
         <div className={styles.rightImageWrapper}>
-          <Image src={secondLampGroup} alt='lamp group' loading='eager' />
+          <Image src={secondLampGroup} alt='lamp group' loading='lazy' />
         </div>
         <SearchCardsContainer inHowWeWork={false} cardsData={searchCardsData} />
       </section>
