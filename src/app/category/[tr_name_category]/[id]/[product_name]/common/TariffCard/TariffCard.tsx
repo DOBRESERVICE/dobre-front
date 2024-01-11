@@ -1,9 +1,7 @@
-import Image from 'next/image';
 import { FC } from 'react';
 
 import styles from './TariffCard.module.scss';
 
-import { tarrifInfo } from '../../../../../../../shared/image';
 import { Term } from '@/interfaces/categories';
 import { PeriodMapping } from '@/shared/lib';
 
@@ -15,7 +13,6 @@ export const TariffCard: FC<TariffCardProps> = ({ term }) => {
   const periodText = PeriodMapping[period];
   return (
     <div className={styles.tariffCard}>
-      {/*{hasInfoIcon && <Image src={tarrifInfo} alt='info' />}*/}
       <div className={styles.content}>
         <p>
           {teek} {periodText}

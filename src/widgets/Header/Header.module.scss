@@ -1,13 +1,12 @@
 @import '@/shared/styles/variables';
 .header {
-  padding: 22px 0 26px 0;
+  padding: 17px 0 22px 0;
   display: flex;
   gap: 30px;
   position: relative;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-
 }
 .header.catalogHeader {
   padding-bottom: 10px;
@@ -72,6 +71,7 @@
   order: 1;
 }
 .content {
+  position: relative;
   display: flex;
   gap: 30px;
   justify-content: end;
@@ -93,7 +93,7 @@
   display: none;
 }
 .catalogHeader {
-  padding-top: 44px;
+  padding-top: 48px;
 }
 .catalogHeader .logo {
   flex: 0;
@@ -173,4 +173,6 @@
   font-weight: $fweight-big;
 }
 
-
+.userImage {
+  cursor: pointer;
+}

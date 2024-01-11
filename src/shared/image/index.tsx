@@ -18,6 +18,7 @@ import karcher from './brands/karcher.svg';
 import makita from './brands/makita.svg';
 import metabo from './brands/metabo.svg';
 import camping from './camping.svg';
+import checkboxIcon from './checkboxIcon.svg';
 import checkedIcon from './checkedIcon.svg';
 import clothes from './clothes.svg';
 import commentExclamation from './commentExclamation.svg';
@@ -28,6 +29,7 @@ import specialTechnique from './constructionImages/specialTechnique.png';
 import cube from './cube.png';
 import dateArrow from './dateArrow.svg';
 import dateImage from './dateImage.svg';
+import defaultWhiteArrow from './default-white-arrow.svg';
 import dpd from './delivery/dpd.svg';
 import kce from './delivery/kce.svg';
 import russiaMail from './delivery/russiaMail.svg';
@@ -80,6 +82,7 @@ import mockUser from './mockUser.svg';
 import nextArrow from './nextArrow.svg';
 import next from './nextSlideButton.svg';
 import noImage from './NO_IMAGE.jpg';
+import openedArrow from './openedArrow.svg';
 import paymentIcon from './paymentIcon.svg';
 import cryptoPayment from './payments/bitkoinPayment.svg';
 import cardPayment from './payments/cardPayment.svg';
@@ -119,6 +122,10 @@ import testimonialsImage from './testimonialsImage.png';
 import tgIcon from './tgIcon.svg';
 import travelling from './travelling.png';
 import userIcon from './userIcon.svg';
+import favouritePopupIcon from './userPopupImages/favouriteIcon.svg';
+import logoutIcon from './userPopupImages/logoutIcon.svg';
+import messagesIcon from './userPopupImages/messagesIcon.svg';
+import rentIcon from './userPopupImages/rentIcon.svg';
 import verified from './verified.svg';
 import vkIcon from './vk.svg';
 import iconVk from './vkIcon.svg';
@@ -126,10 +133,8 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
-import defaultWhiteArrow from './default-white-arrow.svg';
 
 export {
-  defaultWhiteArrow,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,
@@ -147,6 +152,7 @@ export {
   camping,
   cardPayment,
   cashPayment,
+  checkboxIcon,
   checkedIcon,
   cleaningPopularTools,
   clothes,
@@ -156,6 +162,7 @@ export {
   cube,
   dateArrow,
   dateImage,
+  defaultWhiteArrow,
   dewalt,
   DOBRE,
   dobreBanner,
@@ -173,6 +180,7 @@ export {
   FAQBottomGroup,
   FAQTopGroup,
   favouriteIcon,
+  favouritePopupIcon,
   fbIcon,
   feedbackIcon,
   festool,
@@ -201,9 +209,11 @@ export {
   linkArrow,
   linkButtonArrow,
   logoDobre,
+  logoutIcon,
   makita,
   markerIcon,
   messageIcon,
+  messagesIcon,
   metabo,
   mock1Image,
   mock2Image,
@@ -215,6 +225,7 @@ export {
   next,
   nextArrow,
   noImage,
+  openedArrow,
   paymentIcon,
   phoneIcon,
   photographyPopularTools,
@@ -222,6 +233,7 @@ export {
   previous,
   renovation,
   rentButtonIcon,
+  rentIcon,
   rentImage,
   rentTimeArrow,
   rightWhiteSliderIcon,

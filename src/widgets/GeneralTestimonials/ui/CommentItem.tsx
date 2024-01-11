@@ -16,12 +16,10 @@ export const CommentItem: FC<AboutItemType> = ({ title, description, userName, u
   return (
     <div className={styles.mainItem}>
       <div className={styles.itemWrapper}>
-        <div className={styles.content}>
-          <div className={styles.imageItem} />
-          <p className={styles.itemTitle}>{title}</p>
-        </div>
+        <div className={styles.imageItem} />
         <Image src={emoji} alt='emoji' className={styles.emoji} />
       </div>
+      <p className={styles.itemTitle}>{title}</p>
       <div className={styles.itemDescr}>{description}</div>
       <div className={styles.userWrapper}>
         <div className={styles.userIcon} />

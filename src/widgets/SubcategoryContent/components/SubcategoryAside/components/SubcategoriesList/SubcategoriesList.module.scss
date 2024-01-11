@@ -6,16 +6,6 @@
 .subCategoriesContainer {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 34px;
 }
 
-.seeAll {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  gap: 10px;
-  & > p {
-    color: $deep-blue;
-    font-weight: $fweight-big;
-  }
-}

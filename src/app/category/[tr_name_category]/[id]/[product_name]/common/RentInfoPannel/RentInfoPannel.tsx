@@ -1,84 +1,78 @@
 'use client';
 import { Button } from '@mui/material';
 import Image from 'next/image';
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
+import type { Value } from 'react-multi-date-picker';
+import DatePicker from 'react-multi-date-picker';
+import InputIcon from 'react-multi-date-picker/components/input_icon';
 
 import styles from './RentInfoPannel.module.scss';
 
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
+import { Term } from '@/interfaces/categories';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import {
-  customDateFormSelect,
   customDateLabel,
-  customDateSelect,
   customProductQuantityFormSelect,
   customProductQuantitySelect,
 } from '@/shared/styles/selectStyles';
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
 
-import { dateArrow, dateImage, rentButtonIcon } from '../../../../../../../shared/image';
-import DatePicker from 'react-multi-date-picker';
-import type { Value } from 'react-multi-date-picker';
-import InputIcon from 'react-multi-date-picker/components/input_icon';
-import { Term } from '@/interfaces/categories';
+import { blueNextArrow, rentButtonIcon } from '../../../../../../../shared/image';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 interface RentInfoPannelProps {
   count: number;
   availableQuantityArray: number[];
   terms: Term[];
+  price: string;
+  productName: string;
+  qualityControl: number;
+  deposit: number;
 }
 
-export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuantityArray, terms }) => {
-  // const selectData = [
-  //   {
-  //     id: 1,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  //   {
-  //     id: 2,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  //   {
-  //     id: 3,
-  //     firstDate: '10 окт.',
-  //     secondDate: '12 окт.',
-  //   },
-  // ];
+export const RentInfoPannel: FC<RentInfoPannelProps> = ({
+  productName,
+  price,
+  count,
+  availableQuantityArray,
+  terms,
+  qualityControl,
+  deposit,
+}) => {
   const [values, setValues] = useState<Value>(new Date());
-  const [isClient, setIsClient] = useState(false);
-  useEffect(() => {
-    setIsClient(true);
-  }, [isClient, setIsClient]);
-
   return (
     <div className={styles.productInfo}>
-      <div>
-        <div className={styles.dateHeaderWrapper}>
-          <p>Дата</p>
-          <ProductRentStatus isAvailable />
-        </div>
-        <div className={styles.selectWrapper}>
-          <DatePicker render={<InputIcon />} range value={values} onChange={setValues} />
-          {count > 0 ? (
-            <CustomSelect
-              formControlStyles={customProductQuantityFormSelect}
-              labelStyles={customDateLabel}
-              selectStyles={customProductQuantitySelect}
-              label={`${count} шт.`}
-              selectData={availableQuantityArray}
-            />
-          ) : (
-            ''
-          )}
-        </div>
+      <div className={styles.dateHeaderWrapper}>
+        <ProductRentStatus isAvailable />
+        <div className={styles.price}>от {price} руб.</div>
       </div>
-      <div>
+      <h2 className={styles.productName}>{productName}</h2>
+      <div className={styles.infoContent}>
+        <StatusBar status={qualityControl} />
+        <RatingComponent feedbackType='textFeedback' rating={4.4} feedbackCount={31} />
+      </div>
+      <div className={styles.selectWrapper}>
+        <DatePicker render={<InputIcon />} range value={values} onChange={setValues} />
+        {count > 0 ? (
+          <CustomSelect
+            formControlStyles={customProductQuantityFormSelect}
+            labelStyles={customDateLabel}
+            selectStyles={customProductQuantitySelect}
+            label={`${count} шт.`}
+            selectData={availableQuantityArray}
+          />
+        ) : null}
+      </div>
+      <div className={styles.tarrifsWrapper}>
         <div className={styles.dateHeaderWrapper}>
           <p>Тарифы</p>
-          <p>Смотреть все</p>
+          <div className={styles.allTarrifs}>
+            <p>Все тарифы</p>
+            <Image src={blueNextArrow} alt='see all' />
+          </div>
         </div>
         <div className={styles.cardsWrapper}>
           {terms.map((term) => (
@@ -89,7 +83,7 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({ count, availableQuanti
       <div className={styles.depositeWrapper}>
         <p>При оформлении аренды взымается залог</p>
         <div>
-          <p>20 000 руб.</p>
+          <p>Залог {deposit} руб.</p>
         </div>
       </div>
       <div className={styles.rentInfoWrapper}>

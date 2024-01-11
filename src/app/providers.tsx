@@ -1,6 +1,7 @@
 'use client';
 
-import { createTheme,ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { Manrope } from 'next/font/google';
 import { ReactNode } from 'react';
 
@@ -24,8 +25,10 @@ const theme = createTheme({
 });
 export const Providers = ({ children }: { children: ReactNode }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <AuthProvider>{children}</AuthProvider>
-    </ThemeProvider>
+    <AppRouterCacheProvider>
+      <ThemeProvider theme={theme}>
+        <AuthProvider>{children}</AuthProvider>
+      </ThemeProvider>
+    </AppRouterCacheProvider>
   );
 };

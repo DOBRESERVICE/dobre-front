@@ -14,7 +14,7 @@ const HeaderTopBar = () => {
         <p>Легко арендовать, безопасно сдавать 😍</p>
         <p className={styles.geoLocationInfo}>
           <Image src={geolocationIcon} alt='geolocation' />
-          Минск
+          Вся Беларусь
         </p>
       </div>
       <div className={styles.contentGroup}>

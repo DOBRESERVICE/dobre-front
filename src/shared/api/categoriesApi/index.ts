@@ -1,7 +1,14 @@
 import { AxiosResponse } from 'axios';
 
-import { Post, ProductTestimonial } from '@/interfaces';
-import { ExactCategory, ExactVariety, NewProduct, Product, ProductItem, SubCategory } from '@/interfaces/categories';
+import { FilterData, Post, ProductTestimonial } from '@/interfaces';
+import {
+  ExactCategory,
+  ExactVariety,
+  NewProduct,
+  Product,
+  ProductItem,
+  SubCategory,
+} from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
@@ -13,6 +20,18 @@ export const getSubCategory = async (subCategory: string): Promise<AxiosResponse
 };
 export const getCertainVariety = async (variety: string): Promise<AxiosResponse<ExactVariety>> => {
   return defaultRequest.get(`/categories/variety/${variety}`);
+};
+export const getFilteredVariety = async (
+  variety: string,
+  params: { [p: string]: string }
+): Promise<AxiosResponse<FilterData>> => {
+  return defaultRequest.get(`/catalog/v/${variety}`, { params: params });
+};
+export const getFilteredSubcategory = async (
+  variety: string,
+  params: { [p: string]: string }
+): Promise<AxiosResponse<FilterData>> => {
+  return defaultRequest.get(`/catalog/s/${variety}`, { params: params });
 };
 export const getProductData = async (productId: string): Promise<AxiosResponse<ProductItem>> => {
   return defaultRequest.get(`/products/${productId}`);

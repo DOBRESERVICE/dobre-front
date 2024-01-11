@@ -152,6 +152,37 @@ export const authCustomInput = {
     top: '5px',
   },
 };
+export const customRangeInput = {
+  width: '134px',
+  '& .MuiOutlinedInput-root': {
+    borderRadius: '8px',
+    '& input': {
+      color: MUIColors.deepBlue,
+      paddingBlock: '6.5px',
+      fontWeight: '600',
+      fontSize: '15px',
+    },
+    '& fieldset': {
+      border: `1px solid ${MUIColors.lightGraphite}`,
+    },
+    '&:hover fieldset': {
+      borderColor: MUIColors.graphite,
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: MUIColors.deepBlue,
+    },
+  },
+  '& .MuiOutlinedInput-root.Mui-focused': {
+    border: `none`,
+  },
+  '& > label': {
+    fontSize: ' 15px',
+    fontWeight: '600',
+    color: MUIColors.graphite,
+    top: '-10px',
+  },
+  '& .MuiInputLabel-shrink': { top: 0 },
+};
 
 export const authButton = {
   height: '50px',
@@ -169,8 +200,8 @@ export const authCheckBox = {
   borderRadius: '4px',
   color: MUIColors.lightGraphite,
   padding: '0px',
-  '& .MuiSvgIcon-root': {
-    borderRadius: '20',
+  '&.Mui-disabled': {
+    color: MUIColors.deepBlue,
   },
 };
 

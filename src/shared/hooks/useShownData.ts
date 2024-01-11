@@ -9,8 +9,8 @@ interface UseShownDataReturnType<T> {
 
 export function useShownData<T>(data: T[], shownCount: number): UseShownDataReturnType<T> {
   const [showAll, setShowAll] = useState(false);
-  const itemsToShow = showAll ? data : data.slice(0, shownCount);
-  const shouldRenderExpandButton = data.length > shownCount;
+  const itemsToShow = showAll ? data : data?.slice(0, shownCount);
+  const shouldRenderExpandButton = data?.length > shownCount;
 
   return {
     itemsToShow,

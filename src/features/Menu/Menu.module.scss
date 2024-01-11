@@ -4,7 +4,7 @@
   height: 100dvh;
   position: fixed;
   z-index: 3;
-  top: 100px;
+  top: 90px;
   left: 0;
   background-color: $white;
   filter: drop-shadow(0px -3px 20px rgba(0, 0, 0, 0.08));
@@ -49,5 +49,5 @@
   gap: 40px;
   max-height: 80dvh;
   overflow:hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 }

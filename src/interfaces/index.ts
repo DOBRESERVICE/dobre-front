@@ -90,3 +90,88 @@ export interface Testimonial {
   text: string;
   user: User;
 }
+
+export interface FeatureVariety {
+  id_feature: number;
+  name_feature: string;
+  tr_name_feature: string;
+  type_feature: string;
+  array_feature: any;
+  group_feature: any;
+  values_feature: string[];
+  description?: string;
+  enabled_feature: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+}
+
+export interface FilterData {
+  pagination: Pagination;
+  filter: Filter;
+  findEntity: FindEntity;
+  data: Data[];
+}
+
+export interface Pagination {
+  page: number;
+  limit: number;
+  count: number;
+}
+
+export interface Filter {}
+
+export interface FindEntity {
+  id_variety: number;
+  name_variety: string;
+  tr_name_variety: string;
+  image_variety: string;
+  rate_variety: number;
+  enabled_variety: boolean;
+  createdAt: string;
+  updatedAt: string;
+  deletedAt: any;
+  categoryIdCategory: number;
+  subcategoryIdSub: number;
+}
+
+export interface Data {
+  id_product: number;
+  name_product: string;
+  tr_name_product: string;
+  residual: any;
+  ransom: number;
+  image: string;
+  insurance: boolean;
+  enabled_product: boolean;
+  is_blocked: boolean;
+  is_moderate: boolean;
+  description: string;
+  quality_control: number;
+  price_segment: string;
+  rent_period: string;
+  rent_terms: string;
+  quantity: number;
+  specs_product: string;
+  price: string;
+  deposit: number;
+  userId: string;
+  addressIdAddress: number;
+  brandIdBrand: number;
+  categoryIdCategory: number;
+  subcategoryIdSub: number;
+  varietyIdVariety: number;
+  properties: Property[];
+}
+
+export interface Property {
+  id_prop: number;
+  name_prop: string;
+  tr_name_prop: string;
+  typevalue: string;
+  value: string;
+  values: any;
+  enabled_prop: any;
+  productIdProduct: number;
+  featureIdFeature: any;
+}

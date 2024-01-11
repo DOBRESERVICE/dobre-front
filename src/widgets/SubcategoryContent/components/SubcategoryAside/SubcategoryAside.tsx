@@ -1,30 +1,82 @@
 'use client';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { FC } from 'react';
 
 import styles from './SubcategoryAside.module.scss';
 
+import { Loader } from '@/features/Loader/Loader';
+import { FeatureVariety } from '@/interfaces';
 import { Product, Variety } from '@/interfaces/categories';
+import { useFeatureVariety } from '@/shared/hooks/APIHooks/useVarietyFeature';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
-import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
-import { OptionsComponent } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/OptionsComponent/OptionsComponent';
-import { ProductQualityFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/ProductQualityFilter/ProductQualityFilter';
-import { RentPriceFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/RentPriceFilter/RentPriceFilter';
-import { SellerTypeFilter } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SellerTypeFilter/SellerTypeFilter';
+import { BoolCheck } from '@/shared/ui/BoolCheck/BoolCheck';
+import { MultiArray } from '@/shared/ui/MultiArray/MultiArray';
+import { MultiCheck } from '@/shared/ui/MultiCheck/MultiCheck';
+import { MultipleSelect } from '@/shared/ui/MultipleSelect/MultipleSelect';
+import { Range } from '@/shared/ui/Range/Range';
 import { SubcategoriesList } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoriesList/SubcategoriesList';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
 
-import { optionsData } from '../../../../shared/data';
 import { backArrow } from '../../../../shared/image';
-
 interface AsideProps {
   title: string;
   varietiesList: Variety[];
   products: Product[];
 }
 export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, products }) => {
+  const params = useSearchParams();
+  const newSearchParams = new URLSearchParams(params);
+  const trVariety = newSearchParams.get('variety') ?? 'all';
+  const { featureVariety, isLoading } = useFeatureVariety(trVariety);
   const router = useRouter();
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  const renderFeature = (feature: FeatureVariety) => {
+    switch (feature.type_feature) {
+      case 'mselect':
+        return (
+          <>
+            <SelectHeader headerName={feature.name_feature} />
+            <MultipleSelect
+              search_tr_name={feature.tr_name_feature}
+              label={feature.name_feature}
+              selectStyles={customSelect}
+              labelStyles={customLabel}
+              formControlStyles={customDateFormSelect}
+              selectData={feature.values_feature}
+            />
+          </>
+        );
+      case 'marray':
+        return (
+          <>
+            <SelectHeader headerName={feature.name_feature} />
+            <MultiArray search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
+          </>
+        );
+      case 'mcheck':
+        return (
+          <>
+            <SelectHeader headerName={feature.name_feature} />
+            <MultiCheck search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
+          </>
+        );
+      case 'bool':
+        return <BoolCheck headerName={feature.name_feature} search_tr_name={feature.tr_name_feature} />;
+      case 'range':
+        return (
+          <>
+            <SelectHeader headerName={feature.name_feature} />
+            <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
+          </>
+        );
+      default:
+        return <></>;
+    }
+  };
   return (
     <aside className={styles.asideWrapper}>
       <div className={styles.title}>
@@ -38,20 +90,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
           <div>
             <SelectHeader headerName='Бренд' />
           </div>
-          <div>
-            <SelectHeader headerName='Организация' />
-            <CustomSelect
-              label='Все организации'
-              selectData={['sss']}
-              formControlStyles={customDateFormSelect}
-              selectStyles={customSelect}
-              labelStyles={customLabel}
-            />
-          </div>
-          <OptionsComponent title='Питание' optionsData={optionsData} />
-          <RentPriceFilter />
-          <SellerTypeFilter />
-          <ProductQualityFilter />
+          {featureVariety?.map((feature) => <div key={feature.id_feature}>{renderFeature(feature)}</div>)}
         </div>
       ) : (
         ''

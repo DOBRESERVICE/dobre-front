@@ -1,24 +1,33 @@
 @import '@/shared/styles/variables';
 .productInfo {
-  width: 410px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  border-radius: 14px;
-  background: #fff;
-  padding: 20px;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
-}
-.productInfo > div:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.productInfo > div:nth-child(2) {
+  width: 575px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  border-radius: 14px;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
 }
+.infoContent {
+  display:flex;
+  gap:16px;
+}
+.price {
+  color: $graphite;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
+.productName {
+  color: $black;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 140%;
+}
+
 .dateHeaderWrapper {
   display: flex;
   justify-content: space-between;
@@ -36,6 +45,11 @@
     line-height: 11px;
   }
 }
+.tarrifsWrapper {
+  display:flex;
+  flex-direction: column;
+  gap: 13px;
+}
 .selectWrapper {
   display: flex;
   gap: 16px;
@@ -43,6 +57,20 @@
 .cardsWrapper {
   display: flex;
   gap: 16px;
+}
+.allTarrifs {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:6px;
+  cursor: pointer;
+  & > p {
+    color: $deep-blue;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
 }
 .depositeWrapper {
   display: flex;

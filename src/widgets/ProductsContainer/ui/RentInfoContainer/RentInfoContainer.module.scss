@@ -51,12 +51,14 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  & > .rentTimeButton:first-child {
+  & > .rentTimeButton {
     opacity: 0;
     pointer-events: none;
+  }
+  & > .rentTimeButton:first-child {
     transform: rotate(180deg);
   }
-& > .rentTimeButton:first-child.prevVisible {
+  & > .rentTimeButton.prevVisible {
   opacity: 1;
   pointer-events: all;
 }

@@ -1,7 +1,7 @@
 'use client';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box, FormControl, MenuItem, Select, Theme } from '@mui/material';
+import { FormControl, MenuItem, Select, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
@@ -48,14 +48,6 @@ export const CustomSelect: FC<CustomSelect> = ({ labelImage, selectStyles, formC
         id='demo-simple-select'
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        renderValue={(value) => {
-          return (
-            <Box sx={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
-              {labelImage && <Image src={labelImage} alt='saf' />}
-              {value}
-            </Box>
-          );
-        }}
       >
         {selectData.map((item) => (
           <MenuItem key={item} value={item} sx={customMenuItem} disableRipple>

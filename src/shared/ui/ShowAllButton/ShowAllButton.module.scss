@@ -1,0 +1,11 @@
+@import "src/shared/styles/variables";
+.seeAll {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  & > p {
+    color: $deep-blue;
+    font-weight: $fweight-big;
+  }
+}

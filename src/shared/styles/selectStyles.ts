@@ -7,7 +7,7 @@ export const customSelect = {
   fontWeight: '600',
   borderRadius: '8px',
   '& > div': {
-    padding: '8px 14px',
+    padding: '7px 14px',
   },
   '& fieldset': {
     borderColor: MUIColors.lightGraphite,
@@ -19,6 +19,7 @@ export const customSelect = {
     borderColor: MUIColors.lightGraphite,
   },
 };
+
 export const customMenuItem = {
   color: MUIColors.graphite,
   fontSize: '15px',
@@ -29,6 +30,8 @@ export const customMenuItem = {
   justifyContent: 'center',
   borderRadius: '8px',
   marginInline: '10px',
+  marginBlock: '10px',
+  paddingBlock: '7px',
   '&:hover': {
     backgroundColor: MUIColors.lightGraphite,
   },
@@ -95,9 +98,18 @@ export const customDateLabel = {
   top: '-4px',
 };
 
+export const customSortLabel = {
+  color: MUIColors.graphite,
+  fontSize: '15px',
+  fontWeight: '600',
+  top: '-8px',
+  left: '24px',
+  '&.MuiInputLabel-shrink': { top: 0, left: 0 },
+};
 export const customLabel = {
   color: MUIColors.graphite,
   fontSize: '15px',
   fontWeight: '600',
+  '&.MuiInputLabel-shrink': { top: 0 },
   top: '-8px',
 };

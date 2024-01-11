@@ -1,5 +1,4 @@
 'use client';
-import Image from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
 
@@ -7,9 +6,8 @@ import styles from './SubcategoriesList.module.scss';
 
 import { Variety } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
+import { ShowAllButton } from '@/shared/ui/ShowAllButton/ShowAllButton';
 import { SubCategoryItem } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoryListItem/SubcategoryListItem';
-
-import { blueNextArrow } from '../../../../../../shared/image';
 
 interface SubCategoriesProps {
   varietiesList: Variety[];
@@ -25,15 +23,19 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
       router.replace(`${pathName}?variety=all`);
     }
   }, [router, trVariety, pathName]);
-  const [activeSubCategory, setActiveSubCategory] = useState(trVariety);
+  const [activeVariety, setActiveVariety] = useState(trVariety);
   const { itemsToShow, shouldRenderExpandButton, showAll, setShowAll } = useShownData(varietiesList, 9);
+  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === activeVariety);
+  useEffect(() => {
+    varietyPosition > 8 ? setShowAll(true) : setShowAll(false);
+  }, [setShowAll, varietyPosition]);
   return (
     <div className={styles.subCategoriesContainer}>
       <ul className={styles.subCategoriesList}>
         <SubCategoryItem
           varietyName='Все'
-          isActive={activeSubCategory === 'all'}
-          onClick={() => setActiveSubCategory('all')}
+          isActive={activeVariety === 'all'}
+          setActiveVariety={() => setActiveVariety('all')}
           varietyTrName='all'
         />
         {itemsToShow.map((item) => (
@@ -41,17 +43,12 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
             varietyName={item.name_variety}
             varietyTrName={item.tr_name_variety}
             key={item.id_variety}
-            isActive={activeSubCategory === item.tr_name_variety}
-            onClick={() => setActiveSubCategory(item.tr_name_variety)}
+            isActive={activeVariety === item.tr_name_variety}
+            setActiveVariety={() => setActiveVariety(item.tr_name_variety)}
           />
         ))}
       </ul>
-      {shouldRenderExpandButton && (
-        <div className={styles.seeAll} role='button' onClick={() => setShowAll(!showAll)}>
-          <p>{!showAll ? 'Развернуть все' : 'Свернуть все'}</p>
-          <Image src={blueNextArrow} alt='next' />
-        </div>
-      )}
+      {shouldRenderExpandButton && <ShowAllButton showAll={showAll} setShowAll={() => setShowAll(!showAll)} />}
     </div>
   );
 };

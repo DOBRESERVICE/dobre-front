@@ -1,4 +1,3 @@
-
 import {
   aeg,
   blueArrow,
@@ -7,36 +6,33 @@ import {
   checkedIcon,
   cleaningPopularTools,
   clothes,
-  constructionEquipment,
   dewalt,
   drill,
   electroic,
   electroPopularTools,
-  electroTools,
+  favouritePopupIcon,
   festool,
   forKids,
   furniture,
   gamingPopularTools,
-  handMadeTools,
   hilti,
   houseAndyarn,
   houseHold,
   karcher,
   makita,
+  messagesIcon,
   metabo,
   mockItem,
-  mockUser,
   paymentIcon,
   photographyPopularTools,
   renovation,
+  rentIcon,
   secureIcon,
   smartDelivery,
-  specialTechnique,
   sport,
   sportImage,
   sportPopularTools,
   stanki,
-  tesnimonialToolImage,
   travelling,
 } from '../image';
 
@@ -60,23 +56,7 @@ export const searchCardsData = [
     iconUrl: smartDelivery,
   },
 ];
-export const rentInfoData = [
-  {
-    id: 1,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-  {
-    id: 2,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-  {
-    id: 3,
-    timeInRent: '1 неделя',
-    price: '799 pуб.',
-  },
-];
+
 export const howWeWorkData = [
   {
     id: 1,
@@ -134,29 +114,6 @@ export const popularProductsData = [
     id: 7,
     title: 'Электроинструменты',
     imageUrl: electroPopularTools,
-  },
-];
-
-export const descriptionData = [
-  {
-    id: 1,
-    title: 'Что делать, если мою вещь испортят?',
-    text: 'Я регулярно пользуюсь сервисом, по мне очень выгодно и очень удобно, быстрая доставка, единственное не получилось оплатить apple pay. Познакомились с Александром, нашли много общего, очень рада, что есть кто-то кто заботится о людях искренне...',
-  },
-  {
-    id: 2,
-    title: 'Что делать, если мою вещь испортят?',
-    text: 'Я регулярно пользуюсь сервисом, по мне очень выгодно и очень удобно, быстрая доставка, единственное не получилось оплатить apple pay. Познакомились с Александром, нашли много общего, очень рада, что есть кто-то кто заботится о людях искренне...',
-  },
-  {
-    id: 3,
-    title: 'Что делать, если мою вещь испортят?',
-    text: 'Я регулярно пользуюсь сервисом, по мне очень выгодно и очень удобно, быстрая доставка, единственное не получилось оплатить apple pay. Познакомились с Александром, нашли много общего, очень рада, что есть кто-то кто заботится о людях искренне...',
-  },
-  {
-    id: 4,
-    title: 'Что делать, если мою вещь испортят?',
-    text: 'Я регулярно пользуюсь сервисом, по мне очень выгодно и очень удобно, быстрая доставка, единственное не получилось оплатить apple pay. Познакомились с Александром, нашли много общего, очень рада, что есть кто-то кто заботится о людях искренне...',
   },
 ];
 
@@ -515,74 +472,6 @@ export const productsData = [
   },
 ];
 
-export const constuctionData = [
-  {
-    id: 1,
-    imageUrl: handMadeTools,
-    title: 'Ручные инструменты',
-  },
-  {
-    id: 2,
-    imageUrl: electroTools,
-    title: 'Электроинструменты',
-  },
-  {
-    id: 3,
-    imageUrl: specialTechnique,
-    title: 'Спецтехника',
-  },
-  {
-    id: 4,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 5,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 6,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 7,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 8,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 9,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 10,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 11,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 12,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-  {
-    id: 13,
-    imageUrl: constructionEquipment,
-    title: 'Строительное оборудование',
-  },
-];
-
 export const brandsData = [
   {
     id: 1,
@@ -689,206 +578,6 @@ export const popularToolsData = [
   },
 ];
 
-export const catalogData = [
-  {
-    id: 1,
-    title: 'Электроинструменты в аренду',
-    subCategories: [
-      {
-        id: 1,
-        title: 'Болгарки УШМ',
-      },
-      {
-        id: 2,
-        title: 'Дрели и шуруповерты',
-      },
-      {
-        id: 3,
-        title: 'Перфораторы',
-      },
-      {
-        id: 4,
-        title: 'Шлифовальные машины',
-      },
-      {
-        id: 5,
-        title: 'Электрорубанки',
-      },
-      {
-        id: 6,
-        title: 'Электрофрезеры',
-      },
-      {
-        id: 7,
-        title: 'Бензопилы и электрорезы',
-      },
-      {
-        id: 8,
-        title: 'Электропилы и электролобзики',
-      },
-      {
-        id: 9,
-        title: 'Аппараты высокого давления',
-      },
-      {
-        id: 10,
-        title: 'Пылесосы строительные ',
-      },
-      {
-        id: 11,
-        title: 'Сварочное оборудование',
-      },
-      {
-        id: 12,
-        title: 'Комрессоры',
-      },
-      {
-        id: 13,
-        title: 'Комрессоры',
-      },
-      {
-        id: 14,
-        title: 'Комрессоры',
-      },
-    ],
-    items: productsData,
-  },
-
-  {
-    id: 2,
-    title: 'Спецтехника в аренду',
-    subCategories: [
-      {
-        id: 1,
-        title: 'Бетономешалки',
-      },
-      {
-        id: 2,
-        title: 'Самосвалы',
-      },
-      {
-        id: 3,
-        title: 'Прицепы',
-      },
-      {
-        id: 4,
-        title: 'Автовышки',
-      },
-      {
-        id: 5,
-        title: 'Эскаваторы',
-      },
-      {
-        id: 6,
-        title: 'Автокраны',
-      },
-      {
-        id: 7,
-        title: 'Тракторы',
-      },
-      {
-        id: 8,
-        title: 'Манипуляторы',
-      },
-      {
-        id: 9,
-        title: 'Эвакуаторы',
-      },
-      {
-        id: 10,
-        title: 'Катки',
-      },
-      {
-        id: 11,
-        title: 'Погрузчики',
-      },
-      {
-        id: 12,
-        title: 'Ямобуры',
-      },
-      {
-        id: 13,
-        title: 'Ямобуры',
-      },
-      {
-        id: 14,
-        title: 'Ямобуры',
-      },
-    ],
-    items: productsData,
-  },
-  {
-    id: 3,
-    title: 'Ручные инструменты в аренду',
-    subCategories: [
-      {
-        id: 1,
-        title: 'Наборы инструментов',
-      },
-      {
-        id: 2,
-        title: 'Отбойные молотки, топоры, кувалды',
-      },
-      {
-        id: 3,
-        title: 'Плиткорезы, стеклорезы, захваты',
-      },
-      {
-        id: 4,
-        title: 'Лопаты, шуфели, грабли',
-      },
-      {
-        id: 5,
-        title: 'Пилы и лобзики',
-      },
-      {
-        id: 6,
-        title: 'Домкраты',
-      },
-      {
-        id: 7,
-        title: 'Домкраты',
-      },
-    ],
-    items: productsData,
-  },
-  {
-    id: 4,
-    title: 'Строительное оборудование в аренду',
-    subCategories: [
-      {
-        id: 1,
-        title: 'Наборы инструментов',
-      },
-      {
-        id: 2,
-        title: 'Отбойные молотки, топоры, кувалды',
-      },
-      {
-        id: 3,
-        title: 'Плиткорезы, стеклорезы, захваты',
-      },
-      {
-        id: 4,
-        title: 'Лопаты, шуфели, грабли',
-      },
-      {
-        id: 5,
-        title: 'Пилы и лобзики',
-      },
-      {
-        id: 6,
-        title: 'Домкраты',
-      },
-      {
-        id: 7,
-        title: 'Домкраты',
-      },
-    ],
-    items: productsData,
-  },
-];
-
 export const qualityButtonsData = [
   {
     id: 1,
@@ -905,49 +594,6 @@ export const qualityButtonsData = [
   {
     id: 4,
     qualityType: 'Среднее',
-  },
-];
-
-export const subCategoriesData = [
-  {
-    id: 1,
-    text: 'Болгарки УШМ',
-  },
-  {
-    id: 2,
-    text: 'Дрели и шуруповерты',
-  },
-  {
-    id: 3,
-    text: 'Перфораторы',
-  },
-  {
-    id: 4,
-    text: 'Шлифовальные машины',
-  },
-  {
-    id: 5,
-    text: 'Электрорубанки',
-  },
-  {
-    id: 6,
-    text: 'Электрофрезеры',
-  },
-  {
-    id: 7,
-    text: 'Бензопилы и электрорезы',
-  },
-  {
-    id: 8,
-    text: 'Электропилы и электролобзики',
-  },
-  {
-    id: 9,
-    text: 'Аппараты высокого давления',
-  },
-  {
-    id: 10,
-    text: 'Болгарки УШМ',
   },
 ];
 
@@ -1006,33 +652,6 @@ export const headerLinks = [
     id: 11,
     linkName: 'Спорт и активный отдых',
     image: sport,
-  },
-];
-
-export const optionsData = [
-  {
-    id: 1,
-    optionText: 'От сети',
-  },
-  {
-    id: 2,
-    optionText: 'От сети',
-  },
-  {
-    id: 3,
-    optionText: 'От сети',
-  },
-  {
-    id: 4,
-    optionText: 'От сети',
-  },
-  {
-    id: 5,
-    optionText: 'От сети',
-  },
-  {
-    id: 6,
-    optionText: 'От сети',
   },
 ];
 
@@ -1111,58 +730,20 @@ export const blueTypesArray = [
   'Мощность, Вт',
 ];
 
-export const userTestimonialsData = [
+export const userMenuData = [
   {
     id: 1,
-    userImage: mockUser,
-    userName: 'Viola',
-    userComment: 'Дрель в очень хорошем состоянии, почти как новое. Ирина очень отзывчивая, помогла разобраться.',
-    status: 4,
-    images: [
-      {
-        id: 1,
-        img: tesnimonialToolImage,
-      },
-      {
-        id: 2,
-        img: tesnimonialToolImage,
-      },
-    ],
-    feedbackCount: 4.5,
-    feedbackDate: '1 сентября 2023',
+    img: rentIcon,
+    text: 'Аренда',
   },
   {
     id: 2,
-    userImage: mockUser,
-    userName: 'Anton',
-    userComment:
-      'Дрель отличная, рекомендую. Состояние очень хорошее, думаю почти как новое. Виола очень хороший человек, помогла с доставкой! Буду обращаться еще !',
-    status: 3,
-    feedbackCount: 4,
-    feedbackDate: '1 сентября 2023',
-    ownerResponse: 'Антон, спасибо! Обращайтесь ко мне снова!',
-    ownerImage: mockUser,
+    img: messagesIcon,
+    text: 'Сообщения',
   },
   {
     id: 3,
-    userImage: mockUser,
-    userName: 'Виктория',
-    userComment: 'Все ок!',
-    status: 3,
-    feedbackCount: 5,
-    feedbackDate: '1 сентября 2023',
-    ownerImage: mockUser,
-  },
-];
-
-export const FAQData = [
-  {
-    id: 1,
-    userImage: mockUser,
-    userName: 'Anton',
-    userComment: 'Подскажите, дрель сдается с кейсом?',
-    feedbackDate: '1 сентября 2023',
-    ownerResponse: 'Да, конечно. Дрель упакована в специальный кейс.',
-    ownerImage: mockUser,
+    img: favouritePopupIcon,
+    text: 'Избранные',
   },
 ];
