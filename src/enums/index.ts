@@ -50,3 +50,10 @@ export enum SECTION_SEO {
   SUBCATEGORY = 'subcategory',
   VARIETY = 'variety',
 }
+export enum VarietyFeatureType {
+  MSELECT = 'mselect',
+  MARRAY = 'marray',
+  MCHECK = 'mcheck',
+  BOOL = 'bool',
+  RANGE = 'range',
+}

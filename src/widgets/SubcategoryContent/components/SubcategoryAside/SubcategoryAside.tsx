@@ -19,6 +19,7 @@ import { SubcategoriesList } from '@/widgets/SubcategoryContent/components/Subca
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
 
 import { backArrow } from '../../../../shared/image';
+import { VarietyFeatureType } from '@/enums';
 interface AsideProps {
   title: string;
   varietiesList: Variety[];
@@ -36,7 +37,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
 
   const renderFeature = (feature: FeatureVariety) => {
     switch (feature.type_feature) {
-      case 'mselect':
+      case VarietyFeatureType.MSELECT:
         return (
           <>
             <SelectHeader headerName={feature.name_feature} />
@@ -50,29 +51,29 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
             />
           </>
         );
-      case 'marray':
+      case VarietyFeatureType.MARRAY:
         return (
           <>
             <SelectHeader headerName={feature.name_feature} />
             <MultiArray search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
           </>
         );
-      case 'mcheck':
+      case VarietyFeatureType.MCHECK:
         return (
           <>
             <SelectHeader headerName={feature.name_feature} />
             <MultiCheck search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
           </>
         );
-      case 'bool':
+      case VarietyFeatureType.BOOL:
         return <BoolCheck headerName={feature.name_feature} search_tr_name={feature.tr_name_feature} />;
-      case 'range':
-        return (
-          <>
-            <SelectHeader headerName={feature.name_feature} />
-            <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
-          </>
-        );
+      // case VarietyFeatureType.RANGE:
+      //   return (
+      //     <>
+      //       <SelectHeader headerName={feature.name_feature} />
+      //       <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
+      //     </>
+      //   );
       default:
         return <></>;
     }
