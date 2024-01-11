@@ -13,7 +13,6 @@ export const TariffCard: FC<TariffCardProps> = ({ term }) => {
   const periodText = PeriodMapping[period];
   return (
     <div className={styles.tariffCard}>
-      {/*{hasInfoIcon && <Image src={tarrifInfo} alt='info' />}*/}
       <div className={styles.content}>
         <p>
           {teek} {periodText}

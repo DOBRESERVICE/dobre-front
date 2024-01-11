@@ -1,60 +1,60 @@
 'use client';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { DateRangePicker } from 'rsuite';
-import { DateRange } from 'rsuite/DateRangePicker';
-
-import 'rsuite/dist/rsuite-no-reset.css';
+import { useEffect, useRef, useState } from 'react';
+import DatePicker, { DateObject, DatePickerRef, Value } from 'react-multi-date-picker';
 import styles from './CustomDatePicker.module.scss';
-
 import { useAuthData } from '@/shared/context/authContext';
+import classNames from 'classnames';
+import InputIcon from 'react-multi-date-picker/components/input_icon';
 import { parseDate } from '@/shared/lib';
 
 export const CustomDatePicker = () => {
-  const [dateRange, setDateRange] = useState<[Date, Date] | null>(null);
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
   const { isPending, startTransition } = useAuthData();
+  const [dateRange, setDateRange] = useState<Value>(null);
+  const datePickerRef = useRef<DatePickerRef>(null);
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
-    const dateStart = parseDate(params.get('dateStart'));
-    const dateEnd = parseDate(params.get('dateEnd'));
-    if (dateStart && dateEnd) {
-      setDateRange([dateStart, dateEnd]);
-    }
-  }, [searchParams]);
-  const handleChange = (value: DateRange | null) => {
-    const params = new URLSearchParams(searchParams);
-    setDateRange(value);
-    const formattedDates = value
-      ?.filter((dateElement) => dateElement !== null)
-      .map((dateElement) => {
-        const date = new Date(dateElement);
-        return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
-      });
-    if (formattedDates) {
+    if (Array.isArray(dateRange) && dateRange.length > 1 && datePickerRef.current) {
+      const startDate = parseDate(dateRange[0]);
+      const endDate = parseDate(dateRange[1]);
       startTransition(() => {
-        params.set('dateStart', formattedDates[0]);
-        params.set('dateEnd', formattedDates[1]);
+        params.set('dateStart', startDate);
+        params.set('dateEnd', endDate);
         const search = params.toString();
         const query = search ? `?${search}` : '';
         router.push(`${pathname}${query}`, { scroll: false });
       });
+      datePickerRef.current.closeCalendar();
     }
-  };
+  }, [startTransition, pathname, router, searchParams, dateRange]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams);
+    const start = params.get('dateStart');
+    const end = params.get('dateEnd');
+    if (start && end) {
+      setDateRange([start, end]);
+    }
+  }, [searchParams]);
 
   return (
-    <DateRangePicker
+    <DatePicker
       disabled={isPending}
-      format='dd-MM-yyyy'
-      appearance='default'
+      ref={datePickerRef}
+      range
+      editable={false}
+      dateSeparator='-'
+      format='DD/MM/YY'
+      className={styles.datePickerCalendar}
+      containerClassName={classNames(styles.datePicker)}
+      rangeHover
+      onChange={setDateRange}
       value={dateRange}
-      onChange={(value) => handleChange(value)}
-      placeholder='Выберите дату'
-      style={{ width: 230 }}
-      cleanable={false}
-      className={styles.datePicker}
+      render={<InputIcon placeholder='Выберите дату' />}
     />
   );
 };

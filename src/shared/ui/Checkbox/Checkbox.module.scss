@@ -20,3 +20,19 @@
  background-position: center;
  background-repeat: no-repeat;
 }
+.customCheckboxWrapper {
+ width: 34px;
+ height: 34px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ cursor: pointer;
+ transition: background-color .3s;
+}
+.customCheckboxWrapper:hover {
+ background-color: $light-gray;
+}
+.customCheckboxWrapper:active {
+ background-color: #A7A7A7;
+}

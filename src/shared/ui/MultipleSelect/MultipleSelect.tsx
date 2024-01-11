@@ -1,5 +1,5 @@
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { FormControl, MenuItem, Select, SelectChangeEvent, Theme } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -9,7 +9,7 @@ import styles from '@/shared/ui/CustomSelect/CustomSelect.module.scss';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { whiteChecked } from '@/shared/image';
-import { customMenuItem } from '@/shared/styles/selectStyles';
+import { customLabel, customMenuItem, customSortLabel } from '@/shared/styles/selectStyles';
 
 interface CustomSelect {
   label?: string;
@@ -23,7 +23,13 @@ interface CustomSelect {
   selectData: string[];
   search_tr_name: string;
 }
-export const MultipleSelect: FC<CustomSelect> = ({ selectData, selectStyles, formControlStyles, search_tr_name }) => {
+export const MultipleSelect: FC<CustomSelect> = ({
+  selectData,
+  selectStyles,
+  formControlStyles,
+  search_tr_name,
+  label,
+}) => {
   const { isPending, startTransition } = useAuthData();
   const params = useSearchParams();
   const searchParams = new URLSearchParams(params);
@@ -48,12 +54,16 @@ export const MultipleSelect: FC<CustomSelect> = ({ selectData, selectStyles, for
   };
   return (
     <FormControl sx={formControlStyles}>
+      <InputLabel sx={customLabel} id='demo-simple-select'>
+        {label}
+      </InputLabel>
       <Select
         multiple
         MenuProps={{
           disableScrollLock: true,
         }}
         sx={selectStyles}
+        label={label}
         IconComponent={ExpandMoreIcon}
         labelId='demo-simple-select-label'
         id='demo-simple-select'

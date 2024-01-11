@@ -10,6 +10,8 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 export const Checkbox: FC<CheckboxProps> = (props) => {
   const { checked, onChange, ...restProps } = props;
   return (
-    <input {...restProps} type='checkbox' className={styles.customCheckbox} checked={checked} onChange={onChange} />
+    <div className={styles.customCheckboxWrapper}>
+      <input {...restProps} type='checkbox' className={styles.customCheckbox} checked={checked} onChange={onChange} />
+    </div>
   );
 };

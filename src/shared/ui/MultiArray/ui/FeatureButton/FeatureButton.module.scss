@@ -1,6 +1,7 @@
 @import "src/shared/styles/variables";
 .featureButton{
-  height: 36px;
+  min-width: 134px;
+  padding:10px 20px;
   font-family: inherit;
   border-radius: 8px;
   background: $sky-blue;
@@ -9,7 +10,7 @@
   font-size: 13px;
   font-style: normal;
   font-weight: $fweight-big;
-  line-height: 29px;
+  line-height: 17.5px;
   cursor: pointer;
 }
 .featureButton:hover {

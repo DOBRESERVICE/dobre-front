@@ -24,9 +24,8 @@ export const BoolCheck: FC<BoolCheckProps> = ({ search_tr_name, headerName }) =>
   const toggleCheckbox = (value: boolean) => {
     const params = new URLSearchParams(searchParams);
     setIsChecked((prev) => !prev);
-    const newValue = value ? '1' : '0';
     startTransition(() => {
-      params.set(search_tr_name, newValue);
+      value ? params.set(search_tr_name, '1') : params.delete(search_tr_name);
       const search = params.toString();
       const query = search ? `?${search}` : '';
       router.push(`${pathname}${query}`, { scroll: false });

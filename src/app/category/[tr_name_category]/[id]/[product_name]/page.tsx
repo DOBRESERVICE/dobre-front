@@ -71,8 +71,9 @@ export default async function ProductPage({ params }: { params: { product_name: 
             quantity={productData.quantity}
             hasInsurance={productData.insurance}
             terms={productData.terms}
+            deposit={productData.deposit}
           />
-          <ProductAsideInfo lan={lan} lon={lon} />
+          {/*<ProductAsideInfo lan={lan} lon={lon} />*/}
         </div>
         <div className={styles.ratingWrapper}>
           <Testimonials testimonialsData={testimonialsData} FAQData={FAQData} />

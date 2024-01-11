@@ -132,6 +132,7 @@ export interface ProductItem {
   terms: Term[];
   properties: Property[];
   address: Address;
+  deposit: number;
 }
 export interface Property {
   id_prop: number;
