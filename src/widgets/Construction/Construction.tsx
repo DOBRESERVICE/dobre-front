@@ -14,8 +14,9 @@ import { nextArrow, previous } from '../../shared/image';
 interface ConstructionProps {
   title: string;
   subCategories: Subcategory[];
+  trCategoryName: string;
 }
-export const Construction: FC<ConstructionProps> = ({ title, subCategories }) => {
+export const Construction: FC<ConstructionProps> = ({ title, subCategories, trCategoryName }) => {
   return (
     <section className={styles.constructionSectionWrapper}>
       <TopSectionBar barName={title} announcements='316 объявлений' hasLinkArrow={false} />
@@ -24,7 +25,7 @@ export const Construction: FC<ConstructionProps> = ({ title, subCategories }) =>
           {subCategories.map((product) => (
             <CardItem
               key={product.tr_name_sub}
-              link={product.tr_name_sub}
+              link={`/category/${trCategoryName}/${product.tr_name_sub}`}
               imageUrl={product.image_sub}
               title={product.name_sub}
             />

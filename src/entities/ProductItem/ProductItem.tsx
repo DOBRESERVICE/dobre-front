@@ -15,7 +15,6 @@ import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContai
 import { favouriteIcon, mockUser, verified } from '../../shared/image';
 
 export interface ProductItem {
-  id: number;
   itemName: string;
   userUrl: string | StaticImageData | null;
   photoUrl: string | StaticImageData;
@@ -30,8 +29,8 @@ export interface ProductItem {
   description: string;
   trCategoryName?: string;
   trSubCategoryName?: string;
-  trVarietyName?: string;
   productId: number;
+  trProductName: string;
 }
 
 export const ProductItem: FC<ProductItem> = ({
@@ -48,9 +47,9 @@ export const ProductItem: FC<ProductItem> = ({
   description,
   rentInfoArray,
   productId,
-  id,
   trSubCategoryName,
   trCategoryName,
+  trProductName,
 }) => {
   return (
     <div className={styles.newProductWrapper}>
@@ -58,7 +57,10 @@ export const ProductItem: FC<ProductItem> = ({
       <div className={styles.imageWrapper}>
         <Image src={favouriteIcon} alt='favourite' />
       </div>
-      <Link href={`/category/${trCategoryName}/${trSubCategoryName}/${productId}`} className={styles.mainImageWrapper}>
+      <Link
+        href={`/category/${trCategoryName}/${trSubCategoryName}/${trProductName}`}
+        className={styles.mainImageWrapper}
+      >
         <Image src={`${IMAGE_BASE_URL}${photoUrl}`} alt='item' width={340} height={260} />
       </Link>
       <div className={styles.content}>

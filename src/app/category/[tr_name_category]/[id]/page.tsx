@@ -5,6 +5,7 @@ import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryCont
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
 
 import { getFilteredSubcategory, getFilteredVariety, getSubCategory } from '../../../../shared/api/categoriesApi';
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 
 export default async function CategoryPage({
   params,
@@ -20,6 +21,7 @@ export default async function CategoryPage({
       ? await getFilteredVariety(variety, searchParams)
       : await getFilteredSubcategory(params.id, searchParams);
   const { data: SEOData } = await getSEOContent('subcategory', params.id);
+  const activeVarietyName = certainSubCategoryData.varieties.find((v) => v.tr_name_variety === variety)?.name_variety;
   const breadCrumbsData = [
     {
       id: 1,
@@ -28,7 +30,7 @@ export default async function CategoryPage({
     },
     {
       id: 2,
-      link: `/category/remont-i-strojka `,
+      link: `/category/${certainVarietyData.data} `,
       linkName: 'remont-i-strojka ',
     },
     {
@@ -38,13 +40,16 @@ export default async function CategoryPage({
     },
     {
       id: 4,
-      link: `/category/'remont-i-strojka '/${certainSubCategoryData.tr_name_sub}`,
-      linkName: variety,
+      link: `/category/'remont-i-strojka'/${certainSubCategoryData.tr_name_sub}?variety=${variety}`,
+      linkName: activeVarietyName,
     },
   ];
+
   return (
     <>
-      <Wrapper>{/*<BreadCrumbs breadCrumbsData={breadCrumbsData} />*/}</Wrapper>
+      <Wrapper>
+        <BreadCrumbs breadCrumbsData={breadCrumbsData} />
+      </Wrapper>
       <SubcategoryToolsContainer
         varietyProducts={certainSubCategoryData.varieties}
         subCategoryTitle={certainSubCategoryData.name_sub}
