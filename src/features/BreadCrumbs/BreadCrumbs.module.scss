@@ -5,12 +5,20 @@
   gap: 8px;
   margin-top: 44px;
   align-self: start;
+  align-items: center;
+
+  > span {
+  color:$graphite;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  > a {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
 }
-.breadCrumbsWrapper > a {
-  color: $graphite;
-  font-size: 13px;
-  font-weight: 600;
-}
+
 
 .breadCrumbsWrapper > span:last-child {
   display: none;

@@ -44,7 +44,11 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
       <Wrapper>
         <BreadCrumbs breadCrumbsData={breadCrumbsData} />
       </Wrapper>
-      <Construction title={certainCategoryData.name_category} subCategories={certainCategoryData.subcategories} />
+      <Construction
+        title={certainCategoryData.name_category}
+        trCategoryName={certainCategoryData.tr_name_category}
+        subCategories={certainCategoryData.subcategories}
+      />
       <Brands />
       <PopularTools />
       {certainCategoryData.products.length > 0 && <NewProducts newProducts={newProductsData} />}

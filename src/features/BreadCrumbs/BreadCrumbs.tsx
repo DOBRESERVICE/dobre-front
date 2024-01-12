@@ -8,7 +8,7 @@ import styles from './BreadCrumbs.module.scss';
 interface BreadCrumbsSegment {
   id: number;
   link: string;
-  linkName: string;
+  linkName: string | undefined;
 }
 
 interface BreadCrumbsProps {
@@ -18,12 +18,14 @@ interface BreadCrumbsProps {
 export const BreadCrumbs: FC<BreadCrumbsProps> = ({ breadCrumbsData }) => {
   return (
     <div className={styles.breadCrumbsWrapper}>
-      {breadCrumbsData.map((segment) => (
-        <React.Fragment key={segment.id}>
-          <Link href={segment.link}>{segment.linkName}</Link>
-          <span>/</span>
-        </React.Fragment>
-      ))}
+      {breadCrumbsData
+        .filter((item) => item.linkName !== undefined)
+        .map((segment) => (
+          <React.Fragment key={segment.id}>
+            <Link href={segment.link}>{segment.linkName}</Link>
+            <span>/</span>
+          </React.Fragment>
+        ))}
     </div>
   );
 };

@@ -35,10 +35,9 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
             isAvailable={product.enabled_product}
             isConfirmed
             rentInfoArray={product.terms}
-            id={product.id_product}
             // trCategoryName={product.category.tr_name_category}
             // trSubCategoryName={product.subcategory.tr_name_sub}
-            // trVarietyName={product.variety.tr_name_variety}
+            trProductName={product.tr_name_product}
           />
         ))}
       </Slider>
