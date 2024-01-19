@@ -10,7 +10,6 @@ import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 import { getSEOContent } from '@/shared/api/contentApi';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { Blog } from '@/widgets/Blog/Blog';
-
 import { getProductData, getProductFAQ, getProductTestimonials } from '../../../../../shared/api/categoriesApi';
 import { commentExclamation } from '../../../../../shared/image';
 
@@ -61,28 +60,23 @@ export default async function ProductPage({ params }: { params: { product_name: 
             </div>
           </div>
         </div>
-        <div className={styles.wrapper}>
-          <ProductItemContainer
-            productDescription={productData.description}
-            productImage={productData.image}
-            productName={productData.name_product}
-            price={productData.price}
-            qualityControl={productData.quality_control}
-            quantity={productData.quantity}
-            hasInsurance={productData.insurance}
-            terms={productData.terms}
-            deposit={productData.deposit}
-          />
-          {/*<ProductAsideInfo lan={lan} lon={lon} />*/}
-        </div>
+        <ProductItemContainer
+          productDescription={productData.description}
+          productImage={productData.image}
+          productName={productData.name_product}
+          price={productData.price}
+          qualityControl={productData.quality_control}
+          quantity={productData.quantity}
+          hasInsurance={productData.insurance}
+          terms={productData.terms}
+          deposit={productData.deposit}
+          lan={lan}
+          lon={lon}
+        />
         <div className={styles.ratingWrapper}>
           <Testimonials testimonialsData={testimonialsData} FAQData={FAQData} />
           <GeneralRating />
         </div>
-      </section>
-      <section className={styles.similarProducts}>
-        <TopSectionBar hasLinkArrow barName='Похожие товары' />
-        {/*<ProductsContainer products={productsData} />*/}
       </section>
       <Blog SEOData={SEOData} />
     </>

@@ -34,6 +34,7 @@ import dpd from './delivery/dpd.svg';
 import kce from './delivery/kce.svg';
 import russiaMail from './delivery/russiaMail.svg';
 import sdek from './delivery/sdek.svg';
+import deliveryIcon from './delivery/defaultDelivery.svg';
 import yandexGo from './delivery/yandexGo.svg';
 import DOBRE from './DOBRE.svg';
 import dobreBanner from './DobreBanner.svg';
@@ -133,8 +134,15 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
+import rightBlueArrow from './rightBlueArrow.svg';
+import defaultBlackArrow from './defaultBlackArrow.svg';
+import greenCheckedRuleIcon from './greenCheckedRuleIcon.svg';
 
 export {
+  deliveryIcon,
+  greenCheckedRuleIcon,
+  defaultBlackArrow,
+  rightBlueArrow,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,

@@ -8,7 +8,7 @@ import styles from './Testimonials.module.scss';
 import { TabsComponent } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TabsComponent/TabsComponent';
 import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/UserTestimotal/UserTestimonial';
 import { ProductTestimonial } from '@/interfaces';
-import { FAQCustomButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
+import { FAQCustomButton, rentInfoCustomBigButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
 
 interface TestimonialsProps {
   testimonialsData: ProductTestimonial[];
@@ -56,8 +56,8 @@ export const Testimonials: FC<TestimonialsProps> = ({ testimonialsData, FAQData 
         </>
       )}
       <div className={styles.seeAll}>
-        <Button disableRipple sx={SeeAllCustomBigButton}>
-          Просмотреть все
+        <Button disableRipple sx={rentInfoCustomBigButton}>
+          Показать еще
         </Button>
 
         <p>Отзывы могут оставлять только те, кто совершил аренду. Так мы формируем честный рейтинг.</p>

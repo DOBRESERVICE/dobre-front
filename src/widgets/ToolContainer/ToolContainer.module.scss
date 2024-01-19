@@ -1,3 +1,4 @@
+@import "src/shared/styles/variables";
 .popularToolsWrapper {
   width: 100%;
   display: grid;
@@ -7,4 +8,7 @@
   gap: 20px;
   column-gap: 20px;
   row-gap: 30px;
+  @include breakpoint(lg) {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }

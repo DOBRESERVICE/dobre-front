@@ -67,13 +67,13 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
         );
       case VarietyFeatureType.BOOL:
         return <BoolCheck headerName={feature.name_feature} search_tr_name={feature.tr_name_feature} />;
-      // case VarietyFeatureType.RANGE:
-      //   return (
-      //     <>
-      //       <SelectHeader headerName={feature.name_feature} />
-      //       <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
-      //     </>
-      //   );
+      case VarietyFeatureType.RANGE:
+        return (
+          <>
+            <SelectHeader headerName={feature.name_feature} />
+            <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
+          </>
+        );
       default:
         return <></>;
     }
@@ -88,9 +88,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
       <hr />
       {products?.length ? (
         <div className={styles.chooseContent}>
-          <div>
-            <SelectHeader headerName='Бренд' />
-          </div>
+          <SelectHeader headerName='Бренд' />
           {featureVariety?.map((feature) => <div key={feature.id_feature}>{renderFeature(feature)}</div>)}
         </div>
       ) : (

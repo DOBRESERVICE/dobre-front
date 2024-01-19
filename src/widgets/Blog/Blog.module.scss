@@ -10,12 +10,18 @@
 .content {
   display: flex;
   gap: 54px;
+  @include breakpoint(lg) {
+    gap: 20px;
+  }
 }
 .emptyBlock {
   width: 490px;
   height: 230px;
   border-radius: 14px;
   background: $light-graphite;
+  @include breakpoint(lg) {
+    width: 400px;
+  }
 }
 .textBlock {
   display: flex;

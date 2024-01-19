@@ -4,7 +4,7 @@
   max-width: 184px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
   justify-content: center;
   align-items: center;
   border-radius: 14px;
@@ -18,15 +18,11 @@
   border-radius: 14px;
   height: 140px;
 
-  @include breakpoint(lg) {
-    height: 120px;
-  }
 }
 .toolWrapper > p {
   color: $black;
   font-size: $font-default;
   font-weight: $fweight-big;
-  align-self: start;
   @include breakpoint(lg) {
     text-align: center;
   }
@@ -44,8 +40,5 @@
     height: 100%;
     object-fit: cover;
   }
-  @include breakpoint(lg) {
-    height: 120px;
 
-  }
 }

@@ -1,6 +1,7 @@
 import { FC, InputHTMLAttributes } from 'react';
 
 import styles from './Checkbox.module.scss';
+import { useAuthData } from '@/shared/context/authContext';
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
   checked: boolean;
@@ -9,9 +10,15 @@ interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const Checkbox: FC<CheckboxProps> = (props) => {
   const { checked, onChange, ...restProps } = props;
+  const { isPending } = useAuthData();
   return (
-    <div className={styles.customCheckboxWrapper}>
-      <input {...restProps} type='checkbox' className={styles.customCheckbox} checked={checked} onChange={onChange} />
-    </div>
+    <input
+      {...restProps}
+      disabled={isPending}
+      type='checkbox'
+      className={styles.customCheckbox}
+      checked={checked}
+      onChange={onChange}
+    />
   );
 };

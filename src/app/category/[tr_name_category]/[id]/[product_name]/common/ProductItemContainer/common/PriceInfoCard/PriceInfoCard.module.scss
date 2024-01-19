@@ -1,18 +1,29 @@
 @import '@/shared/styles/variables';
 .card {
-  max-width: fit-content;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 86px;
+  justify-content: space-between;
   border-radius: 14px;
-  padding: 20px;
-  background: #f4f4f4;
-
+  padding: 20px 35px 20px 20px;
+  background: $sky-blue;
   @include breakpoint(lg) {
     gap: 16px;
   }
 }
+.text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & > p {
+    width: max-content;
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+    line-height: 23px;
+  }
+}
+
 .cardContent {
   display: flex;
   flex-direction: column;
@@ -26,14 +37,16 @@
 }
 .wrapper {
   display: flex;
-  gap: 16px;
+  gap: 12px;
 }
 .contentItem {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  & > div:first-child {
+  border-radius: 8px;
+  padding: 10px;
+  & > div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,38 +54,37 @@
   }
   & > div > p {
     width: max-content;
-    color: $graphite;
-    font-size: 12px;
+    font-size: 13px;
     font-style: normal;
     font-weight: 600;
     line-height: 18px;
   }
-  & > p {
-    color: $black;
+}
+.price {
     font-size: 18px;
     font-weight: $fweight-big;
   }
-}
 
-.contentItem:not(:last-child) {
-  border-right: 1px solid $light-graphite;
-  padding-right: 20px;
-}
-.additionalContent {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.text {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-
-  & > p {
-    width: max-content;
-    color: #55c94d;
-    font-size: 13px;
-    font-weight: $fweight-big;
+.contentItem:first-child {
+  background: $white;
+  & > div > p {
+    color: $graphite;
+  }
+  & .price {
+    color: $black;
   }
 }
+
+.contentItem:last-child {
+  background: #55C94D;
+  & > div > p {
+    color: $white;
+  }
+  & .price {
+    color:$white;
+  }
+  & svg path {
+    fill: $white;
+  }
+}
+

@@ -3,6 +3,7 @@ import { MUIColors } from '@/shared/styles/MUIColors';
 export const customCategoriesButton = {
   height: '45px',
   backgroundColor: MUIColors.lightBlue,
+  paddingInline: '20px',
   boxShadow: 'none',
   gap: '10px',
   color: MUIColors.deepBlue,
@@ -282,6 +283,7 @@ export const rentInfoCustomBigButton = {
   borderRadius: '8px',
   height: '45px',
   gap: '10px',
+  padding: '14px 20px',
   fontSize: '15px',
   color: MUIColors.white,
   width: 'auto',
@@ -296,6 +298,10 @@ export const rentInfoCustomBigButton = {
   '&:active': {
     backgroundColor: MUIColors.activeDeepBlue,
     boxShadow: 'none',
+  },
+  '&.Mui-disabled': {
+    opacity: 0.4,
+    color: MUIColors.white,
   },
 };
 export const SeeAllCustomBigButton = {

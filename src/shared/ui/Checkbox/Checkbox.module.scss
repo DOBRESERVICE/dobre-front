@@ -1,5 +1,7 @@
 @import "src/shared/styles/variables";
-
+.customCheckboxContent {
+ position: relative;
+}
  .customCheckbox {
   -webkit-appearance: none;
   appearance: none;
@@ -13,6 +15,10 @@
   border-radius: 4px;
   transition: 120ms background-color ease-in-out;
 }
+ .customCheckbox[disabled] {
+  background-color: $light-gray;
+  border-color: $light-gray;
+ }
 .customCheckbox:checked {
  background-image: url('../../image/checkboxIcon.svg');
  background-color: $deep-blue;
@@ -21,6 +27,9 @@
  background-repeat: no-repeat;
 }
 .customCheckboxWrapper {
+ position: absolute;
+ top:0;
+ left:0;
  width: 34px;
  height: 34px;
  display: flex;

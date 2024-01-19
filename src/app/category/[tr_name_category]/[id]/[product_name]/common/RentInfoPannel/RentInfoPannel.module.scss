@@ -1,6 +1,7 @@
 @import '@/shared/styles/variables';
 .productInfo {
   width: 575px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -36,7 +37,7 @@
     color: $black;
     font-size: 15px;
     font-weight: $fweight-big;
-    line-height: 11px;
+    line-height: 18px;
   }
   & > p:nth-child(2) {
     color: $graphite;
@@ -72,34 +73,25 @@
     line-height: 120%;
   }
 }
-.depositeWrapper {
-  display: flex;
-  justify-content: space-between;
-  & > p {
-    color: $graphite;
-    font-size: 13px;
-    font-weight: 600;
-    max-width: 170px;
-  }
-  & > div {
-    display: flex;
-    height: 32px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    border: 1px solid $light-graphite;
-    padding-inline: 12px;
-  }
-  & > div > p {
-    color: $black;
-    font-size: 15px;
-    font-weight: $fweight-big;
-  }
+.depositeInfo {
+  width: 100%;
+  border-radius: 8px;
+  padding-block: 4px;
+  border: 1px solid $light-graphite;
+ & > p {
+   color: $graphite;
+   font-size: 15px;
+   text-align: center;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 24px;
+ }
 }
 .rentInfoWrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
   border-radius: 14px;
   background: #f4f4f4;
   padding: 20px;
@@ -132,5 +124,66 @@
     color: $black;
     font-size: 15px;
     font-weight: $fweight-big;
+  }
+}
+.disabledText {
+  color: $deep-blue;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 130%;
+}
+.rentInfo {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.noDeposit {
+  border-radius: 8px;
+  background: #E7FFE7;
+  border-color: #E7FFE7;
+  & > p {
+    color: #55C94D;
+  }
+}
+.loader {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.8;
+}
+.spinner {
+  width: 25px;
+  height:25px;
+  position: absolute;
+  left:220px;
+  top:20px;
+  z-index: 3;
+  background-image: linear-gradient($deep-blue 10px, transparent 0), linear-gradient(#ff3d00 10px, transparent 0),
+  linear-gradient(#ff3d00 10px, transparent 0), linear-gradient($deep-blue 10px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position:
+          left top,
+          left bottom,
+          right top,
+          right bottom;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.46875) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
   }
 }

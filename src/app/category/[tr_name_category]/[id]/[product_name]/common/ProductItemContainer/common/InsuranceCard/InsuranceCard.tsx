@@ -11,7 +11,7 @@ export const InsuranceCard = () => {
         <Image src={secureProduct} alt='secure' />
         <div className={styles.textContent}>
           <p>Данный товар застрахован</p>
-          <p>В случае повреждения товара, страховая компания возместит ущерб арендодателю.</p>
+          <p>В случае повреждения товара, страховая компания возместит убытки арендадателю</p>
         </div>
       </div>
       <div className={styles.imageWrapper}>
