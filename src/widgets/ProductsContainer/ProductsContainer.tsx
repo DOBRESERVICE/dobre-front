@@ -35,8 +35,8 @@ export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
             isAvailable={product.enabled_product}
             isConfirmed
             rentInfoArray={product.terms}
-            // trCategoryName={product.category.tr_name_category}
-            // trSubCategoryName={product.subcategory.tr_name_sub}
+            trCategoryName={product.category?.tr_name_category}
+            trSubCategoryName={product.subcategory?.tr_name_sub}
             trProductName={product.tr_name_product}
           />
         ))}

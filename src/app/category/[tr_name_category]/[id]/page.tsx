@@ -44,7 +44,6 @@ export default async function CategoryPage({
       linkName: activeVarietyName,
     },
   ];
-
   return (
     <>
       <Wrapper>

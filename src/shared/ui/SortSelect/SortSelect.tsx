@@ -36,12 +36,10 @@ export const SortSelect: FC<SortSelectProps> = ({ selectData, selectStyles, form
     const sortText = selectData.find((el) => el.value === Number(sortValue));
     if (sortText && sortValue) {
       setValue(sortText.text);
-    } else {
-      setValue('');
     }
   }, [selectData, searchParams]);
   const handleChange = (e: SelectChangeEvent) => {
-    setValue(e.target.value as keyof typeof SortOptions);
+    setValue(e.target.value);
     const params = new URLSearchParams(searchParams);
     const sortValue = selectData.find((el) => el.text === e.target.value);
     startTransition(() => {

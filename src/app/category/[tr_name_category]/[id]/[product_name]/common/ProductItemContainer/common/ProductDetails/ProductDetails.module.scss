@@ -1,13 +1,10 @@
 @import '@/shared/styles/variables';
 
 .detailsWrapper {
-  display: grid;
-  width: 100%;
-  grid-template-rows: repeat(2, auto);
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 90px;
-  grid-row-gap: 40px;
-  margin-top: 70px;
+  width: 514px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
 }
 .detailsKeys {
   display: flex;
@@ -36,13 +33,12 @@
 .detailsColumn {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 10px;
   & span {
     min-width: fit-content;
     color: $black;
     font-size: 13px;
     font-weight: $fweight-big;
-    line-height: 15px;
   }
 }
 
@@ -55,7 +51,7 @@
   }
 }
 .detailsContent .detailsColumn:last-child {
-  width: 162px;
+  width: 212px;
 }
 
 .detailTypesWrapper {

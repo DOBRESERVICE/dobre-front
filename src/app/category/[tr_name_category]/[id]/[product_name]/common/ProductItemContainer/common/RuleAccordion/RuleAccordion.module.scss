@@ -1,0 +1,103 @@
+@import "src/shared/styles/variables";
+
+.ruleWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border: 1px solid $light-graphite;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+.accordionButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transition: background-color 0.5s , transform 0.5s;
+  cursor: pointer;
+}
+.ruleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.opened .accordionButton {
+  transform: rotate(180deg);
+}
+.headerContent {
+  display:flex;
+  align-items: center;
+  gap: 8px;
+  & > p {
+    color: $black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: $fweight-big;
+    line-height: 130%
+  }
+}
+.delivery .headerContent > p {
+  font-size: 16px;
+}
+.rulesText {
+  color: $black;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 0.3px;
+  overflow:hidden;
+  white-space: pre-line;
+}
+.textWrapper {
+  display: none;
+  opacity: 0;
+  transition: max-height 0.3s ease;
+}
+
+.ruleWrapper.opened .textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity:1;
+
+}
+.features {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.featureItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 12px;
+  border-radius: 6px;
+  background-color: #E7FFE7;
+  & > p {
+    color:#55C94D;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+  }
+}
+.deliveryIconsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.delivery {
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.14);
+}
+.rightContent {
+  display: flex;
+  gap: 20px;
+}

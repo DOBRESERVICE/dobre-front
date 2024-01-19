@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 
 import styles from './NewProducts.module.scss';
@@ -10,6 +11,7 @@ interface NewProductsProps {
   newProducts: NewProduct[];
 }
 export const NewProducts: FC<NewProductsProps> = ({ newProducts }) => {
+  console.log(newProducts);
   return (
     <section className={styles.newProductsSection}>
       <TopSectionBar hasLinkArrow barName='Новинки' />

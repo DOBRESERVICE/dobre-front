@@ -1,7 +1,7 @@
 'use client';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { FormControl, MenuItem, Select, Theme } from '@mui/material';
+import { FormControl, InputLabel, MenuItem, Select, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
@@ -25,19 +25,20 @@ interface CustomSelect {
   selectData: selectData;
 }
 
-export const CustomSelect: FC<CustomSelect> = ({ labelImage, selectStyles, formControlStyles, selectData }) => {
-  const [value, setValue] = useState(selectData[0]);
+export const CustomSelect: FC<CustomSelect> = ({
+  labelImage,
+  labelStyles,
+  selectStyles,
+  formControlStyles,
+  selectData,
+  label,
+}) => {
+  const [value, setValue] = useState('');
   return (
     <FormControl sx={formControlStyles}>
-      {/*<InputLabel shrink={false} sx={labelStyles} id='demo-simple-select-label'>*/}
-      {/*  <div className={styles.labelContent}>*/}
-      {/*    {labelImage && <Image src={labelImage} alt='date' />}*/}
-      {/*    {label && value}*/}
-      {/*    {firstPartLabel && firstPartLabel}*/}
-      {/*    {labelSecondImage && <Image src={labelSecondImage} alt='image' />}*/}
-      {/*    {secondPartLabel && secondPartLabel}*/}
-      {/*  </div>*/}
-      {/*</InputLabel>*/}
+      <InputLabel sx={labelStyles} id='demo-simple-select-label'>
+        {label}
+      </InputLabel>
       <Select
         MenuProps={{
           disableScrollLock: true,

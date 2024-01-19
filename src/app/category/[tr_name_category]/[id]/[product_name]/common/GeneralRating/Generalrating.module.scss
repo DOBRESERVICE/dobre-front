@@ -1,20 +1,32 @@
 @import '@/shared/styles/variables';
-
-.generalRatingWrapper {
-  min-width: 200px;
-  max-width: 336px;
+.generalRating {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  flex:1;
+}
+.ratingHeader {
+  color: $black;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: $fweight-big;
+  line-height: 130%
+}
+.generalRatingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   padding: 20px;
+  height: fit-content;
+  border-radius: 14px;
+  border: 1px solid $light-graphite;
   @include breakpoint(lg) {
     width: 288px;
   }
 }
 .ratingContent {
   display: flex;
-  height: 28px;
-  padding-bottom: 20px;
+  padding-bottom: 16px;
   justify-content: space-between;
   align-items: center;
   & > p {
@@ -26,6 +38,7 @@
 }
 
 .conditionInfo {
+  width: fit-content;
   display: flex;
   flex-direction: column;
   gap: 12px;

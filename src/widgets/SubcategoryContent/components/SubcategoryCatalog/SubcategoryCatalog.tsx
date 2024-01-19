@@ -47,7 +47,7 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products, paginat
         <div className={styles.content}>
           <div className={styles.buttonsWrapper}>
             <AvailableFilter />
-            <CustomDatePicker />
+            <CustomDatePicker rent={false} />
           </div>
           <SortSelect
             labelImage={sortSvg}
@@ -83,9 +83,9 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products, paginat
               isAvailable={product.enabled_product}
               isConfirmed
               rentInfoArray={product.terms}
-              // trCategoryName={product.category.tr_name_category}
-              // trSubCategoryName={product.subcategory.tr_name_sub}
-              id={product.id_product}
+              trCategoryName={product.category.tr_name_category}
+              trSubCategoryName={product.subcategory.tr_name_sub}
+              trProductName={product.tr_name_product}
             />
           ))}
         </div>

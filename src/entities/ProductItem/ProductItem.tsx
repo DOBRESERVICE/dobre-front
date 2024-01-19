@@ -27,8 +27,8 @@ export interface ProductItem {
   isConfirmed: boolean;
   rentInfoArray: Term[];
   description: string;
-  trCategoryName?: string;
-  trSubCategoryName?: string;
+  trCategoryName: string;
+  trSubCategoryName: string;
   productId: number;
   trProductName: string;
 }

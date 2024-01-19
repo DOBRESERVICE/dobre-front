@@ -21,10 +21,10 @@ export const RangeInput: FC<RangeInputProps> = ({ label, placeholder, search_tr_
     const params = new URLSearchParams(searchParams);
     const searchValue = e.target.value;
     setValue(searchValue);
-    params.set(search_tr_name, searchValue);
-    const search = params.toString();
-    const query = search ? `?${search}` : '';
-    router.push(`${pathname}${query}`, { scroll: false });
+    // params.set(search_tr_name, searchValue);
+    // const search = params.toString();
+    // const query = search ? `?${search}` : '';
+    // router.push(`${pathname}${query}`, { scroll: false });
   };
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
