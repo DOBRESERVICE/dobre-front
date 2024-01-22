@@ -1,14 +1,7 @@
 import { AxiosResponse } from 'axios';
 
-import { FilterData, Post, ProductTestimonial } from '@/interfaces';
-import {
-  ExactCategory,
-  ExactVariety,
-  NewProduct,
-  Product,
-  ProductItem,
-  SubCategory,
-} from '@/interfaces/categories';
+import { FeatureVariety, FilterData, Post, ProductTestimonial } from '@/interfaces';
+import { ExactCategory, ExactVariety, NewProduct, Product, ProductItem, SubCategory } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const getCertainCategory = async (categoryName: string): Promise<AxiosResponse<ExactCategory>> => {
@@ -53,4 +46,8 @@ export const getProductTestimonials = async (productID: number): Promise<AxiosRe
 };
 export const getProductFAQ = async (productID: number): Promise<AxiosResponse<ProductTestimonial[]>> => {
   return defaultRequest.get(`/testimonials/product/${productID}`, { params: { faq: true } });
+};
+
+export const getVarietyFeatures = async (tr_name_variety: string): Promise<AxiosResponse<FeatureVariety[]>> => {
+  return defaultRequest.get(`/features/variety/${tr_name_variety}`);
 };

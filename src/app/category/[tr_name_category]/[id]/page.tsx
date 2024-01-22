@@ -55,6 +55,7 @@ export default async function CategoryPage({
         subCategoryTrName={certainSubCategoryData.tr_name_sub}
       />
       <SubcategoryContent
+        searchParams={searchParams}
         pagination={certainVarietyData.pagination}
         products={certainVarietyData.data}
         subCategoryData={certainSubCategoryData}

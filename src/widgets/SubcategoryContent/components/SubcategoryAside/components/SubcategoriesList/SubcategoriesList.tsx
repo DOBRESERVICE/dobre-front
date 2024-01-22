@@ -16,19 +16,23 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
   const params = useSearchParams();
   const pathName = usePathname();
   const newSearchParams = new URLSearchParams(params);
-  const trVariety = newSearchParams.get('variety') ?? 'all';
   const router = useRouter();
+  const trVariety = newSearchParams.get('variety') ?? 'all';
+
+  const [activeVariety, setActiveVariety] = useState(trVariety);
+  const { itemsToShow, shouldRenderExpandButton, showAll, setShowAll } = useShownData(varietiesList, 9);
+  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === activeVariety);
+
   useEffect(() => {
     if (trVariety === 'all') {
       router.replace(`${pathName}?variety=all`);
     }
   }, [router, trVariety, pathName]);
-  const [activeVariety, setActiveVariety] = useState(trVariety);
-  const { itemsToShow, shouldRenderExpandButton, showAll, setShowAll } = useShownData(varietiesList, 9);
-  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === activeVariety);
+
   useEffect(() => {
     varietyPosition > 8 ? setShowAll(true) : setShowAll(false);
   }, [setShowAll, varietyPosition]);
+
   return (
     <div className={styles.subCategoriesContainer}>
       <ul className={styles.subCategoriesList}>
