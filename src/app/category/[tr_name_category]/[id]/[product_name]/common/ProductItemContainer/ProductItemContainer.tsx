@@ -1,6 +1,6 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import styles from './ProductItemContainer.module.scss';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { Term } from '@/interfaces/categories';
@@ -9,15 +9,19 @@ import {
   mock2Image,
   mock3Image,
   mockBrandImage,
-  mockUser,
-  phoneIcon,
-  sendMessageIcon,
-  verified,
+  nextArrow,
+  previous,
+  rightWhiteSliderIcon,
+  verticalNextIcon,
+  verticalPrevIcon,
 } from '../../../../../../../shared/image';
 import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
-import { deliveryIcons, descriptionProductData } from '@/shared/data';
+import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
 import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/RuleAccordion/RuleAccordion';
 import { deliveryIcon } from '../../../../../../../shared/image';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
+import { Slider } from '@/features/Slider/Slider';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -46,25 +50,29 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
   lon,
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
-
+  const [image, setImage] = useState<StaticImageData>();
   return (
     <div className={styles.productContentWrapper}>
       <div className={styles.productBody}>
         <div className={styles.productContent}>
           <div className={styles.productImages}>
-            <div className={styles.imagesContainer}>
-              <div className={styles.imageWrapper}>
-                <Image src={mock3Image} alt='mock' />
-              </div>
-              <div className={styles.imageWrapper}>
-                <Image src={mock2Image} alt='mock' />
-              </div>
-            </div>
+            <Slider blur={false} direction='vertical' nextIcon={verticalNextIcon} prevIcon={verticalPrevIcon}>
+              {productPageSliderImages.map((slideItem) => (
+                <div key={slideItem.id} className={styles.imageWrapper} onClick={() => setImage(slideItem.image)}>
+                  <Image src={slideItem.image} alt='mock' />
+                </div>
+              ))}
+            </Slider>
             <div className={styles.mainImageWrapper}>
               <div className={styles.brandWrapper}>
                 <Image src={mockBrandImage} alt='brand' />
               </div>
-              <Image src={`${IMAGE_BASE_URL}${productImage}`} width={576} height={576} alt='ss' />
+              <Image
+                src={image ? image : `${IMAGE_BASE_URL}${productImage}`}
+                width={576}
+                height={576}
+                alt='product image'
+              />
             </div>
           </div>
         </div>

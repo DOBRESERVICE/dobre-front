@@ -137,8 +137,12 @@ import ytIcon from './ytIcon.svg';
 import rightBlueArrow from './rightBlueArrow.svg';
 import defaultBlackArrow from './defaultBlackArrow.svg';
 import greenCheckedRuleIcon from './greenCheckedRuleIcon.svg';
+import verticalNextIcon from './verticalNextIcon.svg';
+import verticalPrevIcon from './verticalPrevIcon.svg';
 
 export {
+  verticalPrevIcon,
+  verticalNextIcon,
   deliveryIcon,
   greenCheckedRuleIcon,
   defaultBlackArrow,

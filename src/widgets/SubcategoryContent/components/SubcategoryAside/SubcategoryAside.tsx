@@ -1,14 +1,10 @@
 'use client';
 import Image from 'next/image';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { FC } from 'react';
-
 import styles from './SubcategoryAside.module.scss';
-
-import { Loader } from '@/features/Loader/Loader';
 import { FeatureVariety } from '@/interfaces';
 import { Product, Variety } from '@/interfaces/categories';
-import { useFeatureVariety } from '@/shared/hooks/APIHooks/useVarietyFeature';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
 import { BoolCheck } from '@/shared/ui/BoolCheck/BoolCheck';
 import { MultiArray } from '@/shared/ui/MultiArray/MultiArray';
@@ -24,17 +20,10 @@ interface AsideProps {
   title: string;
   varietiesList: Variety[];
   products: Product[];
+  varietyFeatures: FeatureVariety[];
 }
-export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, products }) => {
-  const params = useSearchParams();
-  const newSearchParams = new URLSearchParams(params);
-  const trVariety = newSearchParams.get('variety') ?? 'all';
-  const { featureVariety, isLoading } = useFeatureVariety(trVariety);
+export const SubcategoryAside: FC<AsideProps> = ({ varietyFeatures, title, varietiesList, products }) => {
   const router = useRouter();
-  if (isLoading) {
-    return <Loader />;
-  }
-
   const renderFeature = (feature: FeatureVariety) => {
     switch (feature.type_feature) {
       case VarietyFeatureType.MSELECT:
@@ -89,7 +78,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ title, varietiesList, product
       {products?.length ? (
         <div className={styles.chooseContent}>
           <SelectHeader headerName='Бренд' />
-          {featureVariety?.map((feature) => <div key={feature.id_feature}>{renderFeature(feature)}</div>)}
+          {varietyFeatures?.map((feature) => <div key={feature.id_feature}>{renderFeature(feature)}</div>)}
         </div>
       ) : (
         ''

@@ -8,7 +8,7 @@ import {
   greenCheckedRuleIcon,
   openedArrow,
 } from '@/shared/image';
-import { Dispatch, FC, SetStateAction } from 'react';
+import { Dispatch, FC, SetStateAction, useRef } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 interface DeliveryIcons {
   id: number;
@@ -35,6 +35,7 @@ export const RuleAccordion: FC<RuleAccordionProps> = ({
   deliveryIcons,
 }) => {
   const isSelected = activeRule === id;
+  const textRef = useRef<HTMLDivElement | null>(null);
   const handleToggle = () => {
     setActiveRule(isSelected ? 0 : id);
   };

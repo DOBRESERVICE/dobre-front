@@ -138,6 +138,8 @@
   gap:20px;
 }
 .productImages {
+  max-height: 576px;
+  overflow: hidden;
   display: flex;
   gap: 20px;
 
@@ -146,4 +148,12 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.swiper {
+  position: relative;
+}
+.next {
+  position: absolute;
+  bottom: 20px;
+  left: 90px;
 }

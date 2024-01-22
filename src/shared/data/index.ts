@@ -22,6 +22,8 @@ import {
   makita,
   messagesIcon,
   metabo,
+  mock2Image,
+  mock3Image,
   mockItem,
   paymentIcon,
   photographyPopularTools,
@@ -794,5 +796,28 @@ export const deliveryIcons = [
   {
     id: 4,
     icon: russiaMail,
+  },
+];
+
+export const productPageSliderImages = [
+  {
+    id: 1,
+    image: mock3Image,
+  },
+  {
+    id: 2,
+    image: mock2Image,
+  },
+  {
+    id: 3,
+    image: mock2Image,
+  },
+  {
+    id: 4,
+    image: mock2Image,
+  },
+  {
+    id: 5,
+    image: mock2Image,
   },
 ];
