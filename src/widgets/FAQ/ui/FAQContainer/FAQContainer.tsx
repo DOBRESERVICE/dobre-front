@@ -8,14 +8,11 @@ import { Post } from '@/interfaces';
 import { FAQItem } from '@/widgets/FAQ/ui/FAQItem/FAQItem';
 
 interface FAQContainerProps {
-  FAQData: Post[] | undefined;
+  FAQData: Post[];
 }
 
 export const FAQContainer: FC<FAQContainerProps> = ({ FAQData }) => {
   const [activeCard, setActiveCard] = useState(0);
-  if (!FAQData) {
-    return <p>LOAD</p>;
-  }
   return (
     <div className={styles.faqContainer}>
       {FAQData.map((item) => (

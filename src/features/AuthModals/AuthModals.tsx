@@ -1,10 +1,7 @@
 'use client';
-
 import Modal from '@mui/material/Modal';
 import { useEffect } from 'react';
-
 import styles from './AuthModals.module.scss';
-
 import { ModalContent } from '@/features/AuthModals/ui/ModalContent/ModalContent';
 import { useAuthData } from '@/shared/context/authContext';
 

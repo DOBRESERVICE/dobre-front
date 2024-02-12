@@ -34,7 +34,7 @@ export const FeatureButton: FC<FeatureButtonProps> = ({ value, search_tr_name })
       }
       const search = params.toString();
       const query = search ? `?${search}` : '';
-      router.push(`${pathname}${query}`, { scroll: false });
+      window.history.pushState(null, '', `?${search}`);
     });
   };
   return (
