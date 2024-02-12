@@ -7,9 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect } from 'react';
-
 import styles from './Header.module.scss';
-
 import { useAuthData } from '@/shared/context/authContext';
 import { blueClose, mockUser, rentImage, searchIcon } from '@/shared/image';
 import cart from '@/shared/image/cart.svg';
@@ -37,6 +35,7 @@ export const Header = () => {
   const router = useRouter();
 
   const { isMenuOpen, setIsMenuOpen, isLogged, setIsLogged, isUserMenuOpen, setIsUserMenuOpen } = useAuthData();
+
   useEffect(() => {
     if (localStorage.getItem('token')) {
       setIsLogged(true);
