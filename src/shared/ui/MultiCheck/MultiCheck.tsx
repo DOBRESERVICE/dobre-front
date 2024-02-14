@@ -5,6 +5,7 @@ import styles from './MultiCheck.module.scss';
 import { useShownData } from '@/shared/hooks/useShownData';
 import { CheckItem } from '@/shared/ui/MultiCheck/ui/CheckItem/CheckItem';
 import { ShowAllButton } from '@/shared/ui/ShowAllButton/ShowAllButton';
+
 interface MultiCheckProps {
   features: string[];
   search_tr_name: string;

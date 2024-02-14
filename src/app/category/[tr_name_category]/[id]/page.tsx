@@ -23,7 +23,7 @@ export default async function CategoryPage({
     {
       id: 2,
       link: `/category/${certainVarietyData.data} `,
-      linkName: 'remont-i-strojka ',
+      linkName: 'Ремонт и стройка',
     },
     {
       id: 3,

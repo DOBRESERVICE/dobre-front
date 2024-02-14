@@ -13,7 +13,7 @@ export const PopularProducts = async () => {
         <TopSectionBar barName='Популярно сейчас' hasLinkArrow />
         <div className={styles.gridContainer}>
           {popularProductsData.map((product) => (
-            <CardItem link='/' key={product.id} imageUrl={product.imageUrl} title={product.title} />
+            <CardItem link={product.link} key={product.id} imageUrl={product.imageUrl} title={product.title} />
           ))}
         </div>
       </section>
