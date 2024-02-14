@@ -66,7 +66,7 @@ export interface Term {
   is_moderate: boolean;
 }
 export interface Subcategory {
-  id_sub: string;
+  id_sub: number;
   name_sub: string;
   tr_name_sub: string;
   image_sub: string;
@@ -76,7 +76,7 @@ export interface Subcategory {
 }
 
 export interface Variety {
-  id_variety: string;
+  id_variety: number;
   name_variety: string;
   tr_name_variety: string;
   image_variety: string | StaticImageData;

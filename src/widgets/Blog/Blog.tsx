@@ -4,11 +4,12 @@ import styles from './Blog.module.scss';
 
 import { SEOContent } from '@/interfaces';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
+import { SEOData } from '@/shared/data';
 
 interface BlogProps {
   SEOData: SEOContent;
 }
-export const Blog: FC<BlogProps> = ({ SEOData }) => {
+export const Blog: FC = () => {
   return (
     <Wrapper>
       <section className={styles.sectionBlogWrapper}>

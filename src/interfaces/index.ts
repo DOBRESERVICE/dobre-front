@@ -27,9 +27,9 @@ export interface User {
   email: string;
   password: string;
   is_activated: boolean;
-  updatedAt: string;
-  createdAt: string;
-  deletedAt: string | null;
+  updatedAt?: string;
+  createdAt?: string;
+  deletedAt?: string | null;
 }
 export interface Post {
   id_post: number;
@@ -62,11 +62,28 @@ export interface ProductTestimonial {
   testimonial_visible: boolean;
   is_moderate: boolean;
   productIdProduct: number;
-  userId: string;
+  userId?: string;
+  date: string;
+  rating: number;
+  images?: { id: string; img: StaticImageData }[];
   answ_id: any;
-  user: User;
+  user: { id: string; email: string; role: string; avatar: any };
   product: ProductInfo;
-  answers: Answer[];
+  answers?: {
+    answer: number;
+    testimonial: {
+      id_testimonial: number;
+      text: string;
+      user: {
+        id: string;
+        email: string;
+        role: string;
+        avatar: null;
+        date: string;
+      };
+    };
+  }[];
+  answerDate?: string;
 }
 
 export interface User {

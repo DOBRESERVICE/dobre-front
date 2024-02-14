@@ -21,7 +21,7 @@ export const TabsComponent: FC<TabsComponentProps> = ({ setActiveTab, activeTab,
     {
       id: 2,
       faq: true,
-      tabName: 'Вопрос-ответ',
+      tabName: 'Ответы на вопросы ',
     },
   ];
   return (

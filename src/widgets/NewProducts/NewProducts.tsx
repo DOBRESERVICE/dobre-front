@@ -1,13 +1,11 @@
 import { FC } from 'react';
 
 import styles from './NewProducts.module.scss';
-
-import { NewProduct } from '@/interfaces/categories';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 
 interface NewProductsProps {
-  newProducts: NewProduct[];
+  newProducts: any[];
 }
 export const NewProducts: FC<NewProductsProps> = ({ newProducts }) => {
   return (

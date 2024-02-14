@@ -11,7 +11,7 @@ import { leftWhiteSliderIcon, rightWhiteSliderIcon } from '../../../../shared/im
 const HeaderLinks = () => {
   return (
     <div className={styles.headerLinks}>
-      <Slider blur direction='horizontal' nextIcon={rightWhiteSliderIcon} prevIcon={leftWhiteSliderIcon}>
+      <Slider blur direction='horizontal' nextIcon={rightWhiteSliderIcon} prevIcon={leftWhiteSliderIcon} gap={33}>
         {headerLinks.map((link) => (
           <HeaderLink key={link.id} linkName={link.linkName} image={link.image} />
         ))}

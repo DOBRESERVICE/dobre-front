@@ -5,7 +5,7 @@ import { SubCategory } from '@/interfaces/categories';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { SubcategoryAside } from '@/widgets/SubcategoryContent/components/SubcategoryAside/SubcategoryAside';
 import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
-import { getVarietyFeatures } from '@/shared/api/categoriesApi';
+import { featuresData } from '@/shared/data';
 
 interface CategoryContentProps {
   subCategoryData: SubCategory;
@@ -20,7 +20,6 @@ export const SubcategoryContent: FC<CategoryContentProps> = async ({
   products,
 }) => {
   const trVariety = searchParams.variety ?? 'all';
-  const { data: varietyFeatures } = await getVarietyFeatures(trVariety);
   return (
     <Wrapper>
       <div className={styles.categoryContent}>
@@ -28,7 +27,7 @@ export const SubcategoryContent: FC<CategoryContentProps> = async ({
           title={subCategoryData.name_sub}
           varietiesList={subCategoryData.varieties}
           products={products}
-          varietyFeatures={varietyFeatures}
+          varietyFeatures={featuresData}
         />
         <SubcategoryCatalog pagination={pagination} products={products} />
       </div>
