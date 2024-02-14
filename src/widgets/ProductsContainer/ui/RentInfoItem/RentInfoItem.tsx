@@ -14,9 +14,7 @@ export const RentInfoItem: FC<RentInfoItem> = ({ term }) => {
   const periodText = PeriodMapping[period];
   return (
     <div className={styles.rentInfoItem}>
-      <p>
-        {teek} {periodText}
-      </p>
+      <p>{teek} день</p>
       <span>{price} руб.</span>
     </div>
   );

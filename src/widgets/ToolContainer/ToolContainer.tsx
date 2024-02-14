@@ -22,6 +22,7 @@ export const ToolContainer: FC<TollContainer> = ({ toolsData, subCategoryTrName 
             key={item.id_variety}
             imageUrl={item.image_variety}
             title={item.name_variety}
+            link={item.link}
           />
         ))}
       </div>

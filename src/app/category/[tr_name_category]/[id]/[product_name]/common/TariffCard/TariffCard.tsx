@@ -11,12 +11,11 @@ interface TariffCardProps {
 export const TariffCard: FC<TariffCardProps> = ({ term }) => {
   const { teek, price, period } = term;
   const periodText = PeriodMapping[period];
+  console.log(periodText);
   return (
     <div className={styles.tariffCard}>
       <div className={styles.content}>
-        <p>
-          {teek} {periodText}
-        </p>
+        <p>{teek} день</p>
         <span>{price} руб.</span>
       </div>
     </div>

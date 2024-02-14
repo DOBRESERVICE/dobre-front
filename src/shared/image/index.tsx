@@ -139,8 +139,12 @@ import defaultBlackArrow from './defaultBlackArrow.svg';
 import greenCheckedRuleIcon from './greenCheckedRuleIcon.svg';
 import verticalNextIcon from './verticalNextIcon.svg';
 import verticalPrevIcon from './verticalPrevIcon.svg';
+import bike from './bike.png';
+import armchair from './armchair.png';
 
 export {
+  armchair,
+  bike,
   verticalPrevIcon,
   verticalNextIcon,
   deliveryIcon,

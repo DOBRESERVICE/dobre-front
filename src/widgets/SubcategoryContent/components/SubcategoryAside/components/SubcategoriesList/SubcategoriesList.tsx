@@ -21,7 +21,7 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
 
   const [activeVariety, setActiveVariety] = useState(trVariety);
   const { itemsToShow, shouldRenderExpandButton, showAll, setShowAll } = useShownData(varietiesList, 9);
-  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === activeVariety);
+  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === trVariety);
 
   useEffect(() => {
     if (trVariety === 'all') {
@@ -32,7 +32,7 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
   useEffect(() => {
     varietyPosition > 8 ? setShowAll(true) : setShowAll(false);
   }, [setShowAll, varietyPosition]);
-
+  console.log(trVariety);
   return (
     <div className={styles.subCategoriesContainer}>
       <ul className={styles.subCategoriesList}>
@@ -47,7 +47,7 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
             varietyName={item.name_variety}
             varietyTrName={item.tr_name_variety}
             key={item.id_variety}
-            isActive={activeVariety === item.tr_name_variety}
+            isActive={trVariety === item.tr_name_variety}
             setActiveVariety={() => setActiveVariety(item.tr_name_variety)}
           />
         ))}

@@ -25,6 +25,7 @@ const GeneralTestimonials = () => {
                 description={item.description}
                 userName={item.userName}
                 userStatus={item.userStatus}
+                img={item.img}
               />
             ))}
           </div>
