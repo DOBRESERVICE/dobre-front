@@ -1,7 +1,5 @@
 import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { getCertainCategory, getNewCategoryProducts, getSubCategory } from '@/shared/api/categoriesApi';
-import { getSEOContent } from '@/shared/api/contentApi';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { Brands } from '@/widgets/Brands/Brands';
@@ -9,20 +7,9 @@ import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
 import { Construction } from '@/widgets/Construction/Construction';
 import { PopularTools } from '@/widgets/PopularTools/PopularTools';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { certainCategoryData, mainPageProducts, subCategoryData } from '@/shared/data';
 
 export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
-  const { data: certainCategoryData } = await getCertainCategory(params.tr_name_category);
-  const { data: newProductsData } = await getNewCategoryProducts(params.tr_name_category);
-  const { data: SEOData } = await getSEOContent('category', params.tr_name_category);
-  const fetchSubCategoriesData = async () => {
-    return await Promise.all(
-      certainCategoryData.subcategories.map(async (subCategory) => {
-        const { data } = await getSubCategory(subCategory.tr_name_sub);
-        return data;
-      })
-    );
-  };
-  const subCategoriesData = await fetchSubCategoriesData();
   const breadCrumbsData = [
     {
       id: 1,
@@ -36,9 +23,6 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
     },
   ];
   const isEveryVarietyEmpty = certainCategoryData.subcategories.every((item) => item.varieties.length === 0);
-  if (!subCategoriesData) {
-    return <NoProductsFound />;
-  }
   return (
     <>
       <Wrapper>
@@ -51,10 +35,10 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
       />
       <Brands />
       <PopularTools />
-      {certainCategoryData.products.length > 0 && <NewProducts newProducts={newProductsData} />}
-      <CatalogBlocks subcategories={subCategoriesData} />
+      {certainCategoryData.products.length > 0 && <NewProducts newProducts={mainPageProducts} />}
+      <CatalogBlocks subcategories={subCategoryData} />
       {isEveryVarietyEmpty && <NoProductsFound />}
-      <Blog SEOData={SEOData} />
+      <Blog />
     </>
   );
 }

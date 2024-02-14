@@ -1,15 +1,13 @@
 import { Button } from '@mui/material';
 import Image from 'next/image';
 import styles from './FAQ.module.scss';
-import { SectionType } from '@/enums';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
 import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
-import { getPost } from '@/shared/api/contentApi';
+import { FAQData } from '@/shared/data';
 
 export const FAQ = async () => {
-  const { data: FAQData } = await getPost(SectionType.FAQ);
   return (
     <Wrapper>
       <section className={styles.faqSectionWrapper}>

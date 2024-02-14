@@ -12,17 +12,18 @@ import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
 import Recommendations from '@/widgets/Recommendations/Recommendations';
 import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
 import SearchBlock from '@/widgets/SearchBlock/SearchBlock';
-import { getNewCategoryProducts, getNewProducts } from '@/shared/api/categoriesApi';
+import { mainPageProducts } from '@/shared/data';
+
 const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
 export default async function HomePage() {
-  const { data: newProductsData } = await getNewProducts();
+  // const { data: newProductsData } = await getNewProducts();
 
   return (
     <HomeLayout>
       <DynamicAuthModals />
       <SearchBlock />
       <Suspense fallback={<Loader />}>
-        <NewProducts newProducts={newProductsData} />
+        <NewProducts newProducts={mainPageProducts} />
       </Suspense>
       <PopularProducts />
       <HowWeWork />

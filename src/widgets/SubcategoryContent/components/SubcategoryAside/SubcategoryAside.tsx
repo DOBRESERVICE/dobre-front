@@ -16,11 +16,12 @@ import { SelectHeader } from '@/widgets/SubcategoryContent/components/Subcategor
 
 import { backArrow } from '../../../../shared/image';
 import { VarietyFeatureType } from '@/enums';
+
 interface AsideProps {
   title: string;
   varietiesList: Variety[];
   products: Product[];
-  varietyFeatures: FeatureVariety[];
+  varietyFeatures: any[];
 }
 export const SubcategoryAside: FC<AsideProps> = ({ varietyFeatures, title, varietiesList, products }) => {
   const router = useRouter();

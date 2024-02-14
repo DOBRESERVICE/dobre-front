@@ -14,16 +14,17 @@ interface SliderProps {
   children: ReactNode;
   direction: Direction;
   blur: boolean;
+  gap?: number;
 }
 
-export const Slider: FC<SliderProps> = ({ blur, direction, children, prevIcon, nextIcon }) => {
+export const Slider: FC<SliderProps> = ({ blur, direction, children, prevIcon, nextIcon, gap = 20 }) => {
   return (
     <Swiper
       allowTouchMove={false}
       noSwiping
       direction={direction}
       slidesPerView='auto'
-      spaceBetween={20}
+      spaceBetween={gap}
       className={classNames(styles.swiper, {
         [styles.verticalSwiper]: direction === 'vertical',
       })}

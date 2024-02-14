@@ -8,11 +8,11 @@ import styles from './Testimonials.module.scss';
 import { TabsComponent } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TabsComponent/TabsComponent';
 import { UserTestimonial } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/UserTestimotal/UserTestimonial';
 import { ProductTestimonial } from '@/interfaces';
-import { FAQCustomButton, rentInfoCustomBigButton, SeeAllCustomBigButton } from '@/shared/styles/buttonStyles';
+import { FAQCustomButton, rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 
 interface TestimonialsProps {
   testimonialsData: ProductTestimonial[];
-  FAQData: ProductTestimonial[];
+  FAQData?: ProductTestimonial[];
 }
 
 export const Testimonials: FC<TestimonialsProps> = ({ testimonialsData, FAQData }) => {
@@ -27,13 +27,14 @@ export const Testimonials: FC<TestimonialsProps> = ({ testimonialsData, FAQData 
             key={testimonialItem.id_testimonial}
             userImage={testimonialItem.user.avatar}
             userName={testimonialItem.user.email}
-            feedBackDate={testimonialItem.text}
+            feedBackDate={testimonialItem.date}
             ownerImage={testimonialItem.user.avatar}
             status={testimonialItem.id_testimonial}
-            ratingCount={testimonialItem.id_testimonial}
+            ratingCount={testimonialItem.rating}
             ownerResponse={testimonialItem.userId}
             userComment={testimonialItem.text}
-            // images={testimonialItem.images}
+            images={testimonialItem.images}
+            responseDate={testimonialItem.answerDate}
           />
         ))}
       {isFaq && (
@@ -42,7 +43,7 @@ export const Testimonials: FC<TestimonialsProps> = ({ testimonialsData, FAQData 
             <p>Не нашли ответ на свой вопрос? Задайте свой вопрос сейчас</p>
             <Button sx={FAQCustomButton}>Задать вопрос </Button>
           </div>
-          {FAQData.map((faqItem) => (
+          {FAQData?.map((faqItem) => (
             <UserTestimonial
               key={faqItem.userId}
               userImage={faqItem.user.avatar}

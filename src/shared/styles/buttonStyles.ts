@@ -22,7 +22,7 @@ export const customCategoriesButton = {
 };
 
 export const customRentButton = {
-  height: '45px',
+  height: '50px',
   backgroundColor: MUIColors.deepBlue,
   gap: '10px',
   boxShadow: 'none',

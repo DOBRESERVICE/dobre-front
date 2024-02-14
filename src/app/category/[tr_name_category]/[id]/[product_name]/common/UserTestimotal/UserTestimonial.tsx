@@ -4,26 +4,26 @@ import { FC } from 'react';
 import styles from './UserTestimonial.module.scss';
 
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
-import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 import { emoji } from '../../../../../../../shared/image';
 
 interface TestimonialImages {
-  id: number;
+  id: string;
   img: StaticImageData;
 }
 
 interface UserTestimonialProps {
   userImage: StaticImageData;
   userName: string;
-  userComment: string;
+  userComment: string | undefined;
   status?: number;
   images?: TestimonialImages[];
   ratingCount?: number;
   feedBackDate: string;
   ownerResponse?: string;
   ownerImage?: StaticImageData;
+  responseDate?: string;
 }
 
 export const UserTestimonial: FC<UserTestimonialProps> = ({
@@ -36,15 +36,24 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
   ratingCount,
   ownerResponse,
   ownerImage,
+  responseDate,
 }) => {
+  console.log(responseDate);
   return (
     <div className={styles.userTestimonialWrapper}>
       <div className={styles.userContent}>
-        <div className={styles.userImageWrapper}>
-          <Image src={`${IMAGE_BASE_URL}${userImage}`} alt='user' width={50} height={50} />
-        </div>
         <div className={styles.content}>
-          <p>{userName}</p>
+          <div className={styles.userInfo}>
+            <div>
+              <Image src={userImage} alt='user' width={50} height={50} />
+              <p>{userName}</p>
+            </div>
+            <div className={styles.ratingContent}>
+              {ratingCount && <RatingComponent rating={ratingCount} feedbackType='default' />}
+              <p>{feedBackDate}</p>
+              {ratingCount && <Image src={emoji} alt='emoji' />}
+            </div>
+          </div>
           <p>{userComment}</p>
           {status && (
             <div className={styles.conditionInfo}>
@@ -56,7 +65,7 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
             <div className={styles.images}>
               {images.map((item) => (
                 <div className={styles.imageWrapper} key={item.id}>
-                  <Image key={item.id} src={`${IMAGE_BASE_URL}${item.img}`} alt='img' width={85} height={85} />
+                  <Image key={item.id} src={item.img} alt='img' width={82} height={82} />
                 </div>
               ))}
             </div>
@@ -64,23 +73,18 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
           {ownerResponse && ownerImage && (
             <div className={styles.responseWrapper}>
               <div className={styles.ownerContent}>
-                <div className={styles.line} />
                 <div className={styles.userImageWrapper}>
-                  <Image src={`${IMAGE_BASE_URL}${ownerImage}`} alt='user' width={50} height={50} />
+                  <Image src={ownerImage} alt='user' width={50} height={50} />
+                  <p>Ответ от арендодателя</p>
                 </div>
+                <p>{responseDate}</p>
               </div>
               <div className={styles.ownerInfo}>
-                <p>Ответ от арендодателя</p>
                 <p>{ownerResponse}</p>
               </div>
             </div>
           )}
         </div>
-      </div>
-      <div className={styles.ratingContent}>
-        {ratingCount && <RatingComponent rating={ratingCount} feedbackType='default' />}
-        <p>{feedBackDate}</p>
-        {ratingCount && <Image src={emoji} alt='emoji' />}
       </div>
     </div>
   );

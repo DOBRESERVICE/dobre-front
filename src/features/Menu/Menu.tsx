@@ -4,13 +4,10 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import styles from './Menu.module.scss';
-
-import { Error } from '@/features/Error/Error';
-import { Loader } from '@/features/Loader/Loader';
 import { CategoryMenuItem } from '@/features/Menu/ui/CategoryMenuItem/CategoryMenuItem';
 import { SubCategoryMenuItem } from '@/features/Menu/ui/SubCategoryMenuItem/SubCategoryMenuItem';
 import { useAuthData } from '@/shared/context/authContext';
-import { useCategories } from '@/shared/hooks/APIHooks/useCategories';
+import { categories } from '@/shared/data';
 
 const Menu = () => {
   const router = useRouter();
@@ -18,16 +15,9 @@ const Menu = () => {
     document.documentElement.classList.add(styles.disabledScroll);
     return () => document.documentElement.classList.remove(styles.disabledScroll);
   }, []);
-  const { categories, isError, isLoading } = useCategories();
   const [selectedCategoryId, setSelectedCategoryId] = useState(1);
   const { setIsMenuOpen } = useAuthData();
   const selectedCategory = categories?.find((category) => category.id_category === selectedCategoryId);
-  if (isLoading) {
-    return <Loader />;
-  }
-  if (isError) {
-    return <Error />;
-  }
 
   return (
     <div className={styles.menuWrapper}>
