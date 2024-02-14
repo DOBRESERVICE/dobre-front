@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import { FC } from 'react';
 
 import styles from './CommentItem.module.scss';
@@ -10,13 +10,16 @@ type AboutItemType = {
   description: string;
   userName: string;
   userStatus: string;
+  img: StaticImageData;
 };
 
-export const CommentItem: FC<AboutItemType> = ({ title, description, userName, userStatus }) => {
+export const CommentItem: FC<AboutItemType> = ({ title, description, userName, userStatus, img }) => {
   return (
     <div className={styles.mainItem}>
       <div className={styles.itemWrapper}>
-        <div className={styles.imageItem} />
+        <div className={styles.imageItem}>
+          <Image src={img} alt='image' />
+        </div>
         <Image src={emoji} alt='emoji' className={styles.emoji} />
       </div>
       <p className={styles.itemTitle}>{title}</p>

@@ -1,5 +1,4 @@
 'use client';
-
 import { FC } from 'react';
 
 import styles from './SubcategoryToolsContainer.module.scss';

@@ -12,11 +12,12 @@ interface ToolItem {
   title: string;
   subCategoryTrName: string;
   varietyTrName: string;
+  link: string;
 }
-export const ToolItem: FC<ToolItem> = ({ imageUrl, title, subCategoryTrName, varietyTrName }) => {
+export const ToolItem: FC<ToolItem> = ({ link, imageUrl, title, subCategoryTrName, varietyTrName }) => {
   const path = usePathname();
   return (
-    <Link href={`${path}/${subCategoryTrName}?variety=${varietyTrName}`} className={styles.toolWrapper}>
+    <Link href={link || `${path}/${subCategoryTrName}?variety=${varietyTrName}`} className={styles.toolWrapper}>
       {imageUrl ? (
         <div className={styles.imageWrapper}>
           <Image src={imageUrl} alt='tool' />
