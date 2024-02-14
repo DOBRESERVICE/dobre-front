@@ -1,6 +1,4 @@
-import { ChangeEvent, FC, useEffect, useId, useState } from 'react';
-
-import styles from './RangeInput.module.scss';
+import { FC, useEffect, useState } from 'react';
 import { customRangeInput } from '@/shared/styles/buttonStyles';
 import TextField from '@mui/material/TextField';
 import { useAuthData } from '@/shared/context/authContext';
@@ -17,30 +15,22 @@ export const RangeInput: FC<RangeInputProps> = ({ searchKey, label, placeholder,
   const [value, setValue] = useState('');
   const { isPending, startTransition } = useAuthData();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const router = useRouter();
   const debouncedValue = useDebounce(value, 1000);
-  const [inFocus, setInFocus] = useState(false);
-  useEffect(() => {
-    const handleBlur = () => {
-      const params = new URLSearchParams(searchParams);
-      startTransition(() => {
-        if (value) {
-          params.set(`${search_tr_name} + ${searchKey}`, value);
-        } else {
-          params.delete(`${search_tr_name} + ${searchKey}`);
-        }
-
-        const search = params.toString();
-        const query = search ? `?${search}` : '';
-        router.push(`${pathname}${query}`, { scroll: false });
-      });
-    };
-
-    if (!inFocus) {
-      handleBlur();
-    }
-  }, [inFocus, startTransition, searchKey, pathname, router, searchParams, search_tr_name, value]);
+  const handleBlur = () => {
+    startTransition(() => {
+      if (value) {
+        params.set(`${search_tr_name} + ${searchKey}`, value);
+      } else {
+        params.delete(`${search_tr_name} + ${searchKey}`);
+      }
+      const search = params.toString();
+      const query = search ? `?${search}` : '';
+      router.push(`${pathname}${query}`, { scroll: false });
+    });
+  };
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
@@ -49,18 +39,15 @@ export const RangeInput: FC<RangeInputProps> = ({ searchKey, label, placeholder,
   }, [searchKey, search_tr_name, searchParams]);
 
   return (
-    <div className={styles.inputWrapper}>
-      <TextField
-        value={value}
-        disabled={isPending}
-        onFocus={() => setInFocus(true)}
-        onBlur={() => setInFocus(false)}
-        autoComplete='off'
-        onChange={(e) => setValue(e.target.value)}
-        sx={customRangeInput}
-        label={label}
-        placeholder={placeholder}
-      />
-    </div>
+    <TextField
+      value={value}
+      disabled={isPending}
+      onBlur={handleBlur}
+      autoComplete='off'
+      onChange={(e) => setValue(e.target.value)}
+      sx={customRangeInput}
+      label={label}
+      placeholder={placeholder}
+    />
   );
 };

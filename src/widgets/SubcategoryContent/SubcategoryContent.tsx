@@ -4,8 +4,8 @@ import { Pagination } from '@/interfaces';
 import { SubCategory } from '@/interfaces/categories';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { SubcategoryAside } from '@/widgets/SubcategoryContent/components/SubcategoryAside/SubcategoryAside';
-import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 import { featuresData } from '@/shared/data';
+import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 
 interface CategoryContentProps {
   subCategoryData: SubCategory;
