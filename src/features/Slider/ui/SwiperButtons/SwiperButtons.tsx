@@ -5,8 +5,9 @@ import { useSwiper } from 'swiper/react';
 
 import styles from './SwiperButtons.module.scss';
 
-import { sliderLeftBlur, sliderRightBlur } from '../../../../shared/image';
 import { Direction } from '@/features/Slider/Slider';
+
+import { sliderLeftBlur, sliderRightBlur } from '../../../../shared/image';
 
 interface SwiperButtonsProps {
   nextIcon: StaticImageData;

@@ -1,7 +1,9 @@
 'use client';
 
 import { FC } from 'react';
+
 import styles from './Construction.module.scss';
+
 import { CardItem } from '@/entities/CardItem/CardItem';
 import { Subcategory } from '@/interfaces/categories';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';

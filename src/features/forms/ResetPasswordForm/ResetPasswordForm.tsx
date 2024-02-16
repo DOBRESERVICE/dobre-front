@@ -3,11 +3,10 @@
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 import { ResetPasswordHeader } from '@/features/forms/ResetPasswordForm/ui/ResetPasswordHeader/ResetPasswordHeader';
 import { emailRules } from '@/shared/constants/validation';
-import { useAuthData } from '@/shared/context/authContext';
 import { authButton, authCustomInput } from '@/shared/styles/buttonStyles';
 
 export const ResetPasswordForm = () => {
@@ -16,7 +15,7 @@ export const ResetPasswordForm = () => {
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty;
   const router = useRouter();
-  const { isLetterSent, handleSendEmailLetter } = useAuthData();
+  // const { isLetterSent, handleSendEmailLetter } = useAuthData();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     const isValidEmail = emailRules.test(value);
@@ -24,11 +23,11 @@ export const ResetPasswordForm = () => {
     setEmailError(!isValidEmail);
   };
 
-  useEffect(() => {
-    if (isLetterSent) {
-      router.push('/');
-    }
-  }, [isLetterSent, router]);
+  // useEffect(() => {
+  //   if (isLetterSent) {
+  //     router.push('/');
+  //   }
+  // }, [isLetterSent, router]);
 
   return (
     <>
@@ -47,7 +46,12 @@ export const ResetPasswordForm = () => {
         onChange={handleEmailChange}
         helperText={emailError ? 'invalid email' : ''}
       />
-      <Button variant='contained' disabled={isDisabled} sx={authButton} onClick={() => handleSendEmailLetter(email)}>
+      <Button
+        variant='contained'
+        disabled={isDisabled}
+        sx={authButton}
+        // onClick={() => handleSendEmailLetter(email)}
+      >
         Получить ссылку
       </Button>
     </>

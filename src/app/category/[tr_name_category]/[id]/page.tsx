@@ -1,12 +1,11 @@
+import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { certainVarietyData, subcategoryObject } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
-import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { certainVarietyData, subcategoryObject } from '@/shared/data';
 
 export default async function CategoryPage({
-  params,
   searchParams,
 }: {
   params: { id: string };

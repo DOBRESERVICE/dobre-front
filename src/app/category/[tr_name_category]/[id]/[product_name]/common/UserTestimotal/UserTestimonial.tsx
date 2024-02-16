@@ -38,7 +38,6 @@ export const UserTestimonial: FC<UserTestimonialProps> = ({
   ownerImage,
   responseDate,
 }) => {
-  console.log(responseDate);
   return (
     <div className={styles.userTestimonialWrapper}>
       <div className={styles.userContent}>

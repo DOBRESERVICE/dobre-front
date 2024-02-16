@@ -9,7 +9,6 @@ import styles from './RecoveryForm.module.scss';
 import { ResetPasswordHeader } from '@/features/forms/ResetPasswordForm/ui/ResetPasswordHeader/ResetPasswordHeader';
 import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
 import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
-import { useAuthData } from '@/shared/context/authContext';
 import { authButton, customRecoveryLightButton } from '@/shared/styles/buttonStyles';
 
 export const RecoveryForm = () => {
@@ -20,7 +19,7 @@ export const RecoveryForm = () => {
   const isDisabled = newPassword.length < 8 || newPassword !== repeatedPassword;
   const router = useRouter();
   const pathName = usePathname();
-  const { isSuccessfulRecovery, handleRecoveryPassword } = useAuthData();
+  // const { isSuccessfulRecovery, handleRecoveryPassword } = useAuthData();
   const params = useSearchParams();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const newSearchParams = new URLSearchParams(params);
@@ -29,14 +28,14 @@ export const RecoveryForm = () => {
     router.push(`${pathName}?${newSearchParams.toString()}`);
   }, [token, newSearchParams, pathName, router]);
 
-  useEffect(() => {
-    if (isSuccessfulRecovery) {
-      router.push('/login');
-    }
-    if (!token) {
-      router.push('/');
-    }
-  }, [token, isSuccessfulRecovery, router]);
+  // useEffect(() => {
+  //   if (isSuccessfulRecovery) {
+  //     router.push('/login');
+  //   }
+  //   if (!token) {
+  //     router.push('/');
+  //   }
+  // }, [token, isSuccessfulRecovery, router]);
 
   if (!token) {
     return <div>Invalid</div>;
@@ -69,7 +68,7 @@ export const RecoveryForm = () => {
             variant='contained'
             sx={authButton}
             disabled={isDisabled}
-            onClick={() => handleRecoveryPassword(token, newPassword)}
+            // onClick={() => handleRecoveryPassword(token, newPassword)}
           >
             Сохранить
           </Button>

@@ -1,13 +1,13 @@
 import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
+import { certainCategoryData, mainPageProducts, subCategoryData } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { Brands } from '@/widgets/Brands/Brands';
 import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
 import { Construction } from '@/widgets/Construction/Construction';
-import { PopularTools } from '@/widgets/PopularTools/PopularTools';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
-import { certainCategoryData, mainPageProducts, subCategoryData } from '@/shared/data';
+import { PopularTools } from '@/widgets/PopularTools/PopularTools';
 
 export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
   const breadCrumbsData = [

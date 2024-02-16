@@ -1,15 +1,12 @@
-import styles from './RuleAccordion.module.scss';
 import classNames from 'classnames';
-import Image, { StaticImageData } from 'next/image';
-import {
-  defaultBlackArrow,
-  defaultWhiteArrow,
-  greenCheckedIcon,
-  greenCheckedRuleIcon,
-  openedArrow,
-} from '@/shared/image';
-import { Dispatch, FC, SetStateAction, useRef } from 'react';
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
+import Image, { StaticImageData } from 'next/image';
+import { Dispatch, FC, SetStateAction } from 'react';
+
+import styles from './RuleAccordion.module.scss';
+
+import { defaultBlackArrow, greenCheckedRuleIcon } from '@/shared/image';
+
 interface DeliveryIcons {
   id: number;
   icon: StaticImageData;
@@ -35,7 +32,6 @@ export const RuleAccordion: FC<RuleAccordionProps> = ({
   deliveryIcons,
 }) => {
   const isSelected = activeRule === id;
-  const textRef = useRef<HTMLDivElement | null>(null);
   const handleToggle = () => {
     setActiveRule(isSelected ? 0 : id);
   };

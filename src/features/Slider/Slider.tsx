@@ -1,10 +1,12 @@
 'use client';
+import classNames from 'classnames';
 import { StaticImageData } from 'next/image';
 import { Children, FC, ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
 import styles from './Slider.module.scss';
+
 import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
-import classNames from 'classnames';
 
 export type Direction = 'vertical' | 'horizontal';
 

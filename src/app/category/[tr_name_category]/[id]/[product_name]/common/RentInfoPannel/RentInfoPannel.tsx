@@ -1,26 +1,29 @@
 'use client';
 import { Button } from '@mui/material';
+import classNames from 'classnames';
 import Image from 'next/image';
+import { useSearchParams } from 'next/navigation';
 import { FC } from 'react';
+
 import styles from './RentInfoPannel.module.scss';
+
+import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
+import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { Term } from '@/interfaces/categories';
+import { useAuthData } from '@/shared/context/authContext';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import {
   customDateLabel,
   customProductQuantityFormSelect,
   customProductQuantitySelect,
 } from '@/shared/styles/selectStyles';
+import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
-import { blueNextArrow, rentButtonIcon } from '../../../../../../../shared/image';
-import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
-import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
-import { useSearchParams } from 'next/navigation';
-import { useAuthData } from '@/shared/context/authContext';
-import classNames from 'classnames';
-import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
+
+import { blueNextArrow, rentButtonIcon } from '../../../../../../../shared/image';
 
 interface RentInfoPannelProps {
   count: number;

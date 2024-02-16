@@ -1,10 +1,12 @@
 import { FC } from 'react';
+
 import styles from './SubcategoryContent.module.scss';
+
 import { Pagination } from '@/interfaces';
 import { SubCategory } from '@/interfaces/categories';
+import { featuresData } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { SubcategoryAside } from '@/widgets/SubcategoryContent/components/SubcategoryAside/SubcategoryAside';
-import { featuresData } from '@/shared/data';
 import { SubcategoryCatalog } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 
 interface CategoryContentProps {

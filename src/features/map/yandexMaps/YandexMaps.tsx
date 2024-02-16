@@ -1,12 +1,15 @@
-import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
-import { FC, useEffect, useState } from 'react';
-import styles from './Yandexmaps.module.scss';
-import Image from 'next/image';
-import geolocationIcon from '../../../shared/image/geolocation.svg';
 import { Button } from '@mui/material';
-import { customCategoriesButton } from '@/shared/styles/buttonStyles';
-import { rightBlueArrow, sendMessageIcon } from '@/shared/image';
+import { Map, Placemark, YMaps } from '@pbe/react-yandex-maps';
 import axios from 'axios';
+import Image from 'next/image';
+import { FC, useEffect, useState } from 'react';
+
+import styles from './Yandexmaps.module.scss';
+
+import { rightBlueArrow } from '@/shared/image';
+import { customCategoriesButton } from '@/shared/styles/buttonStyles';
+
+import geolocationIcon from '../../../shared/image/geolocation.svg';
 interface YandexMapsProps {
   lan: number;
   lon: number;

@@ -3,10 +3,10 @@ import Image from 'next/image';
 
 import styles from './PriceInfoCard.module.scss';
 
+import { InfoIcon } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/ui/InfoIcon';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 
-import { greenCheckedIcon, infoIcon } from '../../../../../../../../../shared/image';
-import { InfoIcon } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/ui/InfoIcon';
+import { greenCheckedIcon } from '../../../../../../../../../shared/image';
 
 export const PriceInfoCard = () => {
   return (

@@ -9,7 +9,7 @@ import styles from '@/shared/ui/CustomSelect/CustomSelect.module.scss';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { whiteChecked } from '@/shared/image';
-import { customLabel, customMenuItem, customSortLabel } from '@/shared/styles/selectStyles';
+import { customLabel, customMenuItem } from '@/shared/styles/selectStyles';
 
 interface CustomSelect {
   label?: string;

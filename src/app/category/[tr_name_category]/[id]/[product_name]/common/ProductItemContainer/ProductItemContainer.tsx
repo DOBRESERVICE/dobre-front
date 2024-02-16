@@ -1,27 +1,23 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
 import { FC, useState } from 'react';
+
 import styles from './ProductItemContainer.module.scss';
+
+import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
+import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/RuleAccordion/RuleAccordion';
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
+import { Slider } from '@/features/Slider/Slider';
 import { Term } from '@/interfaces/categories';
 import { IMAGE_BASE_URL } from '@/shared/constants/urls';
+import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
+
 import {
-  mock2Image,
-  mock3Image,
   mockBrandImage,
-  nextArrow,
-  previous,
-  rightWhiteSliderIcon,
   verticalNextIcon,
   verticalPrevIcon,
 } from '../../../../../../../shared/image';
-import { ProductDescription } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDescription/ProductDescription';
-import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
-import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/RuleAccordion/RuleAccordion';
 import { deliveryIcon } from '../../../../../../../shared/image';
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
-import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons';
-import { Slider } from '@/features/Slider/Slider';
 
 interface ProductItemContainerProps {
   productName: string;

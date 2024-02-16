@@ -1,11 +1,14 @@
 import { Button } from '@mui/material';
 import Image from 'next/image';
+
 import styles from './FAQ.module.scss';
+
+import { FAQData } from '@/shared/data';
 import { customRentButton } from '@/shared/styles/buttonStyles';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { FAQContainer } from '@/widgets/FAQ/ui/FAQContainer/FAQContainer';
+
 import { FAQBottomGroup, FAQTopGroup, linkButtonArrow } from '../../shared/image';
-import { FAQData } from '@/shared/data';
 
 export const FAQ = async () => {
   return (

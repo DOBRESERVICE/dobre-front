@@ -1,6 +1,6 @@
 'use client';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { Box, FormControl, InputLabel, List, MenuItem, Paper, Select, SelectChangeEvent, Theme } from '@mui/material';
+import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Theme } from '@mui/material';
 import { SxProps } from '@mui/system';
 import Image, { StaticImageData } from 'next/image';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
@@ -9,7 +9,7 @@ import { FC, useEffect, useState } from 'react';
 import { useAuthData } from '@/shared/context/authContext';
 import { whiteChecked } from '@/shared/image';
 import { customMenuItem, customSortLabel } from '@/shared/styles/selectStyles';
-import { SortData, SortOptions } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
+import { SortData } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 
 interface SortSelectProps {
   label?: string;

@@ -6,9 +6,10 @@ import { GeneralRating } from '@/app/category/[tr_name_category]/[id]/[product_n
 import { ProductItemContainer } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/ProductItemContainer';
 import { Testimonials } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/Testimonials/Testimonials';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { Blog } from '@/widgets/Blog/Blog';
-import { commentExclamation } from '../../../../../shared/image';
 import { productData, testimonialsData } from '@/shared/data';
+import { Blog } from '@/widgets/Blog/Blog';
+
+import { commentExclamation } from '../../../../../shared/image';
 
 export default async function ProductPage({ params }: { params: { product_name: string } }) {
   const breadCrumbsData = [

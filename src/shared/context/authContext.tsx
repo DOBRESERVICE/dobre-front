@@ -12,7 +12,7 @@ import {
 
 import { Status, StatusCode } from '@/enums';
 
-import { confirmEmail, loginUser, recoveryPassword, registerUser, sendEmailOnRecovery } from '../api/authApi';
+// import { confirmEmail, loginUser, recoveryPassword, registerUser, sendEmailOnRecovery } from '../api/authApi';
 
 interface IAuthContext {
   isSuccessModalShown: boolean;
@@ -91,8 +91,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const handleRegister = async (email: string, password: string) => {
     try {
       setStatus(Status.LOADING);
-      const response = await registerUser(email, password);
-      setUserEmail(response.data.user.email);
+      // const response = await registerUser(email, password);
+      // setUserEmail(response.data.user.email);
       setIsRegistered(true);
       setStatus(Status.SUCCESS);
     } catch (error) {
@@ -105,8 +105,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const handleLogin = async (email: string, password: string) => {
     try {
       setStatus(Status.LOADING);
-      const response = await loginUser(email, password);
-      localStorage.setItem('token', response.data.authToken);
+      // const response = await loginUser(email, password);
+      // localStorage.setItem('token', response.data.authToken);
       setIsLogged(true);
       setStatus(Status.SUCCESS);
     } catch (error) {
@@ -127,7 +127,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const handleRecoveryPassword = async (token: string, password: string) => {
     try {
       setStatus(Status.LOADING);
-      await recoveryPassword(token, password);
+      // await recoveryPassword(token, password);
       setIsSuccessfulRecovery(true);
       setStatus(Status.SUCCESS);
     } catch (error) {
@@ -147,7 +147,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const handleConfirmEmail = async (token: string) => {
     try {
       setStatus(Status.LOADING);
-      await confirmEmail(token);
+      // await confirmEmail(token);
       setIsEmailConfirmed(true);
       setStatus(Status.SUCCESS);
     } catch (error) {
@@ -166,7 +166,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const handleSendEmailLetter = async (email: string) => {
     try {
       setStatus(Status.LOADING);
-      await sendEmailOnRecovery(email);
+      // await sendEmailOnRecovery(email);
       setIsLetterSent(true);
       setStatus(Status.SUCCESS);
     } catch (error) {

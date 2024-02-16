@@ -3,8 +3,8 @@ import { FC } from 'react';
 import styles from './Blog.module.scss';
 
 import { SEOContent } from '@/interfaces';
-import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { SEOData } from '@/shared/data';
+import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 
 interface BlogProps {
   SEOData: SEOContent;

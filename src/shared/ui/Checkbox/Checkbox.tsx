@@ -1,6 +1,7 @@
 import { FC, InputHTMLAttributes } from 'react';
 
 import styles from './Checkbox.module.scss';
+
 import { useAuthData } from '@/shared/context/authContext';
 
 interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {

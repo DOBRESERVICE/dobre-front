@@ -1,5 +1,6 @@
-import { ProductStatus } from '@/enums';
 import { DateObject } from 'react-multi-date-picker';
+
+import { ProductStatus } from '@/enums';
 
 export const isGoodStatus = (status: number) =>
   [ProductStatus.NEW, ProductStatus.LIKE_NEW, ProductStatus.GOOD].includes(status);

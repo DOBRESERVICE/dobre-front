@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import styles from './NewProducts.module.scss';
+
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
 
