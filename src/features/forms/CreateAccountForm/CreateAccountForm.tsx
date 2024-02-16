@@ -3,7 +3,7 @@
 import { Button, Checkbox } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import { useRouter } from 'next/navigation';
-import { ChangeEvent, useEffect, useRef, useState } from 'react';
+import { ChangeEvent, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 import styles from './CreateAccountForm.module.scss';
@@ -13,7 +13,6 @@ import { AuthServices } from '@/features/forms/ui/AuthServices/AuthServices';
 import { DifficultyProgressBar } from '@/features/forms/ui/DifficultyProgressBar/DifficultyProgressBar';
 import { PasswordInput } from '@/features/forms/ui/PasswordInput/PasswordInput';
 import { emailRules } from '@/shared/constants/validation';
-import { useAuthData } from '@/shared/context/authContext';
 import { authButton, authCheckBox, authCustomInput } from '@/shared/styles/buttonStyles';
 
 export const CreateAccountForm = () => {
@@ -27,7 +26,7 @@ export const CreateAccountForm = () => {
   const isPasswordAcceptable = passwordValue.length >= 8;
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
-  const { isRegistered, handleRegister } = useAuthData();
+  // const { isRegistered, handleRegister } = useAuthData();
   const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
@@ -41,12 +40,12 @@ export const CreateAccountForm = () => {
     setEmailValue(value);
     setEmailError(!isValidEmail);
   };
-
-  useEffect(() => {
-    if (isRegistered) {
-      router.push('/');
-    }
-  }, [isRegistered, router]);
+  //
+  // useEffect(() => {
+  //   if (isRegistered) {
+  //     router.push('/');
+  //   }
+  // }, [isRegistered, router]);
   return (
     <>
       <div className={styles.content}>
@@ -92,7 +91,7 @@ export const CreateAccountForm = () => {
         variant='contained'
         disabled={isDisabled}
         sx={authButton}
-        onClick={() => handleRegister(emailValue, passwordValue)}
+        // onClick={() => handleRegister(emailValue, passwordValue)}
       >
         Создать аккаунт
       </Button>
