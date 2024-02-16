@@ -37,10 +37,6 @@ export const RecoveryForm = () => {
   //   }
   // }, [token, isSuccessfulRecovery, router]);
 
-  if (!token) {
-    return <div>Invalid</div>;
-  }
-
   return (
     <>
       <ResetPasswordHeader title='Восстановление пароля' text='Введите новый пароль' />
