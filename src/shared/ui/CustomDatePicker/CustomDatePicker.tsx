@@ -48,17 +48,17 @@ export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent }) => {
       setDateRange([startDate, endDate]);
     }
   }, [searchParams]);
-  const handleClear = () => {
-    const params = new URLSearchParams(searchParams);
-    setDateRange(null);
-    startTransition(() => {
-      params.delete('dateStart');
-      params.delete('dateEnd');
-      const search = params.toString();
-      const query = search ? `?${search}` : '';
-      router.push(`${pathname}${query}`, { scroll: false });
-    });
-  };
+  // const handleClear = () => {
+  //   const params = new URLSearchParams(searchParams);
+  //   setDateRange(null);
+  //   startTransition(() => {
+  //     params.delete('dateStart');
+  //     params.delete('dateEnd');
+  //     const search = params.toString();
+  //     const query = search ? `?${search}` : '';
+  //     router.push(`${pathname}${query}`, { scroll: false });
+  //   });
+  // };
   return (
     <DatePicker
       disabled={isPending}

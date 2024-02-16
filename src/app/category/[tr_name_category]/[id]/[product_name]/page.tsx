@@ -11,7 +11,7 @@ import { Blog } from '@/widgets/Blog/Blog';
 
 import { commentExclamation } from '../../../../../shared/image';
 
-export default async function ProductPage({ params }: { params: { product_name: string } }) {
+export default async function ProductPage() {
   const breadCrumbsData = [
     {
       id: 1,

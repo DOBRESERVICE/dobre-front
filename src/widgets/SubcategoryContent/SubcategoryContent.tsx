@@ -15,13 +15,7 @@ interface CategoryContentProps {
   pagination: Pagination;
   searchParams: { [p: string]: string };
 }
-export const SubcategoryContent: FC<CategoryContentProps> = async ({
-  searchParams,
-  pagination,
-  subCategoryData,
-  products,
-}) => {
-  const trVariety = searchParams.variety ?? 'all';
+export const SubcategoryContent: FC<CategoryContentProps> = async ({ pagination, subCategoryData, products }) => {
   return (
     <Wrapper>
       <div className={styles.categoryContent}>

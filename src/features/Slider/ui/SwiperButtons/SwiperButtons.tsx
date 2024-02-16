@@ -17,7 +17,7 @@ interface SwiperButtonsProps {
 }
 
 export const SwiperButtons: FC<SwiperButtonsProps> = ({ direction, blur, prevIcon, nextIcon }) => {
-  const [trigger, setTrigger] = useState(0);
+  const [_, setTrigger] = useState(0);
   const swiper = useSwiper();
   const handleNext = () => {
     swiper.slideNext();

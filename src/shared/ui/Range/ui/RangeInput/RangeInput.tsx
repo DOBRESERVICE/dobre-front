@@ -3,7 +3,6 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
 
 import { useAuthData } from '@/shared/context/authContext';
-import { useDebounce } from '@/shared/hooks/use-debounce';
 import { customRangeInput } from '@/shared/styles/buttonStyles';
 
 interface RangeInputProps {
@@ -19,7 +18,7 @@ export const RangeInput: FC<RangeInputProps> = ({ searchKey, label, placeholder,
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const router = useRouter();
-  const debouncedValue = useDebounce(value, 1000);
+  // const debouncedValue = useDebounce(value, 1000);
   const handleBlur = () => {
     startTransition(() => {
       if (value) {

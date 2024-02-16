@@ -2,7 +2,6 @@
 
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 import { ResetPasswordHeader } from '@/features/forms/ResetPasswordForm/ui/ResetPasswordHeader/ResetPasswordHeader';
@@ -14,7 +13,7 @@ export const ResetPasswordForm = () => {
   const [emailError, setEmailError] = useState(false);
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty;
-  const router = useRouter();
+  // const router = useRouter();
   // const { isLetterSent, handleSendEmailLetter } = useAuthData();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;

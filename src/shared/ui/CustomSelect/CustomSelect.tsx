@@ -25,14 +25,7 @@ interface CustomSelect {
   selectData: selectData;
 }
 
-export const CustomSelect: FC<CustomSelect> = ({
-  labelImage,
-  labelStyles,
-  selectStyles,
-  formControlStyles,
-  selectData,
-  label,
-}) => {
+export const CustomSelect: FC<CustomSelect> = ({ labelStyles, selectStyles, formControlStyles, selectData, label }) => {
   const [value, setValue] = useState('');
   return (
     <FormControl sx={formControlStyles}>

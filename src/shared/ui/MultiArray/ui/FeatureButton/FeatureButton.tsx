@@ -1,6 +1,6 @@
 'use client';
 import classNames from 'classnames';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 import { FC, useEffect, useState } from 'react';
 
 import styles from './FeatureButton.module.scss';
@@ -15,8 +15,8 @@ export const FeatureButton: FC<FeatureButtonProps> = ({ value, search_tr_name })
   const { isPending, startTransition } = useAuthData();
   const [isActive, setIsActive] = useState(false);
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const pathname = usePathname();
+  // const router = useRouter();
+  // const pathname = usePathname();
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     const allValues = params.getAll(search_tr_name);
@@ -34,7 +34,7 @@ export const FeatureButton: FC<FeatureButtonProps> = ({ value, search_tr_name })
       }
       const search = params.toString();
       const query = search ? `?${search}` : '';
-      window.history.pushState(null, '', `?${search}`);
+      window.history.pushState(null, '', `?${query}`);
     });
   };
   return (
