@@ -2,13 +2,12 @@ import { FC } from 'react';
 
 import styles from './Blog.module.scss';
 
-import { SEOContent } from '@/interfaces';
 import { SEOData } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 
-interface BlogProps {
-  SEOData: SEOContent;
-}
+// interface BlogProps {
+//   SEOData: SEOContent;
+// }
 export const Blog: FC = () => {
   return (
     <Wrapper>

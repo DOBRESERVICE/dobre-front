@@ -9,7 +9,7 @@ import { Construction } from '@/widgets/Construction/Construction';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
 import { PopularTools } from '@/widgets/PopularTools/PopularTools';
 
-export default async function CategoryPage({ params }: { params: { tr_name_category: string } }) {
+export default async function CategoryPage() {
   const breadCrumbsData = [
     {
       id: 1,

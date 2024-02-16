@@ -3,7 +3,6 @@
 import { Button, Checkbox } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { ChangeEvent, useState } from 'react';
 
 import styles from './LogInForm.module.scss';
@@ -24,7 +23,7 @@ export const LoginForm = () => {
   const isPasswordAcceptable = password.length >= 8;
   const isEmailDirty = email.length > 0;
   const isDisabled = emailError || !isEmailDirty || !isPasswordAcceptable;
-  const router = useRouter();
+  // const router = useRouter();
   const handleEmailChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target;
     const isValidEmail = emailRules.test(value);

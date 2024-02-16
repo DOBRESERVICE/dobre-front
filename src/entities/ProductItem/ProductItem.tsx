@@ -37,7 +37,6 @@ export const ProductItem: FC<ProductItem> = ({
   sellerInfo,
   itemName,
   status,
-  userUrl,
   isAvailable,
   rentEndDate,
   rating,

@@ -2,7 +2,6 @@
 
 import { Button, Checkbox } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { useRouter } from 'next/navigation';
 import { ChangeEvent, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 
@@ -27,7 +26,7 @@ export const CreateAccountForm = () => {
   const isEmailDirty = emailValue.length > 0;
   const isDisabled = !isAccept || emailError || !isEmailDirty || !isPasswordAcceptable || !isVerified;
   // const { isRegistered, handleRegister } = useAuthData();
-  const router = useRouter();
+  // const router = useRouter();
   function handleCaptchaSubmission(token: string | null) {
     if (token) {
       setIsVerified(true);

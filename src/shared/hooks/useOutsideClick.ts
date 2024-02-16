@@ -13,5 +13,5 @@ export const useOutsideClick = <T extends HTMLElement>(ref: RefObject<T>, callba
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [callback]);
+  }, [callback, ref]);
 };
