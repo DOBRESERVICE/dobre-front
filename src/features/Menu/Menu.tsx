@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 import styles from './Menu.module.scss';
+
 import { CategoryMenuItem } from '@/features/Menu/ui/CategoryMenuItem/CategoryMenuItem';
 import { SubCategoryMenuItem } from '@/features/Menu/ui/SubCategoryMenuItem/SubCategoryMenuItem';
 import { useAuthData } from '@/shared/context/authContext';

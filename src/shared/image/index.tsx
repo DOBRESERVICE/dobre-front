@@ -2,7 +2,9 @@ import aboutUsAccept from './aboutUsAccept.svg';
 import aboutUsImage from './aboutUsImage.png';
 import acceptIcon from './acceptIcon.svg';
 import appleIcon from './apple.svg';
+import armchair from './armchair.png';
 import backArrow from './backArrow.svg';
+import bike from './bike.png';
 import blackArrowNext from './blackArrowNext.svg';
 import aboutUsBlob from './blobAboutUs.svg';
 import blueArrow from './blueArrow.svg';
@@ -30,11 +32,12 @@ import cube from './cube.png';
 import dateArrow from './dateArrow.svg';
 import dateImage from './dateImage.svg';
 import defaultWhiteArrow from './default-white-arrow.svg';
+import defaultBlackArrow from './defaultBlackArrow.svg';
+import deliveryIcon from './delivery/defaultDelivery.svg';
 import dpd from './delivery/dpd.svg';
 import kce from './delivery/kce.svg';
 import russiaMail from './delivery/russiaMail.svg';
 import sdek from './delivery/sdek.svg';
-import deliveryIcon from './delivery/defaultDelivery.svg';
 import yandexGo from './delivery/yandexGo.svg';
 import DOBRE from './DOBRE.svg';
 import dobreBanner from './DobreBanner.svg';
@@ -57,6 +60,7 @@ import forKids from './forKids.svg';
 import furniture from './furniture.svg';
 import googleIcon from './google.svg';
 import greenCheckedIcon from './greenCheckedIcon.svg';
+import greenCheckedRuleIcon from './greenCheckedRuleIcon.svg';
 import greyArrowNext from './greyArrowNext.svg';
 import houseAndyarn from './houseAndyarn.svg';
 import houseHold from './houseHold.svg';
@@ -100,6 +104,7 @@ import renovation from './renovation.svg';
 import rentButtonIcon from './rentButtonIcon.svg';
 import rentImage from './rentImage.svg';
 import rentTimeArrow from './rentTimeArrow.svg';
+import rightBlueArrow from './rightBlueArrow.svg';
 import rightWhiteSliderIcon from './rightWhiteSliderIcon.svg';
 import searchIcon from './searchIcon.svg';
 import secondLampGroup from './secondLampGroup.svg';
@@ -128,29 +133,16 @@ import logoutIcon from './userPopupImages/logoutIcon.svg';
 import messagesIcon from './userPopupImages/messagesIcon.svg';
 import rentIcon from './userPopupImages/rentIcon.svg';
 import verified from './verified.svg';
+import verticalNextIcon from './verticalNextIcon.svg';
+import verticalPrevIcon from './verticalPrevIcon.svg';
 import vkIcon from './vk.svg';
 import iconVk from './vkIcon.svg';
 import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
-import rightBlueArrow from './rightBlueArrow.svg';
-import defaultBlackArrow from './defaultBlackArrow.svg';
-import greenCheckedRuleIcon from './greenCheckedRuleIcon.svg';
-import verticalNextIcon from './verticalNextIcon.svg';
-import verticalPrevIcon from './verticalPrevIcon.svg';
-import bike from './bike.png';
-import armchair from './armchair.png';
 
 export {
-  armchair,
-  bike,
-  verticalPrevIcon,
-  verticalNextIcon,
-  deliveryIcon,
-  greenCheckedRuleIcon,
-  defaultBlackArrow,
-  rightBlueArrow,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,
@@ -158,8 +150,10 @@ export {
   acceptIcon,
   aeg,
   appleIcon,
+  armchair,
   autorizBanner,
   backArrow,
+  bike,
   blackArrowNext,
   blueArrow,
   blueClose,
@@ -178,7 +172,9 @@ export {
   cube,
   dateArrow,
   dateImage,
+  defaultBlackArrow,
   defaultWhiteArrow,
+  deliveryIcon,
   dewalt,
   DOBRE,
   dobreBanner,
@@ -206,6 +202,7 @@ export {
   gamingPopularTools,
   googleIcon,
   greenCheckedIcon,
+  greenCheckedRuleIcon,
   greyArrowNext,
   handMadeTools,
   hilti,
@@ -252,6 +249,7 @@ export {
   rentIcon,
   rentImage,
   rentTimeArrow,
+  rightBlueArrow,
   rightWhiteSliderIcon,
   russiaMail,
   sdek,
@@ -280,6 +278,8 @@ export {
   travelling,
   userIcon,
   verified,
+  verticalNextIcon,
+  verticalPrevIcon,
   vkIcon,
   whiteChecked,
   whiteLogo,

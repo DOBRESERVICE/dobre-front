@@ -1,16 +1,17 @@
+import { Button } from '@mui/material';
+import Image from 'next/image';
 import { FC, useState } from 'react';
 
 import styles from './ProductDescription.module.scss';
-import Image from 'next/image';
-import { mockUser, phoneIcon, sendMessageIcon, verified } from '@/shared/image';
-import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
-import { Button } from '@mui/material';
-import { customCategoriesButton } from '@/shared/styles/buttonStyles';
-import { YandexMaps } from '@/features/map/yandexMaps/YandexMaps';
-import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
-import { rulesAccordionData } from '@/shared/data';
-import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/RuleAccordion/RuleAccordion';
+
 import { PriceInfoCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/PriceInfoCard/PriceInfoCard';
+import { ProductDetails } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/ProductDetails/ProductDetails';
+import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/RuleAccordion/RuleAccordion';
+import { YandexMaps } from '@/features/map/yandexMaps/YandexMaps';
+import { rulesAccordionData } from '@/shared/data';
+import { mockUser, phoneIcon, sendMessageIcon, verified } from '@/shared/image';
+import { customCategoriesButton } from '@/shared/styles/buttonStyles';
+import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 
 interface ProductDescriptionProps {
   firstDescription: string;

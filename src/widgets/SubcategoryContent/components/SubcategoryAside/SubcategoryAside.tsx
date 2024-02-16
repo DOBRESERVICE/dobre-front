@@ -2,20 +2,22 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { FC } from 'react';
+
 import styles from './SubcategoryAside.module.scss';
+
+import { VarietyFeatureType } from '@/enums';
 import { FeatureVariety } from '@/interfaces';
 import { Product, Variety } from '@/interfaces/categories';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
+import { BoolCheck } from '@/shared/ui/BoolCheck/BoolCheck';
 import { MultiArray } from '@/shared/ui/MultiArray/MultiArray';
 import { MultiCheck } from '@/shared/ui/MultiCheck/MultiCheck';
 import { MultipleSelect } from '@/shared/ui/MultipleSelect/MultipleSelect';
+import { Range } from '@/shared/ui/Range/Range';
 import { SubcategoriesList } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoriesList/SubcategoriesList';
 import { SelectHeader } from '@/widgets/SubcategoryContent/components/SubcategoryAside/ui/SubcategoryAsideHeader/SubcategoryAsideHeader';
 
 import { backArrow } from '../../../../shared/image';
-import { VarietyFeatureType } from '@/enums';
-import { BoolCheck } from '@/shared/ui/BoolCheck/BoolCheck';
-import { Range } from '@/shared/ui/Range/Range';
 
 interface AsideProps {
   title: string;

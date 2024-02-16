@@ -3,6 +3,7 @@ import { Suspense } from 'react';
 
 import { Loader } from '@/features/Loader/Loader';
 import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
+import { mainPageProducts } from '@/shared/data';
 import { AboutUs } from '@/widgets/AboutUs/AboutUs';
 import { FAQ } from '@/widgets/FAQ/FAQ';
 import GeneralTestimonials from '@/widgets/GeneralTestimonials/GeneralTestimonials';
@@ -12,7 +13,6 @@ import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
 import Recommendations from '@/widgets/Recommendations/Recommendations';
 import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
 import SearchBlock from '@/widgets/SearchBlock/SearchBlock';
-import { mainPageProducts } from '@/shared/data';
 
 const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
 export default async function HomePage() {

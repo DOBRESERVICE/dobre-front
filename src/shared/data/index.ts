@@ -38,10 +38,10 @@ import {
   stanki,
   travelling,
 } from '../image';
-import yandex from '../image/delivery/yandexGo.svg';
 import dpd from '../image/delivery/dpd.svg';
-import sdek from '../image/delivery/sdek.svg';
 import russiaMail from '../image/delivery/russiaMail.svg';
+import sdek from '../image/delivery/sdek.svg';
+import yandex from '../image/delivery/yandexGo.svg';
 
 export const searchCardsData = [
   {

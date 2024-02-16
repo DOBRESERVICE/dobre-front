@@ -1,11 +1,13 @@
 'use client';
+import classNames from 'classnames';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { FC, useEffect, useRef, useState } from 'react';
-import DatePicker, { DateObject, DatePickerRef, Value } from 'react-multi-date-picker';
-import styles from './CustomDatePicker.module.scss';
-import { useAuthData } from '@/shared/context/authContext';
-import classNames from 'classnames';
+import DatePicker, { DatePickerRef, Value } from 'react-multi-date-picker';
 import InputIcon from 'react-multi-date-picker/components/input_icon';
+
+import styles from './CustomDatePicker.module.scss';
+
+import { useAuthData } from '@/shared/context/authContext';
 import { parseToUnix, parseUnixDate } from '@/shared/lib';
 
 interface CustomDatePickerProps {

@@ -1,5 +1,7 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
+
 import styles from './Range.module.scss';
+
 import { RangeInput } from '@/shared/ui/Range/ui/RangeInput/RangeInput';
 
 interface RangeProps {

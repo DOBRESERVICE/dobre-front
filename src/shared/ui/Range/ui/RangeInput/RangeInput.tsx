@@ -1,9 +1,10 @@
-import { FC, useEffect, useState } from 'react';
-import { customRangeInput } from '@/shared/styles/buttonStyles';
 import TextField from '@mui/material/TextField';
-import { useAuthData } from '@/shared/context/authContext';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { FC, useEffect, useState } from 'react';
+
+import { useAuthData } from '@/shared/context/authContext';
 import { useDebounce } from '@/shared/hooks/use-debounce';
+import { customRangeInput } from '@/shared/styles/buttonStyles';
 
 interface RangeInputProps {
   label: string;
