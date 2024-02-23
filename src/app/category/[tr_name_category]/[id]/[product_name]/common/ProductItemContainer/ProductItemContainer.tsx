@@ -9,15 +9,15 @@ import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_n
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { Slider } from '@/features/Slider/Slider';
 import { Term } from '@/interfaces/categories';
-import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
 
 import {
+  deliveryIcon,
+  mockBigImage,
   mockBrandImage,
   verticalNextIcon,
   verticalPrevIcon,
 } from '../../../../../../../shared/image';
-import { deliveryIcon } from '../../../../../../../shared/image';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -63,12 +63,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
               <div className={styles.brandWrapper}>
                 <Image src={mockBrandImage} alt='brand' />
               </div>
-              <Image
-                src={image ? image : `${IMAGE_BASE_URL}${productImage}`}
-                width={576}
-                height={576}
-                alt='product image'
-              />
+              <Image src={image ? image : mockBigImage} width={576} height={576} alt='product image' />
             </div>
           </div>
         </div>

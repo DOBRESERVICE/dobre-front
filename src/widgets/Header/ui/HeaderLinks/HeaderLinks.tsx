@@ -13,7 +13,7 @@ const HeaderLinks = () => {
     <div className={styles.headerLinks}>
       <Slider blur direction='horizontal' nextIcon={rightWhiteSliderIcon} prevIcon={leftWhiteSliderIcon} gap={33}>
         {headerLinks.map((link) => (
-          <HeaderLink key={link.id} linkName={link.linkName} image={link.image} />
+          <HeaderLink key={link.id} linkName={link.linkName} link={link.link} image={link.image} />
         ))}
       </Slider>
     </div>

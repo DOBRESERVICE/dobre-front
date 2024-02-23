@@ -141,8 +141,10 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
+import mockBigImage from './mockBigImage.png';
 
 export {
+  mockBigImage,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,

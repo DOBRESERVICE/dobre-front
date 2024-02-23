@@ -623,56 +623,55 @@ export const headerLinks = [
     id: 1,
     linkName: 'Электроника',
     image: electroic,
+    link: '/category/elektronika',
   },
   {
     id: 2,
     linkName: 'Бытовая техника',
     image: houseHold,
+    link: '/category/bytovaya-tekhnika',
   },
   {
     id: 3,
     linkName: 'Одежда и аксессуары',
     image: clothes,
+    link: '/category/odezhda-i-aksessuary',
   },
   {
     id: 4,
     linkName: 'Для родителей и детей',
     image: forKids,
+    link: '/category/dlya-roditelej-i-detej',
   },
   {
     id: 5,
     linkName: 'Ремонт и стройка',
     image: renovation,
+    link: '/category/remont-i-strojka',
   },
   {
     id: 6,
     linkName: 'Дом и сад',
     image: houseAndyarn,
+    link: '/category/dom-i-sad',
   },
   {
     id: 7,
     linkName: 'Мебель',
     image: furniture,
+    link: '/category/mebel',
   },
   {
     id: 8,
     linkName: 'Кемпинг и путешествия',
     image: camping,
+    link: '/category/kemping-i-puteshestviya',
   },
   {
     id: 9,
     linkName: 'Спорт и активный отдых',
     image: sport,
-  },
-  {
-    id: 10,
-    linkName: 'Спорт и активный отдых',
-    image: sport,
-  },
-  {
-    id: 11,
-    linkName: 'Спорт и активный отдых',
-    image: sport,
+    link: '/category/sport-i-aktivnyj-otdyh',
   },
 ];
 
