@@ -1,0 +1,17 @@
+@import '@/shared/styles/variables';
+.headerLinkWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: max-content;
+  height: 40px;
+  & > p {
+    color: $black;
+    font-size: 14px;
+    font-weight: $fweight-big;
+    line-height: 125%;
+  }
+  & > img svg path {
+    display: none;
+  }
+}

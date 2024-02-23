@@ -1,0 +1,36 @@
+@import '@/shared/styles/variables';
+
+.ratingWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  & span {
+    color: $black;
+    font-weight: 700;
+  }
+}
+.defaultRating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  & > span {
+    font-size: 15px;
+  }
+}
+.bigRating {
+  & > img {
+    width: 14px;
+    height: 13px;
+  }
+
+  & > span {
+    font-size: 18px;
+  }
+}
+.textFeedback {
+  font-size: 13px;
+}

@@ -1,0 +1,82 @@
+.swiperButtonsWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+
+  &.noblur .rightBlur,
+  &.noblur .leftBlur {
+    display:none;
+  }
+
+}
+
+.swiperButtonsWrapper > button {
+  width: fit-content;
+  position: absolute;
+  background: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  z-index: 2;
+  pointer-events: all;
+}
+.swiperButtonsWrapper > button:first-of-type {
+  left: 30px;
+}
+.swiperButtonsWrapper > button:last-of-type {
+  right: 30px;
+}
+.swiperButtonsWrapper.verticalButtons > button:first-of-type {
+  top: 20px;
+  left:unset;
+}
+.swiperButtonsWrapper.verticalButtons > button:last-of-type {
+  bottom: 20px;
+  right:unset;
+}
+.swiperButtonsWrapper > button:hover {
+  opacity: 1;
+}
+.leftBlur:hover ~ button:first-of-type {
+  opacity: 1;
+}
+.rightBlur:hover ~ button:last-of-type {
+  opacity: 1;
+}
+.blur {
+  position: absolute;
+  height: 100%;
+  z-index: 1;
+  pointer-events: all;
+}
+.blur > img {
+  min-width: 100px;
+  width: 100%;
+  height: 100%;
+}
+.leftBlur {
+  top: 0;
+  left: 0;
+}
+
+.rightBlur {
+  top: 0;
+  right: 0;
+}
+
+.verticalButtons > button {
+  opacity: 1;
+}
+.verticalButtons.isBeginning > button:first-of-type {
+  opacity: 0;
+  pointer-events: none;
+}
+.verticalButtons.isEnd > button:last-of-type {
+  opacity: 0;
+  pointer-events: none;
+}

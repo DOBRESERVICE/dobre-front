@@ -1,0 +1,82 @@
+@import '../../styles/variables';
+
+.datePickerCalendar {
+  border: 1px solid $light-graphite;
+  box-shadow: none;
+
+  :global(.rmdp-week-day) {
+    color: $graphite;
+  }
+  :global(.rmdp-range) {
+    background-color: $deep-blue;
+  }
+  :global(.rmdp-range-hover) {
+    background-color: $hover-deep-blue;
+  }
+  :global(.rmdp-day.rmdp-today span) {
+    background-color: $deep-blue;
+  }
+  :global(.rmdp-arrow-container) {
+    align-items: center;
+  }
+  :global(.rmdp-arrow-container:hover) {
+    background-color: $deep-blue;
+  }
+  :global(.rmdp-arrow) {
+    border-color:$deep-blue;
+    margin: 0 1px 0 0;
+  }
+  :global(.rmdp-day.rmdp-selected span:not(.highlight)) {
+    background-color: $hover-deep-blue;
+  }
+}
+
+.datePicker {
+  width: 200px;
+  height: 36px !important;
+  cursor: pointer;
+
+  .rmdp-ep-arrow {
+    display: none;
+  }
+  input {
+    font-family: inherit;
+    width: 100%;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid $light-graphite;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    margin: 0;
+    padding:10px 15px;
+    cursor: pointer;
+    caret-color: transparent;
+    color:$graphite;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 120%;
+    letter-spacing: 0.3px;
+    &::placeholder {
+      color:$black;
+    }
+  }
+  :global(.rmdp-input:focus) {
+    border: 1px solid $light-graphite;
+    box-shadow: none;
+  }
+& svg[style] {
+    right: 15px !important;
+  }
+}
+
+.rentDatePicker {
+  width: 100%;
+  height: 46px !important;
+  input {
+    height: 46px;
+    &::placeholder {
+      color:$graphite;
+    }
+  }
+}

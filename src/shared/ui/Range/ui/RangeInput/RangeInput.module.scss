@@ -1,0 +1,24 @@
+@import "src/shared/styles/variables";
+.inputWrapper {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 10px;
+  & > label {
+    color: $black;
+    font-size: 13px;
+    font-weight: $fweight-big;
+  }
+}
+.rangeInput {
+  height:36px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid $light-graphite;
+  padding-left: 20px;
+  outline: none;
+  color: $graphite;
+  font-size: 15px;
+  font-weight: 600;
+
+}

@@ -1,0 +1,86 @@
+@import '@/shared/styles/variables.scss';
+.authWrapper {
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.leftBanner {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 23px;
+  height: 91%;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  max-width: 520px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 500;
+  font-size: 30px;
+  margin: 0 100px 0 40px;
+}
+
+.leftBannerTitle {
+  margin-top: 30px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 58px;
+  height: calc(100% - 82px);
+  margin-left: 40px;
+}
+.arrowBack {
+  cursor: pointer;
+  align-self: start;
+  width: 40px;
+  height: 40px;
+}
+.imageWrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imageWrapper > p {
+  position: absolute;
+  text-align: center;
+  top: 225px;
+  color: $white;
+  font-size: 36px;
+  font-weight: $fweight-big;
+}
+.imageWrapper > div:nth-child(1) {
+  position: absolute;
+  top: 60px;
+}
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.dobreImage {
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+.dobreImage > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.wrapper {
+  display: flex;
+  max-width: 385px;
+  flex-direction: column;
+  gap: 36px;
+}

@@ -1,0 +1,45 @@
+@import '@/shared/styles/variables';
+
+.topSectionBar {
+  display: flex;
+  justify-content: space-between;
+}
+.textContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  & > h3 {
+    color: $black;
+    font-size: 24px;
+    font-weight: $fweight-big;
+  }
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+    align-self: end;
+  }
+}
+.linkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  & > p {
+    color: $graphite;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+.linkArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $black;
+}

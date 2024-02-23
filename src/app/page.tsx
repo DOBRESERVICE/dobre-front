@@ -1,49 +1,36 @@
-'use client';
-import { ModalComponent } from '@/components/ModalComponent';
-import { CreateAccountMess } from '@/components/NotificationMessageModal/CreateAccount';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { HomeLayout } from '@/components/homeLayout/HomeLayout';
-import { SearchBlock } from '@/components/SearchBlock/SearchBlock';
+import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
-import { AboutUs } from '@/components/AboutUs/AboutUs';
-import { NewProducts } from '@/components/NewProducts/NewProducts';
+import { Loader } from '@/features/Loader/Loader';
+import { HomeLayout } from '@/layouts/homeLayout/HomeLayout';
+import { mainPageProducts } from '@/shared/data';
+import { AboutUs } from '@/widgets/AboutUs/AboutUs';
+import { FAQ } from '@/widgets/FAQ/FAQ';
+import GeneralTestimonials from '@/widgets/GeneralTestimonials/GeneralTestimonials';
+import { HowWeWork } from '@/widgets/HowWeWork/HowWeWork';
+import { NewProducts } from '@/widgets/NewProducts/NewProducts';
+import { PopularProducts } from '@/widgets/PopularProducts/PopularProducts';
+import Recommendations from '@/widgets/Recommendations/Recommendations';
+import { RentIntroduction } from '@/widgets/RentIntroduction/RentIntroduction';
+import SearchBlock from '@/widgets/SearchBlock/SearchBlock';
 
-import { FirstItem } from '@/components/FirstItem/FirstItem';
-import { Testimonials } from '@/components/Testimonials/Testimonials';
-import { HowWeWork } from '@/components/HowWeWork/HowWeWork';
-import { PopularProducts } from '@/components/PopularProducts/PopularProducts';
-import { FAQ } from '@/components/FAQ/FAQ';
-import { Recommendations } from '@/components/Recommendations/Recommendations';
-
-export default function HomePage() {
-  const currentUrl = global?.window && window.location;
-  const router = useRouter();
-  const [showModal, setIsShowModal] = useState<boolean>();
-
-  useEffect(() => {
-    setIsShowModal(!!currentUrl?.search.split('=')[1]);
-  }, [currentUrl]);
+const DynamicAuthModals = dynamic(() => import('@/features/AuthModals/AuthModals'));
+export default async function HomePage() {
+  // const { data: newProductsData } = await getNewProducts();
 
   return (
     <HomeLayout>
-      <ModalComponent
-        open={showModal}
-        handleClose={() => {
-          router.push('/');
-          setIsShowModal(false);
-        }}
-      >
-        <CreateAccountMess />
-      </ModalComponent>
+      <DynamicAuthModals />
       <SearchBlock />
-      <NewProducts />
+      <Suspense fallback={<Loader />}>
+        <NewProducts newProducts={mainPageProducts} />
+      </Suspense>
       <PopularProducts />
       <HowWeWork />
-      <FirstItem />
+      <RentIntroduction />
       <Recommendations />
       <AboutUs />
-      <Testimonials />
+      <GeneralTestimonials />
       <FAQ />
     </HomeLayout>
   );

@@ -1,0 +1,43 @@
+@import "src/shared/styles/variables";
+
+.topBar {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 12px;
+  justify-content: space-between;
+}
+.contentGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.contentGroup:nth-child(1) > p {
+  color: $black;
+  font-size: 13px;
+  font-weight: 600;
+}
+.contentGroup:nth-child(2) > p {
+  font-size: 13px;
+  font-weight: $fweight-big;
+}
+
+.contentGroup:nth-child(2) > p:not(:last-child) {
+  color: $graphite;
+}
+
+.contentGroup:nth-child(2) > p:last-child {
+  border-radius: 4px;
+  background: $sky-blue;
+  padding-block: 4px;
+  padding-inline: 10px;
+  color: $deep-blue;
+}
+.geoLocationInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}

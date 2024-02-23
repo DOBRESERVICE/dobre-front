@@ -1,0 +1,63 @@
+@import '@/shared/styles/variables';
+
+.detailsWrapper {
+  width: 514px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+.detailsKeys {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.dashedLine {
+  width: 100%;
+  margin-inline: 12px;
+  border-bottom: 1px dashed #e2e5e9;
+}
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+
+  & > h3 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+}
+.detailsContent {
+  display: flex;
+}
+.detailsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & span {
+    min-width: fit-content;
+    color: $black;
+    font-size: 13px;
+    font-weight: $fweight-big;
+  }
+}
+
+.detailsContent .detailsColumn:first-child {
+  flex: 1;
+  & span {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+.detailsContent .detailsColumn:last-child {
+  width: 212px;
+}
+
+.detailTypesWrapper {
+  display: flex;
+  flex: 1;
+}
+.detailsColumn .blueType {
+  color: $deep-blue;
+}

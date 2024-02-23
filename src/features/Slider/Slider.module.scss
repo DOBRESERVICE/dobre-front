@@ -1,0 +1,20 @@
+.swiper {
+  position: relative;
+  & > div:first-child {
+    display: flex;
+    transition-timing-function: linear;
+  } & > div:first-child > div {
+        width: fit-content;
+      }
+
+  &.verticalSwiper > div:first-child {
+    flex-direction: column;
+  }
+
+}
+.slide  {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+}

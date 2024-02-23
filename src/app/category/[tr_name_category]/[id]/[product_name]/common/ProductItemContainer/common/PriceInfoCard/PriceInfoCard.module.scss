@@ -1,0 +1,90 @@
+@import '@/shared/styles/variables';
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 14px;
+  padding: 20px 35px 20px 20px;
+  background: $sky-blue;
+  @include breakpoint(lg) {
+    gap: 16px;
+  }
+}
+.text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & > p {
+    width: max-content;
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+    line-height: 23px;
+  }
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  & > h3 {
+    color: $black;
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+}
+.wrapper {
+  display: flex;
+  gap: 12px;
+}
+.contentItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 10px;
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
+  & > div > p {
+    width: max-content;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+  }
+}
+.price {
+    font-size: 18px;
+    font-weight: $fweight-big;
+  }
+
+.contentItem:first-child {
+  background: $white;
+  & > div > p {
+    color: $graphite;
+  }
+  & .price {
+    color: $black;
+  }
+}
+
+.contentItem:last-child {
+  background: #55C94D;
+  & > div > p {
+    color: $white;
+  }
+  & .price {
+    color:$white;
+  }
+  & svg path {
+    fill: $white;
+  }
+}
+

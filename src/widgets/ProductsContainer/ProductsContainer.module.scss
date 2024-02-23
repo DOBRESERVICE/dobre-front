@@ -1,0 +1,20 @@
+@import '@/shared/styles/variables';
+
+.productsContainer {
+  width: 100%;
+  position: relative;
+}
+.productsWrapper {
+  width: 100%;
+  max-width: 1680px;
+  position: relative;
+  @include breakpoint(lg) {
+    max-width: 1400px;
+  }
+}
+
+
+.customWrapper {
+  display: flex;
+  width: 100%;
+}

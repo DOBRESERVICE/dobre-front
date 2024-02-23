@@ -1,0 +1,60 @@
+@import '@/shared/styles/variables';
+.generalRating {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex:1;
+}
+.ratingHeader {
+  color: $black;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: $fweight-big;
+  line-height: 130%
+}
+.generalRatingWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px;
+  height: fit-content;
+  border-radius: 14px;
+  border: 1px solid $light-graphite;
+  @include breakpoint(lg) {
+    width: 288px;
+  }
+}
+.ratingContent {
+  display: flex;
+  padding-bottom: 16px;
+  justify-content: space-between;
+  align-items: center;
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  border-bottom: 1px solid $light-graphite;
+}
+
+.conditionInfo {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding:12px;
+  border-radius: 8px;
+  background: #f4f4f4;
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: $fweight-big;
+    letter-spacing: 0.26px;
+    line-height: 130%;
+  }
+}
+.opinionText {
+  color: $black;
+  font-size: 13px;
+  font-weight: 600;
+}

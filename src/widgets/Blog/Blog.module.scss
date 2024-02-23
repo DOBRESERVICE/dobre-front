@@ -1,0 +1,43 @@
+@import '@/shared/styles/variables';
+
+.sectionBlogWrapper {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+}
+.content {
+  display: flex;
+  gap: 54px;
+  @include breakpoint(lg) {
+    gap: 20px;
+  }
+}
+.emptyBlock {
+  width: 490px;
+  height: 230px;
+  border-radius: 14px;
+  background: $light-graphite;
+  @include breakpoint(lg) {
+    width: 400px;
+  }
+}
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 755px;
+  & > h2 {
+    color: $black;
+    font-size: 22px;
+    font-weight: $fweight-big;
+  }
+  & > p {
+    color: $black;
+    font-size: $font-default;
+    font-weight: $fweight-small;
+    letter-spacing: 0.32px;
+    line-height: 26px;
+  }
+}

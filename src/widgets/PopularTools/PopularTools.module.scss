@@ -1,0 +1,18 @@
+.popularToolsSectionWrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 34px;
+  width: calc(100% - 350px);
+}

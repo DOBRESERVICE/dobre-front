@@ -1,0 +1,15 @@
+@import '@/shared/styles/variables';
+
+.content {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & > p {
+    font-size: 26px;
+    font-weight: 700;
+  }
+}

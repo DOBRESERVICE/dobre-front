@@ -1,0 +1,30 @@
+@import '@/shared/styles/variables';
+.sectionHeaderWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  & > h1 {
+    font-size: 55px;
+    font-weight: $fweight-big;
+    color: $white;
+    line-height: 60.5px;
+    @include breakpoint(lg) {
+      line-height: 57px;
+    }
+  }
+  & > h2 {
+    font-size: 36px;
+    font-weight: $fweight-big;
+    color: $white;
+    line-height: 43px;
+  }
+  & > h3 {
+    font-size: $font-medium;
+    color: $white;
+    font-weight: $fweight-small;
+  }
+}
+

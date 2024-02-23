@@ -1,0 +1,70 @@
+@import '@/shared/styles/variables';
+
+.faqItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 32px 12px;
+  border-radius: 14px;
+  background-color: $white;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.description {
+  display: grid;
+  grid-template-rows: 0fr;
+  width: 90%;
+  & > p {
+    color: $black;
+    font-size: $font-default;
+    font-weight: $fweight-medium;
+    letter-spacing: 0.32px;
+    overflow: hidden;
+  }
+  transition: all 0.5s;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & > h2 {
+    color: $black;
+    font-size: 22px;
+    font-weight: $fweight-big;
+    line-height: 30px;
+  }
+}
+.arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $deep-blue;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  transition: background-color 0.5s , transform 0.5s;
+  cursor: pointer;
+}
+
+.faqItem:active .arrow {
+  background-color: $light-gray;
+}
+
+.opened {
+   & > .description {
+     grid-template-rows: 1fr;
+     padding-bottom: 20px;
+   }
+ }
+
+@media screen and (hover:hover) {
+  .faqItem:hover .arrow {
+    background-color: $hover-deep-blue;
+  }
+}
+.faqItem.opened .arrow {
+  transform: rotate(180deg);
+  background-color: $light-gray;
+}

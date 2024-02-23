@@ -1,0 +1,33 @@
+@import '@/shared/styles/variables';
+.searchBlockWrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 110px;
+  background-color: $deep-blue;
+  border-radius: 23px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding-top: 70px;
+  padding-bottom: 150px;
+}
+.leftImageWrapper {
+  height: 415px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.rightImageWrapper {
+  height: 100%;
+  position: absolute;
+  right: 0;
+}
+.rightImageWrapper > img,
+.leftImageWrapper > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

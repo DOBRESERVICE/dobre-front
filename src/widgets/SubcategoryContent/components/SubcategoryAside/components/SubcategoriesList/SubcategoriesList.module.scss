@@ -1,0 +1,11 @@
+@import '@/shared/styles/variables';
+.subCategoriesList {
+  display: flex;
+  flex-direction: column;
+}
+.subCategoriesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+

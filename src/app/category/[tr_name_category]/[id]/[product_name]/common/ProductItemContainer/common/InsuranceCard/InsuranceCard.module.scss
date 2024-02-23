@@ -1,0 +1,50 @@
+@import '@/shared/styles/variables';
+.insuranceCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  border-radius: 14px;
+  background: #e7ffe7;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  & > div > p:first-child {
+    width: max-content;
+    color: #55c94d;
+    font-size: 15px;
+    font-weight: $fweight-big;
+    line-height: 18px;
+  }
+  & > div > p:last-child {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 18px;
+  }
+  & > img {
+    align-self: start;
+  }
+}
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  border-radius: 8px;
+  background: #ff4337;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  align-self: start;
+  gap: 8px;
+}

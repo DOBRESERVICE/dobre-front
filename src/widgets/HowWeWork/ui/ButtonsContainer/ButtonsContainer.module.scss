@@ -1,0 +1,36 @@
+@import '@/shared/styles/variables';
+
+.buttonsWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  width: 264px;
+  background-color: $white;
+  padding: 6px;
+  gap: 6px;
+  border-radius: 8px;
+}
+.active {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 122px;
+  height: 45px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f58f47 0%, #e8596c 100%);
+  z-index: 1;
+
+  & > p {
+    font-weight: $fweight-big;
+    color: $white;
+  }
+  transition: transform 0.3s;
+}
+.take {
+  transform: translateX(0px);
+}
+.rent {
+  transform: translateX(130px);
+}

@@ -1,0 +1,86 @@
+@import '@/shared/styles/variables';
+.statusBarContainer > span {
+  background-color: #d9d9d9;
+}
+
+.statusBarContainer {
+  display: flex;
+  gap: 6px;
+
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3),
+  & > span:nth-child(4),
+  & > span:nth-child(5) {
+    height: 4px;
+    border-radius: 5px;
+  }
+
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3) {
+    width: 26px;
+  }
+
+  & > span:nth-child(4),
+  & > span:nth-child(5) {
+    width: 16px;
+  }
+}
+.newQuality {
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3),
+  & > span:nth-child(4),
+  & > span:nth-child(5) {
+    background-color: #55c94d;
+  }
+}
+
+.likeNewQuality {
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3),
+  & > span:nth-child(4) {
+    background-color: #55c94d;
+  }
+}
+
+.goodQuality {
+  & > span:nth-child(1),
+  & > span:nth-child(2),
+  & > span:nth-child(3) {
+    background-color: #55c94d;
+  }
+}
+
+.usedQuality {
+  & > span:nth-child(1),
+  & > span:nth-child(2) {
+    background-color: #d4aa12;
+  }
+}
+
+.badQuality {
+  & > span:nth-child(1) {
+    background-color: #d4aa12;
+  }
+}
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.status {
+  font-size: 13px;
+  font-weight: $fweight-big;
+  line-height: 130%;
+}
+.goodStatus {
+  color: #55c94d;
+}
+
+.mediumStatus {
+  color: #d4aa12;
+}

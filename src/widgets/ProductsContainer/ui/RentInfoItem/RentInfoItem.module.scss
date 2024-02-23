@@ -1,0 +1,6 @@
+.rentInfoItem {
+  min-width: 84px;
+}
+.rentInfoItem:not(:last-child) {
+  border-right: 1px solid #e6e6e6;
+}

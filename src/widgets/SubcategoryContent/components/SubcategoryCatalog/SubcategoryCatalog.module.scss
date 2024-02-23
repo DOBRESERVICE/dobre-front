@@ -1,0 +1,72 @@
+@import "src/shared/styles/variables";
+
+.categoryCatalogWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.categoryCatalog {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+.buttonsWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.noProductsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  position: absolute;
+  top:0;
+  left:0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0.8;
+}
+.spinner {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left:400px;
+  top:200px;
+  z-index: 3;
+  background-image: linear-gradient($deep-blue 20px, transparent 0), linear-gradient(#ff3d00 20px, transparent 0),
+  linear-gradient(#ff3d00 20px, transparent 0), linear-gradient($deep-blue 20px, transparent 0);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position:
+          left top,
+          left bottom,
+          right top,
+          right bottom;
+  animation: rotate 1s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.46875) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}

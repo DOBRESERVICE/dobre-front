@@ -1,0 +1,46 @@
+@import '@/shared/styles/variables';
+.cardContainer {
+  border-radius: 14px;
+  border: 1px solid #e2e5e9;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(25px);
+  width: 414px;
+  position: relative;
+  padding:32px;
+  @include breakpoint(lg) {
+    width: 363px;
+  }
+}
+.howWeWorkCard {
+  width: 456px;
+  @include breakpoint(lg) {
+    width: 397px;
+  }
+}
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  & > h3 {
+    color: $black;
+    font-size: $font-medium;
+    font-weight: $fweight-big;
+    line-height: 24px;
+  }
+
+  & > p {
+    color: $black;
+    font-size: $font-default;
+    font-weight: $fweight-medium;
+    line-height: 26px;
+    letter-spacing: 0.32px;
+  }
+}
+.cardContainer > img {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+.howWeWorkCard {
+  background: $white;
+}

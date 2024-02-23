@@ -1,0 +1,32 @@
+@import '@/shared/styles/variables';
+.asideWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  min-width: 278px;
+  width: 278px;
+}
+.title {
+  display: flex;
+  gap: 10px;
+
+  & > h2 {
+    color: $black;
+    font-size: $font-medium;
+    font-weight: $fweight-big;
+  }
+}
+.chooseContent {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+}
+.arrowBack {
+  cursor: pointer;
+}

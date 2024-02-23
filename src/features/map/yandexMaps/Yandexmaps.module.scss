@@ -1,0 +1,31 @@
+@import "src/shared/styles/variables";
+
+.mapWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mapContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.addressContent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  & > p {
+    color: $black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: $fweight-big;
+    line-height: 21px;
+  }
+  & > p > span {
+    color:$deep-blue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: $fweight-big;
+    line-height: 130%
+  }
+}

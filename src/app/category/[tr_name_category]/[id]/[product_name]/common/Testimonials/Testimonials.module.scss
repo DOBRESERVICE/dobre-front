@@ -1,0 +1,34 @@
+@import '@/shared/styles/variables';
+.testimonialsWrapper {
+  width: 814px;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  @include breakpoint(lg) {
+    width: 927px;
+  }
+}
+.askAQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 26px;
+  & > p {
+    color: $black;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  border-bottom: 1px solid $light-graphite;
+}
+.seeAll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 34px;
+  align-self: center;
+  & > p {
+    color: $graphite;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
