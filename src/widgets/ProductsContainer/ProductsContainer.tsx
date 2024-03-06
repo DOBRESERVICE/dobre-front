@@ -8,8 +8,8 @@ import styles from './ProductsContainer.module.scss';
 import { ProductItem } from '@/entities/ProductItem/ProductItem';
 import { Slider } from '@/features/Slider/Slider';
 import { Product } from '@/interfaces/categories';
-
-import { nextArrow, previous } from '../../shared/image';
+import { BlackNextButton } from '@/features/Slider/ui/ButtonVariants/BlackButtons/BlackNextButton';
+import { BlackPrevButton } from '@/features/Slider/ui/ButtonVariants/BlackButtons/BlackPrevButton';
 
 interface ProductsContainer {
   products: Product[];
@@ -18,7 +18,14 @@ interface ProductsContainer {
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   return (
     <div className={styles.productsWrapper}>
-      <Slider blur direction='horizontal' nextIcon={nextArrow} prevIcon={previous}>
+      <Slider
+        blur
+        direction='horizontal'
+        left={30}
+        right={30}
+        nextIcon={<BlackNextButton />}
+        prevIcon={<BlackPrevButton />}
+      >
         {products?.map((product) => (
           <ProductItem
             key={product.id_product}

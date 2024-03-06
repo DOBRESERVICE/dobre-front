@@ -25,20 +25,7 @@
   z-index: 2;
   pointer-events: all;
 }
-.swiperButtonsWrapper > button:first-of-type {
-  left: 30px;
-}
-.swiperButtonsWrapper > button:last-of-type {
-  right: 30px;
-}
-.swiperButtonsWrapper.verticalButtons > button:first-of-type {
-  top: 20px;
-  left:unset;
-}
-.swiperButtonsWrapper.verticalButtons > button:last-of-type {
-  bottom: 20px;
-  right:unset;
-}
+
 .swiperButtonsWrapper > button:hover {
   opacity: 1;
 }

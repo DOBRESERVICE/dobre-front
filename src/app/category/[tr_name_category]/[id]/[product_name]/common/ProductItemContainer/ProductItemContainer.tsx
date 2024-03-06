@@ -11,13 +11,9 @@ import { Slider } from '@/features/Slider/Slider';
 import { Term } from '@/interfaces/categories';
 import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
 
-import {
-  deliveryIcon,
-  mockBigImage,
-  mockBrandImage,
-  verticalNextIcon,
-  verticalPrevIcon,
-} from '../../../../../../../shared/image';
+import { deliveryIcon, mockBigImage, mockBrandImage } from '../../../../../../../shared/image';
+import { VerticalNextIcon } from '@/features/Slider/ui/ButtonVariants/VerticalButtons/VerticalNextIcon';
+import { VerticalPrevIcon } from '@/features/Slider/ui/ButtonVariants/VerticalButtons/VerticalPrevIcon';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -52,7 +48,14 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
       <div className={styles.productBody}>
         <div className={styles.productContent}>
           <div className={styles.productImages}>
-            <Slider blur={false} direction='vertical' nextIcon={verticalNextIcon} prevIcon={verticalPrevIcon}>
+            <Slider
+              blur={false}
+              direction='vertical'
+              top={20}
+              bottom={20}
+              nextIcon={<VerticalNextIcon />}
+              prevIcon={<VerticalPrevIcon />}
+            >
               {productPageSliderImages.map((slideItem) => (
                 <div key={slideItem.id} className={styles.imageWrapper} onClick={() => setImage(slideItem.image)}>
                   <Image src={slideItem.image} alt='mock' />

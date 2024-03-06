@@ -1,7 +1,6 @@
 'use client';
 import classNames from 'classnames';
-import { StaticImageData } from 'next/image';
-import { Children, FC, ReactNode } from 'react';
+import { Children, FC, ReactElement, ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './Slider.module.scss';
@@ -11,15 +10,30 @@ import { SwiperButtons } from '@/features/Slider/ui/SwiperButtons/SwiperButtons'
 export type Direction = 'vertical' | 'horizontal';
 
 interface SliderProps {
-  nextIcon: StaticImageData;
-  prevIcon: StaticImageData;
+  nextIcon: ReactElement;
+  prevIcon: ReactElement;
   children: ReactNode;
   direction: Direction;
   blur: boolean;
   gap?: number;
+  left?: number;
+  right?: number;
+  top?: number;
+  bottom?: number;
 }
 
-export const Slider: FC<SliderProps> = ({ blur, direction, children, prevIcon, nextIcon, gap = 20 }) => {
+export const Slider: FC<SliderProps> = ({
+  blur,
+  direction,
+  children,
+  prevIcon,
+  nextIcon,
+  gap = 20,
+  left,
+  bottom,
+  right,
+  top,
+}) => {
   return (
     <Swiper
       allowTouchMove={false}
@@ -36,7 +50,16 @@ export const Slider: FC<SliderProps> = ({ blur, direction, children, prevIcon, n
           {child}
         </SwiperSlide>
       ))}
-      <SwiperButtons blur={blur} direction={direction} nextIcon={nextIcon} prevIcon={prevIcon} />
+      <SwiperButtons
+        left={left}
+        right={right}
+        top={top}
+        bottom={bottom}
+        blur={blur}
+        direction={direction}
+        nextIcon={nextIcon}
+        prevIcon={prevIcon}
+      />
     </Swiper>
   );
 };
