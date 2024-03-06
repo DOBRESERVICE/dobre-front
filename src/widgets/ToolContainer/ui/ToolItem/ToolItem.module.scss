@@ -21,7 +21,7 @@
 }
 .toolWrapper > p {
   color: $black;
-  font-size: $font-default;
+  font-size: 14px;
   font-weight: $fweight-big;
   @include breakpoint(lg) {
     text-align: center;

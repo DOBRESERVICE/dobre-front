@@ -6,14 +6,11 @@ export const customSelect = {
   fontSize: '15px',
   fontWeight: '600',
   borderRadius: '8px',
-  '& > div': {
-    padding: '7px 14px',
+  '.MuiInputBase-root': {
+    borderRadius: '8px',
   },
   '& fieldset': {
     borderColor: MUIColors.lightGraphite,
-  },
-  '& ul': {
-    display: 'none',
   },
   '& fieldset:hover': {
     borderColor: MUIColors.lightGraphite,
@@ -29,9 +26,8 @@ export const customMenuItem = {
   opacity: '1',
   justifyContent: 'center',
   borderRadius: '8px',
-  marginInline: '10px',
-  marginBlock: '10px',
   paddingBlock: '7px',
+  marginBottom: '2px',
   '&:hover': {
     backgroundColor: MUIColors.lightGraphite,
   },
@@ -73,7 +69,7 @@ export const customProductQuantitySelect = {
   fontWeight: '600',
   borderRadius: '8px',
   '& > div': {
-    padding: '12px 14px',
+    paddingBlock: '12.5px',
   },
   '& fieldset': {
     borderColor: MUIColors.lightGraphite,
@@ -89,27 +85,33 @@ export const customFormSelect = {
 };
 export const customProductQuantityFormSelect = {
   minWidth: '113px',
+  '& .MuiPaper-root': {
+    top: '5px',
+  },
 };
 
 export const customDateLabel = {
   color: MUIColors.graphite,
   fontSize: '15px',
   fontWeight: '600',
-  top: '-4px',
+  top: '-2px',
 };
 
 export const customSortLabel = {
   color: MUIColors.graphite,
   fontSize: '15px',
   fontWeight: '600',
-  top: '-8px',
   left: '24px',
-  '&.MuiInputLabel-shrink': { top: 0, left: 0 },
+  '&.MuiInputLabel-shrink': { left: 0 },
 };
 export const customLabel = {
   color: MUIColors.graphite,
   fontSize: '15px',
   fontWeight: '600',
-  '&.MuiInputLabel-shrink': { top: 0 },
-  top: '-8px',
+};
+
+export const customSelectMenuStyles = {
+  boxShadow: '0 0 12px 0 rgba(0, 0, 0, 0.14) !important',
+  borderRadius: '8px',
+  padding: '12px',
 };

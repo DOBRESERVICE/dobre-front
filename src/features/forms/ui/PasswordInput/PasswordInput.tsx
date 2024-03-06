@@ -25,11 +25,8 @@ export const PasswordInput: FC<PasswordInput> = ({
   return (
     <div className={styles.passwordInputWrapper}>
       <TextField
-        id='outlined-basic'
         label={label}
         type={isPassword ? 'password' : 'text'}
-        variant='outlined'
-        size='small'
         sx={authCustomInput}
         value={passwordValue}
         onChange={handlePasswordChange}

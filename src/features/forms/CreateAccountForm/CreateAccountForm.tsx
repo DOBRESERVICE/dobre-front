@@ -53,11 +53,9 @@ export const CreateAccountForm = () => {
       </div>
       <div className={styles.inputWrapper}>
         <TextField
-          id='outlined-basic'
           label='Email'
-          error={emailError}
           variant='outlined'
-          size='small'
+          error={emailError}
           value={emailValue}
           sx={authCustomInput}
           onChange={handleEmailChange}

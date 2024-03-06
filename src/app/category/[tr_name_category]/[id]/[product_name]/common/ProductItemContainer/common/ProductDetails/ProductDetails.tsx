@@ -1,6 +1,6 @@
 import styles from './ProductDetails.module.scss';
 
-import { blueTypesArray, generalInfo } from '../../../../../../../../../shared/data';
+import { generalInfo } from '../../../../../../../../../shared/data';
 
 export const ProductDetails = () => {
   return (
@@ -20,9 +20,7 @@ export const ProductDetails = () => {
             <div />
             <div className={styles.detailsColumn}>
               {section.array.map((item) => (
-                <span className={blueTypesArray.includes(item.key) ? styles.blueType : ''} key={item.value}>
-                  {item.value}
-                </span>
+                <span key={item.value}>{item.value}</span>
               ))}
             </div>
           </div>

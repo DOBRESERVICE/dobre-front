@@ -40,7 +40,7 @@ import russiaMail from './delivery/russiaMail.svg';
 import sdek from './delivery/sdek.svg';
 import yandexGo from './delivery/yandexGo.svg';
 import DOBRE from './DOBRE.svg';
-import dobreBanner from './DobreBanner.svg';
+import dobreBanner from './DobreBanner.png';
 import logoDobre from './dobreLogo.svg';
 import dobreWhiteLogo from './dobreWhiteLogo.svg';
 import drill from './drill.png';

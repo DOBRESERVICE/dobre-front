@@ -28,7 +28,7 @@ export const ProductDescription: FC<ProductDescriptionProps> = ({
   lon,
   lan,
 }) => {
-  const [activeRule, setActiveRule] = useState(0);
+  const [activeRule, setActiveRule] = useState(1);
   return (
     <div className={styles.productInfo}>
       <div className={styles.userInfo}>
@@ -38,7 +38,7 @@ export const ProductDescription: FC<ProductDescriptionProps> = ({
           </div>
           <div className={styles.ratingWrapper}>
             <div>
-              <p>Viola. K, </p>
+              <p>Viola, </p>
               <RatingComponent feedbackType='textFeedback' rating={4.9} feedbackCount={0} />
             </div>
             <div>

@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from 'react';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { customRangeInput } from '@/shared/styles/buttonStyles';
-import { useDebounce } from '@/shared/hooks/use-debounce';
+import { useDebounce } from '@/shared/hooks/useDebounce';
 
 interface RangeInputProps {
   label: string;

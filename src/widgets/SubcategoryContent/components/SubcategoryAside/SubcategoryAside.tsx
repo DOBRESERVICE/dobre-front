@@ -1,7 +1,7 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FC } from 'react';
+import { FC, Fragment } from 'react';
 
 import styles from './SubcategoryAside.module.scss';
 
@@ -9,7 +9,6 @@ import { VarietyFeatureType } from '@/enums';
 import { FeatureVariety } from '@/interfaces';
 import { Product, Variety } from '@/interfaces/categories';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
-import { BoolCheck } from '@/shared/ui/BoolCheck/BoolCheck';
 import { MultiArray } from '@/shared/ui/MultiArray/MultiArray';
 import { MultiCheck } from '@/shared/ui/MultiCheck/MultiCheck';
 import { MultipleSelect } from '@/shared/ui/MultipleSelect/MultipleSelect';
@@ -32,7 +31,7 @@ export const SubcategoryAside: FC<AsideProps> = ({ varietyFeatures, title, varie
     switch (feature.type_feature) {
       case VarietyFeatureType.MSELECT:
         return (
-          <>
+          <div>
             <SelectHeader headerName={feature.name_feature} />
             <MultipleSelect
               search_tr_name={feature.tr_name_feature}
@@ -42,30 +41,28 @@ export const SubcategoryAside: FC<AsideProps> = ({ varietyFeatures, title, varie
               formControlStyles={customDateFormSelect}
               selectData={feature.values_feature}
             />
-          </>
+          </div>
         );
       case VarietyFeatureType.MARRAY:
         return (
-          <>
+          <div>
             <SelectHeader headerName={feature.name_feature} />
             <MultiArray search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
-          </>
+          </div>
         );
       case VarietyFeatureType.MCHECK:
         return (
-          <>
+          <div>
             <SelectHeader headerName={feature.name_feature} />
             <MultiCheck search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
-          </>
+          </div>
         );
-      case VarietyFeatureType.BOOL:
-        return <BoolCheck headerName={feature.name_feature} search_tr_name={feature.tr_name_feature} />;
       case VarietyFeatureType.RANGE:
         return (
-          <>
+          <div>
             <SelectHeader headerName={feature.name_feature} />
             <Range search_tr_name={feature.tr_name_feature} features={feature.values_feature} />
-          </>
+          </div>
         );
       default:
         return <></>;
@@ -73,16 +70,17 @@ export const SubcategoryAside: FC<AsideProps> = ({ varietyFeatures, title, varie
   };
   return (
     <aside className={styles.asideWrapper}>
-      <div className={styles.title}>
-        <Image src={backArrow} className={styles.arrowBack} alt='back' role='button' onClick={() => router.back()} />
-        <h2>{title}</h2>
+      <div className={styles.listWrapper}>
+        <div className={styles.title}>
+          <Image src={backArrow} className={styles.arrowBack} alt='back' role='button' onClick={() => router.back()} />
+          <h2>{title}</h2>
+        </div>
+        <SubcategoriesList varietiesList={varietiesList} />
       </div>
-      <SubcategoriesList varietiesList={varietiesList} />
-      <hr />
       {products?.length ? (
         <div className={styles.chooseContent}>
           <SelectHeader headerName='Бренд' />
-          {varietyFeatures?.map((feature) => <div key={feature.id_feature}>{renderFeature(feature)}</div>)}
+          {varietyFeatures?.map((feature) => <Fragment key={feature.id_feature}>{renderFeature(feature)}</Fragment>)}
         </div>
       ) : (
         ''

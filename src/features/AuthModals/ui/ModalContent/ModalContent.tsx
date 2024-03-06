@@ -6,7 +6,6 @@ import styles from './ModalContent.module.scss';
 
 import { customModalButton } from '@/shared/styles/buttonStyles';
 
-
 interface ModalContentProps {
   imageIcon: StaticImageData;
   title: string;

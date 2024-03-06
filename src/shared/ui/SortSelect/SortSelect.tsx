@@ -8,17 +8,13 @@ import { FC, useEffect, useState } from 'react';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { whiteChecked } from '@/shared/image';
-import { customMenuItem, customSortLabel } from '@/shared/styles/selectStyles';
+import { customMenuItem, customSelectMenuStyles, customSortLabel } from '@/shared/styles/selectStyles';
 import { SortData } from '@/widgets/SubcategoryContent/components/SubcategoryCatalog/SubcategoryCatalog';
 
 interface SortSelectProps {
   label?: string;
   labelImage?: StaticImageData;
-  firstPartLabel?: string;
-  labelSecondImage?: StaticImageData;
-  secondPartLabel?: string;
   selectStyles: SxProps<Theme>;
-  labelStyles: SxProps<Theme>;
   formControlStyles: SxProps<Theme>;
   selectData: SortData[];
 }
@@ -52,19 +48,25 @@ export const SortSelect: FC<SortSelectProps> = ({ selectData, selectStyles, form
     });
   };
   return (
-    <FormControl sx={formControlStyles}>
-      <InputLabel sx={customSortLabel} id='demo-simple-select'>
-        Сортировать по
-      </InputLabel>
+    <FormControl sx={formControlStyles} size='small'>
+      <InputLabel sx={customSortLabel}>Сортировать по</InputLabel>
       <Select
+        size='small'
         displayEmpty
         MenuProps={{
           disableScrollLock: true,
+          PaperProps: {
+            sx: customSelectMenuStyles,
+          },
+          MenuListProps: {
+            sx: {
+              paddingTop: '0',
+              paddingBottom: '0',
+            },
+          },
         }}
         sx={selectStyles}
         IconComponent={ExpandMoreIcon}
-        labelId='demo-simple-select-label'
-        id='demo-simple-select'
         value={value}
         label='Сортировать по'
         onChange={handleChange}
