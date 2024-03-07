@@ -1,6 +1,6 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
-import { FC, useState } from 'react';
+import { CSSProperties, FC, useState } from 'react';
 
 import styles from './ProductItemContainer.module.scss';
 
@@ -43,6 +43,12 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
   const [image, setImage] = useState<StaticImageData>();
+  const nextButtonStyles: CSSProperties = {
+    bottom: '20px',
+  };
+  const prevButtonStyles: CSSProperties = {
+    top: '20px',
+  };
   return (
     <div className={styles.productContentWrapper}>
       <div className={styles.productBody}>
@@ -51,8 +57,10 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
             <Slider
               blur={false}
               direction='vertical'
-              top={20}
-              bottom={20}
+              ButtonProps={{
+                nextButtonStyles: nextButtonStyles,
+                prevBtnStyles: prevButtonStyles,
+              }}
               nextIcon={<VerticalNextIcon />}
               prevIcon={<VerticalPrevIcon />}
             >

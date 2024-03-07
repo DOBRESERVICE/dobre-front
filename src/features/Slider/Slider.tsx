@@ -1,6 +1,6 @@
 'use client';
 import classNames from 'classnames';
-import { Children, FC, ReactElement, ReactNode } from 'react';
+import { Children, CSSProperties, FC, ReactElement, ReactNode } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import styles from './Slider.module.scss';
@@ -14,26 +14,15 @@ interface SliderProps {
   prevIcon: ReactElement;
   children: ReactNode;
   direction: Direction;
+  ButtonProps?: {
+    prevBtnStyles: CSSProperties;
+    nextButtonStyles: CSSProperties;
+  };
   blur: boolean;
   gap?: number;
-  left?: number;
-  right?: number;
-  top?: number;
-  bottom?: number;
 }
 
-export const Slider: FC<SliderProps> = ({
-  blur,
-  direction,
-  children,
-  prevIcon,
-  nextIcon,
-  gap = 20,
-  left,
-  bottom,
-  right,
-  top,
-}) => {
+export const Slider: FC<SliderProps> = ({ blur, direction, children, prevIcon, nextIcon, gap = 20, ButtonProps }) => {
   return (
     <Swiper
       allowTouchMove={false}
@@ -51,10 +40,7 @@ export const Slider: FC<SliderProps> = ({
         </SwiperSlide>
       ))}
       <SwiperButtons
-        left={left}
-        right={right}
-        top={top}
-        bottom={bottom}
+        ButtonProps={ButtonProps}
         blur={blur}
         direction={direction}
         nextIcon={nextIcon}
