@@ -18,14 +18,7 @@ interface ProductsContainer {
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
   return (
     <div className={styles.productsWrapper}>
-      <Slider
-        blur
-        direction='horizontal'
-        left={30}
-        right={30}
-        nextIcon={<BlackNextButton />}
-        prevIcon={<BlackPrevButton />}
-      >
+      <Slider blur direction='horizontal' nextIcon={<BlackNextButton />} prevIcon={<BlackPrevButton />}>
         {products?.map((product) => (
           <ProductItem
             key={product.id_product}
