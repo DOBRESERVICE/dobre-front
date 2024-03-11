@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  serverRuntimeConfig: {
-    port: 80,
-  },
+  // serverRuntimeConfig: {
+  //   port: 80,
+  // },
   images: {
     remotePatterns: [
       {

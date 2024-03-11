@@ -20,5 +20,5 @@ COPY --from=build-stage /app/package.json /app/package.json
 
 WORKDIR /app
 
-EXPOSE 80
-CMD ["npm", "dev", "-p", "80"]
+EXPOSE 3000
+CMD ["npm", "dev"]
