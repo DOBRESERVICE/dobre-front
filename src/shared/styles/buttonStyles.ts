@@ -129,11 +129,13 @@ export const howWeWorkButton = {
 
 export const authCustomInput = {
   width: '385px',
-  '& .MuiOutlinedInput-root': {
+  '& .MuiInputBase-root': {
     height: '50px',
+  },
+  '& .MuiOutlinedInput-root': {
     borderRadius: '8px',
-    border: `1px solid ${MUIColors.grayBorder}`,
     '& input': {
+      padding: '5px 14px',
       color: MUIColors.deepBlue,
     },
     '& input[type="password"]': {
@@ -150,7 +152,13 @@ export const authCustomInput = {
     fontSize: ' 15px',
     fontWeight: '600',
     color: MUIColors.graphite,
-    top: '5px',
+  },
+  '& > label.Mui-focused': {
+    fontSize: ' 13px',
+    fontWeight: '700',
+  },
+  '& fieldset': {
+    border: `1px solid ${MUIColors.lightGraphite}`,
   },
 };
 export const customRangeInput = {

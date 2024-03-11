@@ -9,7 +9,7 @@ import styles from '@/shared/ui/CustomSelect/CustomSelect.module.scss';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { whiteChecked } from '@/shared/image';
-import { customLabel, customMenuItem } from '@/shared/styles/selectStyles';
+import { customLabel, customMenuItem, customSelectMenuStyles } from '@/shared/styles/selectStyles';
 
 interface CustomSelect {
   label?: string;
@@ -53,20 +53,26 @@ export const MultipleSelect: FC<CustomSelect> = ({
     setValues(typeof e.target.value === 'string' ? e.target.value.split(',') : e.target.value);
   };
   return (
-    <FormControl sx={formControlStyles}>
-      <InputLabel sx={customLabel} id='demo-simple-select'>
-        {label}
-      </InputLabel>
+    <FormControl sx={formControlStyles} size='small'>
+      <InputLabel sx={customLabel}>{label}</InputLabel>
       <Select
+        size='small'
         multiple
         MenuProps={{
           disableScrollLock: true,
+          PaperProps: {
+            sx: customSelectMenuStyles,
+          },
+          MenuListProps: {
+            sx: {
+              paddingTop: '0',
+              paddingBottom: '0',
+            },
+          },
         }}
         sx={selectStyles}
         label={label}
         IconComponent={ExpandMoreIcon}
-        labelId='demo-simple-select-label'
-        id='demo-simple-select'
         value={values}
         onChange={handleChange}
       >

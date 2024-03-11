@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import Image, { StaticImageData } from 'next/image';
-import { FC, useState } from 'react';
+import Image from 'next/image';
+import { CSSProperties, FC, ReactElement, useState } from 'react';
 import { useSwiper } from 'swiper/react';
 
 import styles from './SwiperButtons.module.scss';
@@ -10,13 +10,14 @@ import { Direction } from '@/features/Slider/Slider';
 import { sliderLeftBlur, sliderRightBlur } from '../../../../shared/image';
 
 interface SwiperButtonsProps {
-  nextIcon: StaticImageData;
-  prevIcon: StaticImageData;
+  ButtonProps?: { prevBtnStyles: CSSProperties; nextButtonStyles: CSSProperties };
+  nextIcon: ReactElement;
+  prevIcon: ReactElement;
   direction: Direction;
-  blur: boolean;
+  blur?: boolean;
 }
 
-export const SwiperButtons: FC<SwiperButtonsProps> = ({ direction, blur, prevIcon, nextIcon }) => {
+export const SwiperButtons: FC<SwiperButtonsProps> = ({ direction, blur, prevIcon, nextIcon, ButtonProps }) => {
   const [_, setTrigger] = useState(0);
   const swiper = useSwiper();
   const handleNext = () => {
@@ -42,11 +43,11 @@ export const SwiperButtons: FC<SwiperButtonsProps> = ({ direction, blur, prevIco
       <div className={classNames(styles.blur, styles.rightBlur)}>
         <Image src={sliderRightBlur} alt='blur' />
       </div>
-      <button onClick={handlePrev}>
-        <Image src={prevIcon} alt='prev' />
+      <button onClick={handlePrev} style={ButtonProps?.prevBtnStyles}>
+        {prevIcon}
       </button>
-      <button onClick={handleNext}>
-        <Image src={nextIcon} alt='next' />
+      <button onClick={handleNext} style={ButtonProps?.nextButtonStyles}>
+        {nextIcon}
       </button>
     </div>
   );

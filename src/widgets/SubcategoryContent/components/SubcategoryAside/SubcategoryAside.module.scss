@@ -2,9 +2,14 @@
 .asideWrapper {
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 32px;
   min-width: 278px;
   width: 278px;
+}
+.listWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 .title {
   display: flex;
@@ -24,7 +29,7 @@
   > div {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 14px;
   }
 }
 .arrowBack {

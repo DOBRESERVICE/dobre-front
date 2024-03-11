@@ -38,8 +38,6 @@ export const ResetPasswordForm = () => {
         id='outlined-basic'
         label='Email'
         error={emailError}
-        variant='outlined'
-        size='small'
         value={email}
         sx={authCustomInput}
         onChange={handleEmailChange}

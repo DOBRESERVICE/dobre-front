@@ -1,6 +1,6 @@
 'use client';
 import Image, { StaticImageData } from 'next/image';
-import { FC, useState } from 'react';
+import { CSSProperties, FC, useState } from 'react';
 
 import styles from './ProductItemContainer.module.scss';
 
@@ -9,15 +9,11 @@ import { RuleAccordion } from '@/app/category/[tr_name_category]/[id]/[product_n
 import { RentInfoPannel } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/RentInfoPannel/RentInfoPannel';
 import { Slider } from '@/features/Slider/Slider';
 import { Term } from '@/interfaces/categories';
-import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { deliveryIcons, descriptionProductData, productPageSliderImages } from '@/shared/data';
 
-import {
-  mockBrandImage,
-  verticalNextIcon,
-  verticalPrevIcon,
-} from '../../../../../../../shared/image';
-import { deliveryIcon } from '../../../../../../../shared/image';
+import { deliveryIcon, mockBigImage, mockBrandImage } from '../../../../../../../shared/image';
+import { VerticalNextIcon } from '@/features/Slider/ui/ButtonVariants/VerticalButtons/VerticalNextIcon';
+import { VerticalPrevIcon } from '@/features/Slider/ui/ButtonVariants/VerticalButtons/VerticalPrevIcon';
 
 interface ProductItemContainerProps {
   productName: string;
@@ -47,12 +43,27 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
 }) => {
   const availableQuantityArray = Array.from({ length: quantity }, (_, index) => index + 1);
   const [image, setImage] = useState<StaticImageData>();
+  const nextButtonStyles: CSSProperties = {
+    bottom: '20px',
+  };
+  const prevButtonStyles: CSSProperties = {
+    top: '20px',
+  };
   return (
     <div className={styles.productContentWrapper}>
       <div className={styles.productBody}>
         <div className={styles.productContent}>
           <div className={styles.productImages}>
-            <Slider blur={false} direction='vertical' nextIcon={verticalNextIcon} prevIcon={verticalPrevIcon}>
+            <Slider
+              blur={false}
+              direction='vertical'
+              ButtonProps={{
+                nextButtonStyles: nextButtonStyles,
+                prevBtnStyles: prevButtonStyles,
+              }}
+              nextIcon={<VerticalNextIcon />}
+              prevIcon={<VerticalPrevIcon />}
+            >
               {productPageSliderImages.map((slideItem) => (
                 <div key={slideItem.id} className={styles.imageWrapper} onClick={() => setImage(slideItem.image)}>
                   <Image src={slideItem.image} alt='mock' />
@@ -63,12 +74,7 @@ export const ProductItemContainer: FC<ProductItemContainerProps> = ({
               <div className={styles.brandWrapper}>
                 <Image src={mockBrandImage} alt='brand' />
               </div>
-              <Image
-                src={image ? image : `${IMAGE_BASE_URL}${productImage}`}
-                width={576}
-                height={576}
-                alt='product image'
-              />
+              <Image src={image ? image : mockBigImage} width={576} height={576} alt='product image' />
             </div>
           </div>
         </div>

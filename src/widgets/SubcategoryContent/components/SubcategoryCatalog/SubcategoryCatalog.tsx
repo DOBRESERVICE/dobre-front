@@ -9,7 +9,7 @@ import { ProductItem } from '@/entities/ProductItem/ProductItem';
 import { Pagination } from '@/interfaces';
 import { Product } from '@/interfaces/categories';
 import { useAuthData } from '@/shared/context/authContext';
-import { customFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
+import { customFormSelect, customSelect } from '@/shared/styles/selectStyles';
 import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
 import { CustomPagination } from '@/shared/ui/CustomPagination/CustomPagination';
 import { SortSelect } from '@/shared/ui/SortSelect/SortSelect';
@@ -52,7 +52,6 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products, paginat
           <SortSelect
             labelImage={sortSvg}
             selectStyles={customSelect}
-            labelStyles={customLabel}
             formControlStyles={customFormSelect}
             selectData={sortData}
           />

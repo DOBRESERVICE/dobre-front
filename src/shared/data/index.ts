@@ -623,56 +623,55 @@ export const headerLinks = [
     id: 1,
     linkName: 'Электроника',
     image: electroic,
+    link: '/category/elektronika',
   },
   {
     id: 2,
     linkName: 'Бытовая техника',
     image: houseHold,
+    link: '/category/bytovaya-tekhnika',
   },
   {
     id: 3,
     linkName: 'Одежда и аксессуары',
     image: clothes,
+    link: '/category/odezhda-i-aksessuary',
   },
   {
     id: 4,
     linkName: 'Для родителей и детей',
     image: forKids,
+    link: '/category/dlya-roditelej-i-detej',
   },
   {
     id: 5,
     linkName: 'Ремонт и стройка',
     image: renovation,
+    link: '/category/remont-i-strojka',
   },
   {
     id: 6,
     linkName: 'Дом и сад',
     image: houseAndyarn,
+    link: '/category/dom-i-sad',
   },
   {
     id: 7,
     linkName: 'Мебель',
     image: furniture,
+    link: '/category/mebel',
   },
   {
     id: 8,
     linkName: 'Кемпинг и путешествия',
     image: camping,
+    link: '/category/kemping-i-puteshestviya',
   },
   {
     id: 9,
     linkName: 'Спорт и активный отдых',
     image: sport,
-  },
-  {
-    id: 10,
-    linkName: 'Спорт и активный отдых',
-    image: sport,
-  },
-  {
-    id: 11,
-    linkName: 'Спорт и активный отдых',
-    image: sport,
+    link: '/category/sport-i-aktivnyj-otdyh',
   },
 ];
 
@@ -708,47 +707,27 @@ export const descriptionProductData = {
 export const generalInfo = [
   {
     id: 1,
-    title: 'Общая информация',
+    title: 'Характеристики',
     array: [
-      { key: 'Тип', value: 'Перфоратор' },
-      { key: 'Бренд', value: 'Hilti' },
-      { key: 'Модель', value: 'TE 70-AVR 230V 2208672' },
-      { key: 'Страна-изготовитель', value: 'Китай' },
-      { key: 'Цвет', value: 'Красный' },
-      { key: 'Класс инструмента', value: 'Профессиональный' },
-      { key: 'Особенности', value: 'Кейс в комплекте' },
+      { key: 'Тип', value: 'Вечернее платье' },
+      { key: 'Цвет', value: 'Черный' },
+      { key: 'Размер', value: '42-50' },
+      { key: 'Событие', value: 'На фотосессию, На свадьбу' },
+      { key: 'Застежка', value: 'Молния' },
+      { key: 'Длина', value: 'В пол' },
+      { key: 'Декольте', value: '3000' },
+      { key: 'Материал', value: 'Гипюр-Сетка, Органза' },
     ],
   },
   {
     id: 2,
-    title: 'Технические характеристики',
-    array: [
-      { key: 'Тип питания', value: 'От сети' },
-      { key: 'Мощность, Вт', value: '780 Вт' },
-      { key: 'Режим работы', value: 'Сверление, Сверление с ударом, Долбление' },
-      { key: 'Тип потрона', value: 'SDS-Plus' },
-      { key: 'Количество ударов, уд./мин', value: '4500' },
-      { key: 'Количество скоростей', value: '1' },
-    ],
-  },
-  {
-    id: 3,
     title: 'Габариты',
     array: [
-      { key: 'Тип упаковки', value: 'Кейс' },
-      { key: 'Габариты, см', value: '200х200х40' },
-      { key: 'Вес, кг', value: '1.5 ' },
+      { key: 'Тип упаковки', value: 'Чехол' },
+      { key: 'Вес, кг', value: '1,2' },
+      { key: 'Габариты, см', value: '220х80х15' },
     ],
   },
-];
-
-export const blueTypesArray = [
-  'Бренд',
-  'Страна-изготовитель',
-  'Класс инструмента',
-  'Особенности',
-  'Тип питания',
-  'Мощность, Вт',
 ];
 
 export const userMenuData = [
@@ -10337,7 +10316,16 @@ export const featuresData = [
     type_feature: 'mcheck',
     array_feature: null,
     group_feature: null,
-    values_feature: ['Сверление', 'Завинчивание', 'Сверление с ударом', 'Долбление', 'Завинчивание с ударом'],
+    values_feature: [
+      'Сверление',
+      'Завинчивание',
+      'Сверление с ударом',
+      'Долбление',
+      'Завинчивание с ударом',
+      'Завинчивание с ударом',
+      'Завинчивание с ударом',
+      'Завинчивание с ударом',
+    ],
     description: '',
     enabled_feature: true,
     createdAt: '2023-12-12T15:14:06.910Z',
@@ -10524,7 +10512,7 @@ export const productData = {
   price_segment: 'middle',
   rent_period: '1D',
   rent_terms: 'ssssssssssssssss',
-  quantity: 1,
+  quantity: 5,
   specs_product: 'ssssssssssssssss',
   price: '33.00',
   deposit: 20000,

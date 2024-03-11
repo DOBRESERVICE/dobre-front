@@ -23,6 +23,7 @@ const theme = createTheme({
     fontFamily: manrope.style.fontFamily,
   },
 });
+
 export const Providers = ({ children }: { children: ReactNode }) => {
   return (
     <AppRouterCacheProvider>

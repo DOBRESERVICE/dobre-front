@@ -40,7 +40,7 @@ import russiaMail from './delivery/russiaMail.svg';
 import sdek from './delivery/sdek.svg';
 import yandexGo from './delivery/yandexGo.svg';
 import DOBRE from './DOBRE.svg';
-import dobreBanner from './DobreBanner.svg';
+import dobreBanner from './DobreBanner.png';
 import logoDobre from './dobreLogo.svg';
 import dobreWhiteLogo from './dobreWhiteLogo.svg';
 import drill from './drill.png';
@@ -141,8 +141,10 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
+import mockBigImage from './mockBigImage.png';
 
 export {
+  mockBigImage,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,

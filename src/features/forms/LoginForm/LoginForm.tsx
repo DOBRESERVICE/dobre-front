@@ -40,11 +40,8 @@ export const LoginForm = () => {
       <AuthHeader title='Вход' text='Новый пользователь?' actionType='Создать учетную запись' link='create' />
       <div className={styles.inputWrapper}>
         <TextField
-          id='outlined-basic'
           label='Телефон или Email'
           error={emailError}
-          variant='outlined'
-          size='small'
           value={email}
           sx={authCustomInput}
           onChange={handleEmailChange}

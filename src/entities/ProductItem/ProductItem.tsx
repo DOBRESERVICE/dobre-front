@@ -7,12 +7,11 @@ import styles from './ProductItem.module.scss';
 
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
 import { Term } from '@/interfaces/categories';
-import { IMAGE_BASE_URL } from '@/shared/constants/urls';
 import { ProductRentStatus } from '@/shared/ui/ProductRentStatus/ProductRentStatus';
 import { RatingComponent } from '@/shared/ui/RatingComponent/RatingComponent';
 import { RentInfoContainer } from '@/widgets/ProductsContainer/ui/RentInfoContainer/RentInfoContainer';
 
-import { favouriteIcon, mockUser, verified } from '../../shared/image';
+import { favouriteIcon, mockItem, mockUser, verified } from '../../shared/image';
 
 export interface ProductItem {
   itemName: string;
@@ -60,7 +59,7 @@ export const ProductItem: FC<ProductItem> = ({
         href={`/category/${trCategoryName}/${trSubCategoryName}/${trProductName}`}
         className={styles.mainImageWrapper}
       >
-        <Image src={`${IMAGE_BASE_URL}${photoUrl}`} alt='item' width={340} height={260} />
+        <Image src={mockItem} alt='item' width={340} height={260} />
       </Link>
       <div className={styles.content}>
         <StatusBar status={status} />

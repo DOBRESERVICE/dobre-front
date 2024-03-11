@@ -4,6 +4,7 @@ import { FC, useEffect, useState } from 'react';
 
 import { useAuthData } from '@/shared/context/authContext';
 import { customRangeInput } from '@/shared/styles/buttonStyles';
+import { useDebounce } from '@/shared/hooks/useDebounce';
 
 interface RangeInputProps {
   label: string;
@@ -18,7 +19,7 @@ export const RangeInput: FC<RangeInputProps> = ({ searchKey, label, placeholder,
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const router = useRouter();
-  // const debouncedValue = useDebounce(value, 1000);
+  const debouncedValue = useDebounce(value, 1000);
   const handleBlur = () => {
     startTransition(() => {
       if (value) {
@@ -26,9 +27,7 @@ export const RangeInput: FC<RangeInputProps> = ({ searchKey, label, placeholder,
       } else {
         params.delete(`${search_tr_name} + ${searchKey}`);
       }
-      const search = params.toString();
-      const query = search ? `?${search}` : '';
-      router.push(`${pathname}${query}`, { scroll: false });
+      history.replaceState(null, '', `${pathname}?${params.toString()}`);
     });
   };
 

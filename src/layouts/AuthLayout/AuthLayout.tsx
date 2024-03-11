@@ -10,7 +10,7 @@ import { Status } from '@/enums';
 import { Loader } from '@/features/Loader/Loader';
 import { useAuthData } from '@/shared/context/authContext';
 
-import { DOBRE, dobreBanner, dobreWhiteLogo, leftWhiteSliderIcon } from '../../shared/image';
+import { DOBRE, dobreBanner, leftWhiteSliderIcon } from '../../shared/image';
 
 interface FormLayoutProps {
   children: ReactNode;
@@ -36,10 +36,6 @@ export const AuthLayout: FC<FormLayoutProps> = ({ children }) => {
     <div className={styles.authWrapper}>
       <div className={styles.content}>
         <div className={styles.imageWrapper}>
-          <div>
-            <Image src={dobreWhiteLogo} alt='logo' />
-          </div>
-          <p>Легко арендовать и безопасно сдавать</p>
           <Image src={dobreBanner} alt='banner' />
         </div>
         <Image
