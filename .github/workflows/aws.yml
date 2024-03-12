@@ -10,7 +10,7 @@ env:
   ECS_SERVICE: DobreFrontMediumService
   ECS_CLUSTER: DobreFrontMedium
   ECS_TASK_DEFINITION: ./.aws/task-definition.json
-  CONTAINER_NAME: DobreFrontMediumContainer
+  CONTAINER_NAME: dobre-front-container
 
 permissions:
   contents: read
