@@ -1,5 +1,5 @@
 
-FROM node:18 as build-stage
+FROM node:20 as build-stage
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 
 RUN npm run build
 
-FROM node:18 as production-stage
+FROM node:20 as production-stage
 
 COPY --from=build-stage /app/.next /app/.next
 COPY --from=build-stage /app/node_modules /app/node_modules
