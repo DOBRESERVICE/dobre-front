@@ -3,13 +3,14 @@ import { Button } from '@mui/material';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import styles from './RentInfoPannel.module.scss';
 
 import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { ModalDatePicker } from '@/features/ModalDatePicker/ModalDatePicker';
 import { Term } from '@/interfaces/categories';
 import { useAuthData } from '@/shared/context/authContext';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
@@ -50,6 +51,7 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
   const { isPending } = useAuthData();
   const params = new URLSearchParams(searchParams);
   const isDisabled = params.get('dateStart') === null && params.get('dateEnd') === null;
+  const [isDatePickerModalOpen, setIsDatePickerModalOpen] = useState(false);
   return (
     <div className={styles.productInfo}>
       <div className={styles.dateHeaderWrapper}>
@@ -62,7 +64,9 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
         <RatingComponent feedbackType='textFeedback' rating={4.4} feedbackCount={31} />
       </div>
       <div className={styles.selectWrapper}>
-        <CustomDatePicker rent />
+        <button className={styles.datePickerWrapper} onClick={() => setIsDatePickerModalOpen(true)}>
+          <CustomDatePicker rent onOpen={() => false} />
+        </button>
         {count > 0 ? (
           <CustomSelect
             formControlStyles={customProductQuantityFormSelect}
@@ -122,6 +126,7 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
           Оформить аренду
         </Button>
       </div>
+      <ModalDatePicker isModalOpen={isDatePickerModalOpen} setIsModalOpen={setIsDatePickerModalOpen} />
     </div>
   );
 };

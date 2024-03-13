@@ -12,9 +12,10 @@ import { parseToUnix, parseUnixDate } from '@/shared/lib';
 
 interface CustomDatePickerProps {
   rent: boolean;
+  onOpen?: () => boolean;
 }
 
-export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent }) => {
+export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent, onOpen }) => {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();
@@ -72,6 +73,7 @@ export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent }) => {
         [styles.rentDatePicker]: rent,
       })}
       rangeHover
+      onOpen={onOpen}
       onChange={setDateRange}
       value={dateRange}
       render={<InputIcon style={{ right: '15px' }} placeholder='Выберите дату' />}

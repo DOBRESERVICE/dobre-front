@@ -1,0 +1,84 @@
+@import 'src/shared/styles/variables';
+.modalContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+  padding: 40px;
+  border-radius:20px;
+  border: 1px solid $light-graphite;
+  background-color: $white;
+}
+.closeIcon {
+  all: unset;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $white;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.calendar {
+  box-shadow: none !important;
+  :global(.rmdp-week-day) {
+    color: $graphite;
+  }
+  :global(.rmdp-range) {
+    background-color: $sky-blue;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: $deep-blue;
+    box-shadow: none;
+    margin-block: 2px;
+  }
+  :global(.rmdp-range.start) {
+    border-left: 2px solid;
+    border-color: $deep-blue;
+  } :global(.rmdp-range.end) {
+    border-right: 2px solid;
+    border-color: $deep-blue;
+  }
+  :global(.rmdp-day.rmdp-today span ) {
+    border: $black;
+    color:$black;
+    background-color: $white;
+    border-radius: 90px;
+  }
+  :global(.rmdp-range-hover) {
+    background-color: $hover-deep-blue;
+  }
+  :global(.rmdp-day span) {
+    color:$black;
+  }
+  :global(.rmdp-day.rmdp-range.start span) {
+    background-color: $deep-blue;
+    color:$white;
+  }
+  :global(.rmdp-day.rmdp-range.end span) {
+    background-color: $deep-blue;
+    color:$white;
+  }
+  :global(.rmdp-arrow-container) {
+    align-items: center;
+  }
+  :global(.rmdp-arrow-container:hover) {
+    background-color: $deep-blue;
+  }
+  :global(.rmdp-arrow) {
+    border-color:$deep-blue;
+    margin: 0 1px 0 0;
+  }
+  :global(.rmdp-day.rmdp-selected span:not(.highlight)) {
+    background-color: $hover-deep-blue;
+  }
+  :global(.rmdp-week) {
+    justify-content: unset;
+  }
+}
+

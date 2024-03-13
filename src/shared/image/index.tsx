@@ -22,6 +22,7 @@ import metabo from './brands/metabo.svg';
 import camping from './camping.svg';
 import checkboxIcon from './checkboxIcon.svg';
 import checkedIcon from './checkedIcon.svg';
+import closePopup from './closePopup.svg';
 import clothes from './clothes.svg';
 import commentExclamation from './commentExclamation.svg';
 import constructionEquipment from './constructionImages/constructionEquipment.png';
@@ -80,6 +81,7 @@ import messageIcon from './messageIcon.svg';
 import mock1Image from './mock1Image.png';
 import mock2Image from './mock2Image.png';
 import mock3Image from './mock3Image.png';
+import mockBigImage from './mockBigImage.png';
 import mockBrandImage from './mockBrandImage.png';
 import mockItem from './mockItem.png';
 import mockMainImage from './mockMainImage.png';
@@ -141,10 +143,8 @@ import whiteChecked from './whiteChecked.svg';
 import whiteLogo from './whiteLogo.svg';
 import yandexIcon from './yandex.svg';
 import ytIcon from './ytIcon.svg';
-import mockBigImage from './mockBigImage.png';
 
 export {
-  mockBigImage,
   aboutUsAccept,
   aboutUsBlob,
   aboutUsImage,
@@ -167,6 +167,7 @@ export {
   checkboxIcon,
   checkedIcon,
   cleaningPopularTools,
+  closePopup,
   clothes,
   commentExclamation,
   constructionEquipment,
@@ -233,6 +234,7 @@ export {
   mock1Image,
   mock2Image,
   mock3Image,
+  mockBigImage,
   mockBrandImage,
   mockItem,
   mockMainImage,

@@ -176,6 +176,11 @@
   animation: rotate 1s linear infinite;
 }
 
+.datePickerWrapper {
+  all: unset;
+  width: 100%;
+}
+
 @keyframes rotate {
   0% {
     transform: scale(1) rotate(0deg);
