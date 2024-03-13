@@ -1,24 +1,36 @@
 'use client';
 
-import { FC } from 'react';
+import { CSSProperties, FC } from 'react';
 import 'swiper/css';
 
 import styles from './ProductsContainer.module.scss';
 
 import { ProductItem } from '@/entities/ProductItem/ProductItem';
 import { Slider } from '@/features/Slider/Slider';
-import { Product } from '@/interfaces/categories';
 import { BlackNextButton } from '@/features/Slider/ui/ButtonVariants/BlackButtons/BlackNextButton';
 import { BlackPrevButton } from '@/features/Slider/ui/ButtonVariants/BlackButtons/BlackPrevButton';
+import { Product } from '@/interfaces/categories';
 
 interface ProductsContainer {
   products: Product[];
 }
 
 export const ProductsContainer: FC<ProductsContainer> = ({ products }) => {
+  const nextButtonStyles: CSSProperties = {
+    right: '20px',
+  };
+  const prevButtonStyles: CSSProperties = {
+    left: '20px',
+  };
   return (
     <div className={styles.productsWrapper}>
-      <Slider blur direction='horizontal' nextIcon={<BlackNextButton />} prevIcon={<BlackPrevButton />}>
+      <Slider
+        blur
+        direction='horizontal'
+        ButtonProps={{ prevBtnStyles: prevButtonStyles, nextButtonStyles: nextButtonStyles }}
+        nextIcon={<BlackNextButton />}
+        prevIcon={<BlackPrevButton />}
+      >
         {products?.map((product) => (
           <ProductItem
             key={product.id_product}
