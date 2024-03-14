@@ -26,9 +26,41 @@
 
 .calendar {
   box-shadow: none !important;
-  :global(.rmdp-week-day) {
-    color: $graphite;
+  :global(.rmdp-header-values span) {
+    font-weight: 700;
+    font-size: 18px;
+    color: #333;
   }
+  :global(.rmdp-day-picker > div:nth-child(1)) {
+    margin-right: 36px;
+  }
+  :global(.rmdp-week-day) {
+    width: 42px;
+    height: 42px;
+    color: $graphite;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  :global(.rmdp-day) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    margin-block: 2px;
+  }
+  :global(.rmdp-ym .rmdp-day span) {
+    width: 100%;
+    height: 100%;
+  }
+  :global(.rmdp-day span) {
+    width: 34px;
+    height: 34px;
+    font-weight: 600;
+    font-size: 16px;
+    position: static;
+  }
+
   :global(.rmdp-range) {
     background-color: $sky-blue;
     border-top: 2px solid;
@@ -45,13 +77,13 @@
     border-color: $deep-blue;
   }
   :global(.rmdp-day.rmdp-today span ) {
-    border: $black;
+    border: 1px solid $black;
     color:$black;
     background-color: $white;
     border-radius: 90px;
   }
   :global(.rmdp-range-hover) {
-    background-color: $hover-deep-blue;
+    background-color: $sky-blue !important;
   }
   :global(.rmdp-day span) {
     color:$black;
@@ -81,4 +113,28 @@
     justify-content: unset;
   }
 }
+.contentWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+.dateInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
 
+  & > p:first-child {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140%;
+  }
+& > p:last-child {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: 0.02em;
+  color: $graphite;
+  }
+
+}

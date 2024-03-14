@@ -1,43 +1,37 @@
 'use client';
 import classNames from 'classnames';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { FC, useEffect, useRef, useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { Dispatch, FC, SetStateAction, useEffect, useRef } from 'react';
 import DatePicker, { DatePickerRef, Value } from 'react-multi-date-picker';
 import InputIcon from 'react-multi-date-picker/components/input_icon';
 
 import styles from './CustomDatePicker.module.scss';
 
-import { useAuthData } from '@/shared/context/authContext';
 import { parseToUnix, parseUnixDate } from '@/shared/lib';
 
 interface CustomDatePickerProps {
   rent: boolean;
   onOpen?: () => boolean;
+  dateRange: Value;
+  setDateRange: Dispatch<SetStateAction<Value>>;
 }
 
-export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent, onOpen }) => {
+export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent, onOpen, setDateRange, dateRange }) => {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const pathname = usePathname();
-  const { isPending, startTransition } = useAuthData();
-  const [dateRange, setDateRange] = useState<Value>(null);
   const datePickerRef = useRef<DatePickerRef>(null);
-
+  console.log(dateRange);
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     if (Array.isArray(dateRange) && dateRange.length > 1 && datePickerRef.current) {
       const startDate = parseToUnix(dateRange[0]);
       const endDate = parseToUnix(dateRange[1]);
-      startTransition(() => {
-        params.set('dateStart', String(startDate));
-        params.set('dateEnd', String(endDate));
-        const search = params.toString();
-        const query = search ? `?${search}` : '';
-        router.push(`${pathname}${query}`, { scroll: false });
-      });
+      params.set('dateStart', String(startDate));
+      params.set('dateEnd', String(endDate));
+      history.replaceState(null, '', `${pathname}?${params.toString()}`);
       datePickerRef.current.closeCalendar();
     }
-  }, [startTransition, pathname, router, searchParams, dateRange]);
+  }, [pathname, searchParams, dateRange]);
 
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
@@ -48,21 +42,10 @@ export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent, onOpen }) =>
       const endDate = parseUnixDate(end);
       setDateRange([startDate, endDate]);
     }
-  }, [searchParams]);
-  // const handleClear = () => {
-  //   const params = new URLSearchParams(searchParams);
-  //   setDateRange(null);
-  //   startTransition(() => {
-  //     params.delete('dateStart');
-  //     params.delete('dateEnd');
-  //     const search = params.toString();
-  //     const query = search ? `?${search}` : '';
-  //     router.push(`${pathname}${query}`, { scroll: false });
-  //   });
-  // };
+  }, [setDateRange, searchParams]);
+
   return (
     <DatePicker
-      disabled={isPending}
       ref={datePickerRef}
       range
       editable={false}

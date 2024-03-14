@@ -19,10 +19,29 @@ export const parseToUnix = (date: string | number | Date | DateObject) => {
   return new Date(year, month, day).getTime();
 };
 
-export const parseUnixDate = (date: string) => {
+export const parseUnixDate = (date: string | number) => {
   const formattedDate = new Date(Number(date));
   const day = formattedDate.getDate().toString().padStart(2, '0');
   const month = (formattedDate.getMonth() + 1).toString().padStart(2, '0');
   const year = formattedDate.getFullYear().toString().slice(-2);
   return `${day}/${month}/${year}`;
 };
+
+export const calcDayRentTime = (startDate: number, endDate: number) => {
+  const difference = endDate - startDate;
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
+  return Math.floor(difference / millisecondsPerDay);
+};
+
+function getMonthName(monthIndex: number) {
+  const monthNames = ['янв.', 'фев.', 'март', 'апр.', 'май', 'июнь', 'июль', 'авг.', 'сент.', 'окт.', 'нояб.', 'дек.'];
+  return monthNames[monthIndex];
+}
+
+// Форматирование даты в строку
+export function formatDate(date: Date) {
+  const day = date.getDate();
+  const month = getMonthName(date.getMonth());
+  const year = date.getFullYear();
+  return `${day} ${month} ${year} г.`;
+}
