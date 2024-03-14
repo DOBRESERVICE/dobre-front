@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { Dispatch, FC, SetStateAction, useEffect } from 'react';
-import { Calendar, Value } from 'react-multi-date-picker';
+import { Calendar, DateObject, Value } from 'react-multi-date-picker';
 
 import styles from './ModalDatePicker.module.scss';
 
@@ -62,7 +62,12 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
       setDateRange([startDate, endDate]);
     }
   }, [setDateRange, searchParams]);
-
+  const reserved = [
+    new DateObject().setDay(1).format('DD/MM/YY'),
+    new DateObject().setDay(5).format('DD/MM/YY'),
+    new DateObject().setDay(7).format('DD/MM/YY'),
+    new DateObject().setDay(8).format('DD/MM/YY'),
+  ];
   return (
     <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} sx={modalStyles}>
       <div className={styles.modalContent}>
@@ -109,6 +114,12 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
           rangeHover
           onChange={setDateRange}
           value={dateRange}
+          mapDays={({ date }) => {
+            let className;
+            const strDate = date.format();
+            if (reserved.includes(strDate)) className = 'reserved';
+            if (className) return { className };
+          }}
         />
         <div className={styles.buttonsWrapper}>
           <Button disableRipple sx={confirmCalendarButtonStyles} onClick={() => setIsModalOpen(false)}>

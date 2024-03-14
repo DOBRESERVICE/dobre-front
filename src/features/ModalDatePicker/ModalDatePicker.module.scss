@@ -96,6 +96,15 @@
     border-bottom: 2px solid;
     border-color: $deep-blue;
   }
+  :global(.rmdp-day:has(.reserved)) {
+    pointer-events: none;
+  }
+  :global(.sd.reserved) {
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #c4c4c4;
+  }
   :global(.rmdp-range.start) {
     border-left: 2px solid;
     border-top: 2px solid;
