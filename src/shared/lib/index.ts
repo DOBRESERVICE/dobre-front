@@ -38,10 +38,10 @@ function getMonthName(monthIndex: number) {
   return monthNames[monthIndex];
 }
 
-// Форматирование даты в строку
-export function formatDate(date: Date) {
-  const day = date.getDate();
-  const month = getMonthName(date.getMonth());
-  const year = date.getFullYear();
+export function formatDate(date: number) {
+  const formattedDate = new Date(date);
+  const day = formattedDate.getDate();
+  const month = getMonthName(formattedDate.getMonth());
+  const year = formattedDate.getFullYear();
   return `${day} ${month} ${year} г.`;
 }

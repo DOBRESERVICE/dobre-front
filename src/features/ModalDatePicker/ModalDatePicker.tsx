@@ -1,18 +1,19 @@
-'use client';
 import { Button } from '@mui/material';
 import Modal from '@mui/material/Modal';
 import TextField from '@mui/material/TextField';
 import Image from 'next/image';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { Dispatch, FC, SetStateAction, useEffect, useRef } from 'react';
+import { Dispatch, FC, SetStateAction, useEffect } from 'react';
 import { Calendar, Value } from 'react-multi-date-picker';
 
 import styles from './ModalDatePicker.module.scss';
 
+import { months, weekDays } from '@/shared/constants';
 import { closePopup } from '@/shared/image';
 import { calcDayRentTime, formatDate, parseToUnix, parseUnixDate } from '@/shared/lib';
+import { calendarInputStyles, clearCalendarStyles, confirmCalendarButtonStyles } from '@/shared/styles/buttonStyles';
 import { modalStyles } from '@/shared/styles/ModalStyles';
-import { CustomDatePicker } from '@/shared/ui/CustomDatePicker/CustomDatePicker';
+import { CalendarSvg } from '@/shared/ui/CalendarSvg/CalendarSvg';
 
 interface ModalDatePickerProps {
   isModalOpen: boolean;
@@ -28,8 +29,18 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
   const startDate = Number(params.get('dateStart'));
   const endDate = Number(params.get('dateEnd'));
   const daysNumber = calcDayRentTime(startDate, endDate);
-  const periodString = `${formatDate(new Date(startDate))} - ${formatDate(new Date(endDate))}`;
-  const calendarRef = useRef<HTMLDivElement>(null);
+  const periodString = startDate && endDate ? `${formatDate(startDate)} - ${formatDate(endDate)}` : '';
+  const startDateValue = startDate ? parseUnixDate(startDate).split('/').join('.') : '';
+  const endDateValue = endDate ? parseUnixDate(endDate).split('/').join('.') : '';
+
+  const handleClear = () => {
+    const params = new URLSearchParams(searchParams);
+    setDateRange(null);
+    params.delete('dateStart');
+    params.delete('dateEnd');
+    history.replaceState(null, '', `${pathname}?${params.toString()}`);
+  };
+
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     if (Array.isArray(dateRange) && dateRange.length > 1) {
@@ -37,7 +48,6 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
       const endDate = parseToUnix(dateRange[1]);
       params.set('dateStart', String(startDate));
       params.set('dateEnd', String(endDate));
-      console.log('sss');
       history.replaceState(null, '', `${pathname}?${params.toString()}`);
     }
   }, [pathname, searchParams, dateRange]);
@@ -53,16 +63,6 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
     }
   }, [setDateRange, searchParams]);
 
-  const handleClear = () => {
-    const params = new URLSearchParams(searchParams);
-    setDateRange(null);
-    params.delete('dateStart');
-    params.delete('dateEnd');
-    history.replaceState(null, '', `${pathname}?${params.toString()}`);
-  };
-  const startDateValue = parseUnixDate(startDate);
-  console.log(startDateValue);
-  const endDateValue = parseUnixDate(endDate);
   return (
     <Modal open={isModalOpen} onClose={() => setIsModalOpen(false)} sx={modalStyles}>
       <div className={styles.modalContent}>
@@ -71,17 +71,37 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
         </button>
         <div className={styles.contentWrapper}>
           <div className={styles.dateInfoWrapper}>
-            {daysNumber ? (
-              <>
-                <p>{daysNumber} суток</p>
-                <p>{periodString}</p>
-              </>
-            ) : null}
+            <p className={styles.daysNumber}>{daysNumber} суток</p>
+            <p className={styles.periodString}>{periodString && periodString}</p>
           </div>
-          <CustomDatePicker rent={false} onOpen={() => false} setDateRange={setDateRange} dateRange={dateRange} />
+          <div className={styles.inputsWrapper}>
+            <TextField
+              size='small'
+              label='Начало аренды'
+              inputProps={{ readOnly: true }}
+              value={startDateValue}
+              sx={calendarInputStyles}
+              focused={!!startDateValue}
+              InputProps={{
+                endAdornment: <CalendarSvg />,
+              }}
+            />
+            <TextField
+              size='small'
+              value={endDateValue}
+              label='Конец аренды'
+              inputProps={{ readOnly: true }}
+              sx={calendarInputStyles}
+              focused={!!startDateValue}
+              InputProps={{
+                endAdornment: <CalendarSvg />,
+              }}
+            />
+          </div>
         </div>
         <Calendar
-          ref={calendarRef}
+          weekDays={weekDays}
+          months={months}
           className={styles.calendar}
           numberOfMonths={2}
           range
@@ -90,13 +110,13 @@ export const ModalDatePicker: FC<ModalDatePickerProps> = ({ isModalOpen, setIsMo
           onChange={setDateRange}
           value={dateRange}
         />
-        <div>
-          <Button>Готово</Button>
-          <Button onClick={handleClear}>Сбросить даты</Button>
-        </div>
-        <div>
-          <TextField value={startDateValue} placeholder='Выберите дату' />
-          <TextField />
+        <div className={styles.buttonsWrapper}>
+          <Button disableRipple sx={confirmCalendarButtonStyles} onClick={() => setIsModalOpen(false)}>
+            Готово
+          </Button>
+          <Button onClick={handleClear} disableRipple sx={clearCalendarStyles}>
+            Сбросить даты
+          </Button>
         </div>
       </div>
     </Modal>

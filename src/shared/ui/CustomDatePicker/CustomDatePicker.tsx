@@ -20,7 +20,6 @@ export const CustomDatePicker: FC<CustomDatePickerProps> = ({ rent, onOpen, setD
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const datePickerRef = useRef<DatePickerRef>(null);
-  console.log(dateRange);
   useEffect(() => {
     const params = new URLSearchParams(searchParams);
     if (Array.isArray(dateRange) && dateRange.length > 1 && datePickerRef.current) {

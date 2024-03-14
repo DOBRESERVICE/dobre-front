@@ -1,5 +1,6 @@
 'use client';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { Value } from 'react-multi-date-picker';
 
 import styles from './SubcategoryCatalog.module.scss';
 
@@ -41,13 +42,15 @@ export const SubcategoryCatalog: FC<CategoryCatalogProps> = ({ products, paginat
     { text: 'Сначала с отзывами', value: SortOptions['Сначала с отзывами'] },
   ];
   const { isPending } = useAuthData();
+  const [dateRange, setDateRange] = useState<Value>(null);
+
   return (
     <div className={styles.categoryCatalogWrapper}>
       {products?.length ? (
         <div className={styles.content}>
           <div className={styles.buttonsWrapper}>
             <AvailableFilter />
-            <CustomDatePicker rent={false} />
+            <CustomDatePicker rent={false} dateRange={dateRange} setDateRange={setDateRange} />
           </div>
           <SortSelect
             labelImage={sortSvg}

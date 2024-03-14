@@ -312,27 +312,6 @@ export const rentInfoCustomBigButton = {
     color: MUIColors.white,
   },
 };
-export const SeeAllCustomBigButton = {
-  borderRadius: '8px',
-  height: '45px',
-  gap: '10px',
-  fontSize: '15px',
-  color: MUIColors.white,
-  width: 'fit-content',
-  paddingInline: '22px',
-  fontWeight: 700,
-  background: MUIColors.deepBlue,
-  boxShadow: 'none',
-  textTransform: 'none',
-  '&:hover': {
-    backgroundColor: MUIColors.hoverDeepBlue,
-    boxShadow: 'none',
-  },
-  '&:active': {
-    backgroundColor: MUIColors.activeDeepBlue,
-    boxShadow: 'none',
-  },
-};
 
 export const customModalButton = {
   height: '50px',
@@ -434,4 +413,78 @@ export const customSmallRentButton = {
     boxShadow: 'none',
   },
   padding: '6px 10px',
+};
+export const calendarInputStyles = {
+  width: '180px',
+  '& .MuiOutlinedInput-root': {
+    borderRadius: '8px',
+    '& input': {
+      color: MUIColors.graphite,
+      fontWeight: '600',
+      fontSize: '15px',
+      lineHeight: '120%',
+      letterSpacing: '0.02em',
+    },
+  },
+  '& .MuiOutlinedInput-root.Mui-focused': {
+    border: `none`,
+  },
+  '& > label': {
+    fontSize: ' 15px',
+    fontWeight: '600',
+    color: MUIColors.graphite,
+  },
+  '& > label.Mui-focused': {
+    fontWeight: '700',
+  },
+  '& fieldset': {
+    border: `2px solid ${MUIColors.lightGraphite}`,
+  },
+};
+export const confirmCalendarButtonStyles = {
+  borderRadius: '8px',
+  padding: '9px 16px',
+  fontSize: '14px',
+  lineHeight: '100%',
+  color: MUIColors.white,
+  fontWeight: 700,
+  background: MUIColors.deepBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: MUIColors.hoverDeepBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: MUIColors.activeDeepBlue,
+    boxShadow: 'none',
+  },
+  '&.Mui-disabled': {
+    opacity: 0.4,
+    color: MUIColors.white,
+  },
+};
+
+export const clearCalendarStyles = {
+  borderRadius: '8px',
+  padding: '9px 16px',
+  fontSize: '14px',
+  lineHeight: '100%',
+  color: MUIColors.deepBlue,
+  fontWeight: 700,
+  background: MUIColors.lightBlue,
+  boxShadow: 'none',
+  textTransform: 'none',
+  '&:hover': {
+    backgroundColor: MUIColors.hoverLightBlue,
+    boxShadow: 'none',
+  },
+  '&:active': {
+    backgroundColor: MUIColors.activeLightBlue,
+    boxShadow: 'none',
+  },
+  '&.Mui-disabled': {
+    opacity: 0.4,
+    color: MUIColors.white,
+  },
 };

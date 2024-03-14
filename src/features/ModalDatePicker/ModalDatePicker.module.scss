@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 34px;
-  padding: 40px;
+  padding: 50px;
   border-radius:20px;
   border: 1px solid $light-graphite;
   background-color: $white;
@@ -31,8 +31,20 @@
     font-size: 18px;
     color: #333;
   }
+  :global(.rmdp-day-picker) {
+    width: 100%;
+    display: flex;
+    gap: 38px;
+  }
   :global(.rmdp-day-picker > div:nth-child(1)) {
-    margin-right: 36px;
+    margin-right: 0 !important;
+  }
+  :global(.rmdp-week-day) {
+    width: 42px;
+    height: 42px;
+    color: $graphite;
+    font-size: 15px;
+    font-weight: 500;
   }
   :global(.rmdp-week-day) {
     width: 42px;
@@ -60,19 +72,37 @@
     font-size: 16px;
     position: static;
   }
-
   :global(.rmdp-range) {
     background-color: $sky-blue;
-    border-top: 2px solid;
-    border-bottom: 2px solid;
-    border-color: $deep-blue;
     box-shadow: none;
     margin-block: 2px;
   }
+  :global(.rmdp-week .rmdp-range) {
+    border-top: 0;
+    border-bottom: 0;
+  }
+  :global(.rmdp-week:has(.rmdp-range.start) .rmdp-range) {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: $deep-blue;
+  }
+  :global(.rmdp-week:has(.rmdp-range.start) ~ .rmdp-week .rmdp-range) {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: $deep-blue;
+  }
+  :global(.rmdp-day-picker >div:first-child:has(.rmdp-week .start) + div .rmdp-range) {
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    border-color: $deep-blue;
+  }
   :global(.rmdp-range.start) {
     border-left: 2px solid;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
     border-color: $deep-blue;
-  } :global(.rmdp-range.end) {
+  }
+  :global(.rmdp-range.end) {
     border-right: 2px solid;
     border-color: $deep-blue;
   }
@@ -112,8 +142,11 @@
   :global(.rmdp-week) {
     justify-content: unset;
   }
+
 }
 .contentWrapper {
+  width: 100%;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: end;
@@ -124,12 +157,12 @@
   justify-content: center;
   gap: 10px;
 
-  & > p:first-child {
+  & > .daysNumber {
     font-weight: 700;
     font-size: 22px;
     line-height: 140%;
   }
-& > p:last-child {
+& > .periodString {
   font-weight: 600;
   font-size: 15px;
   line-height: 120%;
@@ -137,4 +170,13 @@
   color: $graphite;
   }
 
+}
+.inputsWrapper {
+  display: flex;
+  gap: 12px;
+}
+.buttonsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
