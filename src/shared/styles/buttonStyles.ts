@@ -154,7 +154,6 @@ export const authCustomInput = {
     color: MUIColors.graphite,
   },
   '& > label.Mui-focused': {
-    fontSize: ' 13px',
     fontWeight: '700',
   },
   '& fieldset': {
