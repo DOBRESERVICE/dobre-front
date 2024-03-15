@@ -154,6 +154,8 @@ export const authCustomInput = {
     color: MUIColors.graphite,
   },
   '& > label.Mui-focused': {
+    transform: 'translate(14px, -9px) scale(0.9)',
+    fontSize: ' 13px',
     fontWeight: '700',
   },
   '& fieldset': {
@@ -202,6 +204,11 @@ export const authButton = {
   },
   '&:active': {
     boxShadow: 'none',
+  },
+  '&.Mui-disabled': {
+    background: MUIColors.deepBlue,
+    opacity: 0.4,
+    color: MUIColors.white,
   },
 };
 export const authCheckBox = {
