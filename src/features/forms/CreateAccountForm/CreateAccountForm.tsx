@@ -71,12 +71,12 @@ export const CreateAccountForm = () => {
         <DifficultyProgressBar passwordValue={passwordValue} />
       </div>
 
-      <ReCAPTCHA
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY as string}
-        ref={recaptchaRef}
-        onChange={handleCaptchaSubmission}
-        style={{ transform: 'scale(1.26)', alignSelf: 'center' }}
-      />
+      {/*<ReCAPTCHA*/}
+      {/*  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_API_KEY as string}*/}
+      {/*  ref={recaptchaRef}*/}
+      {/*  onChange={handleCaptchaSubmission}*/}
+      {/*  style={{ transform: 'scale(1.26)', alignSelf: 'center' }}*/}
+      {/*/>*/}
 
       <div className={styles.createWrapperAccept}>
         <Checkbox id='rules' onChange={() => setIsAccept(!isAccept)} sx={authCheckBox} />
