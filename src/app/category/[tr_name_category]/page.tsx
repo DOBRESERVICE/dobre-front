@@ -1,10 +1,9 @@
 import { NoProductsFound } from '@/entities/NoProductsFound/NoProductsFound';
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
 import { getCategory } from '@/shared/api/categoriesApi';
-import { certainCategoryData, mainPageProducts, subCategoryData } from '@/shared/data';
+import { certainCategoryData, mainPageProducts } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
-import { CatalogBlocks } from '@/widgets/CatalogBlocks/CatalogBlocks';
 import { Construction } from '@/widgets/Construction/Construction';
 import { NewProducts } from '@/widgets/NewProducts/NewProducts';
 import { PopularTools } from '@/widgets/PopularTools/PopularTools';
@@ -38,7 +37,7 @@ export default async function CategoryPage({ params }: { params: { tr_name_categ
       />
       <PopularTools />
       {certainCategoryData.products.length > 0 && <NewProducts newProducts={mainPageProducts} />}
-      <CatalogBlocks subcategories={subCategoryData} />
+      {/*<CatalogBlocks subcategories={subCategoryData} />*/}
       {isEveryVarietyEmpty && <NoProductsFound />}
       <Blog />
     </>

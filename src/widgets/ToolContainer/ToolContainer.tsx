@@ -8,7 +8,7 @@ import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { ToolItem } from './ui/ToolItem/ToolItem';
 
 interface TollContainer {
-  toolsData: Varietyy[];
+  toolsData: Varietyy[] | any[];
   subCategoryTrName: string;
 }
 export const ToolContainer: FC<TollContainer> = ({ toolsData, subCategoryTrName }) => {
