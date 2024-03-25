@@ -36,6 +36,25 @@ export interface Brandd {
   imageId: any;
 }
 
+export interface SubcategoryData {
+  id: number;
+  publicationAlias: string;
+  name: string;
+  categoryPublicationAlias: string;
+  productCount: number;
+  varieties: Varietyy[];
+  seoBlocks: any[];
+  blockConstructors: any[];
+  brands: Brandd[];
+}
+
+export interface Varietyy {
+  id: number;
+  publicationAlias: string;
+  name: string;
+  imageId: any;
+}
+
 export interface SubCategory {
   id_sub: number;
   name_sub: string;

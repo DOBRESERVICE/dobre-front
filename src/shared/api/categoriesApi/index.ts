@@ -1,10 +1,13 @@
 import { AxiosResponse } from 'axios';
 
-import { Categoryy } from '@/interfaces/categories';
+import { Categoryy, SubcategoryData } from '@/interfaces/categories';
 import { defaultRequest } from '@/shared/api/axios/instances';
 
 export const getCategory = async (categoryName: string): Promise<AxiosResponse<Categoryy>> => {
   return defaultRequest.get(`/category/${categoryName}`);
+};
+export const getSubcategory = async (subcategoryName: string): Promise<AxiosResponse<SubcategoryData>> => {
+  return defaultRequest.get(`/subcategory/${subcategoryName}`);
 };
 
 // export const getSubCategory = async (subCategory: string): Promise<AxiosResponse<SubCategory>> => {

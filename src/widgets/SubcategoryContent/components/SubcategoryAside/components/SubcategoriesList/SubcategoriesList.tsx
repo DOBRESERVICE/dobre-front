@@ -4,13 +4,13 @@ import { FC, useEffect, useState } from 'react';
 
 import styles from './SubcategoriesList.module.scss';
 
-import { Variety } from '@/interfaces/categories';
+import { Varietyy } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
 import { ShowAllButton } from '@/shared/ui/ShowAllButton/ShowAllButton';
 import { SubCategoryItem } from '@/widgets/SubcategoryContent/components/SubcategoryAside/components/SubcategoryListItem/SubcategoryListItem';
 
 interface SubCategoriesProps {
-  varietiesList: Variety[];
+  varietiesList: Varietyy[];
 }
 export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => {
   const params = useSearchParams();
@@ -21,7 +21,7 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
 
   const [activeVariety, setActiveVariety] = useState(trVariety);
   const { itemsToShow, shouldRenderExpandButton, showAll, setShowAll } = useShownData(varietiesList, 9);
-  const varietyPosition = varietiesList.findIndex((variety) => variety.tr_name_variety === trVariety);
+  const varietyPosition = varietiesList.findIndex((variety) => variety.publicationAlias === trVariety);
 
   useEffect(() => {
     if (trVariety === 'all') {
@@ -29,7 +29,7 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
       searchParams.set('variety', 'all');
       const search = searchParams.toString();
       const query = search ? `?${search}` : '';
-      router.push(`${pathName}${query}`, { scroll: false });
+      router.replace(`${pathName}${query}`, { scroll: false });
     }
   }, [params, router, trVariety, pathName]);
 
@@ -47,11 +47,11 @@ export const SubcategoriesList: FC<SubCategoriesProps> = ({ varietiesList }) => 
         />
         {itemsToShow.map((item) => (
           <SubCategoryItem
-            varietyName={item.name_variety}
-            varietyTrName={item.tr_name_variety}
-            key={item.id_variety}
-            isActive={trVariety === item.tr_name_variety}
-            setActiveVariety={() => setActiveVariety(item.tr_name_variety)}
+            varietyName={item.name}
+            varietyTrName={item.publicationAlias}
+            key={item.id}
+            isActive={trVariety === item.publicationAlias}
+            setActiveVariety={() => setActiveVariety(item.publicationAlias)}
           />
         ))}
       </ul>

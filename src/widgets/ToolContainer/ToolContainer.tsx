@@ -2,13 +2,13 @@ import { FC } from 'react';
 
 import styles from './ToolContainer.module.scss';
 
-import { Variety } from '@/interfaces/categories';
+import { Varietyy } from '@/interfaces/categories';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 
 import { ToolItem } from './ui/ToolItem/ToolItem';
 
 interface TollContainer {
-  toolsData: Variety[] | any[];
+  toolsData: Varietyy[];
   subCategoryTrName: string;
 }
 export const ToolContainer: FC<TollContainer> = ({ toolsData, subCategoryTrName }) => {
@@ -17,12 +17,11 @@ export const ToolContainer: FC<TollContainer> = ({ toolsData, subCategoryTrName 
       <div className={styles.popularToolsWrapper}>
         {toolsData.map((item) => (
           <ToolItem
-            varietyTrName={item.tr_name_variety}
+            varietyTrName={item.publicationAlias}
             subCategoryTrName={subCategoryTrName}
-            key={item.id_variety}
-            imageUrl={item.image_variety}
-            title={item.name_variety}
-            link={item.link}
+            key={item.id}
+            imageUrl={item.imageId}
+            title={item.name}
           />
         ))}
       </div>
