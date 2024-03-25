@@ -7,7 +7,7 @@ import styles from './SubcategoryAside.module.scss';
 
 import { VarietyFeatureType } from '@/enums';
 import { FeatureVariety } from '@/interfaces';
-import { Product, Variety } from '@/interfaces/categories';
+import { Product, Varietyy } from '@/interfaces/categories';
 import { customDateFormSelect, customLabel, customSelect } from '@/shared/styles/selectStyles';
 import { MultiArray } from '@/shared/ui/MultiArray/MultiArray';
 import { MultiCheck } from '@/shared/ui/MultiCheck/MultiCheck';
@@ -20,7 +20,7 @@ import { backArrow } from '../../../../shared/image';
 
 interface AsideProps {
   title: string;
-  varietiesList: Variety[];
+  varietiesList: Varietyy[];
   products: Product[];
   varietyFeatures: any[];
 }

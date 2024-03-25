@@ -3,15 +3,16 @@ import { Button } from '@mui/material';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { Value } from 'react-multi-date-picker';
 
 import styles from './RentInfoPannel.module.scss';
 
 import { InsuranceCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/ProductItemContainer/common/InsuranceCard/InsuranceCard';
 import { TariffCard } from '@/app/category/[tr_name_category]/[id]/[product_name]/common/TariffCard/TariffCard';
 import { StatusBar } from '@/entities/StatusBar/StatusBar';
+import { ModalDatePicker } from '@/features/ModalDatePicker/ModalDatePicker';
 import { Term } from '@/interfaces/categories';
-import { useAuthData } from '@/shared/context/authContext';
 import { rentInfoCustomBigButton } from '@/shared/styles/buttonStyles';
 import {
   customDateLabel,
@@ -47,9 +48,10 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
   hasInsurance,
 }) => {
   const searchParams = useSearchParams();
-  const { isPending } = useAuthData();
   const params = new URLSearchParams(searchParams);
   const isDisabled = params.get('dateStart') === null && params.get('dateEnd') === null;
+  const [isDatePickerModalOpen, setIsDatePickerModalOpen] = useState(false);
+  const [dateRange, setDateRange] = useState<Value>(null);
   return (
     <div className={styles.productInfo}>
       <div className={styles.dateHeaderWrapper}>
@@ -62,7 +64,9 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
         <RatingComponent feedbackType='textFeedback' rating={4.4} feedbackCount={31} />
       </div>
       <div className={styles.selectWrapper}>
-        <CustomDatePicker rent />
+        <button className={styles.datePickerWrapper} onClick={() => setIsDatePickerModalOpen(true)}>
+          <CustomDatePicker rent onOpen={() => false} dateRange={dateRange} setDateRange={setDateRange} />
+        </button>
         {count > 0 ? (
           <CustomSelect
             formControlStyles={customProductQuantityFormSelect}
@@ -94,11 +98,6 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
       </div>
       {hasInsurance && <InsuranceCard />}
       <div className={styles.rentInfoWrapper}>
-        {isPending && (
-          <div className={styles.loader}>
-            <div className={styles.spinner} />
-          </div>
-        )}
         {isDisabled ? (
           <p className={styles.disabledText}>Для расчета и оформления аренды выберите дату </p>
         ) : (
@@ -122,6 +121,12 @@ export const RentInfoPannel: FC<RentInfoPannelProps> = ({
           Оформить аренду
         </Button>
       </div>
+      <ModalDatePicker
+        dateRange={dateRange}
+        setDateRange={setDateRange}
+        isModalOpen={isDatePickerModalOpen}
+        setIsModalOpen={setIsDatePickerModalOpen}
+      />
     </div>
   );
 };

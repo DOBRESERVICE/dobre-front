@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import styles from './CatalogBlock.module.scss';
 
-import { Product, Variety } from '@/interfaces/categories';
+import { Product, Varietyy } from '@/interfaces/categories';
 import { useShownData } from '@/shared/hooks/useShownData';
 import { TopSectionBar } from '@/shared/ui/TopSectionBar/TopSectionBar';
 import { ProductsContainer } from '@/widgets/ProductsContainer/ProductsContainer';
@@ -12,7 +12,7 @@ import { ToolContainer } from '@/widgets/ToolContainer/ToolContainer';
 
 interface CatalogBlock {
   barName: string;
-  toolsData: Variety[];
+  toolsData: Varietyy[];
   productsData: Product[];
   subCategoryTrName: string;
 }

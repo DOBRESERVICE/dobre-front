@@ -1,18 +1,21 @@
 import { BreadCrumbs } from '@/features/BreadCrumbs/BreadCrumbs';
-import { certainVarietyData, subcategoryObject } from '@/shared/data';
+import { getSubcategory } from '@/shared/api/categoriesApi';
+import { certainVarietyData } from '@/shared/data';
 import { Wrapper } from '@/shared/ui/Wrapper/Wrapper';
 import { Blog } from '@/widgets/Blog/Blog';
 import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
 
-export default async function CategoryPage({
+export default async function SubcategoryPage({
   searchParams,
+  params,
 }: {
   params: { id: string };
   searchParams: { [key: string]: string };
 }) {
-  const variety = searchParams?.variety;
-  const activeVarietyName = subcategoryObject.varieties.find((v) => v.tr_name_variety === variety)?.name_variety;
+  const { data: subcategoryData } = await getSubcategory(params.id);
+  const variety = searchParams.variety;
+  const activeVarietyName = subcategoryData.varieties.find((v) => v.publicationAlias === variety)?.name;
   const breadCrumbsData = [
     {
       id: 1,
@@ -21,17 +24,17 @@ export default async function CategoryPage({
     },
     {
       id: 2,
-      link: `/category/${certainVarietyData.data} `,
-      linkName: 'Ремонт и стройка',
+      link: `/category/${subcategoryData.categoryPublicationAlias} `,
+      linkName: subcategoryData.categoryPublicationAlias,
     },
     {
       id: 3,
-      link: `/category/'remont-i-strojka'/${subcategoryObject.tr_name_sub}`,
-      linkName: subcategoryObject.name_sub,
+      link: `/category/${subcategoryData.categoryPublicationAlias}/${subcategoryData.publicationAlias}`,
+      linkName: subcategoryData.name,
     },
     {
       id: 4,
-      link: `/category/'remont-i-strojka'/${subcategoryObject.tr_name_sub}?variety=${variety}`,
+      link: `/category/${subcategoryData.categoryPublicationAlias}/${subcategoryData.publicationAlias}?variety=${variety}`,
       linkName: activeVarietyName,
     },
   ];
@@ -41,15 +44,15 @@ export default async function CategoryPage({
         <BreadCrumbs breadCrumbsData={breadCrumbsData} />
       </Wrapper>
       <SubcategoryToolsContainer
-        varietyProducts={subcategoryObject.varieties}
-        subCategoryTitle={subcategoryObject.name_sub}
-        subCategoryTrName={subcategoryObject.tr_name_sub}
+        varietyProducts={subcategoryData.varieties}
+        subCategoryTitle={subcategoryData.name}
+        subCategoryTrName={subcategoryData.publicationAlias}
       />
       <SubcategoryContent
         searchParams={searchParams}
         pagination={certainVarietyData.pagination}
         products={certainVarietyData.data}
-        subCategoryData={subcategoryObject}
+        subCategoryData={subcategoryData}
       />
       <Blog />
     </>

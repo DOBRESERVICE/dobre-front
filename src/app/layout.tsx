@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Manrope } from 'next/font/google';
 
-import './globals.scss';
+import '../shared/styles/globals.scss';
 
 import { Providers } from '@/app/providers';
 
