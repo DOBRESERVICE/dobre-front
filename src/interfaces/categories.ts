@@ -12,9 +12,30 @@ export interface Category {
   products: Product[];
 }
 
-export interface ExactCategory extends Category {
-  brands: any[];
+export interface Categoryy {
+  id: number;
+  name: string;
+  publicationAlias: string;
+  productCount: number;
+  subCategories: SubCategoryy[];
+  seoBlocks: any[];
+  blockConstructors: any[];
+  brands: Brandd[];
 }
+
+export interface SubCategoryy {
+  id: number;
+  publicationAlias: string;
+  name: string;
+  imageId: any;
+}
+
+export interface Brandd {
+  id: number;
+  name: string;
+  imageId: any;
+}
+
 export interface SubCategory {
   id_sub: number;
   name_sub: string;

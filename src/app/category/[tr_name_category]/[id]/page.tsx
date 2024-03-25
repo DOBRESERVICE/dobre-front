@@ -5,8 +5,9 @@ import { Blog } from '@/widgets/Blog/Blog';
 import { SubcategoryContent } from '@/widgets/SubcategoryContent/SubcategoryContent';
 import { SubcategoryToolsContainer } from '@/widgets/SubcategoryToolsContainer/SubcategoryToolsContainer';
 
-export default async function CategoryPage({
+export default async function SubcategoryPage({
   searchParams,
+  params,
 }: {
   params: { id: string };
   searchParams: { [key: string]: string };
